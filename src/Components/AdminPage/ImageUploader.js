@@ -181,9 +181,9 @@ const ImageUploader = ({ setLoggedIn }) => {
   /* Ha képernyő mérete nagyobb vagy egyenlő mint 768 pixel (mobil nézet), akkor az isOpen értéke false */
 
   useEffect(() => {
-    cartCtx.setIsOpen(window.innerWidth >= 768);
-    cartCtx.setIsOpenResize(window.innerWidth >= 768);
-    cartCtx.setIsMobile(window.innerWidth >= 768);
+    //cartCtx.setIsOpen(window.innerWidth >= 768);
+    //cartCtx.setIsOpenResize(window.innerWidth >= 768);
+    //cartCtx.setIsMobile(window.innerWidth >= 768);
   }, []);
 
   const toggleOpen = () => cartCtx.setIsOpen(!cartCtx.isOpen);
