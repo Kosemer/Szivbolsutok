@@ -1,6 +1,8 @@
 function Home() {
     return(
-        <div></div>
+        <div>
+            <h1>FDSGVFE</h1>
+        </div>
     );
 }
 
