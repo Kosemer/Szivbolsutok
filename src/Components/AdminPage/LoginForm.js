@@ -16,7 +16,7 @@ function LoginForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost/backend/login.php", {
+    const response = await fetch("/backend/login.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
