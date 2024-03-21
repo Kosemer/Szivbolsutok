@@ -16,7 +16,6 @@ function LoginForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    //const response = await fetch("/backend/login.php", {
     const response = await fetch("http://localhost/backend/login.php", {
       method: "POST",
       headers: {

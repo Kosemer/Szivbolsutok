@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+<h1 align="center">Photographer website</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br>
+<br>
 
-## Available Scripts
+# Description:
 
-In the project directory, you can run:
+I made this page for a photographer. I wrote the whole thing in react and used php for the backend. I also created an admin page so that the user can edit the images on the site.
 
-### `npm start`
+<h3>Main features:</h3>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- `Admin page`
+- `Infinite Scrolling in the photo gallery`
+- `Query the dimensions of the image using API`
+- `Message sending form`
+- `Responsive`
+- `Transfer the selected photo package to the messaging form`
+- `reCAPTCHA protection`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<h3>Admin page main features:</h3>
 
-### `npm test`
+- `Login form`
+- `Dark mode`
+- `Upload image to specified folder`
+- `Show images from a selected folder`
+- `Image deletion`
+- `Folder choice`
+- `Editable parts of the site: Slider, Photo Gallery, AboutMe page`
+- `Optimize image size function`
+- `Display storage size`
+- `Display free space`
+- `Show reserved space`
+- `Graphical presentation`
+- `Displays the size of the image when you select it`
+- `Indicates if you find it necessary to optimise the image ( > 6 Mb)`
+- `If no optimization is needed then it will collapse the optimization section, if it is then it will expand it.`
+- `Warning on unfilled fields`
+- `Newly uploaded images will be renamed with a time stamp and a serial number`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+# Tech Stack:
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) 
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) 
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) 
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Link:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<a href="https://www.fruzsiphoto.hu/" target="_blank">https://www.fruzsiphoto.hu/</a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<h2>Admin page</h2>
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Képkivágás](https://github.com/Kosemer/fruzsiphoto/assets/82768146/908b8958-ba55-438f-bd7f-e4ba8a5ac3d2)
+![Képkivágás2](https://github.com/Kosemer/fruzsiphoto/assets/82768146/e9044e8c-26f9-4f1e-8a11-52bb494b67f9)
+![Képkivágás3](https://github.com/Kosemer/fruzsiphoto/assets/82768146/d8fdd310-b387-43bd-baf4-dbb684480390)
+![Képkivágás4](https://github.com/Kosemer/fruzsiphoto/assets/82768146/6e4f8529-70f9-4611-b3a7-e96f7f27c828)
+![Képkivágás5](https://github.com/Kosemer/fruzsiphoto/assets/82768146/1fa9a7dd-cc25-4ad4-a25b-cb907229493c)

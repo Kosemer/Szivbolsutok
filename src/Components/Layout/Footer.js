@@ -86,11 +86,6 @@ function Footer() {
           </div>
           <div className={classes.linkContainer}>
             <NavLink to="/arak" className={classes.linkText}>
-              Kismama fotózás
-            </NavLink>
-          </div>
-          <div className={classes.linkContainer}>
-            <NavLink to="/arak" className={classes.linkText}>
               Boudoir fotózás
             </NavLink>
           </div>
@@ -107,11 +102,6 @@ function Footer() {
           <div className={classes.linkContainer}>
             <NavLink to="/arak" className={classes.linkText}>
               Rendezvény fotózás
-            </NavLink>
-          </div>
-          <div className={classes.linkContainer}>
-            <NavLink to="/arak" className={classes.linkText}>
-              Házi kedvencek fotózás
             </NavLink>
           </div>
         </div>

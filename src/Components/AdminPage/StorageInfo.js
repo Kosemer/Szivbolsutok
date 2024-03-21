@@ -13,8 +13,7 @@ const StorageInfo = () => {
 
   // Fetching the storage data from the server
   useEffect(() => {
-    //fetch("/backend/storage_info.php") // Cseréld le a megfelelő útvonalra
-    fetch("http://localhost/backend/storage_info.php") // Cseréld le a megfelelő útvonalra
+    fetch("/backend/storage_info.php") // Cseréld le a megfelelő útvonalra
       .then((response) => response.json())
       .then((data) => setStorageInfo(data))
       .catch((error) => console.error("Error:", error));

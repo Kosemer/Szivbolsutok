@@ -346,12 +346,10 @@ const ImageUploader = ({ setLoggedIn }) => {
             <optgroup label="Galéria">
               <option value="portrait">Portré</option>
               <option value="wedding">Esküvői</option>
-              <option value="maternity">Kismama</option>
               <option value="budoir">Boudoir</option>
               <option value="sport">Sport</option>
               <option value="family">Családi</option>
               <option value="event">Rendezvény</option>
-              <option value="pet">Házi kedvencek</option>
             </optgroup>
             <optgroup label="Főképernyő kép lapozó">
               <option value="slider">Slider</option>
