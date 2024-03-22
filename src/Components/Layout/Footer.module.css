@@ -62,14 +62,14 @@
   color: #ffffff;
   text-decoration: none;
   font-size: 18px;
-  color: #23967F;
+  color: #4169e1;
   font-weight: 600;
 }
 
 .underlineLong {
   border: none;
   height: 1px;
-  background-color: #FF69B4;
+  background-color: #4169e1;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -144,7 +144,7 @@ span {
   margin-bottom: 40px;
   border: none;
   height: 2px;
-  background-color: #FF69B4;
+  background-color: #4169e1;
   width: 7rem;
   margin-left: auto;
   margin-right: auto;

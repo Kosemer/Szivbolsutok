@@ -42,19 +42,6 @@ function Footer() {
         <div className={classes.containerContact}>
           <h2>Elérhetőségek</h2>
           <hr className={classes.underline}></hr>
-          <div className={classes.emailContainer}>
-            <img src={email} alt="E-mail" className={classes.icon} />
-            <div className={classes.email}>
-              <span>dfruzsiphoto</span>
-              <span>@</span>
-              <span>gmail.com</span>
-            </div>
-          </div>
-
-          <div className={classes.emailContainer}>
-            <img src={phone} alt="phone icon" className={classes.icon} />
-            <p className={classes.iconText}>+36 20 310 7721</p>
-          </div>
 
           <div className={classes.iconContainer} onClick={handleClickInsta}>
             <img
@@ -69,45 +56,54 @@ function Footer() {
             <img src={facebook} alt="facebook icon" className={classes.icon} />
             <p className={classes.iconText}>Facebook</p>
           </div>
+
+          <div className={classes.emailContainer}>
+            <img src={email} alt="E-mail" className={classes.icon} />
+            <div className={classes.email}>
+              <span>szivbolsutok</span>
+              <span>@</span>
+              <span>gmail.com</span>
+            </div>
+          </div>
         </div>
 
         <div className={classes.photoServices}>
-          <h2>Fotó szolgáltatások</h2>
+          <h2>Torták</h2>
           <hr className={classes.underline}></hr>
           <div className={classes.linkContainer}>
             <NavLink to="/arak" className={classes.linkText}>
-              Portré fotózás
+              Hagyományos torták
             </NavLink>
           </div>
           <div className={classes.linkContainer}>
             <NavLink to="/arak" className={classes.linkText}>
-              Esküvői fotózás
+            Burkolt torták
             </NavLink>
           </div>
           <div className={classes.linkContainer}>
             <NavLink to="/arak" className={classes.linkText}>
-              Boudoir fotózás
+              Linzertorták
             </NavLink>
           </div>
           <div className={classes.linkContainer}>
             <NavLink to="/arak" className={classes.linkText}>
-              Sport fotózás
+              Macaronok
             </NavLink>
           </div>
           <div className={classes.linkContainer}>
             <NavLink to="/arak" className={classes.linkText}>
-              Családi fotózás
+              Sütemények
             </NavLink>
           </div>
           <div className={classes.linkContainer}>
             <NavLink to="/arak" className={classes.linkText}>
-              Rendezvény fotózás
+              Fondant figurák
             </NavLink>
           </div>
         </div>
 
         <div className={classes.pages}>
-          <h2>FruzsiPhoto</h2>
+          <h2>Szivből sütök</h2>
           <hr className={classes.underline}></hr>
           <div className={classes.linkContainer}>
             <NavLink to="/" className={classes.linkText}>
@@ -117,11 +113,6 @@ function Footer() {
           <div className={classes.linkContainer}>
             <NavLink to="/galeria" className={classes.linkText}>
               Galéria
-            </NavLink>
-          </div>
-          <div className={classes.linkContainer}>
-            <NavLink to="/arak" className={classes.linkText}>
-              Árak
             </NavLink>
           </div>
           <div className={classes.linkContainer}>
@@ -143,11 +134,11 @@ function Footer() {
       </div>
       <hr className={classes.underlineLong}></hr>
       <p className={classes.author}>
-        © {currentYear} fruzsiphoto &{" "}
+        © {currentYear} Szivbolsutok &{" "}
         <a
           href="https://www.frontweb.hu"
           style={{
-            color: "#23967F",
+            color: "#4169e1",
             textDecoration: "none",
             fontWeight: "bold",
           }}

@@ -49,7 +49,7 @@
   .header a.active {
     color: #1f1e1d;
     padding-bottom: 0.25rem;
-    border-bottom: 4px solid #FF69B4;
+    border-bottom: 4px solid #4169e1;
   }
   
   .header a.social,

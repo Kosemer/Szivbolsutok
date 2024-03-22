@@ -4,7 +4,8 @@
 export async function ImageDimensions(folder) {
   try {
     const response = await fetch(
-      `/backend/getImageDimensions.php?folder=${folder}`
+      //`/backend/getImageDimensions.php?folder=${folder}`
+      `http://localhost/backend/getImageDimensions.php?folder=${folder}`
     );
     if (!response.ok) {
       throw new Error("Hiba a szerver válaszában");

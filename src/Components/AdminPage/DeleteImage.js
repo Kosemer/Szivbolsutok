@@ -10,7 +10,9 @@ const DeleteImage = ({ loadImages }) => {
     e.preventDefault();
     const response = await axios({
       method: "DELETE",
-      url: "/backend/deleteImage.php",
+      //url: "/backend/deleteImage.php",
+      //url: "/backend/deleteImage.php",
+      url: "http://localhost/backend/deleteImage.php",
       data: `image=${cartCtx.imageToDelete}`,
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
     });

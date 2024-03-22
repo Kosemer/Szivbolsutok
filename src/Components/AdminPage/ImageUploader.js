@@ -78,7 +78,8 @@ const ImageUploader = ({ setLoggedIn }) => {
     formData.append("image", cartCtx.selectedFile);
     formData.append("folder", cartCtx.selectedFolder);
 
-    const response = await axios.post("/backend/uploadImage.php", formData, {
+    //const response = await axios.post("/backend/uploadImage.php", formData, {
+    const response = await axios.post("http://localhost/backend/uploadImage.php", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -98,7 +99,8 @@ const ImageUploader = ({ setLoggedIn }) => {
 
   const loadImages = async () => {
     const response = await axios.get(
-      `/backend/listImages.php?folder=${cartCtx.selectedFolder}`
+      //`/backend/listImages.php?folder=${cartCtx.selectedFolder}`
+      `http://localhost/backend/listImages.php?folder=${cartCtx.selectedFolder}`
     );
     cartCtx.setFolderImages(response.data);
   };
