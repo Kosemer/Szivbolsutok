@@ -13,8 +13,9 @@ function getImageDimensions($directory) {
         $dimensions = getimagesize($imageFile);
         $width = $dimensions[0];
         $height = $dimensions[1];
-        //$serverUrl = 'https://www.fruzsiphoto.hu/'; // SZERVER
-        $serverUrl = 'http://localhost/'; // LOCALHOST
+        //$serverUrl = 'https://www.fruzsiphoto.hu/'; // Szerver
+        $serverUrl = 'http://localhost/'; // Localhost
+        $relativePath = str_replace('../', '/', $imageFile);
 
         $imageDimensions[] = [
             'src' => $serverUrl . $relativePath,
