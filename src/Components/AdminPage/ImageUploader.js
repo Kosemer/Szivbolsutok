@@ -430,7 +430,7 @@ const ImageUploader = ({ setLoggedIn }) => {
         >
           {cartCtx.folderImages.map((image, index) => (
             <div
-            //key={index}
+            key={index}
             //onDragOver={(e) => e.preventDefault()}
             //onDrop={(e) => handleDrop(e, index)}
             >
