@@ -47,6 +47,7 @@ function Photography() {
       rootMargin: "20px",
       threshold: 1.0,
     };
+    
 
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
@@ -135,6 +136,13 @@ function Photography() {
     fetchImages("event"); // Rendezvény fotók betöltése
     cartCtx.setSelectedFilter("event", 20);
   };
+
+  // images tömb értékének kiíratása a konzolraa
+
+  useEffect(() => {
+    console.log("images:", images);
+  }, [images]);
+  
   return (
     <div className={classes.conatiner}>
       <h2 className={classes.photoTitle}>Válogass a témakörök között!</h2>
