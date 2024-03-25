@@ -27,14 +27,14 @@ function Photography() {
   const location = useLocation();
   const filterFromState = location.state?.filter;
 
-  const [images, setImages] = useState([]);
+  //const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const loaders = useRef({});
 
   const loadMoreImages = useCallback(async (folder) => {
     setIsLoading(true);
     const imageData = await ImageDimensions(folder);
-    setImages((prevImages) => [
+    cartCtx.setImages((prevImages) => [
       ...prevImages,
       ...imageData.slice(prevImages.length, prevImages.length + 20),
     ]);
@@ -82,7 +82,7 @@ function Photography() {
 
   async function fetchImages(folder, count) {
     const imageData = await ImageDimensions(folder);
-    setImages(imageData.slice(0, count));
+    cartCtx.setImages(imageData.slice(0, count));
   }
 
   async function fetchAllImages() {
@@ -99,7 +99,7 @@ function Photography() {
       const imageData = await ImageDimensions(folder);
       allImageData.push(...imageData);
     }
-    setImages(allImageData);
+    cartCtx.setImages(allImageData);
   }
 
   const loadingSpinner = (
@@ -141,8 +141,8 @@ function Photography() {
   // images tömb értékének kiíratása a konzolraa
 
   useEffect(() => {
-    console.log("images:", images);
-  }, [images]);
+    console.log("images:", cartCtx.images);
+  }, [cartCtx.images]);
   
   
   return (
@@ -194,7 +194,7 @@ function Photography() {
         </h2>
       </div>
       <div className={classes.PhotoGallery}>
-        <PhotoGallery images={images}></PhotoGallery>
+        <PhotoGallery images={cartCtx.images}></PhotoGallery>
         {loadingSpinner}
         <div ref={(ref) => (loaders.current = ref)} />
       </div>

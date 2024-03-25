@@ -11,6 +11,8 @@ function CartProvider(props) {
 
   const [lastFilter, setLastFilter] = useState(null);
 
+  const [images, setImages] = useState([]);
+
   //const [selectedFilter, setSelectedFilter] = useState("portrait");
   const [selectedFilter, setSelectedFilter] = useState(
     isMobileView() ? null : "portrait"
@@ -137,6 +139,8 @@ function CartProvider(props) {
     setDeleteSuccess: setDeleteSuccess,
     isMobile: isMobile,
     setIsMobile: setIsMobile,
+    images: images,
+    setImages: setImages
   };
 
   return (

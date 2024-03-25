@@ -1,20 +1,25 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Importáljuk a Bootstrap stíluslapját
-import { Container, Row, Col, Card } from 'react-bootstrap'; // Importáljuk a Bootstrap komponenseit
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row, Col, Card } from 'react-bootstrap';
+import { useContext } from "react";
+import CartContext from "../../Components/Store/cart-context";
 
 const CardGallery = () => {
+  const cartCtx = useContext(CartContext);
+
   return (
-    <Container fluid>
+    <Container fluid className="mt-5">
       <Row>
-        <Col xs={12} md={6} lg={4} className="mb-4">
-          <Card>
-            <Card.Img variant="top" src="https://res.cloudinary.com/sepuckett86/image/upload/v1513176680/IMG_5837_xicdt5.jpg" alt="Card image cap" />
-            <Card.Body>
-              <Card.Text>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        {/* További kártyák... */}
+        {cartCtx.images.map((image, index) => (
+          <Col key={index} xs={12} md={6} lg={4} className="mb-4">
+            <Card className="shadow"> {/* Árnyékolás hozzáadva */}
+              <Card.Img variant="top" src={image.src} alt={image.caption} />
+              <Card.Body className="text-center">
+                <Card.Text>{image.title}</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
       </Row>
     </Container>
   );

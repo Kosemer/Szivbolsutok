@@ -53,6 +53,8 @@ const CartContext = React.createContext({
   setShowWarningImageSize: () => {},
   setIsMobile: () => {},
   isMobile: false,
+  images: [],
+  setImages: () => {},
 });
 
 export default CartContext;
