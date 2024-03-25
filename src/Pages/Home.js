@@ -5,6 +5,7 @@ import classes from "./Home.module.css";
 import OpinionSwiperCard from "../Components/UI/OpinionSwiper/OpinionSwiperCard";
 import React, { useEffect } from "react";
 import DesktopSlider from "../Components/UI/OpinionSwiper/DesktopSlider";
+import CardGallery from "../Components/PhotoGallery/CardGallery";
 
 function Home() {
   useEffect(() => {
@@ -37,6 +38,8 @@ function Home() {
       <div className={classes.mobileCardSlider}>
         <OpinionSwiperCard></OpinionSwiperCard>
       </div>
+
+      <CardGallery></CardGallery>
 
       <div className={classes.container}>
         <h2 className={classes.title}>Irány a galéria</h2>

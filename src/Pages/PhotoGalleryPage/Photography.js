@@ -48,6 +48,7 @@ function Photography() {
       threshold: 1.0,
     };
     
+    
 
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
@@ -142,6 +143,7 @@ function Photography() {
   useEffect(() => {
     console.log("images:", images);
   }, [images]);
+  
   
   return (
     <div className={classes.conatiner}>
