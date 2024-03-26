@@ -6,6 +6,7 @@ import OpinionSwiperCard from "../Components/UI/OpinionSwiper/OpinionSwiperCard"
 import React, { useEffect } from "react";
 import DesktopSlider from "../Components/UI/OpinionSwiper/DesktopSlider";
 import CardGallery from "../Components/PhotoGallery/CardGallery";
+import Navbar from "../Components/Layout/Navbar";
 
 function Home() {
   useEffect(() => {
@@ -22,6 +23,7 @@ function Home() {
           <span className={classes.author}>– Reismann Marian</span>
         </blockquote>
       </div>
+      <Navbar></Navbar>
       <div className={classes.divider}>
         <div className={classes.line1}></div>
         <h2 className={classes.title}>Néhány kép a munkáimból</h2>
