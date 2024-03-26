@@ -11,7 +11,7 @@ const CardGallery = () => {
     <Container fluid className="mt-5">
       <Row>
         {cartCtx.images.map((image, index) => (
-          <Col key={index} xs={12} md={6} lg={4} className="mb-4">
+          <Col key={index} xs={12} md={6} lg={3} className="mb-4">
             <Card className="shadow"> {/* Árnyékolás hozzáadva */}
               <Card.Img variant="top" src={image.src} alt={image.caption} />
               <Card.Body className="text-center">
