@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './Navbar.css'
+import './NewNavbar.css'
 
-const BurgerMenu = () => {
+const NewNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -60,4 +60,4 @@ const BurgerMenu = () => {
   );
 };
 
-export default BurgerMenu;
+export default NewNavbar;
