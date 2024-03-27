@@ -153,12 +153,24 @@
 
 /* Kisebb asztali és laptop kijelzők */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-
+  .falling-letters {
+    margin-top: 10rem;
+    position: absolute;
+    bottom: 800px;
+    left: 70px;
+    right: 0;
+  }
 }
 
 /* Nagyobb asztali kijelzők és TV-k */
 @media only screen and (min-width: 1200px) {
-
+  .falling-letters {
+    margin-top: 10rem;
+    position: absolute;
+    bottom: 300px;
+    left: 70px;
+    right: 0;
+  }
 }
 
 /* Nagyobb asztali kijelzők és TV-k */

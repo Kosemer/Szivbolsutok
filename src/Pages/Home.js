@@ -7,6 +7,7 @@ import React, { useEffect } from "react";
 import DesktopSlider from "../Components/UI/OpinionSwiper/DesktopSlider";
 import CardGallery from "../Components/PhotoGallery/CardGallery";
 import NewNavbar from "../Components/Layout/NewNavbar";
+import IntroductorySection from '../Components/ParallaxIntroductorySection/IntroductorySection'
 
 function Home() {
   useEffect(() => {
@@ -29,6 +30,7 @@ function Home() {
         <h2 className={classes.title}>Néhány kép a munkáimból</h2>
         <div className={classes.line2}></div>
       </div>
+      <IntroductorySection></IntroductorySection>
       <div className={classes.pictureBox}>
         <div>
           <AccordionPictureBox></AccordionPictureBox>

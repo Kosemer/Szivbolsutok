@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { ImageDimensions } from "../../../Pages/PhotoGalleryPage/ImageDimensions";
 
 const Slider = () => {
+  
   // const startupScreen = (
   //   <div>
   //     <img src={image3} alt="image" />
