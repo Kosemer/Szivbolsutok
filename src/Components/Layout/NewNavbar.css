@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
 
+
 p {
   margin: 0;
 }
@@ -47,7 +48,7 @@ p {
 .burger-menu {
   --burger-menu-radius: 4em;
   position: fixed;
-  top: 20vh;
+  top: 5vh;
   left: 5vw;
   z-index: 100;
   display: block;
