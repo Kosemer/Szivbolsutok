@@ -11,7 +11,7 @@ const NewNavbar = () => {
   return (
     <div>
       <div>
-        <h1>Click the burger menu to see the magic.</h1>
+        
         <input type="checkbox" id="burger-toggle"></input>
         <label for="burger-toggle" class="burger-menu">
           <div class="line"></div>

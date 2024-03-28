@@ -24,7 +24,7 @@ function Home() {
           <span className={classes.author}>– Reismann Marian</span>
         </blockquote>
       </div>
-      <NewNavbar></NewNavbar>
+      
       <div className={classes.divider}>
         <div className={classes.line1}></div>
         <h2 className={classes.title}>Néhány kép a munkáimból</h2>
