@@ -11,6 +11,7 @@ import Logo from "../../Assets/Logo/LogoHeaderNoBackground.png";
 import instagram from "../../Assets/SocialIcon/instagram.svg";
 import facebook from "../../Assets/SocialIcon/facebook.svg";
 import NewNavbar from "./NewNavbar";
+import CurtainMenu from "./CurtainMenu";
 
 function Header() {
   const cartCtx = useContext(CartContext);
@@ -51,7 +52,8 @@ function Header() {
     <Fragment>
       {
         <header className={headerClasses}>
-          <NewNavbar></NewNavbar>
+          <CurtainMenu></CurtainMenu>
+          <BurgerButton></BurgerButton>
           {/*<NavLink to="/" className={classes.logoLink}>
             <img src={Logo} className={classes.logo} alt="logo"></img>
           </NavLink>

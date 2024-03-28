@@ -9,6 +9,8 @@ function CartProvider(props) {
     return window.innerWidth <= 768;
   };
 
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+
   const [lastFilter, setLastFilter] = useState(null);
 
   const [images, setImages] = useState([]);
@@ -140,7 +142,9 @@ function CartProvider(props) {
     isMobile: isMobile,
     setIsMobile: setIsMobile,
     images: images,
-    setImages: setImages
+    setImages: setImages,
+    menuIsOpen: menuIsOpen,
+    setMenuIsOpen: setMenuIsOpen
   };
 
   return (

@@ -165,6 +165,9 @@ p {
 .menu .gallery {
   margin-top: 60px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .menu .title {
   font-size: 24px;
@@ -181,6 +184,10 @@ p {
   margin-top: 36px;
   display: flex;
   flex-wrap: wrap;
+}
+
+.menu .images a {
+  padding: 20px;
 }
 @media screen and (max-width: 750px) {
   .menu .images {
