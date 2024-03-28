@@ -30,7 +30,8 @@ function BurgerButton(props) {
   };
 
   const menuChange = () => {
-    props.moblieMenuChange();
+    //props.moblieMenuChange();
+    cartCtx.setMenuIsOpen(!cartCtx.menuIsOpen)
   };
 
   return (
