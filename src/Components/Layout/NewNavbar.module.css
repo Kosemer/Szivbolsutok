@@ -1,123 +1,89 @@
-@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
-
-/* Általános stílusok */
-:root {
-  --primary-color: #3f51b5;
-  --primary-color-darker: #303f9f;
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #dcdc39;
+    font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* Burger menu stílusok */
-.burger-toggle {
-  position: absolute;
-  appearance: none;
-  opacity: 0;
-}
-.burger-toggle:checked ~ .menu {
-  opacity: 1;
-  visibility: visible;
-}
-.burger-toggle:checked ~ .menu .menu-nav-link span div,
-.burger-toggle:checked ~ .menu img,
-.burger-toggle:checked ~ .menu .title p {
-  transform: translateY(0);
-  transition: 1.2s 0.1s cubic-bezier(0.35, 0, 0.07, 1);
-}
-.burger-toggle:checked ~ .menu .image-link:nth-child(1) img {
-  transition-delay: 0.18s;
-}
-.burger-toggle:checked ~ .menu .image-link:nth-child(2) img {
-  transition-delay: 0.26s;
-}
-.burger-toggle:checked ~ .menu .image-link:nth-child(3) img {
-  transition-delay: 0.34s;
-}
-.burger-toggle:checked ~ .menu .image-link:nth-child(4) img {
-  transition-delay: 0.42s;
-}
-.burger-toggle:checked ~ .burger-menu .line::after {
-  transform: translateX(0);
-}
-.burger-toggle:checked ~ .burger-menu .line:nth-child(1) {
-  transform: translateY(calc(var(--burger-menu-radius) / 5)) rotate(45deg);
-}
-.burger-toggle:checked ~ .burger-menu .line:nth-child(2) {
-  transform: scaleX(0);
-}
-.burger-toggle:checked ~ .burger-menu .line:nth-child(3) {
-  transform: translateY(calc(var(--burger-menu-radius) / -5)) rotate(-45deg);
+body, .nav, .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Burger menu stílusok: .burger-menu */
-.burger-menu {
-  --burger-menu-radius: 4em;
-  position: fixed;
-  top: 5vh;
-  left: 5vw;
-  z-index: 100;
-  display: block;
-  width: var(--burger-menu-radius);
-  height: var(--burger-menu-radius);
-  outline: none;
-  cursor: pointer;
-}
-.burger-menu .line {
-  position: absolute;
-  left: 25%;
-  width: 50%;
-  height: 3px;
-  background: rgba(43, 61, 79, 0.3);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: 0.5s;
-}
-.burger-menu .line:nth-child(1) {
-  top: 30%;
-}
-.burger-menu .line:nth-child(2) {
-  top: 50%;
-}
-.burger-menu .line:nth-child(3) {
-  top: 70%;
-}
-.burger-menu .line::after {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--primary-color-darker);
-  transform: translateX(-100%);
-  transition: 0.25s;
-}
-.burger-menu .line:nth-child(2)::after {
-  transition-delay: 0.1s;
-}
-.burger-menu .line:nth-child(3)::after {
-  transition-delay: 0.2s;
-}
-.burger-menu:hover .line::after {
-  transform: translateX(0);
+.nav {
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    transition: 0.5s;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0,0,0,.2);
 }
 
-/* Menü stílusok: .menu */
 .menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #1a1e23;
-  opacity: 0;
-  overflow-x: hidden;
-  visibility: hidden;
-  transition: 0.3s;
+    margin: 0;
+    padding: 0;
+    width: 0;
+    overflow: hidden;
+    transition: 0.5s;
 }
-@media screen and (max-width: 750px) {
-  .menu {
-    display: block;
-  }
+
+.nav input:checked ~ .menu {
+    width: 450px;
+}
+
+.menu li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.menu li a:hover {
+    color: #161919;
+}
+
+.nav input {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.nav span {
+    position: absolute;
+    left: 30px;
+    width: 30px;
+    height: 4px;
+    border-radius: 50px;
+    background-color: #666;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.nav input:checked ~ span {
+    background-color: #f974a1;
+}
+
+.nav span:nth-child(2) {
+    transform: translateY(-8px);
+}
+
+.nav input:checked ~ span:nth-child(2) {
+    transform: translateY(0) rotate(-45deg);
+}
+.nav span:nth-child(3) {
+    transform: translateY(8px);
+}
+
+.nav input:checked ~ span:nth-child(3) {
+    transform: translateY(0) rotate(45deg);
 }
