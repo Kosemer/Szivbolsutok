@@ -10,6 +10,7 @@ import CartContext from "../Store/cart-context";
 import Logo from "../../Assets/Logo/LogoHeaderNoBackground.png";
 import instagram from "../../Assets/SocialIcon/instagram.svg";
 import facebook from "../../Assets/SocialIcon/facebook.svg";
+import CurtainMenu from './CurtainMenu';
 
 function Header() {
   const cartCtx = useContext(CartContext);
@@ -50,7 +51,10 @@ function Header() {
     <Fragment>
       {
         <header className={headerClasses}>
-          <NavLink to="/" className={classes.logoLink}>
+          <BurgerButton></BurgerButton>
+          <CurtainMenu></CurtainMenu>
+          
+          {/*<NavLink to="/" className={classes.logoLink}>
             <img src={Logo} className={classes.logo} alt="logo"></img>
           </NavLink>
           <nav>
@@ -154,11 +158,11 @@ function Header() {
               alt="facebook icon"
               className={classes.socialIcon}
             ></img>
-          </a>*/}
+          </a>
           <NavLink to="/" className={classes.logoLink}>
             <img src={Logo} className={classes.logoMobile} alt="logo"></img>
           </NavLink>
-          <BurgerButton moblieMenuChange={moblieMenuChange}></BurgerButton>
+          <BurgerButton moblieMenuChange={moblieMenuChange}></BurgerButton>*/}
         </header>
       }
     </Fragment>

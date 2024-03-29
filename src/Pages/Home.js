@@ -6,7 +6,7 @@ import OpinionSwiperCard from "../Components/UI/OpinionSwiper/OpinionSwiperCard"
 import React, { useEffect } from "react";
 import DesktopSlider from "../Components/UI/OpinionSwiper/DesktopSlider";
 import CardGallery from "../Components/PhotoGallery/CardGallery";
-import NewNavbar from "../Components/Layout/NewNavbar";
+
 import IntroductorySection from '../Components/ParallaxIntroductorySection/IntroductorySection'
 
 function Home() {
@@ -16,7 +16,7 @@ function Home() {
 
   return (
     <div>
-      <Slider></Slider>
+      <Slider></Slider>   
       <div className={classes.quote}>
         <blockquote>
           „Az igazán jó képeknek két alapvető motívuma van: az őszinteség és a
