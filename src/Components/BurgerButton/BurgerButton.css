@@ -38,7 +38,7 @@
 @media (min-width: 1102px) {
 .burger-menu{
     cursor: pointer;
-    display: none;
+    display: block;
 }
 }
 
