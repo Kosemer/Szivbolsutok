@@ -39,15 +39,15 @@ const CurtainMenu = () => {
       {cartCtx.menuIsOpen && (
         <div id="myNav" className={overlayClass} onClick={closeNav}>
           <div className={styles.overlayContent}>
-            <Container fluid>
-              <Row>
+            <Container>
+              <Row className='space-between'>
                 {cartCtx.images.map((image, index) => (
                   <Col key={index} xs={12} md={6} lg={3} className="mb-4">
                     <Card 
                       className="shadow" 
                       onMouseEnter={() => handleMouseEnter(index)}
                       onMouseLeave={handleMouseLeave}
-                      style={{ transition: 'transform 0.3s' }}
+                      style={{ transition: 'transform 0.3s', width: '15rem' }}
                     >
                       <div style={{ position: 'relative', overflow: 'hidden' }}>
                         <Card.Img 

@@ -38,7 +38,7 @@ const CardGallery = () => {
   };
 
   return (
-    <Container fluid className="mt-5">
+    <Container className="mt-5">
       <Row>
         {images.map((image, index) => (
           <Col key={index} xs={12} md={6} lg={3} className="mb-4">
