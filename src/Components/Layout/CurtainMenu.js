@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import styles from './CurtainMenu.module.css';
 import CartContext from "../Store/cart-context";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,6 +7,16 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 const CurtainMenu = () => {
   const cartCtx = useContext(CartContext);
   const [hoveredImageIndex, setHoveredImageIndex] = useState(null);
+  const [overlayClass, setOverlayClass] = useState(styles.overlay);
+
+  useEffect(() => {
+    if (cartCtx.menuIsOpen) {
+      setOverlayClass(`${styles.overlay} ${styles.overlayOpen}`);
+    } else {
+      setOverlayClass(`${styles.overlay} ${styles.overlayClose}`);
+      setTimeout(() => setOverlayClass(styles.overlay), 500); // Reset the overlayClass after animation
+    }
+  }, [cartCtx.menuIsOpen]);
 
   const openNav = () => {
     cartCtx.setMenuIsOpen(true);
@@ -27,7 +37,7 @@ const CurtainMenu = () => {
   return (
     <div>
       {cartCtx.menuIsOpen && (
-        <div id="myNav" className={styles.overlay} onClick={closeNav}>
+        <div id="myNav" className={overlayClass} onClick={closeNav}>
           <div className={styles.overlayContent}>
             <Container fluid>
               <Row>

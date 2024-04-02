@@ -1,27 +1,31 @@
 /* The Overlay (background) */
 .overlay {
-    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
-    height: 100%;
-    width: 100%;
-    position: fixed; /* Stay in place */
-    z-index: 10000; /* Sit on top */
-    left: 0;
-    top: 4rem;
-    background-color: rgb(0,0,0); /* Black fallback color */
-    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
-  }
+  height: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 4rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: height 0.5s ease;
+}
 
-  
-  /* Position the content inside the overlay */
-  .overlayContent {
-    position: relative;
-    top: 5%; /* 25% from the top */
-    width: 100%; /* 100% width */
-    text-align: center; /* Centered text/links */
-   
-  }
+.overlayContent {
+  position: relative;
+  top: 5%;
+  width: 100%;
+  text-align: center;
+}
+
+.overlayOpen {
+  height: 100%;
+}
+
+.overlayClose {
+  height: 0;
+  transition:  0.5s ease;
+}
   
   /* The navigation links inside the overlay */
   .overlay a {
