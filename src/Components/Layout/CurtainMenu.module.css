@@ -6,7 +6,7 @@
     position: fixed; /* Stay in place */
     z-index: 10000; /* Sit on top */
     left: 0;
-    top: 10%;
+    top: 4rem;
     background-color: rgb(0,0,0); /* Black fallback color */
     background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
     overflow-x: hidden; /* Disable horizontal scroll */

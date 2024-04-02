@@ -14,11 +14,11 @@ function BurgerButton(props) {
 
   useEffect(() => {
     updateMenu();
-  }, [cartCtx.cssMobile]);
+  }, [cartCtx.menuIsOpen]);
 
   // toggle burger menu change
   const updateMenu = () => {
-    if (!cartCtx.cssMobile) {
+    if (cartCtx.menuIsOpen) {
       setBurgerClass("burger-bar clicked");
       //setMenuClass("menu visible");
     } else {
