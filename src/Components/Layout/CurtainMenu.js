@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 
 const CurtainMenu = () => {
-
   const cartCtx = useContext(CartContext);
   const [hoveredImageIndex, setHoveredImageIndex] = useState(null);
 
@@ -28,10 +27,7 @@ const CurtainMenu = () => {
   return (
     <div>
       {cartCtx.menuIsOpen && (
-        <div id="myNav" className={styles.overlay}>
-          <a href="javascript:void(0)" className={styles.closebtn} onClick={closeNav}>
-            &times;
-          </a>
+        <div id="myNav" className={styles.overlay} onClick={closeNav}>
           <div className={styles.overlayContent}>
             <Container fluid>
               <Row>
