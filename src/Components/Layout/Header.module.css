@@ -3,13 +3,13 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 4rem;
+    height: 3rem;
     /*background: radial-gradient(circle, rgba(238,174,202,0.8715861344537815) 0%, rgba(148,187,233,0.8743872549019608) 100%);*/
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     color: #1f1e1d;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
 
     opacity: 100%;
@@ -20,6 +20,26 @@
   .header nav {
     height: 100%;
     width: 100%;
+  }
+
+  .logoContainer {
+    flex: 1; /* Az elem egyenletesen fogja kitölteni a rendelkezésre álló helyet */
+    text-align: center; /* Szöveg középre igazítása */
+    margin-top: auto;
+  }
+
+  .logo {
+    height: 100px; /* vagy bármilyen más méret, amely megfelelőnek tűnik */
+    width: auto; /* Ha a kép arányait meg kell őrizni, akkor az auto érték segít az arányok megtartásában */
+  }
+
+  .title {
+    margin-right: auto; /* Hogy a h1 elem balra legyen igazítva a flexbox konténeren belül */
+    margin-left: 30px; /* Eltartás a bal oldaltól */
+    font-family: 'Sorts Mill Goudy', serif;
+    margin-top: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 2rem;
   }
   
   .header ul {
@@ -100,9 +120,7 @@
     margin: 6px 0;
     background: #ffffff;
   }
-  .logo{
-    height: 55px;
-  }
+
   .logoMobile{
     display: none;
   }

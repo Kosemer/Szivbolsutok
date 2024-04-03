@@ -7,10 +7,10 @@ import { NavLink } from "react-router-dom";
 import classes from "./Header.module.css";
 import BurgerButton from "../BurgerButton/BurgerButton";
 import CartContext from "../Store/cart-context";
-import Logo from "../../Assets/Logo/LogoHeaderNoBackground.png";
+import Logo from "../../Assets/AccordionPictureBox/szivbolLogo2.png";
 import instagram from "../../Assets/SocialIcon/instagram.svg";
 import facebook from "../../Assets/SocialIcon/facebook.svg";
-import CurtainMenu from './CurtainMenu';
+import CurtainMenu from "./CurtainMenu";
 
 function Header() {
   const cartCtx = useContext(CartContext);
@@ -51,118 +51,16 @@ function Header() {
     <Fragment>
       {
         <header className={headerClasses}>
+          <h1 className={classes.title}>Szívből sütök</h1>
+           {/*<div className={classes.logoContainer}>
+            <NavLink to="/" className={classes.logoLink}>
+              <img src={Logo} className={classes.logo} alt="logo"></img>
+            </NavLink>
+          </div>*/}
           <BurgerButton></BurgerButton>
           <CurtainMenu></CurtainMenu>
-          
-          {/*<NavLink to="/" className={classes.logoLink}>
-            <img src={Logo} className={classes.logo} alt="logo"></img>
-          </NavLink>
-          <nav>
-            <ul onClick={moblieMenuChange}>
-              <li>
-                <NavLink
-                  className={(navData) =>
-                    navData.isActive ? classes.active : ""
-                  }
-                  to="/"
-                >
-                  Főoldal
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  className={(navData) =>
-                    navData.isActive ? classes.active : ""
-                  }
-                  to="/galeria"
-                >
-                  Galéria
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  className={(navData) =>
-                    navData.isActive ? classes.active : ""
-                  }
-                  to="/arak"
-                >
-                  Árak
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  className={(navData) =>
-                    navData.isActive ? classes.active : ""
-                  }
-                  to="/rolam"
-                >
-                  Rólam
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  className={(navData) =>
-                    navData.isActive ? classes.active : ""
-                  }
-                  to="/kapcsolat"
-                >
-                  Kapcsolat
-                </NavLink>
-              </li>
-              <a
-                href="https://www.instagram.com/p/Cp-3l-7I0k6/?igshid=MDJmNzVkMjY="
-                target="_blank"
-                rel="noopener noreferrer"
-                className={classes.socialIconMobile}
-              >
-                <img
-                  src={instagram}
-                  alt="instagram icon"
-                  className={classes.socialIconMobile}
-                ></img>
-              </a>
-              <a
-                href="https://www.facebook.com/fruzsika88"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={classes.socialIconMobile}
-              >
-                <img
-                  src={facebook}
-                  alt="facebook icon"
-                  className={classes.socialIconMobile}
-                ></img>
-              </a>
-            </ul>
-          </nav>
-          {/*<a
-            href="https://www.instagram.com/p/Cp-3l-7I0k6/?igshid=MDJmNzVkMjY="
-            target="_blank"
-            rel="noopener noreferrer"
-            className={classes.social}
-          >
-            <img
-              src={instagram}
-              alt="instagram icon"
-              className={classes.socialIcon}
-            ></img>
-          </a>
-          <a
-            href="https://www.facebook.com/fruzsika88"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={classes.social}
-          >
-            <img
-              src={facebook}
-              alt="facebook icon"
-              className={classes.socialIcon}
-            ></img>
-          </a>
-          <NavLink to="/" className={classes.logoLink}>
-            <img src={Logo} className={classes.logoMobile} alt="logo"></img>
-          </NavLink>
-          <BurgerButton moblieMenuChange={moblieMenuChange}></BurgerButton>*/}
+
+
         </header>
       }
     </Fragment>

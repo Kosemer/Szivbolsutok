@@ -14,7 +14,7 @@ const CurtainMenu = () => {
       setOverlayClass(`${styles.overlay} ${styles.overlayOpen}`);
     } else {
       setOverlayClass(`${styles.overlay} ${styles.overlayClose}`);
-      setTimeout(() => setOverlayClass(styles.overlay), 500); // Reset the overlayClass after animation
+      
     }
   }, [cartCtx.menuIsOpen]);
 

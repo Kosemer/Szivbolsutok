@@ -6,8 +6,9 @@ import OpinionSwiperCard from "../Components/UI/OpinionSwiper/OpinionSwiperCard"
 import React, { useEffect } from "react";
 import DesktopSlider from "../Components/UI/OpinionSwiper/DesktopSlider";
 import CardGallery from "../Components/PhotoGallery/CardGallery";
-
-import IntroductorySection from '../Components/ParallaxIntroductorySection/IntroductorySection'
+import CategorySection from "../Components/PhotoGallery/CategorySection";
+import IntroductorySection from "../Components/ParallaxIntroductorySection/IntroductorySection";
+import hagyomanyosTortak from "../Assets/CakesPicture/a_picture_of_a_cake,_and_it_look(2).png"
 
 function Home() {
   useEffect(() => {
@@ -16,7 +17,7 @@ function Home() {
 
   return (
     <div>
-      <Slider></Slider>   
+      <Slider></Slider>
       <div className={classes.quote}>
         <blockquote>
           „Az igazán jó képeknek két alapvető motívuma van: az őszinteség és a
@@ -24,7 +25,7 @@ function Home() {
           <span className={classes.author}>– Reismann Marian</span>
         </blockquote>
       </div>
-      
+
       <div className={classes.divider}>
         <div className={classes.line1}></div>
         <h2 className={classes.title}>Néhány kép a munkáimból</h2>
@@ -42,9 +43,19 @@ function Home() {
       <div className={classes.mobileCardSlider}>
         <OpinionSwiperCard></OpinionSwiperCard>
       </div>
-
-      <CardGallery></CardGallery>
-
+      <div>
+        <CategorySection
+          category={"Hagyományos Torták"}
+          imageSrc={hagyomanyosTortak}
+        ></CategorySection>
+        <CardGallery categories={"hagyomanyosTortak"}></CardGallery>
+        <CardGallery categories={"burkoltTortak"}></CardGallery>
+        <CardGallery categories={"linzerTotak"}></CardGallery>
+        <CardGallery categories={"macaronok"}></CardGallery>
+        <CardGallery categories={"hagyomanyosSutemenyek"}></CardGallery>
+        <CardGallery categories={"mentesSutemenyek"}></CardGallery>
+        <CardGallery categories={"fondantFigurak"}></CardGallery>
+      </div>
       <div className={classes.container}>
         <h2 className={classes.title}>Irány a galéria</h2>
         <hr className={classes.underline} />

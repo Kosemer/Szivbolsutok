@@ -5,16 +5,14 @@ import { useContext } from "react";
 import CartContext from "../../Components/Store/cart-context";
 import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
 
-const CardGallery = () => {
+const CardGallery = ({ categories }) => {
   const cartCtx = useContext(CartContext);
   const [images, setImages] = useState([]);
 
   useEffect(() => {
     const fetchImages = async () => {
       const imagesData = await Promise.all([
-        fetchImagesFromFolder("portrait"),
-        fetchImagesFromFolder("macaronok"),
-        fetchImagesFromFolder("sutemenyek"),
+        fetchImagesFromFolder(categories),
       ]);
 
       const combinedImages = imagesData.reduce(
