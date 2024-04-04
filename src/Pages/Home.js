@@ -8,7 +8,7 @@ import DesktopSlider from "../Components/UI/OpinionSwiper/DesktopSlider";
 import CardGallery from "../Components/PhotoGallery/CardGallery";
 import CategorySection from "../Components/PhotoGallery/CategorySection";
 import IntroductorySection from "../Components/ParallaxIntroductorySection/IntroductorySection";
-import hagyomanyosTortak from "../Assets/CakesPicture/image1.jpg"
+import hagyomanyosTortak from "../Assets/CakesPicture/tgvccx.png"
 
 function Home() {
   useEffect(() => {
