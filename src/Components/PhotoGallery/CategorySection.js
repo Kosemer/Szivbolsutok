@@ -8,6 +8,7 @@ const SectionWithImage = ({ category, imageSrc }) => {
       className="mt-5"
       style={{
         "--bs-gutter-x": "0rem",
+        marginTop: "0px",
       }}
     >
       <div className="d-flex">
@@ -18,6 +19,7 @@ const SectionWithImage = ({ category, imageSrc }) => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            maxHeight: "100vh"
           }}
         >
           <h1
@@ -29,6 +31,8 @@ const SectionWithImage = ({ category, imageSrc }) => {
               fontWeight: 600,
               lineHeight: "1.2", // Adjust line height if needed
               textTransform: "uppercase", // Set text to uppercase
+              marginLeft: "70%",
+              zIndex: 10,
             }}
           >
             {category.split(" ").map((word, index) => (
@@ -39,12 +43,13 @@ const SectionWithImage = ({ category, imageSrc }) => {
         {/* Kép */}
         <div
           style={{
-            flex: 1.4,
+            flex: 2,
             background:
-              "linear-gradient(to bottom, rgb(236, 141, 147) 70%, rgb(255, 255, 255, 0) 30%)",
+              "linear-gradient(to bottom, rgb(236, 141, 147) 80%, rgb(255, 255, 255, 0) 20%)",
               display: "flex",
               justifyContent: "center",
-              alignItems: "flex-end",
+              alignItems: "center",
+              maxHeight: "100vh"
           }}
         >
           <img
@@ -52,7 +57,7 @@ const SectionWithImage = ({ category, imageSrc }) => {
             alt={category}
             style={{
               maxWidth: "100%", // A kép legnagyobb engedélyezett szélessége
-              maxHeight: "50%", // A kép legnagyobb engedélyezett magassága
+              maxHeight: "90%", // A kép legnagyobb engedélyezett magassága
               objectFit: "cover",
               filter: "brightness(0.9)",
               borderRadius: "0 0px 0px 0px",
