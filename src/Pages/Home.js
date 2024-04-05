@@ -49,8 +49,20 @@ function Home() {
           imageSrc={hagyomanyosTortak}
         ></CategorySection>
         <CardGallery categories={"hagyomanyosTortak"}></CardGallery>
+        <CategorySection
+          category={"Burkolt Torták"}
+          imageSrc={hagyomanyosTortak}
+        ></CategorySection>
         <CardGallery categories={"burkoltTortak"}></CardGallery>
+        <CategorySection
+          category={"Linzertorták"}
+          imageSrc={hagyomanyosTortak}
+        ></CategorySection>
         <CardGallery categories={"linzerTotak"}></CardGallery>
+        <CategorySection
+          category={"Macaronok"}
+          imageSrc={hagyomanyosTortak}
+        ></CategorySection>
         <CardGallery categories={"macaronok"}></CardGallery>
         <CardGallery categories={"hagyomanyosSutemenyek"}></CardGallery>
         <CardGallery categories={"mentesSutemenyek"}></CardGallery>
