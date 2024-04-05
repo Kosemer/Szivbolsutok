@@ -23,13 +23,13 @@ const SectionWithImage = ({ category, imageSrc }) => {
           }}
         >
           <h1
-            className="text-center text-black"
+            className="text-center"
             style={{
-              fontSize: "3rem",
+              fontSize: "5rem",
               fontFamily: "Bebas Neue",
               color: "rgb(33, 37, 40)",
-              fontWeight: 600,
-              lineHeight: "1.2", // Adjust line height if needed
+              fontWeight: 500,
+              lineHeight: "1", // Adjust line height if needed
               textTransform: "uppercase", // Set text to uppercase
               marginLeft: "70%",
               zIndex: 10,
@@ -42,10 +42,12 @@ const SectionWithImage = ({ category, imageSrc }) => {
             {/* Új szöveg */}
             <div
               style={{
-                fontSize: "1.2rem",
+                fontSize: "1.4rem",
                 fontWeight: 400,
-                textAlign: "justify",
+                textAlign: "center",
                 marginTop: "40px",
+                fontFamily: "Playfair-Display",
+                textTransform: "none",
               }}
             >
               A hagyományos torták számos kultúrában és országban jelentős
@@ -57,20 +59,21 @@ const SectionWithImage = ({ category, imageSrc }) => {
             style={{
               alignSelf: "flex-end",
               zIndex: "10",
-              marginBottom: "100px",
+              marginBottom: "0px",
+              marginLeft: "-40px"
             }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="70"
-              height="200"
+              width="80"
+              height="450"
               fill="currentColor"
               className="bi bi-arrow-down"
               viewBox="0 0 16 26"
             >
               <path
                 fillRule="evenodd"
-                d="M8 1a.5.5 0 0 1 .5.5v20.293l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 21.793V1.5A.5.5 0 0 1 8 1"
+                d="M8 1a.5.5 0 0 1 .5.5v40.293l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 41.793V1.5A.5.5 0 0 1 8 1"
               />
             </svg>
           </div>
