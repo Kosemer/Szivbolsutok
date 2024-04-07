@@ -25,13 +25,13 @@ const SectionWithImage = ({ category, imageSrc }) => {
           <h1
             className="text-center"
             style={{
-              fontSize: "5rem",
+              fontSize: "4rem",
               fontFamily: "Bebas Neue",
               color: "rgb(33, 37, 40)",
               fontWeight: 500,
               lineHeight: "1", // Adjust line height if needed
               textTransform: "uppercase", // Set text to uppercase
-              marginLeft: "70%",
+              marginLeft: "40%",
               zIndex: 10,
               textAlign: "justify",
             }}
@@ -48,6 +48,7 @@ const SectionWithImage = ({ category, imageSrc }) => {
                 marginTop: "40px",
                 fontFamily: "Playfair-Display",
                 textTransform: "none",
+                width: "400px",
               }}
             >
               A hagyományos torták számos kultúrában és országban jelentős
@@ -60,7 +61,7 @@ const SectionWithImage = ({ category, imageSrc }) => {
               alignSelf: "flex-end",
               zIndex: "10",
               marginBottom: "0px",
-              marginLeft: "-40px"
+              marginLeft: "-100px"
             }}
           >
             <svg
