@@ -7,7 +7,7 @@ const CategorySection = ({ category, imageSrc }) => {
     <Container fluid className="mt-4" style={{ "--bs-gutter-x": "0rem", marginTop: "0px" }}>
       <div className={styles.wrapper}>
         {/* Szöveg */}
-        <div
+        <div className={styles.h1TextBox}
           style={{
             flex: 1,
             display: "flex",
