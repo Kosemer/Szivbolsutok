@@ -37,12 +37,7 @@ function Home() {
           <AccordionPictureBox></AccordionPictureBox>
         </div>
       </div>
-      <div className={classes.DesktopSlider}>
-        <DesktopSlider></DesktopSlider>
-      </div>
-      <div className={classes.mobileCardSlider}>
-        <OpinionSwiperCard></OpinionSwiperCard>
-      </div>
+
       <div>
         <CategorySection
           category={"Hagyományos Torták"}
@@ -67,6 +62,12 @@ function Home() {
         <CardGallery categories={"hagyomanyosSutemenyek"}></CardGallery>
         <CardGallery categories={"mentesSutemenyek"}></CardGallery>
         <CardGallery categories={"fondantFigurak"}></CardGallery>
+      </div>
+      <div className={classes.DesktopSlider}>
+        <DesktopSlider></DesktopSlider>
+      </div>
+      <div className={classes.mobileCardSlider}>
+        <OpinionSwiperCard></OpinionSwiperCard>
       </div>
       <div className={classes.container}>
         <h2 className={classes.title}>Irány a galéria</h2>

@@ -4,7 +4,7 @@ import styles from "./CategorySection.module.css"; // CSS modul importálása
 
 const CategorySection = ({ category, imageSrc }) => {
   return (
-    <Container fluid className="mt-5" style={{ "--bs-gutter-x": "0rem", marginTop: "0px" }}>
+    <Container fluid className="mt-4" style={{ "--bs-gutter-x": "0rem", marginTop: "0px" }}>
       <div className={styles.wrapper}>
         {/* Szöveg */}
         <div
