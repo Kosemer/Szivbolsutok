@@ -14,6 +14,8 @@ const CategorySection = ({ category, imageSrc }) => {
             alignItems: "center",
             justifyContent: "center",
             maxHeight: "100vh",
+
+            textAlign: "center",
           }}
         >
           <h1
@@ -25,9 +27,11 @@ const CategorySection = ({ category, imageSrc }) => {
               fontWeight: 500,
               lineHeight: "1", // Adjust line height if needed
               textTransform: "uppercase", // Set text to uppercase
-              marginLeft: "70%",
+              marginLeft: "100%",
+              marginRight: "0%",
               zIndex: 10,
-              textAlign: "justify",
+              textAlign: "center",
+              minWidth: "300px",
             }}
           >
             {category.split(" ").map((word, index) => (
@@ -54,7 +58,7 @@ const CategorySection = ({ category, imageSrc }) => {
               alignSelf: "flex-end",
               zIndex: "10",
               marginBottom: "0px",
-              marginLeft: "-20px",
+              
             }}
           >
             <svg

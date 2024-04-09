@@ -8,7 +8,10 @@ import DesktopSlider from "../Components/UI/OpinionSwiper/DesktopSlider";
 import CardGallery from "../Components/PhotoGallery/CardGallery";
 import CategorySection from "../Components/PhotoGallery/CategorySection";
 import IntroductorySection from "../Components/ParallaxIntroductorySection/IntroductorySection";
-import hagyomanyosTortak from "../Assets/CakesPicture/tgvccx.png"
+import hagyomanyosTortak from "../Assets/CakesPicture/kitKat.png";
+import burkoltTortak from "../Assets/CakesPicture/viragLada.png";
+import linzerTortak from "../Assets/CakesPicture/almas.png";
+import macaronok from "../Assets/CakesPicture/tgvccx.png";
 
 function Home() {
   useEffect(() => {
@@ -46,17 +49,18 @@ function Home() {
         <CardGallery categories={"hagyomanyosTortak"}></CardGallery>
         <CategorySection
           category={"Burkolt Torták"}
-          imageSrc={hagyomanyosTortak}
+          imageSrc={burkoltTortak}
         ></CategorySection>
         <CardGallery categories={"burkoltTortak"}></CardGallery>
         <CategorySection
           category={"Linzertorták"}
-          imageSrc={hagyomanyosTortak}
+          imageSrc={linzerTortak}
         ></CategorySection>
-        <CardGallery categories={"linzerTotak"}></CardGallery>
+        <CardGallery 
+          categories={"linzerTotak"}></CardGallery>
         <CategorySection
           category={"Macaronok"}
-          imageSrc={hagyomanyosTortak}
+          imageSrc={macaronok}
         ></CategorySection>
         <CardGallery categories={"macaronok"}></CardGallery>
         <CardGallery categories={"hagyomanyosSutemenyek"}></CardGallery>
