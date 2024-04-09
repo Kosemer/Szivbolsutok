@@ -45,22 +45,33 @@ function Home() {
         <CategorySection
           category={"Hagyományos Torták"}
           imageSrc={hagyomanyosTortak}
+          description={
+            "A hagyományos torták számos kultúrában és országban jelentős szerepet töltenek be ünnepi és különleges alkalmakon. Ezek a desszertek gyakran több generáció receptjei alapján készülnek"
+          }
         ></CategorySection>
         <CardGallery categories={"hagyomanyosTortak"}></CardGallery>
         <CategorySection
           category={"Burkolt Torták"}
           imageSrc={burkoltTortak}
+          description={
+            "A burkolt torták különleges és művészi alkotások, amelyeket általában különleges alkalmakra vagy ünnepekre készítenek. A burkolt torták gyakran lenyűgöző megjelenésük miatt népszerűek esküvőkön, születésnapokon és más ünnepi eseményeken."
+          }
         ></CategorySection>
         <CardGallery categories={"burkoltTortak"}></CardGallery>
         <CategorySection
           category={"Linzertorták"}
           imageSrc={linzerTortak}
+          description={
+            "A linzertorta egy hagyományos osztrák sütemény, amelyet általában ünnepekre és különleges alkalmakra készítenek. Ez az ízletes torta rétegekben vagy tésztaként készül, és gyakran málna- vagy ribizlis lekvárral van töltve."
+          }
         ></CategorySection>
-        <CardGallery 
-          categories={"linzerTotak"}></CardGallery>
+        <CardGallery categories={"linzerTotak"}></CardGallery>
         <CategorySection
           category={"Macaronok"}
           imageSrc={macaronok}
+          description={
+            "A macaronok finom francia édességek, melyek két mandulás piskóta közé töltött krém vagy lekvár réteggel készülnek. Ezek a kis, színes sütemények számos ízben és színben elérhetőek, így sokféle kombinációban kóstolhatóak."
+          }
         ></CategorySection>
         <CardGallery categories={"macaronok"}></CardGallery>
         <CardGallery categories={"hagyomanyosSutemenyek"}></CardGallery>

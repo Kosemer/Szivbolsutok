@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import styles from "./CategorySection.module.css"; // CSS modul importálása
 
-const CategorySection = ({ category, imageSrc }) => {
+const CategorySection = ({ category, imageSrc, description }) => {
   return (
     <Container fluid className="mt-4" style={{ "--bs-gutter-x": "0rem", marginTop: "0px" }}>
       <div className={styles.wrapper}>
@@ -48,9 +48,7 @@ const CategorySection = ({ category, imageSrc }) => {
                 textTransform: "none",
               }}
             >
-              A hagyományos torták számos kultúrában és országban jelentős
-              szerepet töltenek be ünnepi és különleges alkalmakon. Ezek a
-              desszertek gyakran több generáció receptjei alapján készülnek
+              {description}
             </div>
           </h1>
           <div className={styles.svgArrow}
