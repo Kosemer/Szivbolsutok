@@ -12,6 +12,10 @@
     align-items: center;
     max-height: 100vh;
   }
+
+  .image-containerMoblie{
+    display: none;
+  }
   
   
   .image {
@@ -68,6 +72,10 @@
     color:  rgb(66, 65, 63);
   }
   .image-container {
+    display: none;
+  }
+  .image-containerMoblie{
+    display: block;
     flex: 2;
     background: linear-gradient(to bottom, rgb(236, 141, 147) 80%, rgb(255, 255, 255, 0) 20%);
     display: flex;
