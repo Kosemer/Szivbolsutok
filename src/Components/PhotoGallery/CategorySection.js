@@ -1,34 +1,38 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import styles from "./CategorySection.module.css"; // CSS modul importálása
+import splash from "../../Assets/CakesPicture/splash.png";
 
 const CategorySection = ({ category, imageSrc, description }) => {
   return (
     <Container fluid className="mt-4" style={{ "--bs-gutter-x": "0rem", marginTop: "0px" }}>
       <div className={styles.wrapper}>
         {/* Szöveg */}
-        <div className={styles.h1TextBox}
+        <div
+          className={styles.h1TextBox}
           style={{
+            position: "relative", // A tartalom relatív pozícióba helyezése a háttérkép elhelyezéséhez
             flex: 1,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             maxHeight: "100vh",
-
             textAlign: "center",
           }}
         >
           <h1
             className={styles.h1Text}
             style={{
+              position: "relative", // A h1 elem relatív pozícióba helyezése
+              backgroundImage: `url(${splash})`, // Háttérkép beállítása
+              backgroundSize: "contain", // Háttérkép méretének beállítása a tartalomra
+              backgroundRepeat: "no-repeat",
               fontSize: "5rem",
               fontFamily: "Bebas Neue",
-              color: "rgb(33, 37, 40)",
+              color: "rgb(66, 65, 63)",
               fontWeight: 500,
               lineHeight: "1", // Adjust line height if needed
               textTransform: "uppercase", // Set text to uppercase
-              marginLeft: "100%",
-              marginRight: "0%",
               zIndex: 10,
               textAlign: "center",
               minWidth: "300px",
@@ -38,25 +42,28 @@ const CategorySection = ({ category, imageSrc, description }) => {
               <div key={index}>{word}</div>
             ))}
             {/* Új szöveg */}
-            <div className={styles.text}
+            <div
+              className={styles.text}
               style={{
+                position: "relative", // A szöveg relatív pozícióba helyezése a háttérkép elhelyezéséhez
                 fontSize: "1.4rem",
                 fontWeight: 400,
                 textAlign: "center",
                 marginTop: "40px",
                 fontFamily: "Sorts Mill Goudy",
                 textTransform: "none",
+                zIndex: 20, // A szöveg előtérbe helyezése
               }}
             >
               {description}
             </div>
           </h1>
-          <div className={styles.svgArrow}
+          <div
+            className={styles.svgArrow}
             style={{
               alignSelf: "flex-end",
               zIndex: "10",
               marginBottom: "0px",
-              
             }}
           >
             <svg
