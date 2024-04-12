@@ -36,6 +36,9 @@ const CurtainMenu = () => {
     setHoveredImageIndex(null);
   };
 
+console.log(overlayClass)
+
+/*Images load*/
   useEffect(() => {
     const fetchImages = async () => {
       const imagesData = await Promise.all([
@@ -61,6 +64,7 @@ const CurtainMenu = () => {
       return [];
     }
   };
+  /*Images load*/
 
   return (
     <div>
@@ -102,7 +106,7 @@ const CurtainMenu = () => {
           </div>
         </div>
       )}
-      <span onClick={openNav}>open</span>
+      <span onClick={openNav}></span>
     </div>
   );
 };

@@ -10,6 +10,11 @@
   transition: height 0.5s ease;
 }
 
+.menuCard {
+  transition: 0.3s;
+}
+
+
 .overlayContent {
   position: relative;
   top: 5%;
@@ -23,12 +28,12 @@
 }
 
 .overlayOpen {
-  height: 100%;
+  height: 80%;
 }
 
 .overlayClose {
   height: 0;
-  transition:  0.5s ease;
+  transition: height 0.5s ease;
 }
   
   /* The navigation links inside the overlay */
@@ -53,7 +58,7 @@
     right: 45px;
     font-size: 60px;
   }
-  
+
 
   /* Extra kicsi készülékek (telefonok, 576px és alatt) */
 @media (max-width: 575.98px) {
