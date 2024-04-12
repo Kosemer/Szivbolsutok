@@ -7,7 +7,6 @@
   left: 0;
   top: 3rem;
   background-color: rgba(0, 0, 0, 0.9);
-  overflow-x: hidden;
   transition: height 0.5s ease;
 }
 
@@ -16,6 +15,11 @@
   top: 5%;
   width: 100%;
   text-align: center;
+}
+
+.rowCard{
+  display: flex; /* Flexbox elrendezés */
+  justify-content: space-around;
 }
 
 .overlayOpen {
@@ -50,12 +54,46 @@
     font-size: 60px;
   }
   
-  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-  @media screen and (max-height: 450px) {
-    .overlay a {font-size: 20px}
-    .overlay .closebtn {
-      font-size: 40px;
-      top: 0px;
-      right: 35px;
-    }
+
+  /* Extra kicsi készülékek (telefonok, 576px és alatt) */
+@media (max-width: 575.98px) {
+
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 0px;
+    right: 35px;
   }
+  .menuCard{
+    width: 10rem !important;
+
+  }
+  .rowCard{
+    margin-left: auto !important;
+  }
+}
+
+/* Kicsi készülékek (tabletek, 576px és 767px között) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+}
+
+/* Közepes készülékek (tabletek, 768px és 991px között) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+}
+
+/* Nagy készülékek (asztali gépek, 992px és 1199px között) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+
+/* Extra nagy készülékek (asztali gépek, 1200px és afölött) */
+@media (min-width: 1200px) and (max-width: 1600px) {
+  
+}
+
+/* Extra nagy készülékek (asztali gépek, 1601px és afölött) */
+@media (min-width: 1601px) {
+  
+}

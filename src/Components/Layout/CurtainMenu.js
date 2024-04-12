@@ -3,11 +3,13 @@ import styles from './CurtainMenu.module.css';
 import CartContext from "../Store/cart-context";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
 
 const CurtainMenu = () => {
   const cartCtx = useContext(CartContext);
   const [hoveredImageIndex, setHoveredImageIndex] = useState(null);
   const [overlayClass, setOverlayClass] = useState(styles.overlay);
+  const [images, setImages] = useState([]);
 
   useEffect(() => {
     if (cartCtx.menuIsOpen) {
@@ -34,17 +36,43 @@ const CurtainMenu = () => {
     setHoveredImageIndex(null);
   };
 
+  useEffect(() => {
+    const fetchImages = async () => {
+      const imagesData = await Promise.all([
+        fetchImagesFromFolder("menuPictures"),
+      ]);
+
+      const combinedImages = imagesData.reduce(
+        (acc, curr) => acc.concat(curr),
+        []
+      );
+      setImages(combinedImages);
+    };
+
+    fetchImages();
+  }, []);
+
+  const fetchImagesFromFolder = async (folder) => {
+    try {
+      const imageData = await ImageDimensions(folder);
+      return imageData.slice(0, 7); // Change 3 to the number of images you want to display from each folder
+    } catch (error) {
+      console.error("Hiba a képek lekérése közben", error);
+      return [];
+    }
+  };
+
   return (
     <div>
       {cartCtx.menuIsOpen && (
         <div id="myNav" className={overlayClass} onClick={closeNav}>
           <div className={styles.overlayContent}>
             <Container>
-              <Row className='space-between'>
-                {cartCtx.images.map((image, index) => (
-                  <Col key={index} xs={12} md={6} lg={3} className="mb-4">
+              <Row className={styles.rowCard}>
+                {images.map((image, index) => (
+                  <Col key={index} xs={6} md={6} lg={3} className="mb-4">
                     <Card 
-                      className="shadow" 
+                      className={styles.menuCard}
                       onMouseEnter={() => handleMouseEnter(index)}
                       onMouseLeave={handleMouseLeave}
                       style={{ transition: 'transform 0.3s', width: '15rem' }}

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import { useContext } from "react";
-import CartContext from "../../Components/Store/cart-context";
+//import { useContext } from "react";
+//import CartContext from "../../Components/Store/cart-context";
 import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
 
 const CardGallery = ({ categories }) => {
-  const cartCtx = useContext(CartContext);
+  //const cartCtx = useContext(CartContext);
   const [images, setImages] = useState([]);
 
   useEffect(() => {
