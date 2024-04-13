@@ -11,6 +11,7 @@ import Logo from "../../Assets/AccordionPictureBox/szivbolLogo2.png";
 import instagram from "../../Assets/SocialIcon/instagram.svg";
 import facebook from "../../Assets/SocialIcon/facebook.svg";
 import CurtainMenu from "./CurtainMenu";
+import CurtainMenuWithLink from "./CurtainMenuWithLink";
 
 function Header() {
   const cartCtx = useContext(CartContext);
@@ -59,7 +60,7 @@ function Header() {
           </div>*/}
           <BurgerButton></BurgerButton>
           <CurtainMenu></CurtainMenu>
-
+          {/*<CurtainMenuWithLink></CurtainMenuWithLink>*/}
 
         </header>
       }
