@@ -66,9 +66,28 @@ console.log(overlayClass)
   };
   /*Images load*/
 
+
+/*If the menu is open you cannot scroll the page*/
+  useEffect(() => {
+    const body = document.body;
+    if (cartCtx.menuIsOpen) {
+      // Ha a menü nyitva van, letiltjuk a görgetést
+      body.style.overflow = 'hidden';
+    } else {
+      // Ha a menü bezárva van, visszaállítjuk a normál állapotot
+      body.style.overflow = 'auto';
+    }
+  
+    // Clean-up függvény, amely visszaállítja az eredeti állapotot, amikor a komponens unmountolódik
+    return () => {
+      body.style.overflow = 'auto';
+    };
+  }, [cartCtx.menuIsOpen]);
+  /*If the menu is open you cannot scroll the page*/
+
   return (
     <div>
-      {cartCtx.menuIsOpen && (
+      
         <div id="myNav" className={overlayClass} onClick={closeNav}>
           <div className={styles.overlayContent}>
             <Container>
@@ -105,7 +124,7 @@ console.log(overlayClass)
             </Container>
           </div>
         </div>
-      )}
+
       <span onClick={openNav}></span>
     </div>
   );

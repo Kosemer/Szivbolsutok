@@ -1,6 +1,5 @@
 /* The Overlay (background) */
 .overlay {
-  height: 0;
   width: 100%;
   position: fixed;
   z-index: 10000;
@@ -8,6 +7,7 @@
   top: 3rem;
   background-color: rgba(0, 0, 0, 0.9);
   transition: height 0.5s ease;
+  overflow: hidden;
 }
 
 .menuCard {
@@ -28,11 +28,11 @@
 }
 
 .overlayOpen {
-  height: 80%;
+  height: 100%;
 }
 
 .overlayClose {
-  height: 0;
+  height: 0%;
   transition: height 0.5s ease;
 }
   
