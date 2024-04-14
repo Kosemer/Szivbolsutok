@@ -27,6 +27,7 @@ const ScrollToTopButton = () => {
     const scrollInterval = setInterval(() => {
       if (window.pageYOffset !== 0) {
         window.scrollBy(0, scrollStep);
+       
       } else {
         clearInterval(scrollInterval);
       }

@@ -36,7 +36,6 @@ const CurtainMenu = () => {
     setHoveredImageIndex(null);
   };
 
-console.log(overlayClass)
 
 /*Images load*/
   useEffect(() => {
