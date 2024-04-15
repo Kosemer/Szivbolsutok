@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import styles from "./CategorySection.module.css"; // CSS modul importálása
 import splash from "../../Assets/CakesPicture/splash.png";
+import AnimatedDownArrow from "../AnimatedDownArrow/AnimatedDownArrow";
 
 const CategorySection = ({ category, imageSrc, description }) => {
   return (
@@ -65,6 +66,7 @@ const CategorySection = ({ category, imageSrc, description }) => {
             >
               {description}
             </div>
+            <AnimatedDownArrow></AnimatedDownArrow>
           </h1>
           <div
             className={styles.svgArrow}
