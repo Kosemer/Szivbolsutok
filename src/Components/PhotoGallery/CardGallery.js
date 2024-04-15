@@ -41,7 +41,9 @@ const CardGallery = ({ categories }) => {
         {images.map((image, index) => (
           <Col key={index} xs={12} md={6} lg={3} className="mb-4">
             <Card className="shadow">
-              <Card.Img variant="top" src={image.src} alt={image.caption} />
+            <div style={{ width: "100%", height: "300px", overflow: "hidden" }}>
+              <Card.Img variant="top" src={image.src} alt={image.caption} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              </div>
               <Card.Body className="text-center">
                 <Card.Text>{image.title}</Card.Text>
               </Card.Body>
