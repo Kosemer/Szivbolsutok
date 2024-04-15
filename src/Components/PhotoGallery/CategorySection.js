@@ -31,10 +31,10 @@ const CategorySection = ({ category, imageSrc, description }) => {
           <h1
             className={styles.h1Text}
             style={{
-              position: "relative", // A h1 elem relatív pozícióba helyezése
-              backgroundImage: `url(${splash})`, // Háttérkép beállítása
-              backgroundSize: "contain", // Háttérkép méretének beállítása a tartalomra
-              backgroundRepeat: "no-repeat",
+              position: "relative", 
+              /*backgroundImage: `url(${splash})`, 
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",*/
               fontSize: "5rem",
               fontFamily: "Bebas Neue",
               color: "rgb(66, 65, 63)",
