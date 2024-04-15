@@ -68,7 +68,7 @@ const CategorySection = ({ category, imageSrc, description }) => {
             </div>
             <AnimatedDownArrow></AnimatedDownArrow>
           </h1>
-          <div
+          {/*<div
             className={styles.svgArrow}
             style={{
               alignSelf: "flex-end",
@@ -91,7 +91,7 @@ const CategorySection = ({ category, imageSrc, description }) => {
                 d="M8 1a.5.5 0 0 1 .5.5v40.293l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 41.793V1.5A.5.5 0 0 1 8 1"
               />
             </svg>
-          </div>
+          </div>*/}
         </div>
         {/* Kép */}
         <div className={styles["image-container"]}> {/* CSS modul osztály */}
