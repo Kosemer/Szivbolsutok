@@ -1,19 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Card } from "react-bootstrap";
-//import { useContext } from "react";
-//import CartContext from "../../Components/Store/cart-context";
 import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
 
 const CardGallery = ({ categories }) => {
-  //const cartCtx = useContext(CartContext);
   const [images, setImages] = useState([]);
 
   useEffect(() => {
     const fetchImages = async () => {
-      const imagesData = await Promise.all([
-        fetchImagesFromFolder(categories),
-      ]);
+      const imagesData = await Promise.all([fetchImagesFromFolder(categories)]);
 
       const combinedImages = imagesData.reduce(
         (acc, curr) => acc.concat(curr),
@@ -40,12 +35,22 @@ const CardGallery = ({ categories }) => {
       <Row>
         {images.map((image, index) => (
           <Col key={index} xs={12} md={6} lg={3} className="mb-4">
-            <Card className="shadow">
-            <div style={{ width: "100%", height: "300px", overflow: "hidden" }}>
-              <Card.Img variant="top" src={image.src} alt={image.caption} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-              </div>
+            <Card className="shadow" style={{ height: "100%" }}>
+              <Card.Img
+                variant="top"
+                src={image.src}
+                alt={image.caption}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
               <Card.Body className="text-center">
-                <Card.Text>{image.title}</Card.Text>
+                <Card.Text
+                  style={{
+                    fontFamily: "'Sorts Mill Goudy', serif",
+                    fontSize: "1.2em",
+                  }}
+                >
+                  {image.title}
+                </Card.Text>
               </Card.Body>
             </Card>
           </Col>
@@ -66,7 +71,7 @@ const CardGallery = ({ categories }) => {
                   width="32"
                   height="32"
                   fill="currentColor"
-                  class="bi bi-arrow-right-circle-fill ms-3"
+                  className="bi bi-arrow-right-circle-fill ms-3"
                   viewBox="0 0 16 16"
                 >
                   <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
