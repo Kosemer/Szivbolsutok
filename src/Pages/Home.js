@@ -12,6 +12,8 @@ import hagyomanyosTortak from "../Assets/CakesPicture/kitKat.png";
 import burkoltTortak from "../Assets/CakesPicture/viragLada.png";
 import linzerTortak from "../Assets/CategorySection/almas.png";
 import macaronok from "../Assets/CakesPicture/tgvccx.png";
+import fondantFigurak from "../Assets/CategorySection/Skye-mancs orjarat.png";
+import mentesSutemenyek from "../Assets/CategorySection/mindenmentes_csokis_epres_torta2.png";
 
 function Home() {
   useEffect(() => {
@@ -84,7 +86,7 @@ function Home() {
         <CardGallery categories={"hagyomanyosSutemenyek"}></CardGallery>
         <CategorySection
           category={"Mentes Sütemények"}
-          imageSrc={macaronok}
+          imageSrc={mentesSutemenyek}
           description={
             "A mentes sütemények olyan különleges édességek, melyek kiváló alternatívát nyújtanak azoknak, akik különböző ételintoleranciával vagy diétás korlátozásokkal küzdenek, például glutén-, tej-, vagy tojásmentes ételeket keresnek. Ezek a sütemények általában kreatív és egészséges összetevőket használnak."
           }
@@ -92,7 +94,7 @@ function Home() {
         <CardGallery categories={"mentesSutemenyek"}></CardGallery>
         <CategorySection
           category={"Fondant figurák"}
-          imageSrc={macaronok}
+          imageSrc={fondantFigurak}
           description={
             "A fondant figurák kézműves mestermunkák, melyekkel valódi művészi alkotásokat lehet létrehozni a süteményeken és tortákon. A fondant, egy rugalmas, gyurma-szerű cukormáz, lehetővé teszi a különféle formák és modellek készítését, legyen az virág, állat, vagy akár személyes karakter."
           }
