@@ -126,7 +126,7 @@
     background-size: 100%;
     background-repeat: no-repeat;
     display: flex;
-    justify-content: end;
+    justify-content: center;
   }
   .text{
     font-size: 1.5rem !important;
@@ -173,7 +173,7 @@
     background-size: 100%;
     background-repeat: no-repeat;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
   }
   .text{
     font-size: 1.2rem !important;
@@ -186,7 +186,7 @@
   .h1Text{
     font-size: 3.5rem !important;
     text-align: center !important;
-    margin-left: 40% !important;
+    margin-left: 20% !important;
     max-width: auto;
     color: #333;
     margin-top: 10%;
@@ -218,7 +218,8 @@
     background-size: 100%;
     background-repeat: no-repeat;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
+    padding-right: 5%;
   }
   .text{
     font-size: 1.5rem !important;
@@ -235,7 +236,7 @@
     max-width: auto;
     color: #333;
     margin-top: 10%;
-    min-width: 350px !important;
+    min-width: 400px !important;
   }
 }
 
@@ -260,10 +261,11 @@
     flex: 2;
     background-image: url('../../Assets/CakesPicture/splashbackground.png');
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     background-position: center center;
     background-size: 100%;
     background-repeat: no-repeat;
+    padding-right: 10%;
   }
   .text{
     font-size: 1.4rem !important;
@@ -319,7 +321,8 @@
     background-size: 100%;
     background-repeat: no-repeat;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
+    padding-right: 10%;
   }
   .text{
     font-size: 2rem !important;
@@ -332,11 +335,11 @@
   .h1Text{
     font-size: 5rem !important;
     text-align: center !important;
-    margin-left: 70% !important;
+    margin-left: 60% !important;
     max-width: auto;
     color: #333;
     margin-top: 10%;
-    min-width: 500px !important;
+    min-width: 600px !important;
   }
   
 }

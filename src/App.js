@@ -6,7 +6,6 @@ import Header from "./Components/Layout/Header";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
 import AboutMe from "./Pages/AboutMe";
-import Prices from "./Pages/Prices";
 import Photography from "./Pages/PhotoGalleryPage/Photography";
 import CartProvider from "./Components/Store/CartProvider";
 import Footer from "./Components/Layout/Footer";
@@ -23,7 +22,6 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home></Home>}></Route>
           <Route path="/galeria" element={<Photography></Photography>}></Route>
-          <Route path="/arak" element={<Prices></Prices>}></Route>
           <Route path="/rolam" element={<AboutMe></AboutMe>}></Route>
           <Route
             path="/kapcsolat"

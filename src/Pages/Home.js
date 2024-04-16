@@ -10,7 +10,7 @@ import CategorySection from "../Components/PhotoGallery/CategorySection";
 import IntroductorySection from "../Components/ParallaxIntroductorySection/IntroductorySection";
 import hagyomanyosTortak from "../Assets/CakesPicture/kitKat.png";
 import burkoltTortak from "../Assets/CakesPicture/viragLada.png";
-import linzerTortak from "../Assets/CakesPicture/almas.png";
+import linzerTortak from "../Assets/CategorySection/almas.png";
 import macaronok from "../Assets/CakesPicture/tgvccx.png";
 
 function Home() {
@@ -73,9 +73,30 @@ function Home() {
             "A macaronok finom francia édességek, melyek két mandulás piskóta közé töltött krém vagy lekvár réteggel készülnek. Ezek a kis, színes sütemények számos ízben és színben elérhetőek, így sokféle kombinációban kóstolhatóak."
           }
         ></CategorySection>
-        <CardGallery categories={"macaronok"}></CardGallery>
         <CardGallery categories={"hagyomanyosSutemenyek"}></CardGallery>
+        <CategorySection
+          category={"Hagyományos Sütemények"}
+          imageSrc={macaronok}
+          description={
+            "A hagyományos sütemények hordozzák magukban az évtizedek vagy akár évszázadok alatt kialakult ízek és receptek varázsát. Ezek a finomságok gyakran nemcsak ízükkel, hanem történetükkel is gazdagítják az étkezéseket."
+          }
+        ></CategorySection>
+        <CardGallery categories={"hagyomanyosSutemenyek"}></CardGallery>
+        <CategorySection
+          category={"Mentes Sütemények"}
+          imageSrc={macaronok}
+          description={
+            "A mentes sütemények olyan különleges édességek, melyek kiváló alternatívát nyújtanak azoknak, akik különböző ételintoleranciával vagy diétás korlátozásokkal küzdenek, például glutén-, tej-, vagy tojásmentes ételeket keresnek. Ezek a sütemények általában kreatív és egészséges összetevőket használnak."
+          }
+        ></CategorySection>
         <CardGallery categories={"mentesSutemenyek"}></CardGallery>
+        <CategorySection
+          category={"Fondant figurák"}
+          imageSrc={macaronok}
+          description={
+            "A fondant figurák kézműves mestermunkák, melyekkel valódi művészi alkotásokat lehet létrehozni a süteményeken és tortákon. A fondant, egy rugalmas, gyurma-szerű cukormáz, lehetővé teszi a különféle formák és modellek készítését, legyen az virág, állat, vagy akár személyes karakter."
+          }
+        ></CategorySection>
         <CardGallery categories={"fondantFigurak"}></CardGallery>
       </div>
       <div className={classes.DesktopSlider}>
