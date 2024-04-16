@@ -10,41 +10,40 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 const ScrollToTopButton = () => {
-  const [visible, setVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
-  const toggleVisibility = () => {
-    if (window.pageYOffset > 300) {
-      setVisible(true);
-    } else {
-      setVisible(false);
-    }
-  };
-
-  const scrollToTopSmooth = () => {
-    const scrollDuration = 500; // Görgetési időtartam (milliszekundumban)
-    const scrollStep = -window.pageYOffset / (scrollDuration / 15);
-
-    const scrollInterval = setInterval(() => {
-      if (window.pageYOffset !== 0) {
-        window.scrollBy(0, scrollStep);
-       
-      } else {
-        clearInterval(scrollInterval);
-      }
-    }, 15);
-  };
-
+  // Figyeljük a felhasználó görgetését, hogy megjelenítsük vagy elrejtsük a gombot
   useEffect(() => {
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', toggleVisibility);
+
+    // Takarítsunk fel a komponens elbontása után
+    return () => {
+      window.removeEventListener('scroll', toggleVisibility);
+    };
   }, []);
 
-  const buttonClass = visible ? styles.fadeIn : styles.fadeOut;
+  // Görgetés a lap tetejére
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Gördülékeny görgetés
+    });
+  };
+
+  const buttonClass = isVisible ? styles.fadeIn : styles.fadeOut;
 
   return (
     <div className={styles.scrollToTop}>
       <button
-        onClick={scrollToTopSmooth}
+        onClick={scrollToTop}
         className={`${styles.scrollToTopButton} ${buttonClass}`}
       >
         <FontAwesomeIcon icon={faChevronUp} />
