@@ -112,7 +112,7 @@ const CurtainMenu = () => {
                         />
                         <Card.ImgOverlay className="d-flex align-items-center justify-content-center">
                           <div className="text-center text-white">
-                            <h3>{image.title}</h3>
+                            <h3>{image.title.split(".")[0]}</h3>
                           </div>
                         </Card.ImgOverlay>
                       </div>

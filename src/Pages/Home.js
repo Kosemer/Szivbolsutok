@@ -10,8 +10,8 @@ import CategorySection from "../Components/PhotoGallery/CategorySection";
 import IntroductorySection from "../Components/ParallaxIntroductorySection/IntroductorySection";
 import hagyomanyosTortak from "../Assets/CategorySection/kitKat2.png";
 import burkoltTortak from "../Assets/CategorySection/viragLada.png";
-import linzerTortak from "../Assets/CategorySection/almas.png";
-import macaronok from "../Assets/CategorySection/foMacaron.png";
+import linzerTortak from "../Assets/CategorySection/almas3.png";
+import macaronok from "../Assets/CategorySection/foMacaron2.png";
 import fondantFigurak from "../Assets/CategorySection/Skye-mancs orjarat.png";
 import mentesSutemenyek from "../Assets/CategorySection/mindenmentes_csokis_epres_torta2.png";
 
