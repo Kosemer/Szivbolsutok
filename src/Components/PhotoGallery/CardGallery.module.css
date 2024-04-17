@@ -1,0 +1,126 @@
+.cardContainer{
+    margin-top: 5rem;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 5rem;
+}
+
+.cardBody{
+    text-align: center;
+}
+
+.cardBodyNext{
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    transition: transform 0.3s ease-in-out;
+}
+
+.cardBodyNext:hover {
+    background-color: rgba(255, 0, 0, 0.5); /* Példa: vörös átlátszó hátterű szín */
+    transform: translateY(-4px);
+  }
+
+
+/* Extra kicsi készülékek (telefonok, 576px és alatt) */
+@media (max-width: 575.98px) {
+    .cardText{
+        font-family: "'Sorts Mill Goudy', serif";
+        font-size: 1.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20px;
+    }
+    .cardContainer{
+        margin-top: 5rem;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-bottom: 5rem;
+    }    
+  }
+  
+  /* Kicsi készülékek (tabletek, 576px és 767px között) */
+  @media (min-width: 576px) and (max-width: 767.98px) {
+
+  }
+  
+  /* Közepes készülékek (tabletek, 768px és 991px között) */
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .cardContainer{
+        margin-top: 0rem;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-bottom: 0rem;
+    } 
+    .cardText{
+        font-family: "'Sorts Mill Goudy', serif";
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20px;
+    }
+  }
+  
+  /* Nagy készülékek (asztali gépek, 992px és 1199px között) */
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    .cardContainer{
+        margin-top: 0rem;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-bottom: 0rem;
+    } 
+    .cardText{
+        font-family: "'Sorts Mill Goudy', serif";
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20px;
+        padding: 0px;
+        line-height: 20px;
+    }
+
+  }
+  
+  /* Extra nagy készülékek (asztali gépek, 1200px és afölött) */
+  @media (min-width: 1200px) and (max-width: 1600px) {
+    .cardText{
+        font-family: "'Sorts Mill Goudy', serif";
+        font-size: 1.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        line-height: 25px;
+    }
+    .cardContainer{
+        margin-top: 0rem;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-bottom: 0rem;
+    }   
+  }
+  
+  /* Extra nagy készülékek (asztali gépek, 1601px és afölött) */
+  @media (min-width: 1601px) {
+    .cardText{
+        font-family: "'Sorts Mill Goudy', serif";
+        font-size: 1.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        line-height: 25px;
+    }
+    .cardContainer{
+        margin-top: 0rem;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-bottom: 0rem;
+    }  
+  }

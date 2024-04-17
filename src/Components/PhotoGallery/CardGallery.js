@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
+import classes from "./CardGallery.module.css";
 
 const CardGallery = ({ categories }) => {
   const [images, setImages] = useState([]);
@@ -30,8 +31,10 @@ const CardGallery = ({ categories }) => {
     }
   };
 
+  console.log(images)
+
   return (
-    <Container className="mt-5">
+    <Container className={classes.cardContainer}>
       <Row>
         {images.map((image, index) => (
           <Col key={index} xs={12} md={6} lg={3} className="mb-4">
@@ -40,16 +43,12 @@ const CardGallery = ({ categories }) => {
                 variant="top"
                 src={image.src}
                 alt={image.caption}
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                style={{ width: "100%", height: "100%", objectFit: "cover", backgroundColor: "rgba(255, 0, 0, 0.5)"              }}
               />
-              <Card.Body className="text-center">
-                <Card.Text
-                  style={{
-                    fontFamily: "'Sorts Mill Goudy', serif",
-                    fontSize: "1.2em",
-                  }}
+              <Card.Body className={classes.cardBody}>
+                <Card.Text className={classes.cardText}
                 >
-                  {image.title}
+                  {image.title.split(".")[0]}
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -57,7 +56,7 @@ const CardGallery = ({ categories }) => {
         ))}
         <Col xs={12} md={6} lg={3} className="mb-4">
           <Card
-            className="shadow text-center d-flex justify-content-center align-items-center"
+            className={classes.cardBodyNext}
             style={{ height: "100%" }}
           >
             <Card.Body>
