@@ -5,6 +5,7 @@ import splash from "../../Assets/CakesPicture/splash.png";
 import AnimatedDownArrow from "../AnimatedDownArrow/AnimatedDownArrow";
 
 const CategorySection = ({ category, imageSrc, description }) => {
+  
   return (
     <Container fluid  style={{ "--bs-gutter-x": "0rem", marginTop: "0px" }}>
       <div className={styles.wrapper}>

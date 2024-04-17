@@ -61,7 +61,7 @@ const CardGallery = ({ categories }) => {
           >
             <Card.Body>
               <Card.Text
-                className="d-flex align-items-center"
+                className={classes.cardText}
                 style={{ height: "100%", fontSize: "1.3em" }}
               >
                 További képek
