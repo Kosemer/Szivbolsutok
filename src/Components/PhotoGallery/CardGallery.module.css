@@ -17,6 +17,7 @@
     align-items: center;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
     transition: transform 0.3s ease-in-out;
+    border: 1px solid black;
 }
 
 .cardBodyNext:hover {

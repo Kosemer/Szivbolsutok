@@ -38,7 +38,7 @@ const CardGallery = ({ categories }) => {
       <Row>
         {images.map((image, index) => (
           <Col key={index} xs={12} md={6} lg={3} className="mb-4">
-            <Card className="shadow" style={{ height: "100%" }}>
+            <Card className="shadow" style={{ height: "100%",  }}>
               <Card.Img
                 variant="top"
                 src={image.src}

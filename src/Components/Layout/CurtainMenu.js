@@ -97,7 +97,7 @@ const CurtainMenu = () => {
                       className={styles.menuCard}
                       onMouseEnter={() => handleMouseEnter(index)}
                       onMouseLeave={handleMouseLeave}
-                      style={{ transition: 'transform 0.3s', width: '15rem', backgroundColor: 'rgba(255, 0, 0, 0.3)' }}
+                      style={{ transition: 'transform 0.3s', width: '15rem' }}
                     >
                       <div style={{ position: 'relative', overflow: 'hidden' }}>
                         <Card.Img 
@@ -105,7 +105,7 @@ const CurtainMenu = () => {
                           src={image.src} 
                           alt={image.caption} 
                           style={{ 
-                            filter: hoveredImageIndex === index ? 'brightness(1)' : 'brightness(0.7)',
+                            filter: hoveredImageIndex === index ? 'brightness(1)' : 'brightness(0.9)',
                             transform: hoveredImageIndex === index ? 'scale(1.1)' : 'scale(1)',
                             transition: 'transform 0.5s ease-in-out',
                           }}
