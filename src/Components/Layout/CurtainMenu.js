@@ -97,7 +97,7 @@ const CurtainMenu = () => {
                       className={styles.menuCard}
                       onMouseEnter={() => handleMouseEnter(index)}
                       onMouseLeave={handleMouseLeave}
-                      style={{ transition: 'transform 0.3s', width: '15rem' }}
+                      style={{ transition: 'transform 0.3s', width: '15rem', backgroundColor: 'rgba(255, 0, 0, 0.3)' }}
                     >
                       <div style={{ position: 'relative', overflow: 'hidden' }}>
                         <Card.Img 

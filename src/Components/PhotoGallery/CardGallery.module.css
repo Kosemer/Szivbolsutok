@@ -21,12 +21,13 @@
 
 .cardBodyNext:hover {
     
-    transform: translateY(-4px);
+    transform: translateY(-8px);
   }
 
   .cardText{
     display: flex;
     align-items: center;
+    font-family: "Bebas Neue", sans-serif;
   }
 
   .cardText {
@@ -41,24 +42,63 @@
 /* Extra kicsi készülékek (telefonok, 576px és alatt) */
 @media (max-width: 575.98px) {
     .cardText{
-        font-family: "'Sorts Mill Goudy', serif";
+        font-family: "Bebas Neue", sans-serif;
         font-size: 1.4rem;
         display: flex;
         align-items: center;
         justify-content: center;
         height: 20px;
     }
+    h1{
+        margin-top: 2rem;
+    }
     .cardContainer{
         margin-top: 5rem;
         padding-left: 30px;
         padding-right: 30px;
         margin-bottom: 5rem;
-    }    
+    }
+    .cardBodyNext{
+        color: rgba(255, 0, 0, 0.5);
+    }
+    .cardTextNext{
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20px;
+    }     
   }
   
   /* Kicsi készülékek (tabletek, 576px és 767px között) */
   @media (min-width: 576px) and (max-width: 767.98px) {
-
+    .cardContainer{
+        margin-top: 0rem;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-bottom: 0rem;
+    } 
+    .cardText{
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20px;
+    }
+    .cardBodyNext{
+        color: rgba(255, 0, 0, 0.5);
+        font-size: 1.5rem;
+    }
+    .cardTextNext{
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20px;
+    } 
   }
   
   /* Közepes készülékek (tabletek, 768px és 991px között) */
@@ -70,13 +110,25 @@
         margin-bottom: 0rem;
     } 
     .cardText{
-        font-family: "'Sorts Mill Goudy', serif";
-        font-size: 1.2rem;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.3rem;
         display: flex;
         align-items: center;
         justify-content: center;
         height: 20px;
     }
+    .cardBodyNext{
+        color: rgba(255, 0, 0, 0.5);
+        font-size: 1.5rem;
+    }
+    .cardTextNext{
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20px;
+    } 
   }
   
   /* Nagy készülékek (asztali gépek, 992px és 1199px között) */
@@ -88,7 +140,7 @@
         margin-bottom: 0rem;
     } 
     .cardText{
-        font-family: "'Sorts Mill Goudy', serif";
+        font-family: "Bebas Neue", sans-serif;
         font-size: 1.2rem;
         display: flex;
         align-items: center;
@@ -97,18 +149,29 @@
         padding: 0px;
         line-height: 20px;
     }
-
+    .cardBodyNext{
+        color: rgba(255, 0, 0, 0.5);
+        font-size: 1.5rem;
+    }  
+    .cardTextNext{
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20px;
+    }
   }
   
   /* Extra nagy készülékek (asztali gépek, 1200px és afölött) */
   @media (min-width: 1200px) and (max-width: 1600px) {
     .cardText{
-        font-family: "'Sorts Mill Goudy', serif";
-        font-size: 1.4rem;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.2rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 30px;
+        height: 20px;
         line-height: 25px;
     }
     .cardContainer{
@@ -116,13 +179,25 @@
         padding-left: 30px;
         padding-right: 30px;
         margin-bottom: 0rem;
-    }   
+    }
+    .cardBodyNext{
+        color: rgba(255, 0, 0, 0.5);
+        font-size: 1.5rem;
+    }  
+    .cardTextNext{
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20px;
+    }    
   }
   
   /* Extra nagy készülékek (asztali gépek, 1601px és afölött) */
   @media (min-width: 1601px) {
     .cardText{
-        font-family: "'Sorts Mill Goudy', serif";
+        font-family: "Bebas Neue", sans-serif;
         font-size: 1.4rem;
         display: flex;
         align-items: center;
@@ -135,5 +210,17 @@
         padding-left: 0px;
         padding-right: 0px;
         margin-bottom: 0rem;
-    }  
+    }
+    .cardTextNext{
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20px;
+    }
+    .cardBodyNext{
+        color: rgba(255, 0, 0, 0.5);
+        font-size: 1.5rem;
+    }   
   }
