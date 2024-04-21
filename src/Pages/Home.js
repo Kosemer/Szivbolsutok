@@ -44,6 +44,7 @@ function Home() {
       </div>
 
       <div>
+        <div className={classes.section}>
         <CategorySection
           category={"Hagyományos Torták"}
           imageSrc={hagyomanyosTortak}
@@ -52,6 +53,7 @@ function Home() {
           }
         ></CategorySection>
         <CardGallery categories={"HagyomanyosTortak"}></CardGallery>
+        </div>
         <CategorySection
           category={"Burkolt Torták"}
           imageSrc={burkoltTortak}

@@ -2,7 +2,7 @@
 
 .parallax {
     /* The image used */
-    background-image: url("../../Assets/AccordionPictureBox/image6.jpg");
+    background-image: url("../../Assets/AccordionPictureBox/macaron.jpg");
   
     /* Set a specific height */
     min-height: 500px;
@@ -13,6 +13,7 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+
 
   .centeredText {
     text-align: center;
