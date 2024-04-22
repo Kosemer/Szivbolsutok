@@ -17,7 +17,7 @@ function CartProvider(props) {
 
   //const [selectedFilter, setSelectedFilter] = useState("portrait");
   const [selectedFilter, setSelectedFilter] = useState(
-    isMobileView() ? null : "portrait"
+    isMobileView() ? null : "HagyomanyosTortak"
   );
 
   const [cssMobile, setCssMobile] = useState(true);

@@ -3,6 +3,7 @@
 .wrapper{
     display: flex;
     height: 50vh;
+    overflow: visible !important;
 }
 
 .image-container {
@@ -16,6 +17,7 @@
     background-position: center center;
     background-size: 100%;
     background-repeat: no-repeat;
+    overflow: visible !important;
     
   }
 
@@ -225,6 +227,7 @@
     justify-content: center;
     padding-left: 15%;
     height: 40vh;
+    overflow: visible !important;
   }
   .text{
     font-size: 1.5rem !important;
@@ -265,14 +268,15 @@
   } 
   .image-container {
     flex: 2;
-    background-image: url('../../Assets/CakesPicture/splashbackground2.png');
+    background-image: url('../../Assets/CakesPicture/splashbackground3.png');
     display: flex;
     justify-content: center;
     background-position: right;
-    background-size: 80%;
+    background-size: 90%;
     background-repeat: no-repeat;
-    padding-left: 25%;
-    height: 100vh;
+    padding-left: 5%;
+    height: 100%;
+    overflow: visible !important;
   }
   .text{
     font-size: 1.2rem !important;
@@ -323,7 +327,7 @@
   .image-container {
     flex: 2;
     /*background: linear-gradient(to bottom, rgb(236, 141, 147) 80%, rgb(255, 255, 255, 0) 20%);*/
-    background-image: url('../../Assets/CakesPicture/splashbackground.png');
+    background-image: url('../../Assets/CakesPicture/splashbackground3.png');
     background-position: center center;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -331,6 +335,7 @@
     justify-content: center;
     padding-left: 15%;
     height: 100vh;
+    overflow: visible;
   }
   .text{
     font-size: 2rem !important;

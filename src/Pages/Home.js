@@ -1,4 +1,3 @@
-import AccordionPictureBox from "../Components/AccordionPictureBox/AccordionPictureBox";
 import OptionalPhotoshoots from "../Components/UI/GoToGallery/OptionalPhotoshoots";
 import Slider from "../Components/UI/Slider/Slider";
 import classes from "./Home.module.css";
@@ -22,26 +21,8 @@ function Home() {
 
   return (
     <div>
-      <Slider></Slider>
-      <div className={classes.quote}>
-        <blockquote>
-          „Az igazán jó képeknek két alapvető motívuma van: az őszinteség és a
-          természetesség.”<br></br>{" "}
-          <span className={classes.author}>– Reismann Marian</span>
-        </blockquote>
-      </div>
-
-      <div className={classes.divider}>
-        <div className={classes.line1}></div>
-        <h2 className={classes.title}>Néhány kép a munkáimból</h2>
-        <div className={classes.line2}></div>
-      </div>
+      {/*<Slider></Slider>*/}
       <IntroductorySection></IntroductorySection>
-      <div className={classes.pictureBox}>
-        <div>
-          <AccordionPictureBox></AccordionPictureBox>
-        </div>
-      </div>
 
       <div>
         <div className={classes.section}>
@@ -54,6 +35,7 @@ function Home() {
         ></CategorySection>
         <CardGallery categories={"HagyomanyosTortak"}></CardGallery>
         </div>
+        <div className={classes.section}>
         <CategorySection
           category={"Burkolt Torták"}
           imageSrc={burkoltTortak}
@@ -62,6 +44,8 @@ function Home() {
           }
         ></CategorySection>
         <CardGallery categories={"BurkoltTortak"}></CardGallery>
+        </div>
+        <div className={classes.section}>
         <CategorySection
           category={"Linzertorták"}
           imageSrc={linzerTortak}
@@ -70,6 +54,8 @@ function Home() {
           }
         ></CategorySection>
         <CardGallery categories={"Linzertortak"}></CardGallery>
+        </div>
+        <div className={classes.section}>
         <CategorySection
           category={"Macaronok"}
           imageSrc={macaronok}
@@ -78,6 +64,8 @@ function Home() {
           }
         ></CategorySection>
         <CardGallery categories={"Macaronok"}></CardGallery>
+        </div>
+        <div className={classes.section}>
         <CategorySection
           category={"Hagyományos Sütemények"}
           imageSrc={macaronok}
@@ -86,6 +74,8 @@ function Home() {
           }
         ></CategorySection>
         <CardGallery categories={"HagyomanyosSutemenyek"}></CardGallery>
+        </div>
+        <div className={classes.section}>
         <CategorySection
           category={"Mentes Sütemények"}
           imageSrc={mentesSutemenyek}
@@ -94,6 +84,8 @@ function Home() {
           }
         ></CategorySection>
         <CardGallery categories={"MentesSutemenyek"}></CardGallery>
+        </div>
+        <div className={classes.section}>
         <CategorySection
           category={"Fondant figurák"}
           imageSrc={fondantFigurak}
@@ -102,6 +94,7 @@ function Home() {
           }
         ></CategorySection>
         <CardGallery categories={"FondantFigurak"}></CardGallery>
+        </div>
       </div>
       <div className={classes.DesktopSlider}>
         <DesktopSlider></DesktopSlider>

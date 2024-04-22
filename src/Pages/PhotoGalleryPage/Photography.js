@@ -52,7 +52,7 @@ function Photography() {
 
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
-        loadMoreImages(filterFromState || "portrait");
+        loadMoreImages(filterFromState || "HagyomanyosTortak");
       }
     }, options);
 
@@ -67,7 +67,7 @@ function Photography() {
 
   useEffect(() => {
     return () => {
-      cartCtx.setSelectedFilter("portrait");
+      cartCtx.setSelectedFilter("HagyomanyosTortak");
     };
   }, [location.pathname]);
 
@@ -76,7 +76,7 @@ function Photography() {
       fetchImages(filterFromState, 20);
       cartCtx.setSelectedFilter(filterFromState);
     } else {
-      fetchImages("portrait", 20);
+      fetchImages("HagyomanyosTortak", 20);
     }
   }, [filterFromState]);
 
@@ -87,12 +87,13 @@ function Photography() {
 
   async function fetchAllImages() {
     const folders = [
-      "portrait",
-      "wedding",
-      "budoir",
-      "sport",
-      "family",
-      "event",
+      "HagyomanyosTortak",
+      "BurkoltTortak",
+      "Linzertortak",
+      "Macaronok",
+      "HagyomanyosSutemenyek",
+      "MentesSutemenyek",
+      "FondantFigurak",
     ];
     const allImageData = [];
     for (let folder of folders) {
@@ -113,29 +114,33 @@ function Photography() {
     cartCtx.setSelectedFilter("all", 20);
   };
 
-  const handlePortraitClick = () => {
-    fetchImages("portrait"); // Portré fotók betöltése
-    cartCtx.setSelectedFilter("portrait", 20);
+  const handleHagyomanyosTortakClick = () => {
+    fetchImages("HagyomanyosTortak"); 
+    cartCtx.setSelectedFilter("HagyomanyosTortak", 20);
   };
-  const handleWeddingClick = () => {
-    fetchImages("wedding"); // Esküvői fotók betöltése
-    cartCtx.setSelectedFilter("wedding", 20);
+  const handleBurkoltTortakClick = () => {
+    fetchImages("BurkoltTortak"); 
+    cartCtx.setSelectedFilter("BurkoltTortak", 20);
   };
-  const handleBudoirClick = () => {
-    fetchImages("budoir"); // Budoir fotók betöltése
-    cartCtx.setSelectedFilter("budoir", 20);
+  const handleLinzertortakClick = () => {
+    fetchImages("Linzertortak"); 
+    cartCtx.setSelectedFilter("Linzertortak", 20);
   };
-  const handleSportClick = () => {
-    fetchImages("sport"); // Sport fotók betöltése
-    cartCtx.setSelectedFilter("sport", 20);
+  const handleMacaronokClick = () => {
+    fetchImages("Macaronok"); 
+    cartCtx.setSelectedFilter("Macaronok", 20);
   };
-  const handleFamiyClick = () => {
-    fetchImages("family"); // Családi fotók betöltése
-    cartCtx.setSelectedFilter("family", 20);
+  const handleHagyomanyosSutemenyekClick = () => {
+    fetchImages("HagyomanyosSutemenyek"); 
+    cartCtx.setSelectedFilter("HagyomanyosSutemenyek", 20);
   };
-  const handleEventClick = () => {
-    fetchImages("event"); // Rendezvény fotók betöltése
-    cartCtx.setSelectedFilter("event", 20);
+  const handleMentesSutemenyekClick = () => {
+    fetchImages("MentesSutemenyek"); 
+    cartCtx.setSelectedFilter("MentesSutemenyek", 20);
+  };
+  const handleFondantFigurakClick = () => {
+    fetchImages("FondantFigurak"); 
+    cartCtx.setSelectedFilter("FondantFigurak", 20);
   };
 
   // images tömb értékének kiíratása a konzolraa
@@ -157,40 +162,46 @@ function Photography() {
           Összes
         </h2>
         <h2
-          onClick={handlePortraitClick}
-          data-selected={cartCtx.selectedFilter === "portrait"}
+          onClick={handleHagyomanyosTortakClick}
+          data-selected={cartCtx.selectedFilter === "HagyomanyosTortak"}
         >
-          Portré
+          HagyomanyosTortak
         </h2>
         <h2
-          onClick={handleWeddingClick}
-          data-selected={cartCtx.selectedFilter === "wedding"}
+          onClick={handleBurkoltTortakClick}
+          data-selected={cartCtx.selectedFilter === "BurkoltTortak"}
         >
-          Esküvői
+          BurkoltTortak
         </h2>
         <h2
-          onClick={handleBudoirClick}
-          data-selected={cartCtx.selectedFilter === "budoir"}
+          onClick={handleLinzertortakClick}
+          data-selected={cartCtx.selectedFilter === "Linzertortak"}
         >
-          Boudoir
+          Linzertorták
         </h2>
         <h2
-          onClick={handleSportClick}
-          data-selected={cartCtx.selectedFilter === "sport"}
+          onClick={handleMacaronokClick}
+          data-selected={cartCtx.selectedFilter === "Macaronok"}
         >
-          Sport
+          Macaronok
         </h2>
         <h2
-          onClick={handleFamiyClick}
-          data-selected={cartCtx.selectedFilter === "family"}
+          onClick={handleHagyomanyosSutemenyekClick}
+          data-selected={cartCtx.selectedFilter === "HagyomanyosSutemenyek"}
         >
-          Családi
+         Hagyományos Sütemények
         </h2>
         <h2
-          onClick={handleEventClick}
-          data-selected={cartCtx.selectedFilter === "event"}
+          onClick={handleMentesSutemenyekClick}
+          data-selected={cartCtx.selectedFilter === "MentesSutemenyek"}
         >
-          Rendezvény
+          Mentes Sütemények
+        </h2>
+        <h2
+          onClick={handleFondantFigurakClick}
+          data-selected={cartCtx.selectedFilter === "FondantFigurak"}
+        >
+          Fondant figurák
         </h2>
       </div>
       <div className={classes.PhotoGallery}>

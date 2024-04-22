@@ -67,7 +67,7 @@ const CategorySection = ({ category, imageSrc, description }) => {
             >
               {description}
             </div>
-            <AnimatedDownArrow></AnimatedDownArrow>
+            {/*<AnimatedDownArrow></AnimatedDownArrow>*/}
           </h1>
           {/*<div
             className={styles.svgArrow}
