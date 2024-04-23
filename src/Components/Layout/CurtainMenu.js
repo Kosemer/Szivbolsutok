@@ -1,12 +1,13 @@
-import React, { useState, useContext, useEffect } from 'react';
-import styles from './CurtainMenu.module.css';
+import React, { useState, useContext, useEffect } from "react";
+import styles from "./CurtainMenu.module.css";
 import CartContext from "../Store/cart-context";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
 
 const CurtainMenu = () => {
   const cartCtx = useContext(CartContext);
+
   const [hoveredImageIndex, setHoveredImageIndex] = useState(null);
   const [overlayClass, setOverlayClass] = useState(styles.overlay);
   const [images, setImages] = useState([]);
@@ -16,7 +17,6 @@ const CurtainMenu = () => {
       setOverlayClass(`${styles.overlay} ${styles.overlayOpen}`);
     } else {
       setOverlayClass(`${styles.overlay} ${styles.overlayClose}`);
-      
     }
   }, [cartCtx.menuIsOpen]);
 
@@ -36,8 +36,7 @@ const CurtainMenu = () => {
     setHoveredImageIndex(null);
   };
 
-
-/*Images load*/
+  /*Images load*/
   useEffect(() => {
     const fetchImages = async () => {
       const imagesData = await Promise.all([
@@ -65,64 +64,46 @@ const CurtainMenu = () => {
   };
   /*Images load*/
 
-
-/*If the menu is open you cannot scroll the page*/
+  /*If the menu is open you cannot scroll the page*/
   useEffect(() => {
     const body = document.body;
     if (cartCtx.menuIsOpen) {
       // Ha a menü nyitva van, letiltjuk a görgetést
-      body.style.overflow = 'hidden';
+      body.style.overflow = "hidden";
     } else {
       // Ha a menü bezárva van, visszaállítjuk a normál állapotot
-      body.style.overflow = 'auto';
+      body.style.overflow = "auto";
     }
-  
+
     // Clean-up függvény, amely visszaállítja az eredeti állapotot, amikor a komponens unmountolódik
     return () => {
-      body.style.overflow = 'auto';
+      body.style.overflow = "auto";
     };
   }, [cartCtx.menuIsOpen]);
   /*If the menu is open you cannot scroll the page*/
 
+  const onImageClickHandler = (image) => {
+    console.log(image);
+
+    //navigate("/galeria", { state: { filter: image.filter } });
+  };
+
   return (
     <div>
-      
-        <div id="myNav" className={overlayClass} onClick={closeNav}>
-          <div className={styles.overlayContent}>
-            <Container>
-              <Row className={styles.rowCard}>
-                {images.map((image, index) => (
-                  <Col key={index} xs={6} md={6} lg={3} className="mb-4">
-                    <Card 
-                      className={styles.menuCard}
-                      onMouseEnter={() => handleMouseEnter(index)}
-                      onMouseLeave={handleMouseLeave}
-                      style={{ transition: 'transform 0.3s', width: '15rem' }}
-                    >
-                      <div style={{ position: 'relative', overflow: 'hidden' }}>
-                        <Card.Img 
-                          variant="top" 
-                          src={image.src} 
-                          alt={image.caption} 
-                          style={{ 
-                            filter: hoveredImageIndex === index ? 'brightness(1)' : 'brightness(0.9)',
-                            transform: hoveredImageIndex === index ? 'scale(1.1)' : 'scale(1)',
-                            transition: 'transform 0.5s ease-in-out',
-                          }}
-                        />
-                        <Card.ImgOverlay className="d-flex align-items-center justify-content-center">
-                          <div className="text-center text-white">
-                            <h3>{image.title.split(".")[0]}</h3>
-                          </div>
-                        </Card.ImgOverlay>
-                      </div>
-                    </Card>
-                  </Col>
-                ))}
-              </Row>
-            </Container>
-          </div>
+      <div id="myNav" className={overlayClass} onClick={closeNav}>
+        <div className={styles.container}>
+          {images.map((image) => (
+            <div
+              key={image.id}
+              className={styles.box}
+              onClick={() => onImageClickHandler(image)}
+            >
+              <img src={image.src} alt={image.alt} />
+              <div className={styles.text}>{image.title.split(".")[0]}</div>
+            </div>
+          ))}
         </div>
+      </div>
 
       <span onClick={openNav}></span>
     </div>
