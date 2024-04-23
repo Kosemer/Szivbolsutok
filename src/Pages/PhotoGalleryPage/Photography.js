@@ -152,7 +152,7 @@ function Photography() {
   
   return (
     <div className={classes.conatiner}>
-      <h2 className={classes.photoTitle}>Válogass a témakörök között!</h2>
+      <h2 className={classes.photoTitle}>Galéria</h2>
       <hr className={classes.underline}></hr>
       <div className={classes.photoFilter}>
         <h2
@@ -165,13 +165,13 @@ function Photography() {
           onClick={handleHagyomanyosTortakClick}
           data-selected={cartCtx.selectedFilter === "HagyomanyosTortak"}
         >
-          HagyomanyosTortak
+          Hagyományos tortak
         </h2>
         <h2
           onClick={handleBurkoltTortakClick}
           data-selected={cartCtx.selectedFilter === "BurkoltTortak"}
         >
-          BurkoltTortak
+          Burkolt torták
         </h2>
         <h2
           onClick={handleLinzertortakClick}
@@ -189,13 +189,13 @@ function Photography() {
           onClick={handleHagyomanyosSutemenyekClick}
           data-selected={cartCtx.selectedFilter === "HagyomanyosSutemenyek"}
         >
-         Hagyományos Sütemények
+         Hagyományos sütemények
         </h2>
         <h2
           onClick={handleMentesSutemenyekClick}
           data-selected={cartCtx.selectedFilter === "MentesSutemenyek"}
         >
-          Mentes Sütemények
+          Mentes sütemények
         </h2>
         <h2
           onClick={handleFondantFigurakClick}

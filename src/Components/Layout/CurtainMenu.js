@@ -82,8 +82,17 @@ const CurtainMenu = () => {
   }, [cartCtx.menuIsOpen]);
   /*If the menu is open you cannot scroll the page*/
 
+  const removeAccents = (str) => {
+    return str
+        .normalize("NFD") // Normalizáljuk a karaktereket Unicode formára
+        .replace(/[\u0300-\u036f]/g, ""); // Kicseréljük az ékezetes karaktereket ékezet nélküli változataikra
+};
+
+
+
+
   const onImageClickHandler = (image) => {
-    console.log(image);
+    console.log(removeAccents(image.title.split(".")[0]));
 
     //navigate("/galeria", { state: { filter: image.filter } });
   };
