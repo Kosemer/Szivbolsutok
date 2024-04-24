@@ -3,9 +3,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
 import classes from "./CardGallery.module.css";
+import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const CardGallery = ({ categories }) => {
   const [images, setImages] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -22,7 +25,12 @@ const CardGallery = ({ categories }) => {
     fetchImages();
   }, [categories]);
 
-  console.log(images)
+  console.log(categories)
+
+  const onImageClickHandler = () => {
+  
+    navigate("/galeria", { state: { filter: categories } });
+  };
 
   return (
     <Container className={classes.cardContainer}>
@@ -54,8 +62,9 @@ const CardGallery = ({ categories }) => {
               <Card.Text
                 className={classes.cardTextNext}
                 style={{ height: "100%" }}
+                onClick={() => onImageClickHandler()}
               >
-                További képek
+
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="32"
