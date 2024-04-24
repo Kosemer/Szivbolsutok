@@ -60,6 +60,8 @@
 @media (max-width: 575.98px) {
   .wrapper{
     display: block;
+    height: 100%;
+    overflow: visible !important;
 }
   .h1Text{
     font-size: 3rem !important;
@@ -202,7 +204,11 @@
 
 /* Nagy készülékek (asztali gépek, 992px és 1199px között) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-
+  .wrapper{
+    display: flex;
+    height: 100%;
+    overflow: visible !important;
+}
   .image {
     max-width: 80%;
     max-height: 80%;

@@ -61,7 +61,7 @@
         margin-top: 2rem;
     }
     .cardContainer{
-        margin-top: 5rem;
+        margin-top: 1rem;
         padding-left: 30px;
         padding-right: 30px;
         margin-bottom: 5rem;
@@ -184,8 +184,8 @@
     }
     .cardContainer{
         margin-top: 2rem;
-        padding-left:0px;
-        padding-right: 0px;
+        padding-left: 30px;
+        padding-right: 30px;
         margin-bottom: 0rem;
     }
     .cardBodyNext{
