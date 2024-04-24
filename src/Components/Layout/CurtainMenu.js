@@ -2,11 +2,12 @@ import React, { useState, useContext, useEffect } from "react";
 import styles from "./CurtainMenu.module.css";
 import CartContext from "../Store/cart-context";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col, Card } from "react-bootstrap";
 import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
+import { useNavigate } from 'react-router-dom';
 
 const CurtainMenu = () => {
   const cartCtx = useContext(CartContext);
+  const navigate = useNavigate();
 
   const [hoveredImageIndex, setHoveredImageIndex] = useState(null);
   const [overlayClass, setOverlayClass] = useState(styles.overlay);
@@ -82,21 +83,30 @@ const CurtainMenu = () => {
   }, [cartCtx.menuIsOpen]);
   /*If the menu is open you cannot scroll the page*/
 
-  const removeAccents = (str) => {
-    return str
+
+  /*Navigation to the gallery.*/
+  const onImageClickHandler = (image) => {
+    const removeAccents = (str) => {
+      return str
         .normalize("NFD") // Normalizáljuk a karaktereket Unicode formára
         .replace(/[\u0300-\u036f]/g, ""); // Kicseréljük az ékezetes karaktereket ékezet nélküli változataikra
-};
-
-
-
-
-  const onImageClickHandler = (image) => {
-    console.log(removeAccents(image.title.split(".")[0]));
-
-    //navigate("/galeria", { state: { filter: image.filter } });
+    };
+  
+    const capitalizeFirstLetter = (word) => {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    };
+  
+    let filteredTitle = ""; // Változó létrehozása a szűrt cím tárolásához
+    filteredTitle = removeAccents(image.title.split(".")[0]); // Szűrt cím tárolása a változóban
+    const words = filteredTitle.split(" "); // Szavakra bontjuk a címet szóköz mentén
+    const capitalizedWords = words.map((word) => capitalizeFirstLetter(word)); // Minden szót nagybetűvel kezdünk
+    const joinedTitle = capitalizedWords.join(""); // Egyesítjük a szavakat egybe
+    console.log(joinedTitle);
+  
+    navigate("/galeria", { state: { filter: joinedTitle } });
   };
-
+    /*Navigation to the gallery.*/
+  
   return (
     <div>
       <div id="myNav" className={overlayClass} onClick={closeNav}>

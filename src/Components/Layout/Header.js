@@ -52,16 +52,19 @@ function Header() {
     <Fragment>
       {
         <header className={headerClasses}>
-          <h1 className={classes.title}>Szívből sütök</h1>
-           {/*<div className={classes.logoContainer}>
+          <NavLink to="/" className={classes.linkText}>
+            <h1 className={classes.title}>Szívből sütök</h1>
+          </NavLink>
+
+          {/*<div className={classes.logoContainer}>
             <NavLink to="/" className={classes.logoLink}>
               <img src={Logo} className={classes.logo} alt="logo"></img>
             </NavLink>
           </div>*/}
-          <BurgerButton></BurgerButton>
           <CurtainMenu></CurtainMenu>
+          <BurgerButton></BurgerButton>
+          
           {/*<CurtainMenuWithLink></CurtainMenuWithLink>*/}
-
         </header>
       }
     </Fragment>

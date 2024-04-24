@@ -9,27 +9,18 @@ const CardGallery = ({ categories }) => {
 
   useEffect(() => {
     const fetchImages = async () => {
-      const imagesData = await Promise.all([fetchImagesFromFolder(categories)]);
-
-      const combinedImages = imagesData.reduce(
-        (acc, curr) => acc.concat(curr),
-        []
-      );
-      setImages(combinedImages);
+      try {
+        const imageData = await ImageDimensions(categories);
+        const combinedImages = imageData.slice(0, 3);
+        setImages(combinedImages);
+      } catch (error) {
+        console.error("Hiba a képek lekérése közben", error);
+        setImages([]);
+      }
     };
 
     fetchImages();
-  }, []);
-
-  const fetchImagesFromFolder = async (folder) => {
-    try {
-      const imageData = await ImageDimensions(folder);
-      return imageData.slice(0, 3); // Change 3 to the number of images you want to display from each folder
-    } catch (error) {
-      console.error("Hiba a képek lekérése közben", error);
-      return [];
-    }
-  };
+  }, [categories]);
 
   console.log(images)
 
