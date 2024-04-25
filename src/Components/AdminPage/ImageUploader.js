@@ -346,12 +346,13 @@ const ImageUploader = ({ setLoggedIn }) => {
           >
             <option value="">Válassz mappát</option>
             <optgroup label="Galéria">
-              <option value="portrait">Portré</option>
-              <option value="wedding">Esküvői</option>
-              <option value="budoir">Boudoir</option>
-              <option value="sport">Sport</option>
-              <option value="family">Családi</option>
-              <option value="event">Rendezvény</option>
+              <option value="HagyomanyosTortak">Hagyományos torták</option>
+              <option value="BurkoltTortak">Burkolt torták</option>
+              <option value="Linzertortak">Linzertorták</option>
+              <option value="Macaronok">Macaronok</option>
+              <option value="HagyomanyosSutemenyek">Hagyományos sütemények</option>
+              <option value="MentesSutemenyek">Mentes sütemények</option>
+              <option value="FondantFigurak">Fondant figurák</option>
             </optgroup>
             <optgroup label="Főképernyő kép lapozó">
               <option value="slider">Slider</option>

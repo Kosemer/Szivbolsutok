@@ -31,7 +31,9 @@ function Photography() {
   const [isLoading, setIsLoading] = useState(false);
   const loaders = useRef({});
 
+
   const loadMoreImages = useCallback(async (folder) => {
+    console.log(folder)
     setIsLoading(true);
     const imageData = await ImageDimensions(folder);
     cartCtx.setImages((prevImages) => [
