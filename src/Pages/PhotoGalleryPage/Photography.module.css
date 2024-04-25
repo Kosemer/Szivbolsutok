@@ -1,14 +1,14 @@
 .conatiner {
-  margin-top: 10rem;
+  margin-top: 5rem;
   margin-bottom: 1rem;
 }
 
 .photoFilter {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   background-color: #333;
-  padding: 3rem;
+  padding: 2rem;
   color: white;
 }
 
@@ -17,43 +17,31 @@
 }
 
 .photoFilter h2 {
-  margin: 0 1rem;
   cursor: pointer;
-  font-family: "Georgia", serif;
-}
-
-.photoFilter {
-  display: flex;
-  justify-content: center;
-}
-
-.photoFilter h2 {
-  margin: 0 25px;
+  font-family: "Bebas Neue", serif;
+  background-color: #FF69B4;
+  padding: 10px 20px 10px 20px;
   cursor: pointer;
   position: relative;
+  border-radius: 20px;
+  font-size: 1.6rem;
+  /* Háttérszín és szövegszín beállítások: */
+  background-color: #FF69B4; /* Eredeti háttérszín */
+  color: #333;
 }
 
-.photoFilter h2::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background-color: #FF69B4;
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: all 0.3s ease-in-out 0s;
+/*.photoFilter h2:hover {
+background-color: white;
+color: #333;
+}*/
+
+
+.photoFilter h2:hover {
+  background-color: white; /* Hover esetén fehér háttérszín */
 }
 
-.photoFilter h2:hover::after {
-  visibility: visible;
-  transform: scaleX(1);
-}
-
-.photoFilter h2[data-selected="true"]::after {
-  visibility: visible;
-  transform: scaleX(1);
+.photoFilter h2[data-selected="true"] {
+  background-color: white; /* Kattintás után is fehér háttérszín */
 }
 
 .AccordionImage{
@@ -77,6 +65,33 @@
     margin-right: auto;
 }
 
+.photoFilterMobile{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: #333;
+  padding: 1rem;
+  color: white;
+}
+
+.photoFilterMobile h2 {
+  cursor: pointer;
+  font-family: "Bebas Neue", serif;
+  background-color: #FF69B4;
+  padding: 10px 20px 10px 20px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 20px;
+  font-size: 1.6rem;
+  /* Háttérszín és szövegszín beállítások: */
+  background-color: #FF69B4; /* Eredeti háttérszín */
+  color: #333;
+}
+
+.photoFilterMobile h2[data-selected="true"] {
+  background-color: white; /* Kattintás után is fehér háttérszín */
+}
+
  /* Small devices (mobile phones) */
  @media only screen and (max-width: 804px) {
   .photoFilter {
@@ -93,10 +108,10 @@
     margin-top: 4rem;
   }
   .AccordionImage{
-    display: block;
+    display: none;
   }
   .PhotoGallery{
-    display: none;
+    display: block;
   }
   .photoTitle{
     text-align: center;

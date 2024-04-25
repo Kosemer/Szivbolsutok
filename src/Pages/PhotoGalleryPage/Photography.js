@@ -148,13 +148,33 @@ function Photography() {
   useEffect(() => {
     console.log("images:", cartCtx.images);
   }, [cartCtx.images]);
+
+  const [isMobileView, setIsMobileView] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      // Ellenőrizzük az ablak szélességét, hogy meghatározzuk, mobil nézetben vagyunk-e
+      setIsMobileView(window.innerWidth <= 768); // Vagy más értéket állíthatsz be a mobil szélességhez
+    }
+
+    // Az eseménykezelőt hozzáadjuk az ablak méretváltozásához
+    window.addEventListener('resize', handleResize);
+
+    // Kezdeti beállítás
+    handleResize();
+
+    // Az eseménykezelő eltávolítása a komponens unmountolása előtt
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   
   
   return (
     <div className={classes.conatiner}>
       <h2 className={classes.photoTitle}>Galéria</h2>
       <hr className={classes.underline}></hr>
-      <div className={classes.photoFilter}>
+      <div className={isMobileView ? classes.photoFilterMobile : classes.photoFilter}>
         <h2
           onClick={handleAllClick}
           data-selected={cartCtx.selectedFilter === "all"}
@@ -165,7 +185,7 @@ function Photography() {
           onClick={handleHagyomanyosTortakClick}
           data-selected={cartCtx.selectedFilter === "HagyomanyosTortak"}
         >
-          Hagyományos tortak
+          Hagyományos torták
         </h2>
         <h2
           onClick={handleBurkoltTortakClick}
@@ -179,12 +199,7 @@ function Photography() {
         >
           Linzertorták
         </h2>
-        <h2
-          onClick={handleMacaronokClick}
-          data-selected={cartCtx.selectedFilter === "Macaronok"}
-        >
-          Macaronok
-        </h2>
+
         <h2
           onClick={handleHagyomanyosSutemenyekClick}
           data-selected={cartCtx.selectedFilter === "HagyomanyosSutemenyek"}
@@ -196,6 +211,12 @@ function Photography() {
           data-selected={cartCtx.selectedFilter === "MentesSutemenyek"}
         >
           Mentes sütemények
+        </h2>
+        <h2
+          onClick={handleMacaronokClick}
+          data-selected={cartCtx.selectedFilter === "Macaronok"}
+        >
+          Macaronok
         </h2>
         <h2
           onClick={handleFondantFigurakClick}
