@@ -1,5 +1,5 @@
 .conatiner {
-  margin-top: 5rem;
+  margin-top: 3rem;
   margin-bottom: 1rem;
 }
 
@@ -50,8 +50,18 @@ color: #333;
 
 .photoTitle{
   text-align: center;
-  font-family: "Georgia", serif;
-  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Bebas Neue", serif;;
+  font-size: 80px;
+  background-image: url('../../Assets/CakesPicture/splashbackground3.png');
+  background-position: center center;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  height: 40vh;
+  font-weight: 500;
+  color: white;
 }
 
 .underline{

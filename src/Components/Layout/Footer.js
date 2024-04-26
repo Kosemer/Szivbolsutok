@@ -39,6 +39,7 @@ function Footer() {
   return (
     <footer className={classes.footer}>
       <div className={classes.container}>
+        
         <div className={classes.containerContact}>
           <h2>Elérhetőségek</h2>
           <hr className={classes.underline}></hr>

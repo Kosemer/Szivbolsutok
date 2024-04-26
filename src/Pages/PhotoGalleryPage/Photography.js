@@ -89,13 +89,13 @@ function Photography() {
 
   async function fetchAllImages() {
     const folders = [
-      "HagyomanyosTortak",
-      "BurkoltTortak",
-      "Linzertortak",
-      "Macaronok",
-      "HagyomanyosSutemenyek",
-      "MentesSutemenyek",
-      "FondantFigurak",
+      "Gallery/HagyomanyosTortak",
+      "Gallery/BurkoltTortak",
+      "Gallery/Linzertortak",
+      "Gallery/Macaronok",
+      "Gallery/HagyomanyosSutemenyek",
+      "Gallery/MentesSutemenyek",
+      "Gallery/FondantFigurak",
     ];
     const allImageData = [];
     for (let folder of folders) {
@@ -117,31 +117,31 @@ function Photography() {
   };
 
   const handleHagyomanyosTortakClick = () => {
-    fetchImages("HagyomanyosTortak"); 
+    fetchImages("Gallery/HagyomanyosTortak"); 
     cartCtx.setSelectedFilter("HagyomanyosTortak", 20);
   };
   const handleBurkoltTortakClick = () => {
-    fetchImages("BurkoltTortak"); 
+    fetchImages("Gallery/BurkoltTortak"); 
     cartCtx.setSelectedFilter("BurkoltTortak", 20);
   };
   const handleLinzertortakClick = () => {
-    fetchImages("Linzertortak"); 
+    fetchImages("Gallery/Linzertortak"); 
     cartCtx.setSelectedFilter("Linzertortak", 20);
   };
   const handleMacaronokClick = () => {
-    fetchImages("Macaronok"); 
+    fetchImages("Gallery/Macaronok"); 
     cartCtx.setSelectedFilter("Macaronok", 20);
   };
   const handleHagyomanyosSutemenyekClick = () => {
-    fetchImages("HagyomanyosSutemenyek"); 
+    fetchImages("Gallery/HagyomanyosSutemenyek"); 
     cartCtx.setSelectedFilter("HagyomanyosSutemenyek", 20);
   };
   const handleMentesSutemenyekClick = () => {
-    fetchImages("MentesSutemenyek"); 
+    fetchImages("Gallery/MentesSutemenyek"); 
     cartCtx.setSelectedFilter("MentesSutemenyek", 20);
   };
   const handleFondantFigurakClick = () => {
-    fetchImages("FondantFigurak"); 
+    fetchImages("Gallery/FondantFigurak"); 
     cartCtx.setSelectedFilter("FondantFigurak", 20);
   };
 
@@ -175,7 +175,7 @@ function Photography() {
   return (
     <div className={classes.conatiner}>
       <h2 className={classes.photoTitle}>Galéria</h2>
-      <hr className={classes.underline}></hr>
+      {/*<hr className={classes.underline}></hr>*/}
       <div className={isMobileView ? classes.photoFilterMobile : classes.photoFilter}>
         <h2
           onClick={handleAllClick}
