@@ -20,7 +20,7 @@
   cursor: pointer;
   font-family: "Bebas Neue", serif;
   background-color: #FF69B4;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 25px 10px 25px;
   cursor: pointer;
   position: relative;
   border-radius: 20px;
@@ -54,14 +54,16 @@ color: #333;
   align-items: center;
   justify-content: center;
   font-family: "Bebas Neue", serif;;
-  font-size: 90px;
-  background-image: url('../../Assets/CakesPicture/splashbackground3.png');
+  font-size: 70px;
+  background-image: url('../../Assets/CakesPicture/splashbackground4.png');
   background-position: center center;
-  background-size: 40%;
+  background-size: 30%;
   background-repeat: no-repeat;
-  height: 40vh;
+  height: 30vh;
   font-weight: 500;
   color: white;
+  background-color: #333;
+  margin-bottom: 0rem !important;
 }
 
 .underline{
@@ -96,6 +98,7 @@ color: #333;
   /* Háttérszín és szövegszín beállítások: */
   background-color: #FF69B4; /* Eredeti háttérszín */
   color: #333;
+
 }
 
 .photoFilterMobile h2[data-selected="true"] {
