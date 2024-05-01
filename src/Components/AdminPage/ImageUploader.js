@@ -103,6 +103,7 @@ const ImageUploader = ({ setLoggedIn }) => {
       `http://localhost/backend/listImages.php?folder=${cartCtx.selectedFolder}`
     );
     cartCtx.setFolderImages(response.data);
+    (console.log(response.data))
   };
 
   useEffect(() => {
