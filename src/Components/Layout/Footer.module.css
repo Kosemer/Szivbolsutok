@@ -155,6 +155,42 @@ span {
   margin: 0;
 }
 
+.imageBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-width: 50%;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  width: calc(50% - 10px);
+  margin-bottom: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.box img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.h2Title{
+  font-size: 1.8rem;
+  font-family: "Bebas Neue";
+  cursor: pointer;
+}
+
+.instaBox{
+  cursor: pointer;
+}
+
 /* Mobil eszközök (kis képernyő) */
 @media only screen and (max-width: 767px) {
   .container {
@@ -203,6 +239,31 @@ span {
   margin: 0;
   font-size: 12px;
   margin-bottom: .5rem;
+}
+.imageBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.box {
+  width: 100px;
+  height: 200px;
+  width: calc(50% - 15px);
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.box img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
 }
 }
 

@@ -14,11 +14,13 @@ import email from "../../Assets/Icon/email.svg";
 import phone from "../../Assets/Icon/phone.svg";
 import instagram from "../../Assets/SocialIcon/instagram.svg";
 import facebook from "../../Assets/SocialIcon/facebook.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
 
 function Footer() {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+  const [images, setImages] = useState([]);
 
   function handleClickInsta() {
     window.open(
@@ -36,12 +38,73 @@ function Footer() {
     );
   }
 
+  /*Images load*/
+  useEffect(() => {
+    const fetchImages = async () => {
+      const imagesData = await Promise.all([
+        fetchImagesFromFolder("InstagramBox"),
+      ]);
+
+      const combinedImages = imagesData.reduce(
+        (acc, curr) => acc.concat(curr),
+        []
+      );
+      setImages(combinedImages);
+    };
+
+    fetchImages();
+  }, []);
+
+  const fetchImagesFromFolder = async (folder) => {
+    try {
+      const imageData = await ImageDimensions(folder);
+      return imageData.slice(0, 4);
+    } catch (error) {
+      console.error("Hiba a képek lekérése közben", error);
+      return [];
+    }
+  };
+
   return (
     <footer className={classes.footer}>
       <div className={classes.container}>
-        
+        <div className={classes.photoServices}>
+          <h2 className={classes.h2Title}>Szivből sütök</h2>
+          <hr className={classes.underline}></hr>
+          <div className={classes.linkContainer}>
+            <NavLink to="/arak" className={classes.linkText}>
+              Hagyományos torták
+            </NavLink>
+          </div>
+          <div className={classes.linkContainer}>
+            <NavLink to="/arak" className={classes.linkText}>
+              Burkolt torták
+            </NavLink>
+          </div>
+          <div className={classes.linkContainer}>
+            <NavLink to="/arak" className={classes.linkText}>
+              Linzertorták
+            </NavLink>
+          </div>
+          <div className={classes.linkContainer}>
+            <NavLink to="/arak" className={classes.linkText}>
+              Macaronok
+            </NavLink>
+          </div>
+          <div className={classes.linkContainer}>
+            <NavLink to="/arak" className={classes.linkText}>
+              Sütemények
+            </NavLink>
+          </div>
+          <div className={classes.linkContainer}>
+            <NavLink to="/arak" className={classes.linkText}>
+              Fondant figurák
+            </NavLink>
+          </div>
+        </div>
+
         <div className={classes.containerContact}>
-          <h2>Elérhetőségek</h2>
+          <h2 className={classes.h2Title}>Elérhetőségek</h2>
           <hr className={classes.underline}></hr>
 
           <div className={classes.iconContainer} onClick={handleClickInsta}>
@@ -68,71 +131,25 @@ function Footer() {
           </div>
         </div>
 
-        <div className={classes.photoServices}>
-          <h2>Torták</h2>
-          <hr className={classes.underline}></hr>
-          <div className={classes.linkContainer}>
-            <NavLink to="/arak" className={classes.linkText}>
-              Hagyományos torták
-            </NavLink>
-          </div>
-          <div className={classes.linkContainer}>
-            <NavLink to="/arak" className={classes.linkText}>
-            Burkolt torták
-            </NavLink>
-          </div>
-          <div className={classes.linkContainer}>
-            <NavLink to="/arak" className={classes.linkText}>
-              Linzertorták
-            </NavLink>
-          </div>
-          <div className={classes.linkContainer}>
-            <NavLink to="/arak" className={classes.linkText}>
-              Macaronok
-            </NavLink>
-          </div>
-          <div className={classes.linkContainer}>
-            <NavLink to="/arak" className={classes.linkText}>
-              Sütemények
-            </NavLink>
-          </div>
-          <div className={classes.linkContainer}>
-            <NavLink to="/arak" className={classes.linkText}>
-              Fondant figurák
-            </NavLink>
-          </div>
-        </div>
-
-        <div className={classes.pages}>
-          <h2>Szivből sütök</h2>
-          <hr className={classes.underline}></hr>
-          <div className={classes.linkContainer}>
-            <NavLink to="/" className={classes.linkText}>
-              Főoldal
-            </NavLink>
-          </div>
-          <div className={classes.linkContainer}>
-            <NavLink to="/galeria" className={classes.linkText}>
-              Galéria
-            </NavLink>
-          </div>
-          <div className={classes.linkContainer}>
-            <NavLink to="/rolam" className={classes.linkText}>
-              Rólam
-            </NavLink>
-          </div>
-          <div className={classes.linkContainer}>
-            <NavLink to="/kapcsolat" className={classes.linkText}>
-              Kapcsolat
-            </NavLink>
-          </div>
-          <div className={classes.linkContainer}>
-            <NavLink to="/login" className={classes.linkText}>
-              Admin
-            </NavLink>
+        <div>
+          <h2 className={classes.h2Title} onClick={handleClickInsta}>
+            Instagram{" "}
+            <img
+              src={instagram}
+              alt="instagram icon"
+              className={classes.icon}
+            />
+          </h2>
+          <div className={classes.imageBox} onClick={handleClickInsta}>
+            {images.map((image) => (
+              <div key={image.id} className={classes.box}>
+                <img src={image.src} alt={image.alt} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
+
       <hr className={classes.underlineLong}></hr>
       <p className={classes.author}>
         © {currentYear} Szivbolsutok &{" "}
