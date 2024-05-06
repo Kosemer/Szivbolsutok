@@ -24,7 +24,7 @@ function Footer() {
 
   function handleClickInsta() {
     window.open(
-      "https://www.instagram.com/p/Cp-3l-7I0k6/?igshid=MDJmNzVkMjY=",
+      "https://www.instagram.com/szivbol_sutok/",
       "_blank",
       "noopener,noreferrer"
     );
@@ -69,42 +69,54 @@ function Footer() {
     <footer className={classes.footer}>
       <div className={classes.container}>
         <div className={classes.photoServices}>
-          <h2 className={classes.h2Title}>Szivből sütök</h2>
-          <hr className={classes.underline}></hr>
-          <div className={classes.linkContainer}>
-            <NavLink to="/arak" className={classes.linkText}>
-              Hagyományos torták
-            </NavLink>
-          </div>
-          <div className={classes.linkContainer}>
-            <NavLink to="/arak" className={classes.linkText}>
-              Burkolt torták
-            </NavLink>
-          </div>
-          <div className={classes.linkContainer}>
-            <NavLink to="/arak" className={classes.linkText}>
-              Linzertorták
-            </NavLink>
-          </div>
-          <div className={classes.linkContainer}>
-            <NavLink to="/arak" className={classes.linkText}>
-              Macaronok
-            </NavLink>
-          </div>
-          <div className={classes.linkContainer}>
-            <NavLink to="/arak" className={classes.linkText}>
-              Sütemények
-            </NavLink>
-          </div>
-          <div className={classes.linkContainer}>
-            <NavLink to="/arak" className={classes.linkText}>
-              Fondant figurák
-            </NavLink>
+          <h2 className={classes.h2Title}>Torták és sütemények</h2>
+          <div className={classes.links}>
+          
+            <div className={classes.linkBox}>
+            <div className={classes.verticalLine}>
+              <div className={classes.linkContainer}>
+                <NavLink to="/arak" className={classes.linkText}>
+                  Hagyományos torták
+                </NavLink>
+              </div>
+              <div className={classes.linkContainer}>
+                <NavLink to="/arak" className={classes.linkText}>
+                  Burkolt torták
+                </NavLink>
+              </div>
+              <div className={classes.linkContainer}>
+                <NavLink to="/arak" className={classes.linkText}>
+                  Linzertorták
+                </NavLink>
+              </div>
+              </div>
+            </div>
+
+            <div className={classes.linkBox}>
+            <div className={classes.verticalLine}>
+              <div className={classes.linkContainer}>
+                <NavLink to="/arak" className={classes.linkText}>
+                  Macaronok
+                </NavLink>
+              </div>
+              <div className={classes.linkContainer}>
+                <NavLink to="/arak" className={classes.linkText}>
+                  Sütemények
+                </NavLink>
+              </div>
+              <div className={classes.linkContainer}>
+                <NavLink to="/arak" className={classes.linkText}>
+                  Fondant figurák
+                </NavLink>
+              </div>
+              </div>
+            </div>
           </div>
         </div>
 
+
         <div className={classes.containerContact}>
-          <h2 className={classes.h2Title}>Elérhetőségek</h2>
+          <h2 className={classes.h2Title}>Szivből sütök</h2>
           <hr className={classes.underline}></hr>
 
           <div className={classes.iconContainer} onClick={handleClickInsta}>
@@ -132,7 +144,7 @@ function Footer() {
         </div>
 
         <div>
-          <h2 className={classes.h2Title} onClick={handleClickInsta}>
+          <h2 className={classes.h2TitleInsta} onClick={handleClickInsta}>
             Instagram{" "}
             <img
               src={instagram}

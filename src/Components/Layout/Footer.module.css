@@ -25,19 +25,27 @@
   filter: invert(1);
 }
 
+.photoServices {
+  display: flex;
+  flex-direction: column; /* Helyezze az elemeket oszlopcsúlyosan */
+  align-items: flex-start; /* Az elemeket az oszlop kezdetére igazítja */
+}
+
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
 }
+
 
 .containerContact,
 .photoServices,
 .pages
  {
-  flex-basis: 33.33%;
-  max-width: 33.33%;
+ 
+  max-width: 50%;
 }
+
 
 .photoServices a,
 .pages a {
@@ -47,7 +55,8 @@
 }
 
 .linkContainer {
-  margin: 15px 0;
+  margin: 0px 0;
+  display: flex;
 }
 
 .linkContainer a{
@@ -185,11 +194,38 @@ span {
   font-size: 1.8rem;
   font-family: "Bebas Neue";
   cursor: pointer;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.h2TitleInsta{
+  font-size: 1.8rem;
+  font-family: "Bebas Neue";
+  cursor: pointer;
+  margin-top: 0;
 }
 
 .instaBox{
   cursor: pointer;
 }
+
+.links {
+  display: flex;
+  justify-content: space-between; /* Az elemeket szétfeszíti az elérhető helyen */
+  flex-wrap: wrap; 
+  align-items: stretch; /* Az elemeket feszíti a közös szülőelem magasságához */
+}
+
+
+
+.verticalLine {
+  border-left: 2px solid #ff000080; 
+  height: 100%; /* A függőleges vonal magasságának beállítása a linkBox méretére */
+  margin-right: 5rem; 
+  padding-left: 1rem;
+}
+
+
 
 /* Mobil eszközök (kis képernyő) */
 @media only screen and (max-width: 767px) {
@@ -251,7 +287,7 @@ span {
 
 .box {
   width: 100px;
-  height: 200px;
+  height: 150px;
   width: calc(50% - 15px);
   margin-bottom: 10px;
   position: relative;
