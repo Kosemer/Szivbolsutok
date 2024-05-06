@@ -17,6 +17,7 @@ import facebook from "../../Assets/SocialIcon/facebook.svg";
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
+import footerLogo from "../../Assets/footerLogo/szivbolLogo.png"
 
 function Footer() {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
@@ -117,30 +118,10 @@ function Footer() {
 
         <div className={classes.containerContact}>
           <h2 className={classes.h2Title}>Szivből sütök</h2>
-          <hr className={classes.underline}></hr>
 
-          <div className={classes.iconContainer} onClick={handleClickInsta}>
-            <img
-              src={instagram}
-              alt="instagram icon"
-              className={classes.icon}
-            />
-            <p className={classes.iconText}>Instagram</p>
-          </div>
+          <img src={footerLogo} alt="footerLogo" className={classes.footerLogo} />
 
-          <div className={classes.iconContainer} onClick={handleClickFace}>
-            <img src={facebook} alt="facebook icon" className={classes.icon} />
-            <p className={classes.iconText}>Facebook</p>
-          </div>
-
-          <div className={classes.emailContainer}>
-            <img src={email} alt="E-mail" className={classes.icon} />
-            <div className={classes.email}>
-              <span>szivbolsutok</span>
-              <span>@</span>
-              <span>gmail.com</span>
-            </div>
-          </div>
+          
         </div>
 
         <div>
