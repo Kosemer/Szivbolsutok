@@ -35,6 +35,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  margin-bottom: 2rem;
 }
 
 
@@ -96,12 +97,7 @@ a {
 
 /*sfddgfgfdhhdghg*/
 
-.containerContact {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+
 
 .icon {
   width: 30px;
@@ -194,6 +190,13 @@ span {
   font-family: "Bebas Neue";
   cursor: pointer;
   margin-top: 0;
+  margin-bottom: 4rem;
+}
+
+.h2TitleLogo{
+  font-size: 1.8rem;
+  font-family: "Bebas Neue";
+  cursor: pointer;
   margin-bottom: 2rem;
 }
 
@@ -224,6 +227,10 @@ span {
   padding-left: 1rem;
 }
 
+.footerLogo {
+  width: 200px; 
+  height: auto; 
+}
 
 
 /* Mobil eszközök (kis képernyő) */
@@ -243,6 +250,7 @@ span {
     padding: 0rem;
     padding-left: 0rem;
     margin-right: 0px;
+    margin-bottom: 3rem;
   }
   .emailContainer {
     flex-direction: column;
@@ -299,6 +307,79 @@ span {
   height: 100%;
   object-fit: cover;
   cursor: pointer;
+}
+.footerLogo {
+  width: 60%; 
+  height: auto; 
+}
+.verticalLine {
+  border-left: 0px solid #ff000080; 
+  height: 100%; /* A függőleges vonal magasságának beállítása a linkBox méretére */
+  margin-right: 1rem; 
+  padding-left: 1rem;
+}
+
+.linkContainer {
+  margin: 0px 0;
+  display: block;
+  line-height: 3.5rem;
+}
+.linkContainer a{
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.photoServices {
+  align-items: center; /* Az elemeket az oszlop kezdetére igazítja */
+}
+.links {
+  display: flex;
+  justify-content: center; /* Középre igazítás vízszintesen */
+  margin-bottom: 3rem;
+}
+.h2Title{
+  font-size: 1.8rem;
+  font-family: "Bebas Neue";
+  cursor: pointer;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.h2Title::after{
+  content: ''; /* Tartalom hozzáadása a ::after pszeudo-elemhez */
+  position: absolute; /* Abszolút pozíció beállítása a szülőhöz képest */
+  bottom: -5px; /* Az alsó részhez való illesztés */
+  left: 0; /* Balra igazítás */
+  width: 100%; /* Teljes szélességű vonal */
+  height: 2px; /* Vonal magassága */
+  background-color: red; /* Vonal színe */
+}
+.h2TitleLogo::after,
+.h2TitleInsta::after {
+  content: ''; /* Tartalom hozzáadása a ::after pszeudo-elemhez */
+  position: absolute; /* Abszolút pozíció beállítása a szülőhöz képest */
+  bottom: -5px; /* Az alsó részhez való illesztés */
+  width: 50%; /* Teljes szélességű vonal */
+  left: 0;
+  right: 0;
+  height: 2px; /* Vonal magassága */
+  background-color: red; /* Vonal színe */
+}
+
+.h2TitleLogo{
+  font-size: 1.8rem;
+  font-family: "Bebas Neue";
+  cursor: pointer;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.h2TitleInsta{
+  font-size: 1.8rem;
+  font-family: "Bebas Neue";
+  cursor: pointer;
+  margin-top: 0;
+  position: relative;
 }
 }
 

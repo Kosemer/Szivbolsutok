@@ -17,7 +17,7 @@ import facebook from "../../Assets/SocialIcon/facebook.svg";
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
-import footerLogo from "../../Assets/footerLogo/szivbolLogo.png"
+import footerLogo from "../../Assets/footerLogo/logoMenu2.png"
 
 function Footer() {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
@@ -117,7 +117,7 @@ function Footer() {
 
 
         <div className={classes.containerContact}>
-          <h2 className={classes.h2Title}>Szivből sütök</h2>
+          <h2 className={classes.h2TitleLogo}>Szivből sütök</h2>
 
           <img src={footerLogo} alt="footerLogo" className={classes.footerLogo} />
 
