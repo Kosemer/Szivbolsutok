@@ -26,26 +26,18 @@
 }
 
 .photoServices {
-  display: flex;
-  flex-direction: column; /* Helyezze az elemeket oszlopcsúlyosan */
-  align-items: flex-start; /* Az elemeket az oszlop kezdetére igazítja */
+    display: flex;
+    flex-direction: column; /* Helyezze az elemeket oszlopcsúlyosan */
+    align-items: flex-start; /* Az elemeket az oszlop kezdetére igazítja */
 }
 
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
   margin-bottom: 2rem;
 }
 
-
-.containerContact,
-.photoServices,
-.pages
- {
- 
-  max-width: 50%;
-}
 
 
 .photoServices a,
@@ -71,7 +63,7 @@
 .pages a:hover {
   color: #ffffff;
   text-decoration: none;
-  color: #4169e1;
+  color: #FF69B4;
   font-weight: 600;
 }
 
@@ -164,7 +156,7 @@ span {
   flex-wrap: wrap;
   justify-content: space-evenly;
   max-width: 50%;
-  margin: 0 auto;
+
   margin-top: 1rem;
 }
 
@@ -191,6 +183,27 @@ span {
   cursor: pointer;
   margin-top: 0;
   margin-bottom: 4rem;
+  position: relative;
+}
+.h2Title::after{
+  content: ''; /* Tartalom hozzáadása a ::after pszeudo-elemhez */
+  position: absolute; /* Abszolút pozíció beállítása a szülőhöz képest */
+  bottom: -5px; /* Az alsó részhez való illesztés */
+  left: 0; /* Balra igazítás */
+  width: 100%; /* Teljes szélességű vonal */
+  height: 2px; /* Vonal magassága */
+  background-color: #FF69B4; /* Vonal színe */
+}
+.h2TitleLogo::after,
+.h2TitleInsta::after {
+  content: ''; /* Tartalom hozzáadása a ::after pszeudo-elemhez */
+  position: absolute; /* Abszolút pozíció beállítása a szülőhöz képest */
+  bottom: -5px; /* Az alsó részhez való illesztés */
+  width: 100%; /* Teljes szélességű vonal */
+  left: 0;
+  right: 0;
+  height: 2px; /* Vonal magassága */
+  background-color: #FF69B4; /* Vonal színe */
 }
 
 .h2TitleLogo{
@@ -198,6 +211,7 @@ span {
   font-family: "Bebas Neue";
   cursor: pointer;
   margin-bottom: 2rem;
+  position: relative;
 }
 
 .h2TitleInsta{
@@ -205,6 +219,7 @@ span {
   font-family: "Bebas Neue";
   cursor: pointer;
   margin-top: 0;
+  position: relative;
 }
 
 .instaBox{
@@ -232,6 +247,18 @@ span {
   height: auto; 
 }
 
+.containerInsta{
+  display: flex;
+  flex-direction: column; /* Helyezze az elemeket oszlopcsúlyosan */
+  align-items: flex-end; /* Az elemeket az oszlop kezdetére igazítja */
+}
+
+.containerContact{
+  display: flex;
+  flex-direction: column; /* Helyezze az elemeket oszlopcsúlyosan */
+  align-items: center; /* Az elemeket az oszlop kezdetére igazítja */
+}
+
 
 /* Mobil eszközök (kis képernyő) */
 @media only screen and (max-width: 767px) {
@@ -251,6 +278,14 @@ span {
     padding-left: 0rem;
     margin-right: 0px;
     margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column; /* Helyezze az elemeket oszlopcsúlyosan */
+    align-items: center; /* Az elemeket az oszlop kezdetére igazítja */
+  }
+  .containerInsta{
+    display: flex;
+    flex-direction: column; /* Helyezze az elemeket oszlopcsúlyosan */
+    align-items: center; /* Az elemeket az oszlop kezdetére igazítja */
   }
   .emailContainer {
     flex-direction: column;
@@ -270,6 +305,7 @@ span {
     align-items: center;
     margin-bottom: 2rem;
   }
+ 
   .containerContact,
   .photoServices,
   .pages {
@@ -283,15 +319,6 @@ span {
   font-size: 12px;
   margin-bottom: .5rem;
 }
-.imageBox {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  max-width: 100%;
-  margin: 0 auto;
-  margin-top: 1rem;
-}
-
 .box {
   width: 100px;
   height: 150px;
@@ -345,26 +372,7 @@ span {
   margin-bottom: 2rem;
   position: relative;
 }
-.h2Title::after{
-  content: ''; /* Tartalom hozzáadása a ::after pszeudo-elemhez */
-  position: absolute; /* Abszolút pozíció beállítása a szülőhöz képest */
-  bottom: -5px; /* Az alsó részhez való illesztés */
-  left: 0; /* Balra igazítás */
-  width: 100%; /* Teljes szélességű vonal */
-  height: 2px; /* Vonal magassága */
-  background-color: red; /* Vonal színe */
-}
-.h2TitleLogo::after,
-.h2TitleInsta::after {
-  content: ''; /* Tartalom hozzáadása a ::after pszeudo-elemhez */
-  position: absolute; /* Abszolút pozíció beállítása a szülőhöz képest */
-  bottom: -5px; /* Az alsó részhez való illesztés */
-  width: 50%; /* Teljes szélességű vonal */
-  left: 0;
-  right: 0;
-  height: 2px; /* Vonal magassága */
-  background-color: red; /* Vonal színe */
-}
+
 
 .h2TitleLogo{
   font-size: 1.8rem;
@@ -381,17 +389,66 @@ span {
   margin-top: 0;
   position: relative;
 }
+.imageBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-width: 100%;
+
+  margin-top: 1rem;
+}
 }
 
 /* Tablet eszközök (közepes képernyő) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .container {
-    margin: 0px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 
   .containerContact,
+.photoServices,
+.containerInsta {
+  flex-basis: 33.33%;
+  max-width: 33.33%;
+}
+
+.links {
+  display: flex;
+  justify-content: center; /* Középre igazítás vízszintesen */
+  margin-bottom: 3rem;
+}
+
+.linkContainer {
+  margin: 0px 0;
+  display: block;
+  line-height: 2.5rem;
+}
+
+.photoServices {
+  align-items: center; /* Az elemeket az oszlop kezdetére igazítja */
+}
+
+.h2Title{
+  font-size: 1.8rem;
+  font-family: "Bebas Neue";
+  cursor: pointer;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-bottom: 0rem;
+}
+
+  .containerContact,
   .photoServices,
-  .pages {
+  .containerInsta {
     margin: 1rem 0;
   }
   .containerContact {
@@ -415,20 +472,141 @@ span {
     align-items: center;
     margin-bottom: 2rem;
   }
+  .imageBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    max-width: 100%;
+
+    margin-top: 1rem;
+  }
+  .box {
+    width: auto;
+    height: 100px;
+    width: calc(50% - 15px);
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  .verticalLine {
+    border-left: 0px solid #FF69B4; 
+    height: 100%; /* A függőleges vonal magasságának beállítása a linkBox méretére */
+    margin-right: 1rem; 
+    padding-left: 1rem;
+  }
 }
 
 /* Kisebb asztali és laptop kijelzők */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .container {
-    padding: 2rem;
-  }
-  .iconText {
-    margin: 0;
-    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 
+  .containerContact,
+.photoServices,
+.containerInsta {
+  flex-basis: 33.33%;
+  max-width: 33.33%;
+}
+
+.links {
+  display: flex;
+  flex-direction: column; /* Oszlopba rendezés */
+  align-items: center; /* Középre igazítás függőlegesen */
+  margin-bottom: 3rem;
+}
+
+.linkContainer {
+  margin: 0px 0;
+  display: block;
+  line-height: 2.5rem;
+}
+
+.photoServices {
+  align-items: center; /* Az elemeket az oszlop kezdetére igazítja */
+}
+
+.h2Title{
+  font-size: 1.8rem;
+  font-family: "Bebas Neue";
+  cursor: pointer;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-bottom: 0rem;
+}
+
+  .containerContact,
+  .photoServices,
+  .containerInsta {
+    margin: 1rem 0;
+  }
+  .containerContact {
+    padding: 0rem;
+    padding-left: 0rem;
+    margin-right: 0px;
+  }
   .emailContainer {
-    margin-right: 20px;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .icon {
+    margin-bottom: 0rem;
+  }
+
+  .email {
+    text-align: center;
+  }
+  .iconContainer {
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  .imageBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    max-width: 100%;
+
+    margin-top: 1rem;
+  }
+  .box {
+    width: auto;
+    height: 100px;
+    width: calc(50% - 15px);
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  .verticalLine {
+    border-left: 0px solid #FF69B4; 
+    height: 100%; /* A függőleges vonal magasságának beállítása a linkBox méretére */
+    margin-right: 1rem; 
+    padding-left: 1rem;
   }
 }
 

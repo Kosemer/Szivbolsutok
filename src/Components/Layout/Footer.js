@@ -124,7 +124,7 @@ function Footer() {
           
         </div>
 
-        <div>
+        <div className={classes.containerInsta}>
           <h2 className={classes.h2TitleInsta} onClick={handleClickInsta}>
             Instagram{" "}
             <img
@@ -145,11 +145,11 @@ function Footer() {
 
       <hr className={classes.underlineLong}></hr>
       <p className={classes.author}>
-        © {currentYear} Szivbolsutok &{" "}
+        © {currentYear} Szívből sütök &{" "}
         <a
           href="https://www.frontweb.hu"
           style={{
-            color: "#4169e1",
+            color: "#FF69B4",
             textDecoration: "none",
             fontWeight: "bold",
           }}
