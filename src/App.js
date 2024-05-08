@@ -13,6 +13,7 @@ import ContactForm from "./Components/ContactForm/ContactFrom";
 import ScrollToTopButton from "./Components/ScrollToTopButton/ScrollToTopButton";
 import ImageUploader from "../src/Components/AdminPage/ImageUploader";
 import LoginForm from "./Components/AdminPage/LoginForm";
+import CurtainGallery from "./Components/PhotoGallery/CurtainGallery"
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         <Header></Header>
         <Routes>
           <Route exact path="/" element={<Home></Home>}></Route>
-          <Route path="/galeria" element={<Photography></Photography>}></Route>
+          {/*<Route path="/galeria" element={<Photography></Photography>}></Route>*/}
+          <Route path="/galeria" element={<CurtainGallery></CurtainGallery>}></Route>
           <Route path="/rolam" element={<AboutMe></AboutMe>}></Route>
           <Route
             path="/kapcsolat"
