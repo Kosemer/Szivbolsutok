@@ -6,7 +6,7 @@ import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
 import { useNavigate } from 'react-router-dom';
 import PhotoGallery from "./PhotoGallery";
 
-const CurtainMenu = () => {
+const CurtainGallery = () => {
   const cartCtx = useContext(CartContext);
   const navigate = useNavigate();
 
@@ -125,4 +125,4 @@ const CurtainMenu = () => {
   );
 };
 
-export default CurtainMenu;
+export default CurtainGallery;
