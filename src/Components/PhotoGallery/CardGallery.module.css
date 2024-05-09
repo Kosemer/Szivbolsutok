@@ -217,12 +217,14 @@
         justify-content: center;
         height: 40px;
         line-height: 25px;
+
     }
     .cardContainer{
         margin-top: 0rem;
         padding-left: 0px;
         padding-right: 0px;
         margin-bottom: 0rem;
+        margin-top: 1rem;
     }
     .cardTextNext{
         font-family: "Bebas Neue", sans-serif;
@@ -231,9 +233,14 @@
         align-items: center;
         justify-content: center;
         height: 20px;
+
     }
     .cardBodyNext{
         color: rgba(255, 0, 0, 0.5);
         font-size: 1.5rem;
+        border: none;
     }   
+    .cardBody{
+        padding: 5px;
+    }
   }

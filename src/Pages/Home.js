@@ -13,6 +13,7 @@ import linzerTortak from "../Assets/CategorySection/almas3.png";
 import macaronok from "../Assets/CategorySection/foMacaron2.png";
 import fondantFigurak from "../Assets/CategorySection/Skye-mancs orjarat.png";
 import mentesSutemenyek from "../Assets/CategorySection/mindenmentes_csokis_epres_torta2.png";
+import ParalaxSection from "../Components/ParallaxIntroductorySection/ParalaxSection";
 
 function Home() {
   useEffect(() => {
@@ -22,7 +23,7 @@ function Home() {
   return (
     <div>
       {/*<Slider></Slider>*/}
-      <IntroductorySection></IntroductorySection>
+      <ParalaxSection></ParalaxSection>
 
       <div>
         <div className={classes.section}>

@@ -149,41 +149,41 @@
     margin: 0 10px 20px 10px;
     position: relative;
   }
+  .box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease-in-out;
+    cursor: pointer;
+    filter: brightness(0.6);
+  }
+  
+  .box:hover img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease-in-out;
+    cursor: pointer;
+    filter: brightness(0.9);
+  }
+  
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 1.7rem;
+    font-family: "Bebas Neue", serif;
+    color: #fff;
+    text-shadow: 1px 1px #000;
+    transition: font-size 0.3s ease-in-out;
+    cursor: pointer;
+  }
 }
 
-.box img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s ease-in-out;
-  cursor: pointer;
-  filter: brightness(0.6);
-}
-
-.box:hover img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s ease-in-out;
-  cursor: pointer;
-  filter: brightness(0.9);
-}
-
-.text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  font-size: 1.7rem;
-  font-family: "Bebas Neue", serif;
-  color: #fff;
-  text-shadow: 1px 1px #000;
-  transition: font-size 0.3s ease-in-out;
-  cursor: pointer;
-}
 
 
 /* Nagy készülékek (asztali gépek, 992px és 1199px között) */
@@ -198,5 +198,53 @@
 
 /* Extra nagy készülékek (asztali gépek, 1601px és afölött) */
 @media (min-width: 1601px) {
+  .box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease-in-out;
+    cursor: pointer;
+    filter: brightness(0.6);
+  }
   
+  .box:hover img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease-in-out;
+    cursor: pointer;
+    filter: brightness(0.9);
+  }
+  
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: "Bebas Neue", serif;
+    color: #fff;
+    text-shadow: 1px 1px #000;
+    transition: font-size 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  .box {
+    width: 250px;
+    height: 350px;
+    width: calc(25% - 20px);
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 4rem;
+  }
 }

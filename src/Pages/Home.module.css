@@ -160,7 +160,10 @@
 
 /* Extra nagy készülékek (asztali gépek, 1601px és afölött) */
 @media (min-width: 1601px) {
- 
+  .section{
+    height: auto;
+    margin-top: 4rem;
+  }
 }
   
   
