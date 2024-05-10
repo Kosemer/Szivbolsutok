@@ -31,6 +31,7 @@ const CardGallery = ({ categories }) => {
   
     navigate("/galeria", { state: { filter: categories } });
   };
+  
 
   return (
     <Container className={classes.cardContainer}>
