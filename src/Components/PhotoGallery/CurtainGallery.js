@@ -1,12 +1,12 @@
 import React, { useState, useContext, useEffect } from "react";
-import styles from "../Layout/CurtainMenu.module.css";
+import styles from "./CurtainGallery.module.css"
 import CartContext from "../Store/cart-context";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
 import { useNavigate } from 'react-router-dom';
 import PhotoGallery from "./PhotoGallery";
 
-const CurtainGallery = () => {
+const CurtainGallery = (category) => {
   const cartCtx = useContext(CartContext);
   const navigate = useNavigate();
 
@@ -15,19 +15,19 @@ const CurtainGallery = () => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    if (cartCtx.menuIsOpen) {
+    if (cartCtx.galleryIsOpen) {
       setOverlayClass(`${styles.overlay} ${styles.overlayOpen}`);
     } else {
       setOverlayClass(`${styles.overlay} ${styles.overlayClose}`);
     }
-  }, [cartCtx.menuIsOpen]);
+  }, [cartCtx.galleryIsOpen]);
 
   const openNav = () => {
-    cartCtx.setMenuIsOpen(true);
+    cartCtx.setGalleryIsOpen(true);
   };
 
   const closeNav = () => {
-    cartCtx.setMenuIsOpen(false);
+    cartCtx.setGalleryIsOpen(false);
   };
 
   const handleMouseEnter = (index) => {
@@ -42,7 +42,7 @@ const CurtainGallery = () => {
   useEffect(() => {
     const fetchImages = async () => {
       const imagesData = await Promise.all([
-        fetchImagesFromFolder("BurkoltTortak"),
+        fetchImagesFromFolder("Gallery/BurkoltTortak"),
       ]);
 
       const combinedImages = imagesData.reduce(
@@ -50,7 +50,7 @@ const CurtainGallery = () => {
         []
       );
       setImages(combinedImages);
-      console.log(images)
+      console.log(category)
     };
 
     fetchImages();
@@ -71,7 +71,7 @@ const CurtainGallery = () => {
   /*If the menu is open you cannot scroll the page*/
   useEffect(() => {
     const body = document.body;
-    if (cartCtx.menuIsOpen) {
+    if (cartCtx.galleryIsOpen) {
       // Ha a menü nyitva van, letiltjuk a görgetést
       body.style.overflow = "hidden";
     } else {
@@ -83,7 +83,7 @@ const CurtainGallery = () => {
     return () => {
       body.style.overflow = "auto";
     };
-  }, [cartCtx.menuIsOpen]);
+  }, [cartCtx.galleryIsOpen]);
   /*If the menu is open you cannot scroll the page*/
 
 
@@ -115,8 +115,11 @@ const CurtainGallery = () => {
   return (
     <div>
       <div id="myNav" className={overlayClass} onClick={closeNav}>
+      <a href="javascript:void(0)" class={styles.closebtn} onclick="closeNav()">&times;</a>
+        <div>
         <div className={styles.container}>
         <PhotoGallery images={images}></PhotoGallery>
+        </div>
         </div>
       </div>
 

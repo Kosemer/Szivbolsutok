@@ -2,7 +2,8 @@ import OptionalPhotoshoots from "../Components/UI/GoToGallery/OptionalPhotoshoot
 import Slider from "../Components/UI/Slider/Slider";
 import classes from "./Home.module.css";
 import OpinionSwiperCard from "../Components/UI/OpinionSwiper/OpinionSwiperCard";
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
+import CartContext from "../Components/Store/cart-context";
 import DesktopSlider from "../Components/UI/OpinionSwiper/DesktopSlider";
 import CardGallery from "../Components/PhotoGallery/CardGallery";
 import CategorySection from "../Components/PhotoGallery/CategorySection";
@@ -16,6 +17,9 @@ import mentesSutemenyek from "../Assets/CategorySection/mindenmentes_csokis_epre
 import ParalaxSection from "../Components/ParallaxIntroductorySection/ParalaxSection";
 
 function Home() {
+  const cartCtx = useContext(CartContext);
+
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

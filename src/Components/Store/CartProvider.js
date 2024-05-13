@@ -11,6 +11,10 @@ function CartProvider(props) {
 
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
+  const [galleryIsOpen, setGalleryIsOpen] = useState(false);
+
+  const [category, setCategory] = useState([]);
+
   const [lastFilter, setLastFilter] = useState(null);
 
   const [images, setImages] = useState([]);
@@ -144,7 +148,11 @@ function CartProvider(props) {
     images: images,
     setImages: setImages,
     menuIsOpen: menuIsOpen,
-    setMenuIsOpen: setMenuIsOpen
+    setMenuIsOpen: setMenuIsOpen,
+    galleryIsOpen: galleryIsOpen,
+    setGalleryIsOpen: setGalleryIsOpen,
+    category: category,
+    setCategory: setCategory,
   };
 
   return (
