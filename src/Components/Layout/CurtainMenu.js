@@ -9,7 +9,6 @@ const CurtainMenu = () => {
   const cartCtx = useContext(CartContext);
   const navigate = useNavigate();
 
-  const [hoveredImageIndex, setHoveredImageIndex] = useState(null);
   const [overlayClass, setOverlayClass] = useState(styles.overlay);
   const [images, setImages] = useState([]);
 
@@ -27,14 +26,6 @@ const CurtainMenu = () => {
 
   const closeNav = () => {
     cartCtx.setMenuIsOpen(false);
-  };
-
-  const handleMouseEnter = (index) => {
-    setHoveredImageIndex(index);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredImageIndex(null);
   };
 
   /*Images load*/

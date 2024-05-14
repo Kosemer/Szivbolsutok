@@ -10,7 +10,6 @@ const CurtainGallery = ({category}) => {
   const cartCtx = useContext(CartContext);
   const navigate = useNavigate();
 
-  const [hoveredImageIndex, setHoveredImageIndex] = useState(null);
   const [overlayClass, setOverlayClass] = useState(styles.overlay);
   const [images, setImages] = useState([]);
 
@@ -28,14 +27,6 @@ const CurtainGallery = ({category}) => {
 
   const closeNav = () => {
     cartCtx.setGalleryIsOpen(false);
-  };
-
-  const handleMouseEnter = (index) => {
-    setHoveredImageIndex(index);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredImageIndex(null);
   };
 
   /*Images load*/
@@ -59,7 +50,7 @@ const CurtainGallery = ({category}) => {
     try {
       const imageData = await ImageDimensions(folder);
       console.log(imageData)
-      return imageData.slice(0, 7); // Change 3 to the number of images you want to display from each folder
+      return imageData;
     } catch (error) {
       console.error("Hiba a képek lekérése közben", error);
       return [];
@@ -86,35 +77,11 @@ const CurtainGallery = ({category}) => {
   /*If the menu is open you cannot scroll the page*/
 
 
-  /*Navigation to the gallery.*/
-  const onImageClickHandler = (image) => {
-    const removeAccents = (str) => {
-      return str
-        .normalize("NFD") // Normalizáljuk a karaktereket Unicode formára
-        .replace(/[\u0300-\u036f]/g, ""); // Kicseréljük az ékezetes karaktereket ékezet nélküli változataikra
-    };
-  
-    const capitalizeFirstLetter = (word) => {
-      return word.charAt(0).toUpperCase() + word.slice(1);
-    };
-  
-    let filteredTitle = ""; // Változó létrehozása a szűrt cím tárolásához
-    filteredTitle = removeAccents(image.title.split(".")[0]); // Szűrt cím tárolása a változóban
-    const words = filteredTitle.split(" "); // Szavakra bontjuk a címet szóköz mentén
-    const capitalizedWords = words.map((word) => capitalizeFirstLetter(word)); // Minden szót nagybetűvel kezdünk
-    const joinedTitle = capitalizedWords.join(""); // Egyesítjük a szavakat egybe
-    console.log(joinedTitle);
-  
-    navigate("/galeria", { state: { filter: joinedTitle } });
-  };
-    /*Navigation to the gallery.*/
-
-
   
   return (
     <div>
       <div id="myNav" className={overlayClass} onClick={closeNav}>
-      <a href="javascript:void(0)" class={styles.closebtn} onclick="closeNav()">&times;</a>
+      <a href="javascript:void(0)" class={styles.closebtn} onClick={closeNav}>&times;</a>
         <div>
         <div className={styles.container}>
         <PhotoGallery images={images}></PhotoGallery>
