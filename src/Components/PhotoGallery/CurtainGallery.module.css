@@ -5,10 +5,16 @@
     z-index: 10;
     left: 0;
     top: 3rem;
-    background-color: rgba(0, 0, 0, 0.5);
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(10.2px);
+-webkit-backdrop-filter: blur(10.2px);
     transition: height 0.5s ease;
     overflow: auto;
   }
+  
   
   .overlayOpen {
     height: 100%;

@@ -15,6 +15,7 @@ import macaronok from "../Assets/CategorySection/foMacaron2.png";
 import fondantFigurak from "../Assets/CategorySection/Skye-mancs orjarat.png";
 import mentesSutemenyek from "../Assets/CategorySection/mindenmentes_csokis_epres_torta2.png";
 import ParalaxSection from "../Components/ParallaxIntroductorySection/ParalaxSection";
+import CurtainGallery from "../Components/PhotoGallery/CurtainGallery";
 
 function Home() {
   const cartCtx = useContext(CartContext);

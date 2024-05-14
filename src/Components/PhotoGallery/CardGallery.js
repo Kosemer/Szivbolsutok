@@ -41,9 +41,9 @@ const CardGallery = ({ categories }) => {
 
   return (
 <div>
-      {cartCtx.galleryIsOpen ? ( // Ellenőrizd, hogy a galeriaIsOpen értéke true vagy false
-        <CurtainGallery /> // Ha true, akkor jelenítsd meg a CurtainGallery komponenst
-      ) : (
+
+<CurtainGallery></CurtainGallery>
+
         <Container className={classes.cardContainer}> {/* Ha false, akkor jelenítsd meg a Container komponenst */}
           <Row className={classes.rowContainer}>
             {images.map((image, index) => (
@@ -92,7 +92,7 @@ const CardGallery = ({ categories }) => {
             </Col>
           </Row>
         </Container>
-      )}
+
     </div>
   );
 };
