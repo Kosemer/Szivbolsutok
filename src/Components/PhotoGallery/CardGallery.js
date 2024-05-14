@@ -13,8 +13,6 @@ const CardGallery = ({ categories }) => {
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
 
-  const [category, setCategory] = useState([]);
-
   useEffect(() => {
     const fetchImages = async () => {
       try {
@@ -30,12 +28,14 @@ const CardGallery = ({ categories }) => {
     fetchImages();
   }, [categories]);
 
-  console.log(categories)
+
 
 
   const onImageClickHandler = () => {
+    cartCtx.setCategory(categories)
     cartCtx.setGalleryIsOpen(!cartCtx.galleryIsOpen)
     //navigate("/galeria", { state: { filter: categories } });
+    console.log(categories)
   };
   
 

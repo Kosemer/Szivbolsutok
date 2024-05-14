@@ -6,7 +6,7 @@ import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
 import { useNavigate } from 'react-router-dom';
 import PhotoGallery from "./PhotoGallery";
 
-const CurtainGallery = (category) => {
+const CurtainGallery = ({category}) => {
   const cartCtx = useContext(CartContext);
   const navigate = useNavigate();
 
@@ -42,7 +42,7 @@ const CurtainGallery = (category) => {
   useEffect(() => {
     const fetchImages = async () => {
       const imagesData = await Promise.all([
-        fetchImagesFromFolder("Gallery/BurkoltTortak"),
+        fetchImagesFromFolder(`Gallery/${cartCtx.category}`),
       ]);
 
       const combinedImages = imagesData.reduce(
@@ -50,7 +50,6 @@ const CurtainGallery = (category) => {
         []
       );
       setImages(combinedImages);
-      console.log(category)
     };
 
     fetchImages();
