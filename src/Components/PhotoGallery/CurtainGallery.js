@@ -76,9 +76,12 @@ const CurtainGallery = ({category}) => {
     <div>
       
       <div id="myNav" className={overlayClass} onClick={closeNav}>
+        <div className={styles.categoryTitle}>
+        <h1 className={styles.categoryH1}>{cartCtx.categoriesName}</h1>
+        </div>
       <a href="javascript:void(0)" class={styles.closebtn} onClick={closeNav}>&times;</a>
         <div>
-        <h1 className={styles.categoryTitle}>{cartCtx.categoriesName}</h1>
+        
         <div className={styles.container}>
         <PhotoGallery images={images}></PhotoGallery>
         </div>

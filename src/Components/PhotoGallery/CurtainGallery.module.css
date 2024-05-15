@@ -12,6 +12,7 @@ backdrop-filter: blur(5.4px);
 -webkit-backdrop-filter: blur(5.4px);
     transition: height 0.5s ease;
     overflow: auto;
+    text-align: center;
   }
   
   
@@ -36,7 +37,7 @@ backdrop-filter: blur(5.4px);
     
     /* When you mouse over the navigation links, change their color */
     .overlay a:hover, .overlay a:focus {
-      color: rgba(255, 0, 0, 0.5);
+      color: rgb(255, 105, 180);
     }
     
     /* Position the close button (top right corner) */
@@ -66,8 +67,17 @@ backdrop-filter: blur(5.4px);
     .categoryTitle{
         text-align: center;
         color: #f1f1f1;
-        margin-top: 2rem;
-        background-color: #000;
+        background-color: rgb(255, 105, 180);
+        display: inline-block;
+        padding: 10px;
+        border-radius: 0 0 10px 10px;
+        
+    }
+
+    .categoryH1{
+        font-size: 2.5rem;
+        font-family: "Bebas Neue", sans-serif;
+        margin-bottom: 0rem;
     }
   
     /* Extra kicsi készülékek (telefonok, 576px és alatt) */
