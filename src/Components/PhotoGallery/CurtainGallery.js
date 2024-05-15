@@ -32,19 +32,13 @@ const CurtainGallery = ({category}) => {
   /*Images load*/
   useEffect(() => {
     const fetchImages = async () => {
-      const imagesData = await Promise.all([
-        fetchImagesFromFolder(`Gallery/${cartCtx.category}`),
-      ]);
-
-      const combinedImages = imagesData.reduce(
-        (acc, curr) => acc.concat(curr),
-        []
-      );
-      setImages(combinedImages);
+      const imagesData = await fetchImagesFromFolder(`Gallery/${cartCtx.category}`);
+      setImages(imagesData);
     };
-
+  
     fetchImages();
-  }, []);
+  }, [cartCtx.category]);
+  
 
   const fetchImagesFromFolder = async (folder) => {
     try {
@@ -80,9 +74,11 @@ const CurtainGallery = ({category}) => {
   
   return (
     <div>
+      
       <div id="myNav" className={overlayClass} onClick={closeNav}>
       <a href="javascript:void(0)" class={styles.closebtn} onClick={closeNav}>&times;</a>
         <div>
+        <h1 className={styles.categoryTitle}>{cartCtx.categoriesName}</h1>
         <div className={styles.container}>
         <PhotoGallery images={images}></PhotoGallery>
         </div>

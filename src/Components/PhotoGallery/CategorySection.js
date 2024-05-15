@@ -43,7 +43,7 @@ const CategorySection = ({ category, imageSrc, description }) => {
               fontWeight: 500,
               lineHeight: "1", // Adjust line height if needed
               textTransform: "uppercase", // Set text to uppercase
-              zIndex: 10,
+              zIndex: 1,
               textAlign: "center",
               minWidth: "300px",
             }}

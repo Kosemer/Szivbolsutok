@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import CurtainGallery from "./CurtainGallery";
 import CartContext from "../Store/cart-context";
 
-const CardGallery = ({ categories }) => {
+const CardGallery = ({ categories, categoriesName }) => {
   const cartCtx = useContext(CartContext);
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
@@ -33,16 +33,17 @@ const CardGallery = ({ categories }) => {
 
   const onImageClickHandler = () => {
     cartCtx.setCategory(categories)
+    cartCtx.setCategoriesName(categoriesName)
     cartCtx.setGalleryIsOpen(!cartCtx.galleryIsOpen)
     //navigate("/galeria", { state: { filter: categories } });
-    console.log(categories)
+    console.log(cartCtx.category)
   };
   
 
   return (
 <div>
 
-<CurtainGallery></CurtainGallery>
+
 
         <Container className={classes.cardContainer}> {/* Ha false, akkor jelenítsd meg a Container komponenst */}
           <Row className={classes.rowContainer}>

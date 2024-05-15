@@ -29,7 +29,7 @@ function Home() {
     <div>
       {/*<Slider></Slider>*/}
       <ParalaxSection></ParalaxSection>
-
+      <CurtainGallery></CurtainGallery>
       <div>
         <div className={classes.section}>
         <CategorySection
@@ -39,7 +39,7 @@ function Home() {
             "A hagyományos torták számos kultúrában és országban jelentős szerepet töltenek be ünnepi és különleges alkalmakon. Ezek a desszertek gyakran több generáció receptjei alapján készülnek"
           }
         ></CategorySection>
-        <CardGallery categories={"HagyomanyosTortak"}></CardGallery>
+        <CardGallery categories={"HagyomanyosTortak"} categoriesName={"Hagyományos torták"}></CardGallery>
         </div>
         <div className={classes.section}>
         <CategorySection
@@ -49,7 +49,7 @@ function Home() {
             "A burkolt torták különleges és művészi alkotások, amelyeket általában különleges alkalmakra vagy ünnepekre készítenek. A burkolt torták gyakran lenyűgöző megjelenésük miatt népszerűek esküvőkön, születésnapokon és más ünnepi eseményeken."
           }
         ></CategorySection>
-        <CardGallery categories={"BurkoltTortak"}></CardGallery>
+        <CardGallery categories={"BurkoltTortak"} categoriesName={"Burkolt torták"}></CardGallery>
         </div>
         <div className={classes.section}>
         <CategorySection
@@ -59,7 +59,7 @@ function Home() {
             "A linzertorta egy hagyományos osztrák sütemény, amelyet általában ünnepekre és különleges alkalmakra készítenek. Ez az ízletes torta rétegekben vagy tésztaként készül, és gyakran málna- vagy ribizlis lekvárral van töltve."
           }
         ></CategorySection>
-        <CardGallery categories={"Linzertortak"}></CardGallery>
+        <CardGallery categories={"Linzertortak"} categoriesName={"Linzertorták"}></CardGallery>
         </div>
         <div className={classes.section}>
         <CategorySection
@@ -69,7 +69,7 @@ function Home() {
             "A macaronok finom francia édességek, melyek két mandulás piskóta közé töltött krém vagy lekvár réteggel készülnek. Ezek a kis, színes sütemények számos ízben és színben elérhetőek, így sokféle kombinációban kóstolhatóak."
           }
         ></CategorySection>
-        <CardGallery categories={"Macaronok"}></CardGallery>
+        <CardGallery categories={"Macaronok"} categoriesName={"Macaronok"}></CardGallery>
         </div>
         <div className={classes.section}>
         <CategorySection
@@ -79,7 +79,7 @@ function Home() {
             "A hagyományos sütemények hordozzák magukban az évtizedek vagy akár évszázadok alatt kialakult ízek és receptek varázsát. Ezek a finomságok gyakran nemcsak ízükkel, hanem történetükkel is gazdagítják az étkezéseket."
           }
         ></CategorySection>
-        <CardGallery categories={"HagyomanyosSutemenyek"}></CardGallery>
+        <CardGallery categories={"HagyomanyosSutemenyek"} categoriesName={"Hagyományos sütemények"}></CardGallery>
         </div>
         <div className={classes.section}>
         <CategorySection
@@ -89,7 +89,7 @@ function Home() {
             "A mentes sütemények olyan különleges édességek, melyek kiváló alternatívát nyújtanak azoknak, akik különböző ételintoleranciával vagy diétás korlátozásokkal küzdenek, például glutén-, tej-, vagy tojásmentes ételeket keresnek. Ezek a sütemények általában kreatív és egészséges összetevőket használnak."
           }
         ></CategorySection>
-        <CardGallery categories={"MentesSutemenyek"}></CardGallery>
+        <CardGallery categories={"MentesSutemenyek"} categoriesName={"Mentes sütemények"}></CardGallery>
         </div>
         <div className={classes.section}>
         <CategorySection
@@ -99,7 +99,7 @@ function Home() {
             "A fondant figurák kézműves mestermunkák, melyekkel valódi művészi alkotásokat lehet létrehozni a süteményeken és tortákon. A fondant, egy rugalmas, gyurma-szerű cukormáz, lehetővé teszi a különféle formák és modellek készítését, legyen az virág, állat, vagy akár személyes karakter."
           }
         ></CategorySection>
-        <CardGallery categories={"FondantFigurak"}></CardGallery>
+        <CardGallery categories={"FondantFigurak"} categoriesName={"Fondant figurák"}></CardGallery>
         </div>
       </div>
       <div className={classes.DesktopSlider}>

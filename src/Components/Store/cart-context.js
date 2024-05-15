@@ -61,6 +61,8 @@ const CartContext = React.createContext({
   setGalleryIsOpen: () => {},
   category: [],
   setCategory: () => {},
+  categoriesName: [],
+  setCategoriesName: () => {},
 });
 
 export default CartContext;

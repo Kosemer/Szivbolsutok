@@ -15,6 +15,8 @@ function CartProvider(props) {
 
   const [category, setCategory] = useState([]);
 
+  const [categoriesName, setCategoriesName] = useState([]);
+
   const [lastFilter, setLastFilter] = useState(null);
 
   const [images, setImages] = useState([]);
@@ -153,6 +155,8 @@ function CartProvider(props) {
     setGalleryIsOpen: setGalleryIsOpen,
     category: category,
     setCategory: setCategory,
+    categoriesName: categoriesName,
+    setCategoriesName: setCategoriesName,
   };
 
   return (
