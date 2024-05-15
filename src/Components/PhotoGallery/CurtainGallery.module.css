@@ -64,6 +64,17 @@ backdrop-filter: blur(5.4px);
       overflow: hidden;
     }
 
+/*Category title*/
+    @keyframes slideIn {
+      from {
+        transform: translateY(-100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+    
+
     .categoryTitle{
         text-align: center;
         color: #f1f1f1;
@@ -71,7 +82,7 @@ backdrop-filter: blur(5.4px);
         display: inline-block;
         padding: 10px;
         border-radius: 0 0 10px 10px;
-        
+        animation: slideIn 0.5s ease-out;
     }
 
     .categoryH1{
@@ -79,6 +90,8 @@ backdrop-filter: blur(5.4px);
         font-family: "Bebas Neue", sans-serif;
         margin-bottom: 0rem;
     }
+
+  /*Category title*/
   
     /* Extra kicsi készülékek (telefonok, 576px és alatt) */
   @media (max-width: 575.98px) {

@@ -70,7 +70,6 @@ const CurtainGallery = ({category}) => {
   }, [cartCtx.galleryIsOpen]);
   /*If the menu is open you cannot scroll the page*/
 
-
   
   return (
     <div>
