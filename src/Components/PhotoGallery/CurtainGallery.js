@@ -25,6 +25,16 @@ const CurtainGallery = ({category}) => {
     cartCtx.setGalleryIsOpen(true);
   };
 
+  useEffect(() => {
+    if (cartCtx.galleryIsOpen) {
+      const container = document.getElementById('galleryContainer');
+      if (container) {
+        container.scrollTop = 0;
+      }
+    }
+  }, [cartCtx.galleryIsOpen]);
+  
+
   const closeNav = () => {
     cartCtx.setGalleryIsOpen(false);
   };
@@ -74,7 +84,7 @@ const CurtainGallery = ({category}) => {
   return (
     <div>
       
-      <div id="myNav" className={overlayClass} onClick={closeNav}>
+      <div  id="galleryContainer" className={overlayClass} onClick={closeNav}>
         <div className={styles.categoryTitle}>
         <h1 className={styles.categoryH1}>{cartCtx.categoriesName}</h1>
         </div>

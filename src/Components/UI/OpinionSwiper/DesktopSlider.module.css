@@ -1,15 +1,15 @@
 .swiper {
     width: 100%;
     height: 100%;
-    margin: 20px auto;
-    background-color: #333;
+    background-color: rgb(255, 105, 180);
     padding: 40px;
-  }
-  
-  .swiper {
-    width: 100%;
-    height: 100%;
     padding-bottom: 4rem;
+  }
+
+  .wrapper{
+    padding-bottom: 2rem;
+    background-color: rgb(255, 105, 180);
+    text-align: center;
   }
   
   .swiper-slide {
@@ -36,11 +36,11 @@
   }
 
   .swiper-button-prev {
-    color: #ffffff;
+    color: #333;
   }
   
   .swiper-button-next {
-    color: #ffffff;
+    color: #333;
   }
 
   .swiper-pagination-fraction{
@@ -49,16 +49,28 @@
   
 
   .opinionTitle{
-    color: white;
+    color: #ffffff;
     text-align: center;
-    font-family: 'Montserrat';
-    background-color: #333;
-    padding: 20px;
+    font-family: "Bebas Neue";
+    background-color: rgb(255, 105, 180);
+    display: inline-block;
+    position: relative;
+    padding-top: 2rem;
+  }
+
+  .opinionTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%; /* A bal oldalt 50%-ra állítjuk, hogy középre igazítsuk */
+    transform: translateX(-50%); /* A vonal középre igazításához */
+    width: 100%; /* A vonal szélessége megegyezik a szöveg szélességével */
+    height: 2px;
+    background-color: #020202;
   }
 
   .underline{
     margin-top: -30px;
-    margin-bottom: 40px;
     border: none;
     height: 3px;
     background-color: #FF69B4;

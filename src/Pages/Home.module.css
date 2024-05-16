@@ -83,7 +83,7 @@
 
   .DesktopSlider{
     background-color: #333;
-    padding: 10px 0;
+    
   }
   
 
@@ -116,7 +116,7 @@
     margin-right: auto;
   }
   .DesktopSlider{
-    display: none;
+    
   }
   .arrowIcon {
     bottom: 0;

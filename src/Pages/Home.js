@@ -105,14 +105,7 @@ function Home() {
       <div className={classes.DesktopSlider}>
         <DesktopSlider></DesktopSlider>
       </div>
-      <div className={classes.mobileCardSlider}>
-        <OpinionSwiperCard></OpinionSwiperCard>
-      </div>
-      <div className={classes.container}>
-        <h2 className={classes.title}>Irány a galéria</h2>
-        <hr className={classes.underline} />
-        <OptionalPhotoshoots></OptionalPhotoshoots>
-      </div>
+
     </div>
   );
 }

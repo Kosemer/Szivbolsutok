@@ -17,12 +17,11 @@ const DesktopSlider = () => {
   const [swiperRef, setSwiperRef] = useState(null);
 
   return (
-    <div>
+    <div className={classes.wrapper}>
       <h1 className={classes.opinionTitle}>Vélemények</h1>
-      <hr className={classes.underline}></hr>
       <Swiper
         onSwiper={setSwiperRef}
-        slidesPerView={3}
+
         centeredSlides={false}
         autoplay={{
           delay: 6000,
@@ -38,6 +37,19 @@ const DesktopSlider = () => {
         }}
         modules={[Pagination, Navigation, Autoplay]}
         className={classes.swiper}
+        breakpoints={{
+          // when window width is >= 640px
+          640: {
+            width: 640,
+            slidesPerView: 1,
+          },
+          // when window width is >= 768px
+          768: {
+            width: 768,
+            slidesPerView: 2,
+          },
+
+        }}
       >
         {Slides.map((slide, index) => (
           <SwiperSlide key={index}  className={classes["swiper-slide"]}>{slide}</SwiperSlide>
