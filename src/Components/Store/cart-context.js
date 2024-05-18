@@ -63,6 +63,8 @@ const CartContext = React.createContext({
   setCategory: () => {},
   categoriesName: [],
   setCategoriesName: () => {},
+  scrollToCategory: "",
+  setScrollToCategory: () => {},
 });
 
 export default CartContext;

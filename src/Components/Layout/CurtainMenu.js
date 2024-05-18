@@ -3,11 +3,9 @@ import styles from "./CurtainMenu.module.css";
 import CartContext from "../Store/cart-context";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
-import { useNavigate } from 'react-router-dom';
 
 const CurtainMenu = () => {
   const cartCtx = useContext(CartContext);
-  const navigate = useNavigate();
 
   const [overlayClass, setOverlayClass] = useState(styles.overlay);
   const [images, setImages] = useState([]);
@@ -74,7 +72,6 @@ const CurtainMenu = () => {
   }, [cartCtx.menuIsOpen]);
   /*If the menu is open you cannot scroll the page*/
 
-
   /*Navigation to the gallery.*/
   const onImageClickHandler = (image) => {
     const removeAccents = (str) => {
@@ -92,12 +89,10 @@ const CurtainMenu = () => {
     const words = filteredTitle.split(" "); // Szavakra bontjuk a címet szóköz mentén
     const capitalizedWords = words.map((word) => capitalizeFirstLetter(word)); // Minden szót nagybetűvel kezdünk
     const joinedTitle = capitalizedWords.join(""); // Egyesítjük a szavakat egybe
-    console.log(joinedTitle);
   
-    navigate("/galeria", { state: { filter: joinedTitle } });
+    cartCtx.setScrollToCategory(joinedTitle)
   };
-    /*Navigation to the gallery.*/
-  
+
   return (
     <div>
       <div id="myNav" className={overlayClass} onClick={closeNav}>

@@ -21,6 +21,8 @@ function CartProvider(props) {
 
   const [images, setImages] = useState([]);
 
+  const [scrollToCategory, setScrollToCategory] = useState("");
+
   //const [selectedFilter, setSelectedFilter] = useState("portrait");
   const [selectedFilter, setSelectedFilter] = useState(
     isMobileView() ? null : "HagyomanyosTortak"
@@ -157,6 +159,8 @@ function CartProvider(props) {
     setCategory: setCategory,
     categoriesName: categoriesName,
     setCategoriesName: setCategoriesName,
+    scrollToCategory: scrollToCategory,
+    setScrollToCategory: setScrollToCategory,
   };
 
   return (

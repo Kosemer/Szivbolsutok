@@ -11,8 +11,12 @@
     background-color: white;
   }
 
-  .section{
+  .section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
+    flex-direction: column; /* Ha a gyermekelemek függőlegesen egymás alatt vannak */
   }
   
   blockquote {
