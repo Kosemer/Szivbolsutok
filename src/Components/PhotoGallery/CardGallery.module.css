@@ -5,6 +5,11 @@
     margin-bottom: 5rem;
 }
 
+.rowContainer{
+    max-width: 80%;
+    margin: 0 auto; /* Középre igazítja a Row komponenst */
+}
+
 
 .cardBody{
     text-align: center;

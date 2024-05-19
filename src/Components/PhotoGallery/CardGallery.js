@@ -4,7 +4,7 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
 import classes from "./CardGallery.module.css";
 import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import CurtainGallery from "./CurtainGallery";
 import CartContext from "../Store/cart-context";
 
@@ -28,72 +28,67 @@ const CardGallery = ({ categories, categoriesName }) => {
     fetchImages();
   }, [categories]);
 
-
-
-
   const onImageClickHandler = () => {
-    cartCtx.setCategory(categories)
-    cartCtx.setCategoriesName(categoriesName)
-    cartCtx.setGalleryIsOpen(!cartCtx.galleryIsOpen)
+    cartCtx.setCategory(categories);
+    cartCtx.setCategoriesName(categoriesName);
+    cartCtx.setGalleryIsOpen(!cartCtx.galleryIsOpen);
     //navigate("/galeria", { state: { filter: categories } });
-    console.log(cartCtx.category)
+    console.log(cartCtx.category);
   };
-  
 
   return (
-<div>
-
-
-
-        <Container className={classes.cardContainer}> {/* Ha false, akkor jelenítsd meg a Container komponenst */}
-          <Row className={classes.rowContainer}>
-            {images.map((image, index) => (
-              <Col key={index} xs={12} md={6} lg={2} className="mb-4">
-                <Card className="shadow" style={{ height: "100%",  }}>
-                  <Card.Img
-                    variant="top"
-                    src={image.src}
-                    alt={image.caption}
-                    style={{ width: "100%", height: "100%", objectFit: "cover", backgroundColor: "rgba(255, 0, 0, 0.5)"              }}
-                  />
-                  <Card.Body className={classes.cardBody}>
-                    <Card.Text className={classes.cardText}
-                    >
-                      {image.title.split(".")[0]}
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-            <Col xs={12} md={6} lg={3} className="mb-4">
-              <Card
-                className={classes.cardBodyNext}
-                style={{ height: "100%" }}
-              >
-                <Card.Body>
-                  <Card.Text
-                    className={classes.cardTextNext}
-                    style={{ height: "100%" }}
-                    onClick={() => onImageClickHandler()}
-                  >
-                    További képek
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="32"
-                      height="32"
-                      fill="currentColor"
-                      className="bi bi-arrow-right-circle-fill ms-3"
-                      viewBox="0 0 16 16"
-                    >
-                      <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
-                    </svg>
+    <div>
+      <Container className={classes.cardContainer}>
+        {" "}
+        {/* Ha false, akkor jelenítsd meg a Container komponenst */}
+        <Row className={classes.rowContainer}>
+          {images.map((image, index) => (
+            <Col key={index} xs={12} md={6} lg={2} xl={3} className="mb-4">
+              <Card className="shadow" style={{ height: "100%" }}>
+                <Card.Img
+                  variant="top"
+                  src={image.src}
+                  alt={image.caption}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    backgroundColor: "rgba(255, 0, 0, 0.5)",
+                  }}
+                />
+                <Card.Body className={classes.cardBody}>
+                  <Card.Text className={classes.cardText}>
+                    {image.title.split(".")[0]}
                   </Card.Text>
                 </Card.Body>
               </Card>
             </Col>
-          </Row>
-        </Container>
-
+          ))}
+          <Col xs={12} md={6} lg={3} className="mb-4">
+            <Card className={classes.cardBodyNext} style={{ height: "100%" }}>
+              <Card.Body>
+                <Card.Text
+                  className={classes.cardTextNext}
+                  style={{ height: "100%" }}
+                  onClick={() => onImageClickHandler()}
+                >
+                  További képek
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    fill="currentColor"
+                    className="bi bi-arrow-right-circle-fill ms-3"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+                  </svg>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };
