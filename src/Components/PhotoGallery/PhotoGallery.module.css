@@ -3,6 +3,28 @@
     margin-top: 5rem;
 }
 
+  .captionContainer {
+    text-align: center;
+    margin-top: 5px;
+    background-color: white;
+  }
+  
+  .caption {
+    font-size: 14px;
+    color: #555;
+  }
+  
+/* PhotoGallery.module.css */
+.captionContainer {
+    position: relative;
+    text-align: center;
+  }
+  
+  .mentesImage {
+    width: 70px;
+    height: 55px;
+  }
+  
 
 /* Mobil eszközök (kis képernyő) */
 @media only screen and (max-width: 767px) {

@@ -159,7 +159,10 @@
 
 /* Extra nagy készülékek (asztali gépek, 1200px és afölött) */
 @media (min-width: 1200px) and (max-width: 1600px) {
-  
+  .section{
+    height: auto;
+    padding-top: 2rem;
+  }
 }
 
 /* Extra nagy készülékek (asztali gépek, 1601px és afölött) */

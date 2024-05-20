@@ -5,7 +5,6 @@ import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
 import classes from "./CardGallery.module.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import CurtainGallery from "./CurtainGallery";
 import CartContext from "../Store/cart-context";
 
 const CardGallery = ({ categories, categoriesName }) => {
@@ -32,18 +31,15 @@ const CardGallery = ({ categories, categoriesName }) => {
     cartCtx.setCategory(categories);
     cartCtx.setCategoriesName(categoriesName);
     cartCtx.setGalleryIsOpen(!cartCtx.galleryIsOpen);
-    //navigate("/galeria", { state: { filter: categories } });
     console.log(cartCtx.category);
   };
 
   return (
     <div>
       <Container className={classes.cardContainer}>
-        {" "}
-        {/* Ha false, akkor jelenítsd meg a Container komponenst */}
         <Row className={classes.rowContainer}>
           {images.map((image, index) => (
-            <Col key={index} xs={12} md={6} lg={2} xl={3} className="mb-4">
+            <Col key={index} xs={12} md={6} lg={3} className={`mb-4 mt-4 d-flex ${classes.customCol}`}>
               <Card className="shadow" style={{ height: "100%" }}>
                 <Card.Img
                   variant="top"
@@ -51,7 +47,7 @@ const CardGallery = ({ categories, categoriesName }) => {
                   alt={image.caption}
                   style={{
                     width: "100%",
-                    height: "100%",
+                    height: "150px",
                     objectFit: "cover",
                     backgroundColor: "rgba(255, 0, 0, 0.5)",
                   }}
@@ -69,7 +65,10 @@ const CardGallery = ({ categories, categoriesName }) => {
               <Card.Body>
                 <Card.Text
                   className={classes.cardTextNext}
-                  style={{ height: "100%" }}
+                  style={{
+                    width: "200px",
+                    height: "100%",
+                  }}
                   onClick={() => onImageClickHandler()}
                 >
                   További képek

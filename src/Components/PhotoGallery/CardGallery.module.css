@@ -5,51 +5,51 @@
     margin-bottom: 5rem;
 }
 
-.rowContainer{
-    max-width: 80%;
-    margin: 0 auto; /* Középre igazítja a Row komponenst */
+.rowContainer {
+    max-width: 100%;
+    margin: 0 auto;
 }
 
+.customCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-.cardBody{
+}
+
+.cardBody {
     text-align: center;
+    flex: 1;
 }
 
-.cardBodyNext{
-    
+.cardBodyNext {
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    /*box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);*/
     transition: transform 0.3s ease-in-out;
-    /*border: 1px solid black;*/
+    height: 100%; /* Ensure the height matches the parent column */
 }
 
 .cardBodyNext:hover {
-    
     transform: translateY(-8px);
-  }
+}
 
-  .cardText{
+.cardText {
     display: flex;
     align-items: center;
     font-family: "Bebas Neue", sans-serif;
-    
-  }
+    transition: color 0.3s ease;
+}
 
-  .cardTextNext{
+.cardTextNext {
     cursor: pointer;
-
-  }
-
-  .cardText {
-    transition: color 0.3s ease; /* Az animáció az színváltozás 0.3 másodpercig tart, és könnyűvé teszi az átmenetet */
 }
 
 .cardBodyNext:hover .cardText {
-    color: rgba(255, 0, 0, 0.5); /* A kártya szövegének színe a hover-re */
+    color: rgba(255, 0, 0, 0.5);
 }
+
 
 
 /* Extra kicsi készülékek (telefonok, 576px és alatt) */
