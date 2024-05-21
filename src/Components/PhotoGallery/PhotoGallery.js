@@ -53,13 +53,16 @@ const PhotoGallery = ({ images }) => {
           onClick={(e) => openLightbox(e, { index })}
           style={{ cursor: "pointer" }}
         />
-        {cartCtx.category === "MentesSutemenyek" && icons.length > 0 && (
+        {cartCtx.category === "MentesSutemenyek" && icons.length > 0 ? (
           <div className={classes.captionContainer}>
-            {/*<div>{textBeforeIcon}</div>*/} {/* Zárójel előtti szöveg külön sorban */}
+            <div>{textBeforeIcon}</div> {/* Zárójel előtti szöveg külön sorban */}
             {icons.map((icon, idx) => (
               <img key={idx} src={icon} alt={`${matchedIcons[idx]} icon`} className={classes.mentesImage} />
             ))}
-            {/*<span className={classes.caption}>{photo.title}</span>*/}
+          </div>
+        ) : (
+          <div className={classes.captionContainer}>
+            <div>{photo.title}</div> {/* Megjeleníti a photo.title-t */}
           </div>
         )}
       </div>
