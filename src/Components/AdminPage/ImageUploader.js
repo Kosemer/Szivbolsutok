@@ -16,6 +16,9 @@ import DeleteImage from "./DeleteImage";
 const ImageUploader = ({ setLoggedIn }) => {
   const cartCtx = useContext(CartContext);
 
+  const [imageName, setImageName] = useState('');
+
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -41,7 +44,7 @@ const ImageUploader = ({ setLoggedIn }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (
       !cartCtx.selectedFile ||
       !cartCtx.selectedFolder ||
@@ -52,20 +55,21 @@ const ImageUploader = ({ setLoggedIn }) => {
         left: 0,
         behavior: "smooth",
       });
+      return;
     }
-
+  
     if (!cartCtx.selectedFile || cartCtx.selectedFile.size === 0) {
       cartCtx.setFileError("Válassz ki egy fájlt");
     } else {
       cartCtx.setFileError(null);
     }
-
+  
     if (!cartCtx.selectedFolder) {
       cartCtx.setFolderError("Válassz ki egy mappát");
     } else {
       cartCtx.setFolderError(null);
     }
-
+  
     if (
       !cartCtx.selectedFile ||
       !cartCtx.selectedFolder ||
@@ -73,23 +77,25 @@ const ImageUploader = ({ setLoggedIn }) => {
     ) {
       return;
     }
-
+  
     const formData = new FormData();
     formData.append("image", cartCtx.selectedFile);
     formData.append("folder", cartCtx.selectedFolder);
-
-    //const response = await axios.post("/backend/uploadImage.php", formData, {
+    formData.append("imageName", imageName);
+  
     const response = await axios.post("http://localhost/backend/uploadImage.php", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
     });
-
+  
     console.log(response.data);
     cartCtx.setUploadSuccess(true);
     await loadImages();
     cartCtx.resetImageUploader();
+    setImageName(''); // Reset the image name after upload
   };
+  
 
   useEffect(() => {
     if (cartCtx.uploadSuccess) {
@@ -142,46 +148,6 @@ const ImageUploader = ({ setLoggedIn }) => {
     }
   };
 
-  /*const handleDrop = (e, targetIndex) => {
-    e.preventDefault();
-    const draggedIndex = parseInt(e.dataTransfer.getData("imageIndex"), 10);
-    updateImageOrder(draggedIndex, targetIndex);
-  };
-
-  useEffect(() => {
-    saveImageOrder();
-  }, [cartCtx.folderImages]);
-
-  const saveImageOrder = async () => {
-    const imageOrder = cartCtx.folderImages.map((image) => {
-      // Vágjuk le az elérési útvonalat, és hagyjuk meg csak a fájlnevet
-      return image.split("/").pop();
-    });
-    const formData = new FormData();
-    formData.append("folder", cartCtx.selectedFolder);
-    formData.append("imageOrder", JSON.stringify(imageOrder));
-
-    const response = await axios.post(
-      "http://localhost/saveImageOrder.php",
-      formData,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      }
-    );
-  };
-
-  const updateImageOrder = (draggedIndex, targetIndex) => {
-    if (draggedIndex === targetIndex) return;
-    const newFolderImages = [...cartCtx.folderImages];
-    const draggedImage = newFolderImages[draggedIndex];
-    newFolderImages.splice(draggedIndex, 1);
-    newFolderImages.splice(targetIndex, 0, draggedImage);
-    cartCtx.setFolderImages(newFolderImages);
-  };*/
-
-  /* Ha képernyő mérete nagyobb vagy egyenlő mint 768 pixel (mobil nézet), akkor az isOpen értéke false */
 
   useEffect(() => {
     cartCtx.setIsOpen(window.innerWidth >= 768);
@@ -338,7 +304,6 @@ const ImageUploader = ({ setLoggedIn }) => {
             value={cartCtx.selectedFolder}
             onChange={(e) => {
               cartCtx.setSelectedFolder(e.target.value);
-              // Törölje a hibaüzenetet, ha a felhasználó kiválasztott egy mappát
               if (e.target.value) {
                 cartCtx.setFolderError(null);
               }
@@ -359,10 +324,21 @@ const ImageUploader = ({ setLoggedIn }) => {
               <option value="slider">Slider</option>
               <option value="sliderMobile">Mobil slider</option>
             </optgroup>
-            {/* További mappa opciók */}
           </select>
           {cartCtx.folderError && (
             <div className={classes.error}>{cartCtx.folderError}</div>
+          )}
+          {cartCtx.selectedFolder && (
+            <div className={classes.inputWrapper}>
+              <label htmlFor="imageName">Kép neve:</label>
+              <input
+                id="imageName"
+                type="text"
+                value={imageName}
+                onChange={(e) => setImageName(e.target.value)}
+                className={classes.imageNameInput}
+              />
+            </div>
           )}
         </div>
         <div className={currentClassesResize} onClick={toggleOpenResize}>
@@ -376,7 +352,7 @@ const ImageUploader = ({ setLoggedIn }) => {
             <div className={classes.svg2}>
               <img src={otimalization} alt="otimalization Icon" />
             </div>
-
+  
             <ResizeImage
               imageFile={cartCtx.selectedFile}
               setImageFile={cartCtx.setSelectedFile}
@@ -429,9 +405,7 @@ const ImageUploader = ({ setLoggedIn }) => {
         >
           {cartCtx.folderImages.map((image, index) => (
             <div
-            key={index}
-            //onDragOver={(e) => e.preventDefault()}
-            //onDrop={(e) => handleDrop(e, index)}
+              key={index}
             >
               <DraggableImage
                 index={index}
@@ -446,6 +420,7 @@ const ImageUploader = ({ setLoggedIn }) => {
       )}
     </div>
   );
+  
 };
 
 export default ImageUploader;
