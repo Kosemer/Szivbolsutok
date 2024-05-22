@@ -1,45 +1,34 @@
-// Mobilnézetben a navigációs menü gombja.
-
-import { Fragment, useContext, useEffect, useState } from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import CartContext from "../Store/cart-context";
 import "./BurgerButton.css";
 
-function BurgerButton(props) {
+function BurgerButton() {
   const cartCtx = useContext(CartContext);
 
-  // to change burger classes
-  const [burger_class, setBurgerClass] = useState("burger-bar unclicked");
-  //const [menu_class, setMenuClass] = useState("menu hidden");
-  const [isMenuClicked, setIsMenuClicked] = useState(false);
+  const [burgerClass, setBurgerClass] = useState("burger-bar unclicked");
 
   useEffect(() => {
-    updateMenu();
-  }, [cartCtx.menuIsOpen]);
-
-  // toggle burger menu change
-  const updateMenu = () => {
-    if (cartCtx.menuIsOpen) {
+    if (cartCtx.galleryIsOpen || cartCtx.menuIsOpen) {
       setBurgerClass("burger-bar clicked");
-      //setMenuClass("menu visible");
     } else {
       setBurgerClass("burger-bar unclicked");
-      //setMenuClass("menu hidden");
     }
-    setIsMenuClicked(isMenuClicked);
-    // props.moblieMenuChange();
-  };
+  }, [cartCtx.galleryIsOpen, cartCtx.menuIsOpen]);
 
-  const menuChange = () => {
-    //props.moblieMenuChange();
-    cartCtx.setMenuIsOpen(!cartCtx.menuIsOpen)
+  const handleClick = () => {
+    if (cartCtx.galleryIsOpen) {
+      cartCtx.setGalleryIsOpen(false);
+    } else {
+      cartCtx.setMenuIsOpen(!cartCtx.menuIsOpen);
+    }
   };
 
   return (
     <Fragment>
-      <div className="burger-menu" onClick={menuChange}>
-        <div className={burger_class}></div>
-        <div className={burger_class}></div>
-        <div className={burger_class}></div>
+      <div className="burger-menu" onClick={handleClick}>
+        <div className={burgerClass}></div>
+        <div className={burgerClass}></div>
+        <div className={burgerClass}></div>
       </div>
     </Fragment>
   );

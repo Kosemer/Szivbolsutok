@@ -1,58 +1,67 @@
-.container{
-    margin: 0 5rem;
-    margin-top: 5rem;
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
-  .captionContainer {
+
+.container {
+    min-height: 100vh;
+    margin: 0 5rem;
+    margin-top: 5rem;
+    padding-bottom: 5rem; 
+    box-sizing: border-box; 
+}
+
+.captionContainer {
     text-align: center;
     margin-top: 5px;
     background-color: white;
-  }
-  
-  .caption {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.3rem;
+}
+
+.caption {
     font-size: 14px;
     color: #555;
-  }
-  
-/* PhotoGallery.module.css */
-.captionContainer {
-    position: relative;
-    text-align: center;
-  }
-  
+}
 
-  .mentesImage {
+.mentesImage {
     width: 70px;
-    height: 55px;
-  }
-  
+    height: auto;
+}
 
-/* Mobil eszközök (kis képernyő) */
+
 @media only screen and (max-width: 767px) {
-    .container{
+    .container {
         margin: 0 10px;
         margin-top: 20px;
         margin-bottom: 20px;
+        padding-bottom: 5rem; 
     }
-  }
-  
-  /* Tablet eszközök (közepes képernyő) */
-  @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .container{
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .container {
         margin: 0 30px;
         margin-top: 20px;
         margin-bottom: 20px;
+        padding-bottom: 5rem; 
     }
-  }
-  
-  /* Kisebb asztali és laptop kijelzők */
-  @media only screen and (min-width: 992px) and (max-width: 1199px) {
-    
-  }
-  
-  /* Nagyobb asztali kijelzők és TV-k */
-  @media only screen and (min-width: 1200px) {
-    
-  }
-  
+}
 
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .container {
+        padding-bottom: 5rem; 
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .container {
+        padding-bottom: 5rem; 
+    }
+}

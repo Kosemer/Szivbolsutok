@@ -9,6 +9,7 @@ import eggFree from "../../Assets/MentesIcon/eggFree2.png";
 import gluten from "../../Assets/MentesIcon/gluten2.png";
 import milk from "../../Assets/MentesIcon/milk.png";
 import sugar from "../../Assets/MentesIcon/sugar.png";
+import DietIconSection from "./DietIconSection";
 
 const iconMapping = {
   tk: tk,
@@ -38,17 +39,22 @@ const PhotoGallery = ({ images }) => {
     setViewerIsOpen(false);
   };
 
+  const getFileNameWithoutExtension = (fileName) => {
+    return fileName.split('.').slice(0, -1).join('.');
+  };
+
   const renderImage = ({ index, photo, margin }) => {
     const fileName = photo.src.split("/").pop(); // Képfájl neve
     const matches = fileName.match(/\((.*?)\)/); // Zárójel előtti szöveg
     const textBeforeIcon = matches ? fileName.split("(")[0].trim() : ""; // Zárójel előtti szöveg
     const matchedIcons = matches ? matches[0].replace(/[()]/g, "").split(",") : []; // Jelölések szétválasztása vesszővel
     const icons = matchedIcons.map((key) => iconMapping[key.trim()]);
+    const title = getFileNameWithoutExtension(photo.title);
 
     return (
       <div key={index} style={{ margin, display: "inline-block", position: "relative" }}>
         <img
-          alt={photo.title}
+          alt={title}
           {...photo}
           onClick={(e) => openLightbox(e, { index })}
           style={{ cursor: "pointer" }}
@@ -62,7 +68,7 @@ const PhotoGallery = ({ images }) => {
           </div>
         ) : (
           <div className={classes.captionContainer}>
-            <div>{photo.title}</div> {/* Megjeleníti a photo.title-t */}
+            <div>{title}</div> {/* Megjeleníti a fájlnevet kiterjesztés nélkül */}
           </div>
         )}
       </div>
@@ -71,6 +77,7 @@ const PhotoGallery = ({ images }) => {
 
   return (
     <div className={classes.container}>
+      {cartCtx.category === "MentesSutemenyek" && <DietIconSection />}
       <Gallery photos={images} renderImage={renderImage} />
       <ModalGateway>
         {viewerIsOpen ? (
@@ -83,11 +90,12 @@ const PhotoGallery = ({ images }) => {
                 const textBeforeIcon = matches ? fileName.split("(")[0].trim() : ""; // Zárójel előtti szöveg
                 const matchedIcons = matches ? matches[0].replace(/[()]/g, "").split(",") : []; // Jelölések szétválasztása vesszővel
                 const icons = matchedIcons.map((key) => iconMapping[key.trim()]);
+                const title = getFileNameWithoutExtension(image.title);
                 return {
                   ...image,
                   src: icons.length > 0 ? icons[0] : image.src,
                   srcset: image.srcSet,
-                  caption: image.title,
+                  caption: title, // Megjeleníti a fájlnevet kiterjesztés nélkül
                   textBeforeIcon: textBeforeIcon, // Zárójel előtti szöveg hozzáadása a Carousel nézetben
                 };
               })}

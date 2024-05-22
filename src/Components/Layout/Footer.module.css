@@ -52,6 +52,20 @@
   display: flex;
 }
 
+.admin{
+}
+
+.adminText{
+  color: white;
+  font-family: "Bebas Neue";
+  letter-spacing: 1px;
+  font-size: 1.3rem;
+}
+
+.adminText:hover{
+  color: rgb(255, 105, 180);
+}
+
 .linkContainer a{
   color: white;
   font-size: 15px;

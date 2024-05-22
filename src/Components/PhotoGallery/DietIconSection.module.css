@@ -1,0 +1,40 @@
+.iconContainer {
+    display: flex; /* Flexbox használata a sorbeli elrendezéshez */
+    justify-content: center; /* Középre igazítás */
+    align-items: center; /* Függőleges középre igazítás */
+    gap: 30px; /* Képek közötti térköz */
+    background-color: white;
+    border-radius: 20px;
+    margin-bottom: 4rem;
+    padding: 10px 0px 10px 0px;
+  }
+  
+  .icon {
+    width: 130px; /* Kép szélessége */
+    height: auto; /* Automatikus magasság a helyes arányokhoz */
+  }
+
+  .iconText{
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 600px) {
+    .iconContainer {
+        display: grid; /* Grid layout használata kisebb képernyőn */
+        grid-template-columns: repeat(2, 1fr); /* Képek kettesével egymás mellé */
+        gap: 10px; /* Képek közötti térköz */
+        justify-items: center; /* Képek középre igazítása vízszintesen */
+        align-items: center; /* Képek középre igazítása függőlegesen */
+      }
+    .icon {
+      width: 80%; /* Kisebb méret a kisebb képernyőkön */
+    }
+    .iconText{
+        font-family: "Bebas Neue", sans-serif;
+        letter-spacing: 1px;
+        font-size: 0.8rem;
+      }
+  }
+  

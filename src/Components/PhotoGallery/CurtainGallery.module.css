@@ -42,11 +42,12 @@ backdrop-filter: blur(5.4px);
     
     /* Position the close button (top right corner) */
     .overlay .closebtn {
-      position: absolute;
+      position: fixed;
       top: 0px;
       right: 15px;
       font-size: 60px;
       color: #f1f1f1;
+      z-index: 1000;
     }
   
     .container {

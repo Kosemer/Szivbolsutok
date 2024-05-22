@@ -359,9 +359,6 @@ const ImageUploader = ({ setLoggedIn }) => {
               <option value="slider">Slider</option>
               <option value="sliderMobile">Mobil slider</option>
             </optgroup>
-            <optgroup label="Rólam oldal profilkép">
-              <option value="aboutMePicture">Profilkép</option>
-            </optgroup>
             {/* További mappa opciók */}
           </select>
           {cartCtx.folderError && (
