@@ -12,12 +12,11 @@ import darkModeClasses from "./DarkMode.module.css";
 import DarkModeButton from "./DarkModeButton";
 import CartContext from "../../Components/Store/cart-context";
 import DeleteImage from "./DeleteImage";
+import DietIconSection from "../PhotoGallery/DietIconSection";
+import DietIconSectionAdminPage from "./DietIconSectionAdminPage";
 
 const ImageUploader = ({ setLoggedIn }) => {
   const cartCtx = useContext(CartContext);
-
-  const [imageName, setImageName] = useState('');
-
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -44,58 +43,70 @@ const ImageUploader = ({ setLoggedIn }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (
       !cartCtx.selectedFile ||
       !cartCtx.selectedFolder ||
-      cartCtx.selectedFile.size === 0
+      cartCtx.selectedFile.size === 0 ||
+      !cartCtx.imageName
     ) {
       window.scrollTo({
         top: 150,
         left: 0,
         behavior: "smooth",
       });
-      return;
     }
-  
+
     if (!cartCtx.selectedFile || cartCtx.selectedFile.size === 0) {
       cartCtx.setFileError("Válassz ki egy fájlt");
     } else {
       cartCtx.setFileError(null);
     }
-  
+
     if (!cartCtx.selectedFolder) {
       cartCtx.setFolderError("Válassz ki egy mappát");
     } else {
       cartCtx.setFolderError(null);
     }
-  
+
+    if (!cartCtx.imageName) {
+      cartCtx.setImageNameError("Mi legyen a kép neve?");
+    } else {
+      cartCtx.setImageNameError(null);
+    }
+
     if (
       !cartCtx.selectedFile ||
       !cartCtx.selectedFolder ||
-      cartCtx.selectedFile.size === 0
+      cartCtx.selectedFile.size === 0 ||
+      !cartCtx.imageName
     ) {
       return;
     }
-  
+
     const formData = new FormData();
     formData.append("image", cartCtx.selectedFile);
     formData.append("folder", cartCtx.selectedFolder);
-    formData.append("imageName", imageName);
-  
-    const response = await axios.post("http://localhost/backend/uploadImage.php", formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    });
-  
+    const imageNameWithIcons = `${cartCtx.imageName}(${cartCtx.selectedIcons.join(', ')})`;
+    formData.append("imageName", imageNameWithIcons);
+
+    const response = await axios.post(
+      "http://localhost/backend/uploadImage.php",
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+
     console.log(response.data);
     cartCtx.setUploadSuccess(true);
     await loadImages();
     cartCtx.resetImageUploader();
-    setImageName(''); // Reset the image name after upload
+    cartCtx.setImageName(""); // Reset the image name after upload
+    cartCtx.setSelectedIcons([]);
   };
-  
 
   useEffect(() => {
     if (cartCtx.uploadSuccess) {
@@ -109,7 +120,7 @@ const ImageUploader = ({ setLoggedIn }) => {
       `http://localhost/backend/listImages.php?folder=${cartCtx.selectedFolder}`
     );
     cartCtx.setFolderImages(response.data);
-    (console.log(response.data))
+    console.log(response.data);
   };
 
   useEffect(() => {
@@ -147,7 +158,6 @@ const ImageUploader = ({ setLoggedIn }) => {
       cartCtx.setIsOpenResize(false);
     }
   };
-
 
   useEffect(() => {
     cartCtx.setIsOpen(window.innerWidth >= 768);
@@ -316,7 +326,9 @@ const ImageUploader = ({ setLoggedIn }) => {
               <option value="BurkoltTortak">Burkolt torták</option>
               <option value="Linzertortak">Linzertorták</option>
               <option value="Macaronok">Macaronok</option>
-              <option value="HagyomanyosSutemenyek">Hagyományos sütemények</option>
+              <option value="HagyomanyosSutemenyek">
+                Hagyományos sütemények
+              </option>
               <option value="MentesSutemenyek">Mentes sütemények</option>
               <option value="FondantFigurak">Fondant figurák</option>
             </optgroup>
@@ -330,16 +342,30 @@ const ImageUploader = ({ setLoggedIn }) => {
           )}
           {cartCtx.selectedFolder && (
             <div className={classes.inputWrapper}>
-              <label htmlFor="imageName">Kép neve:</label>
               <input
                 id="imageName"
                 type="text"
-                value={imageName}
-                onChange={(e) => setImageName(e.target.value)}
+                value={cartCtx.imageName}
+                onChange={(e) => cartCtx.setImageName(e.target.value)}
                 className={classes.imageNameInput}
+                placeholder="Mi legyen a kép neve?"
               />
             </div>
           )}
+          {cartCtx.imageNameError && (
+            <div className={classes.error}>{cartCtx.imageNameError}</div>
+          )}
+          <div
+            className={classes.dietBox}
+            style={{
+              display:
+                cartCtx.selectedFolder === "MentesSutemenyek"
+                  ? "block"
+                  : "none",
+            }}
+          >
+            <DietIconSectionAdminPage></DietIconSectionAdminPage>
+          </div>
         </div>
         <div className={currentClassesResize} onClick={toggleOpenResize}>
           <div
@@ -352,7 +378,7 @@ const ImageUploader = ({ setLoggedIn }) => {
             <div className={classes.svg2}>
               <img src={otimalization} alt="otimalization Icon" />
             </div>
-  
+
             <ResizeImage
               imageFile={cartCtx.selectedFile}
               setImageFile={cartCtx.setSelectedFile}
@@ -404,9 +430,7 @@ const ImageUploader = ({ setLoggedIn }) => {
           }
         >
           {cartCtx.folderImages.map((image, index) => (
-            <div
-              key={index}
-            >
+            <div key={index}>
               <DraggableImage
                 index={index}
                 image={image}
@@ -420,7 +444,6 @@ const ImageUploader = ({ setLoggedIn }) => {
       )}
     </div>
   );
-  
 };
 
 export default ImageUploader;

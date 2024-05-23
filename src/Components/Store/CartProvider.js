@@ -23,6 +23,8 @@ function CartProvider(props) {
 
   const [scrollToCategory, setScrollToCategory] = useState("");
 
+  const [selectedIcons, setSelectedIcons] = useState([]);
+
   //const [selectedFilter, setSelectedFilter] = useState("portrait");
   const [selectedFilter, setSelectedFilter] = useState(
     isMobileView() ? null : "HagyomanyosTortak"
@@ -38,6 +40,9 @@ function CartProvider(props) {
   const [folderImages, setFolderImages] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [imagePreview, setImagePreview] = useState(null);
+
+  const [imageName, setImageName] = useState(null);
+  const [imageNameError, setImageNameError] = useState(null);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [imageToDelete, setImageToDelete] = useState(null);
@@ -161,6 +166,12 @@ function CartProvider(props) {
     setCategoriesName: setCategoriesName,
     scrollToCategory: scrollToCategory,
     setScrollToCategory: setScrollToCategory,
+    imageName: imageName,
+    setImageName: setImageName,
+    imageNameError: imageNameError,
+    setImageNameError: setImageNameError,
+    selectedIcons: selectedIcons,
+    setSelectedIcons: setSelectedIcons,
   };
 
   return (

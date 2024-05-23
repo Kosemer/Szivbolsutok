@@ -199,6 +199,20 @@ button {
   font-size: 16px;
 }
 
+.dietBox{
+  margin-top: 2rem;
+}
+
+.imageNameInput{
+  margin-top: 2rem;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 16px;
+  border: 1px solid black;
+}
+
 /* ImageUploader.module.css */
 .fileInput {
   display: none;
