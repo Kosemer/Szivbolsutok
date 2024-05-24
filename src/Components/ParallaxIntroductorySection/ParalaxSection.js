@@ -1,10 +1,15 @@
+import React from 'react';
 import classes from "./ParalaxSection.module.css";
+import fruitCake from "../../Assets/CakesPicture/fruitCake.png";
 
 function ParalaxSection() {
   return (
     <div>
       <div className={classes.parallax}>
-        <h1 className={classes.centeredTextTitle}>Üdvözöllek az oldalon!</h1>
+        <div className={classes.rectangle}>
+          <h1 className={classes.centeredTextTitle}>Üdvözöllek az oldalon!</h1>
+        </div>
+        <img src={fruitCake} alt="Fruit Cake" className={classes.fruitCake} />
       </div>
       <div className={classes.text}>
         <p className={classes.introductoryText}>

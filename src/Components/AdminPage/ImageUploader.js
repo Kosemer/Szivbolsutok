@@ -12,7 +12,6 @@ import darkModeClasses from "./DarkMode.module.css";
 import DarkModeButton from "./DarkModeButton";
 import CartContext from "../../Components/Store/cart-context";
 import DeleteImage from "./DeleteImage";
-import DietIconSection from "../PhotoGallery/DietIconSection";
 import DietIconSectionAdminPage from "./DietIconSectionAdminPage";
 
 const ImageUploader = ({ setLoggedIn }) => {
@@ -69,10 +68,16 @@ const ImageUploader = ({ setLoggedIn }) => {
       cartCtx.setFolderError(null);
     }
 
-    if (!cartCtx.imageName) {
+    if (!cartCtx.imageName && cartCtx.selectedFolder) {
       cartCtx.setImageNameError("Mi legyen a kép neve?");
     } else {
       cartCtx.setImageNameError(null);
+    }
+
+    if (cartCtx.selectedIcons && cartCtx.selectedFolder === "MentesSutemenyek") {
+      cartCtx.setSelectedIconsError("Biztos nem választasz ki semmit?");
+    } else {
+      cartCtx.setSelectedIconsError(null);
     }
 
     if (
@@ -87,7 +92,9 @@ const ImageUploader = ({ setLoggedIn }) => {
     const formData = new FormData();
     formData.append("image", cartCtx.selectedFile);
     formData.append("folder", cartCtx.selectedFolder);
-    const imageNameWithIcons = `${cartCtx.imageName}(${cartCtx.selectedIcons.join(', ')})`;
+    const imageNameWithIcons = cartCtx.selectedIcons.length > 0
+    ? `${cartCtx.imageName}(${cartCtx.selectedIcons.join(', ')})`
+    : cartCtx.imageName;
     formData.append("imageName", imageNameWithIcons);
 
     const response = await axios.post(
@@ -106,6 +113,7 @@ const ImageUploader = ({ setLoggedIn }) => {
     cartCtx.resetImageUploader();
     cartCtx.setImageName(""); // Reset the image name after upload
     cartCtx.setSelectedIcons([]);
+    cartCtx.setSelectedIconsError(null)
   };
 
   useEffect(() => {
@@ -364,8 +372,12 @@ const ImageUploader = ({ setLoggedIn }) => {
                   : "none",
             }}
           >
+            <div className={classes.dietTitle}>Válassz egy vagy több kategóriát.</div>
             <DietIconSectionAdminPage></DietIconSectionAdminPage>
           </div>
+          {cartCtx.selectedIconsError && (
+            <div className={classes.error}>{cartCtx.selectedIconsError}</div>
+          )}
         </div>
         <div className={currentClassesResize} onClick={toggleOpenResize}>
           <div

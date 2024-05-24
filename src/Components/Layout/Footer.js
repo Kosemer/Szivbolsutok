@@ -14,12 +14,16 @@ import email from "../../Assets/Icon/email.svg";
 import phone from "../../Assets/Icon/phone.svg";
 import instagram from "../../Assets/SocialIcon/instagram.svg";
 import facebook from "../../Assets/SocialIcon/facebook.svg";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
 import footerLogo from "../../Assets/footerLogo/logoMenu2.png";
+import CartContext from "../../Components/Store/cart-context";
 
 function Footer() {
+
+  const cartCtx = useContext(CartContext);
+
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [images, setImages] = useState([]);
 
@@ -74,18 +78,23 @@ function Footer() {
           <div className={classes.links}>
             <div className={classes.linkBox}>
               <div className={classes.verticalLine}>
+              <div className={classes.linkContainer}>
+                  <NavLink className={classes.linkText} onClick={() => cartCtx.setScrollToCategory("HagyomanyosSutemenyek")}>
+                    Hagyományos sütemények
+                  </NavLink>
+                </div>
                 <div className={classes.linkContainer}>
-                  <NavLink to="/arak" className={classes.linkText}>
+                  <NavLink className={classes.linkText} onClick={() => cartCtx.setScrollToCategory("HagyomanyosTortak")}>
                     Hagyományos torták
                   </NavLink>
                 </div>
                 <div className={classes.linkContainer}>
-                  <NavLink to="/arak" className={classes.linkText}>
+                  <NavLink className={classes.linkText} onClick={() => cartCtx.setScrollToCategory("BurkoltTortak")}>
                     Burkolt torták
                   </NavLink>
                 </div>
                 <div className={classes.linkContainer}>
-                  <NavLink to="/arak" className={classes.linkText}>
+                  <NavLink className={classes.linkText} onClick={() => cartCtx.setScrollToCategory("Linzertortak")}>
                     Linzertorták
                   </NavLink>
                 </div>
@@ -94,19 +103,19 @@ function Footer() {
 
             <div className={classes.linkBox}>
               <div className={classes.verticalLine}>
-                <div className={classes.linkContainer}>
-                  <NavLink to="/arak" className={classes.linkText}>
-                    Macaronok
+              <div className={classes.linkContainer}>
+                  <NavLink className={classes.linkText} onClick={() => cartCtx.setScrollToCategory("MentesSutemenyek")}>
+                    Mentes sütemények
                   </NavLink>
                 </div>
                 <div className={classes.linkContainer}>
-                  <NavLink to="/arak" className={classes.linkText}>
-                    Sütemények
-                  </NavLink>
-                </div>
-                <div className={classes.linkContainer}>
-                  <NavLink to="/arak" className={classes.linkText}>
+                  <NavLink className={classes.linkText} onClick={() => cartCtx.setScrollToCategory("FondantFigurak")}>
                     Fondant figurák
+                  </NavLink>
+                </div>
+                <div className={classes.linkContainer}>
+                  <NavLink className={classes.linkText} onClick={() => cartCtx.setScrollToCategory("Macaronok")}>
+                    Macaronok
                   </NavLink>
                 </div>
               </div>

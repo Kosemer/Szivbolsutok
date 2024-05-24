@@ -24,6 +24,7 @@ function CartProvider(props) {
   const [scrollToCategory, setScrollToCategory] = useState("");
 
   const [selectedIcons, setSelectedIcons] = useState([]);
+  const [selectedIconsError, setSelectedIconsError] = useState([]);
 
   //const [selectedFilter, setSelectedFilter] = useState("portrait");
   const [selectedFilter, setSelectedFilter] = useState(
@@ -172,6 +173,8 @@ function CartProvider(props) {
     setImageNameError: setImageNameError,
     selectedIcons: selectedIcons,
     setSelectedIcons: setSelectedIcons,
+    selectedIconsError: selectedIconsError,
+    setSelectedIconsError: setSelectedIconsError,
   };
 
   return (

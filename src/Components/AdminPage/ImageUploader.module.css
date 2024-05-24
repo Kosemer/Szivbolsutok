@@ -267,6 +267,13 @@ button {
   margin-top: 20px;
 }
 
+.dietTitle{
+  margin-bottom: 1rem;
+  font-family: "Bebas Neue";
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
 .successMessage {
   display: inline-flex;
   align-items: center;

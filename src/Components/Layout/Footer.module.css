@@ -84,7 +84,7 @@
 .underlineLong {
   border: none;
   height: 1px;
-  background-color: #4169e1;
+  background-color: rgb(255, 105, 180);
   margin: 0;
   padding: 0;
   width: 100%;
@@ -194,9 +194,9 @@ span {
 .h2Title{
   font-size: 1.8rem;
   font-family: "Bebas Neue";
-  cursor: pointer;
   margin-top: 0;
   margin-bottom: 4rem;
+  cursor: default;
   position: relative;
 }
 .h2Title::after{
@@ -223,7 +223,7 @@ span {
 .h2TitleLogo{
   font-size: 1.8rem;
   font-family: "Bebas Neue";
-  cursor: pointer;
+  cursor: default;
   margin-bottom: 2rem;
   position: relative;
 }
@@ -231,7 +231,7 @@ span {
 .h2TitleInsta{
   font-size: 1.8rem;
   font-family: "Bebas Neue";
-  cursor: pointer;
+  cursor: default;
   margin-top: 0;
   position: relative;
 }
@@ -255,6 +255,7 @@ span {
   margin-right: 4rem; 
   padding-left: 1rem;
 }
+
 
 .footerLogo {
   width: 200px; 
@@ -381,7 +382,6 @@ span {
 .h2Title{
   font-size: 1.8rem;
   font-family: "Bebas Neue";
-  cursor: pointer;
   margin-top: 0;
   margin-bottom: 2rem;
   position: relative;
@@ -447,7 +447,6 @@ span {
 .h2Title{
   font-size: 1.8rem;
   font-family: "Bebas Neue";
-  cursor: pointer;
   margin-top: 0;
   margin-bottom: 1rem;
   position: relative;
@@ -553,7 +552,6 @@ span {
 .h2Title{
   font-size: 1.8rem;
   font-family: "Bebas Neue";
-  cursor: pointer;
   margin-top: 0;
   margin-bottom: 1rem;
   position: relative;

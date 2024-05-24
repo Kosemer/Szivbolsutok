@@ -1,37 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy:ital@0;1&display=swap');
 
 .parallax {
-    /* The image used */
+    /* The image used 
 
-    background-image: linear-gradient(to right, white 50%, pink 50%, pink 70%, white 70%);
+    background-image: linear-gradient(to left top, #e7dde2, #efc3d9, #f6a8ce, #fb8bc2, #ff69b4);
   
-    /* Set a specific height */
-    min-height: 500px;
+    min-height: 100vh;
   
-    /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;
+    justify-content: center;*/
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+
+    align-items: center; /* Center items vertically */
+    padding: 20px;
+    background-image: linear-gradient(to left top, #e7dde2, #efc3d9, #f6a8ce, #fb8bc2, #ff69b4);
+  }
+
+  .rectangle {
+    width: 650px;
+    height: 350px;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    z-index: 2; /* Above the text */
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
   }
-
-  .blob{
-    
+  
+  .fruitCake {
+    max-width: 40%; /* Adjust the image size as needed */
+    height: auto;
+    margin-top: 6rem;
   }
-
 
   .centeredText {
-    text-align: center;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh;
-    color: white;
-    font-size: 2.5rem;  
-    font-family: 'Sorts Mill Goudy', serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Behind the rectangle */
+    color: rgba(0, 0, 0, 0.8); /* Optional: add some transparency */
   }
 
   .centeredTextTitle{
