@@ -1,157 +1,108 @@
-@import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy:ital@0;1&display=swap');
-
 .parallax {
-    /* The image used 
-
-    background-image: linear-gradient(to left top, #e7dde2, #efc3d9, #f6a8ce, #fb8bc2, #ff69b4);
-  
-    min-height: 100vh;
-  
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;*/
     min-height: 100vh;
     position: relative;
     display: flex;
-
-    align-items: center; /* Center items vertically */
-    padding: 20px;
+    align-items: center;
+    justify-content: center;
     background-image: linear-gradient(to left top, #e7dde2, #efc3d9, #f6a8ce, #fb8bc2, #ff69b4);
-  }
+}
 
-  .rectangle {
+.rectangle {
     width: 650px;
-    height: 350px;
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2; /* Above the text */
-    /* From https://css.glass */
     background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-  }
-  
-  .fruitCake {
-    max-width: 40%; /* Adjust the image size as needed */
-    height: auto;
-    margin-top: 6rem;
-  }
-
-  .centeredText {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1; /* Behind the rectangle */
-    color: rgba(0, 0, 0, 0.8); /* Optional: add some transparency */
-  }
+    left: 20%;
+    top: 60%;
+    transform: translate(0, -50%);
+    z-index: 2;
+    
+}
 
-  .centeredTextTitle{
+.titleBox{
+  position: absolute;
+  left: 5%;
+  top: 30%;
+  transform: translate(0, -50%);
+  z-index: 2;
+
+}
+
+.centeredTextTitle2 {
+  text-align: center;
+  color: #333;
+  font-size: 4rem;
+  font-weight: 400;
+  font-family: "Bebas Neue";
+}
+
+.fruitCake {
+    max-width: 45%;
+    height: auto;
+    position: absolute;
+    right: 10%; /* Adjust as needed */
+    top: 60%;
+    transform: translate(0, -50%);
+    z-index: 1;
+
+}
+
+.centeredTextTitle {
     text-align: center;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh;
     color: #333;
     font-size: 3rem;
     font-weight: 400;
     font-family: 'Sorts Mill Goudy', serif;
-  }
+}
 
-  .introductoryText{
+.text {
+    background-color: rgba(33, 37, 40, 0.8);
+}
+
+.introductoryText {
     text-align: center;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    height: 50vh;
     font-size: 1.7rem;
     line-height: 1.6;
     color: #ffffff;
-    margin-bottom: 20px;
-    margin: 0px 100px 0px 100px;
+    margin: 0 100px;
     font-family: 'Sorts Mill Goudy', serif;
-  }
+}
 
-  .text{
-    background-color: rgb(33, 37, 40, 0.8);
-  }
+.introductoryText2 {
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #141313;
+  font-family: 'Sorts Mill Goudy', serif;
+  padding: 0px 70px 0px 70px;
+ 
+}
 
- /* Mobil eszközök (kis képernyő) */
+/* Responsive styles */
 @media only screen and (max-width: 400px) {
-    .introductoryText{
-        text-align: center;
-        display: flex;
-        justify-content: center; 
-        align-items: center; 
-        height: 50vh;
-        color: black;
+    .introductoryText {
         font-size: 1.2rem;
-        line-height: 1.6;
-        color: #333;
-        margin-bottom: 10px;
-        margin: 0px 20px 0px 20px;
-        font-family: 'Sorts Mill Goudy', serif;
-      }
-      .centeredText {
-        text-align: center;
-        display: flex;
-        justify-content: center; 
-        align-items: center; 
-        height: 100vh;
-        color: white;
-        font-size: 2.5rem;  
-        font-family: 'Sorts Mill Goudy', serif;
-      }
-  } 
-  
-/* Mobil eszközök (kis képernyő) */
+        margin: 0 20px;
+    }
+    .centeredTextTitle {
+        font-size: 2.5rem;
+    }
+}
+
 @media only screen and (min-width: 401px) and (max-width: 767px) {
-    .introductoryText{
-        text-align: center;
-        display: flex;
-        justify-content: center; 
-        align-items: center; 
-        height: 50vh;
-        color: black;
+    .introductoryText {
         font-size: 1.4rem;
-        line-height: 1.6;
-        color: #333;
-        margin-bottom: 10px;
-        margin: 0px 20px 0px 20px;
-        font-family: 'Sorts Mill Goudy', serif;
-      }
-      .centeredText {
-        text-align: center;
-        display: flex;
-        justify-content: center; 
-        align-items: center; 
-        height: 50vh;
-        color: white;
-        font-size: 2.5rem;  
-        font-family: 'Sorts Mill Goudy', serif;
-      }
-  }
-  
-  /* Tablet eszközök (közepes képernyő) */
-  @media only screen and (min-width: 768px) and (max-width: 991px) {
-
-  }
-  
-  /* Kisebb asztali és laptop kijelzők */
-  @media only screen and (min-width: 992px) and (max-width: 1199px) {
-
-  }
-  
-  /* Nagyobb asztali kijelzők és TV-k */
-  @media only screen and (min-width: 1200px) {
-
-  }
-  
+        margin: 0 20px;
+    }
+    .centeredTextTitle {
+        font-size: 2.5rem;
+    }
+}
