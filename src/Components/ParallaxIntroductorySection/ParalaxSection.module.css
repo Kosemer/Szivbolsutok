@@ -30,7 +30,7 @@
 .titleBox{
   position: absolute;
   left: 5%;
-  top: 30%;
+  top: 20%;
   transform: translate(0, -50%);
   z-index: 2;
 
@@ -52,6 +52,12 @@
     top: 60%;
     transform: translate(0, -50%);
     z-index: 1;
+
+}
+
+.mainTitle{
+  width: 50%;
+  height: auto;
 
 }
 

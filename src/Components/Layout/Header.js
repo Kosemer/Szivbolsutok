@@ -12,6 +12,7 @@ import instagram from "../../Assets/SocialIcon/instagram.svg";
 import facebook from "../../Assets/SocialIcon/facebook.svg";
 import CurtainMenu from "./CurtainMenu";
 import CurtainMenuWithLink from "./CurtainMenuWithLink";
+import mainTitle from "../../Assets/CakesPicture/mainTitle.png"
 
 function Header() {
   const cartCtx = useContext(CartContext);
@@ -53,7 +54,10 @@ function Header() {
       {
         <header className={headerClasses}>
           <NavLink to="/" className={classes.linkText}>
-            <h1 className={classes.title}>Szívből sütök</h1>
+            <div className={classes.headerTitle}>
+          <img src={mainTitle} alt="Fruit Cake" className={classes.mainTitle} />
+          </div>
+            {/*<h1 className={classes.title}>Szívből sütök</h1>*/}
           </NavLink>
 
           {/*<div className={classes.logoContainer}>

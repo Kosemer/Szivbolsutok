@@ -17,6 +17,18 @@
   transition: transform 0.3s ease-in-out; 
 }
 
+.headerTitle{
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.mainTitle{
+  width: 30%;
+  height: auto;
+  margin-left: 2rem;
+}
+
 .header nav {
   height: 100%;
   width: 100%;
