@@ -3,37 +3,30 @@
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-image: linear-gradient(to left top, #e7dde2, #efc3d9, #f6a8ce, #fb8bc2, #ff69b4);
+    justify-content: flex-start; 
+    background-color: white;
+    background-image: url('../../Assets/CakesPicture/polygonSvg3.svg'); /* Háttérkép beállítása */
+    background-size: cover; /* A háttér méretének beállítása */
+    background-repeat: no-repeat; /* A háttér ismétlődésének megakadályozása */
 }
 
 .rectangle {
     width: 650px;
     height: 300px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
     position: absolute;
-    left: 20%;
-    top: 60%;
+    top: 70%;
     transform: translate(0, -50%);
     z-index: 2;
-    
 }
 
-.titleBox{
+.titleBox {
   position: absolute;
   left: 5%;
-  top: 20%;
+  top: 30%;
   transform: translate(0, -50%);
   z-index: 2;
-
 }
 
 .centeredTextTitle2 {
@@ -52,21 +45,28 @@
     top: 60%;
     transform: translate(0, -50%);
     z-index: 1;
-
 }
 
-.mainTitle{
+.mainTitle {
   width: 50%;
   height: auto;
-
 }
 
 .centeredTextTitle {
     text-align: center;
-    color: #333;
-    font-size: 3rem;
-    font-weight: 400;
-    font-family: 'Sorts Mill Goudy', serif;
+    font-size: 4rem;
+    font-family: "Bebas Neue";
+    
+}
+
+.pinkText {
+    color: #FF69B4;
+    font-weight: normal;
+}
+
+.blackText {
+    color: #000000;
+    font-weight: normal;
 }
 
 .text {
@@ -74,7 +74,7 @@
 }
 
 .introductoryText {
-    text-align: center;
+   
     font-size: 1.7rem;
     line-height: 1.6;
     color: #ffffff;
@@ -83,14 +83,14 @@
 }
 
 .introductoryText2 {
-  text-align: center;
+ 
   font-size: 1.3rem;
   line-height: 1.6;
   color: #141313;
   font-family: 'Sorts Mill Goudy', serif;
   padding: 0px 70px 0px 70px;
- 
 }
+
 
 /* Responsive styles */
 @media only screen and (max-width: 400px) {

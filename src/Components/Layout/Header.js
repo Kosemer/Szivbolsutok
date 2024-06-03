@@ -48,6 +48,7 @@ function Header() {
   const headerClasses = `${classes.header} ${
     menuVisible ? "" : classes.hidden
   } ${cssMobile ? classes.active : ""}`;
+  
 
   return (
     <Fragment>
