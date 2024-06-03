@@ -67,7 +67,9 @@ function Header() {
             </NavLink>
           </div>*/}
           <CurtainMenu></CurtainMenu>
+          <div className={classes.burgerButton}>
           <BurgerButton></BurgerButton>
+          </div>
           
           {/*<CurtainMenuWithLink></CurtainMenuWithLink>*/}
         </header>
