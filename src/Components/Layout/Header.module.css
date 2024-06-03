@@ -16,6 +16,14 @@
   transition: transform 0.3s ease-in-out; 
 }
 
+.headerVisible {
+  transform: translateY(0);
+}
+
+.headerHidden {
+  transform: translateY(-100%);
+}
+
 
 .headerTitle{
   display: flex;

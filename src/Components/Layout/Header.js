@@ -12,7 +12,6 @@ import instagram from "../../Assets/SocialIcon/instagram.svg";
 import facebook from "../../Assets/SocialIcon/facebook.svg";
 import CurtainMenu from "./CurtainMenu";
 import CurtainMenuWithLink from "./CurtainMenuWithLink";
-import mainTitle from "../../Assets/CakesPicture/mainTitle.png"
 
 function Header() {
   const cartCtx = useContext(CartContext);
@@ -48,30 +47,21 @@ function Header() {
   const headerClasses = `${classes.header} ${
     menuVisible ? "" : classes.hidden
   } ${cssMobile ? classes.active : ""}`;
-  
 
   return (
     <Fragment>
       {
         <header className={headerClasses}>
-          <NavLink to="/" className={classes.linkText}>
-            <div className={classes.headerTitle}>
-          <img src={mainTitle} alt="Fruit Cake" className={classes.mainTitle} />
-          </div>
-            {/*<h1 className={classes.title}>Szívből sütök</h1>*/}
-          </NavLink>
-
-          {/*<div className={classes.logoContainer}>
+          <h1 className={classes.title}>Szívből sütök</h1>
+           {/*<div className={classes.logoContainer}>
             <NavLink to="/" className={classes.logoLink}>
               <img src={Logo} className={classes.logo} alt="logo"></img>
             </NavLink>
           </div>*/}
-          <CurtainMenu></CurtainMenu>
-          <div className={classes.burgerButton}>
           <BurgerButton></BurgerButton>
-          </div>
-          
+          <CurtainMenu></CurtainMenu>
           {/*<CurtainMenuWithLink></CurtainMenuWithLink>*/}
+
         </header>
       }
     </Fragment>

@@ -29,19 +29,6 @@ function ParalaxSection() {
         </div>
         <img src={fruitCake} alt="Fruit Cake" className={classes.fruitCake} />
       </div>
-      <div className={classes.text}>
-        <p className={classes.introductoryText}>
-          Mióta az eszemet tudom, a sütés-főzés teszi ki a gondolataim jelentős
-          részét. A sütéssel komolyabban is elkezdtem foglalkozni, ezért
-          2017-ben elvégeztem egy cukrász képzést. Ezt követően pedig
-          megállíthatatlan süteménykészítésbe kezdtem a hagyományos és a mentes
-          vonalon is bontogatva a szárnyaimat. Mindezek eredményét láthatod az
-          oldalon.
-        </p>
-      </div>
-      <div className={classes.parallax}>
-        
-      </div>
     </div>
   );
 }
