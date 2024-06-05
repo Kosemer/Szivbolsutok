@@ -92,3 +92,22 @@
   font-weight: 550;
   
 }
+
+/* Mobil eszközök (kis képernyő) */
+@media only screen and (max-width: 767px) {
+
+}
+
+/* Tablet eszközök (közepes képernyő) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Kisebb asztali és laptop kijelzők */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* Nagyobb asztali kijelzők és TV-k */
+@media only screen and (min-width: 1200px) {
+}
