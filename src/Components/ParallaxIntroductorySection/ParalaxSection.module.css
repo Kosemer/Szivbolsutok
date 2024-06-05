@@ -78,22 +78,26 @@
         background-attachment: fixed; /* Fix the background */
         background-repeat: no-repeat;
         overflow: auto; /* Ensure scrolling */
+        text-align: center;
     }
 
     .rectangle {
         width: 100%;
         height: auto; /* Adjust height to auto for content flexibility */
         margin-top: 20px; /* Adjust margin for spacing */
+        top: 40%;
     }
     
     .titleBox {
         margin-top: 20px; /* Adjust margin as needed */
+        left: auto;
+        top: 15%;
     }
     
     .fruitCake {
-        max-width: 90%; /* Adjust width to fit the screen */
+        max-width: 80%; /* Adjust width to fit the screen */
         height: auto;
-        margin-top: 20px; /* Adjust margin for spacing */
+        top: 80%;
     }
 
     .centeredTextTitle {
@@ -101,7 +105,7 @@
     }
 
     .introductoryText2 {
-        font-size: 1rem; /* Adjust font size for smaller screens */
+        font-size: 1.1rem; /* Adjust font size for smaller screens */
         padding: 0px 20px; /* Adjust padding for smaller screens */
     }
       
