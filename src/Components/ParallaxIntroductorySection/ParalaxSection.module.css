@@ -72,48 +72,38 @@
 
 /* Mobil eszközök (kis képernyő) */
 @media only screen and (max-width: 767px) {
+    .parallax {
+        background-attachment: scroll; /* Make the background scroll with content */
+        flex-direction: column;
+        background-attachment: fixed; /* Fix the background */
+        background-repeat: no-repeat;
+        overflow: auto; /* Ensure scrolling */
+    }
+
     .rectangle {
         width: 100%;
-        height: 300px;
-        display: flex;
-        align-items: center;
-        position: absolute;
-        top: 60%;
-        transform: translate(0, -50%);
-        z-index: 2;
+        height: auto; /* Adjust height to auto for content flexibility */
+        margin-top: 20px; /* Adjust margin for spacing */
     }
     
     .titleBox {
-      position: absolute;
-      left: 5%;
-      top: 20%;
-      transform: translate(0, -50%);
-      z-index: 2;
+        margin-top: 20px; /* Adjust margin as needed */
     }
     
     .fruitCake {
-        max-width: 45%;
+        max-width: 90%; /* Adjust width to fit the screen */
         height: auto;
-        position: absolute;
-        right: 10%; /* Adjust as needed */
-        top: 50%;
-        transform: translate(0, -50%);
-        z-index: 1;
+        margin-top: 20px; /* Adjust margin for spacing */
     }
+
     .centeredTextTitle {
-        text-align: center;
-        font-size: 3rem;
-        font-family: "Bebas Neue";
-        
+        font-size: 2.5rem; /* Adjust font size for smaller screens */
     }
+
     .introductoryText2 {
- 
-        font-size: 1.1rem;
-        line-height: 1.6;
-        color: #141313;
-        font-family: 'Sorts Mill Goudy', serif;
-        padding: 0px 60px 0px 20px;
-      }
+        font-size: 1rem; /* Adjust font size for smaller screens */
+        padding: 0px 20px; /* Adjust padding for smaller screens */
+    }
       
 }
 
