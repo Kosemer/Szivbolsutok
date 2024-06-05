@@ -12,6 +12,7 @@ import instagram from "../../Assets/SocialIcon/instagram.svg";
 import facebook from "../../Assets/SocialIcon/facebook.svg";
 import CurtainMenu from "./CurtainMenu";
 import CurtainMenuWithLink from "./CurtainMenuWithLink";
+import mainTitle from "../../Assets/CakesPicture/mainTitle.png"
 
 function Header() {
   const cartCtx = useContext(CartContext);
@@ -27,7 +28,8 @@ function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
-      setMenuVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+      const shouldShowMenu = prevScrollPos > currentScrollPos || currentScrollPos < 10;
+      setMenuVisible(shouldShowMenu && currentScrollPos === 0);
       setPrevScrollPos(currentScrollPos);
     };
 
@@ -48,20 +50,33 @@ function Header() {
     menuVisible ? "" : classes.hidden
   } ${cssMobile ? classes.active : ""}`;
 
+  const mainTitleClasses = `${classes.mainTitle} ${
+    menuVisible ? "" : classes.mainTitleHidden
+  } ${cssMobile ? classes.active : ""}`;
+  
+
   return (
     <Fragment>
       {
         <header className={headerClasses}>
-          <h1 className={classes.title}>Szívből sütök</h1>
-           {/*<div className={classes.logoContainer}>
+          <NavLink to="/" className={classes.linkText}>
+            <div className={classes.headerTitle}>
+          <img src={mainTitle} alt="Fruit Cake" className={mainTitleClasses} />
+          </div>
+            {/*<h1 className={classes.title}>Szívből sütök</h1>*/}
+          </NavLink>
+
+          {/*<div className={classes.logoContainer}>
             <NavLink to="/" className={classes.logoLink}>
               <img src={Logo} className={classes.logo} alt="logo"></img>
             </NavLink>
           </div>*/}
-          <BurgerButton></BurgerButton>
           <CurtainMenu></CurtainMenu>
+          <div className={classes.burgerButton}>
+          <BurgerButton></BurgerButton>
+          </div>
+          
           {/*<CurtainMenuWithLink></CurtainMenuWithLink>*/}
-
         </header>
       }
     </Fragment>
