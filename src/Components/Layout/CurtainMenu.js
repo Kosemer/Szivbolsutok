@@ -4,7 +4,7 @@ import CartContext from "../Store/cart-context";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
 
-const CurtainMenu = () => {
+const CurtainMenu = (menuVisible) => {
   const cartCtx = useContext(CartContext);
 
   const [overlayClass, setOverlayClass] = useState(styles.overlay);

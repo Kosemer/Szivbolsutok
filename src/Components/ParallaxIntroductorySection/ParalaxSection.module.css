@@ -69,10 +69,55 @@
   padding: 0px 70px 0px 70px;
 }
 
+.imageContainer {
+    display: flex;
+    justify-content: center; /* Függőleges középre igazítás */
+  align-items: center; /* Függőleges középre igazítás */
+    gap: 20px; /* Add some space between the single image and the group */
+    margin-left: auto; /* Align the image container to the right */
+    margin-right: 100px;
+  }
+  
+  .imageBoxSingle {
+    margin-bottom: 20px; /* Add some space below the single image if needed */
+  }
+  
+  .imageBoxSingle img {
+    width: 350px; /* Adjust size of the single image */
+    height: auto;
+    border-radius: 50px;
+  }
+  
+  .imageBoxGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .imageBox {
+    margin-bottom: 30px; /* Space between images in the group */
+  }
+  
+  .imageBox img {
+    width: 200px; /* Adjust size of the images */
+    height: auto;
+    border-radius: 30px;
+  }
+
+  .imageBox2 {
+    margin-top: 30px; /* Space between images in the group */
+  }
+  
+  .imageBox2 img {
+    width: 200px; /* Adjust size of the images */
+    height: auto;
+    border-radius: 30px;
+  }
 
 /* Mobil eszközök (kis képernyő) */
-@media only screen and (max-width: 767px) {
+@media (max-width: 480px) {
     .parallax {
+        height: 100%;
         background-attachment: scroll; /* Make the background scroll with content */
         flex-direction: column;
         background-attachment: fixed; /* Fix the background */
@@ -85,7 +130,7 @@
         width: 100%;
         height: auto; /* Adjust height to auto for content flexibility */
         margin-top: 20px; /* Adjust margin for spacing */
-        top: 40%;
+        top: 50%;
     }
     
     .titleBox {
@@ -97,7 +142,49 @@
     .fruitCake {
         max-width: 80%; /* Adjust width to fit the screen */
         height: auto;
-        top: 80%;
+        top: 90%;
+    }
+
+    .centeredTextTitle {
+        font-size: 3rem; /* Adjust font size for smaller screens */
+    }
+
+    .introductoryText2 {
+        font-size: 1.2rem; /* Adjust font size for smaller screens */
+        padding: 0px 20px; /* Adjust padding for smaller screens */
+    }
+
+  }
+
+/* Mobil eszközök */
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+    .parallax {
+        height: 100%;
+        background-attachment: scroll; /* Make the background scroll with content */
+        flex-direction: column;
+        background-attachment: fixed; /* Fix the background */
+        background-repeat: no-repeat;
+        overflow: auto; /* Ensure scrolling */
+        text-align: center;
+    }
+
+    .rectangle {
+        width: 100%;
+        height: auto; /* Adjust height to auto for content flexibility */
+        margin-top: 20px; /* Adjust margin for spacing */
+        top: 50%;
+    }
+    
+    .titleBox {
+        margin-top: 20px; /* Adjust margin as needed */
+        left: auto;
+        top: 15%;
+    }
+    
+    .fruitCake {
+        max-width: 80%; /* Adjust width to fit the screen */
+        height: auto;
+        top: 100%;
     }
 
     .centeredTextTitle {

@@ -71,7 +71,7 @@ function Header() {
               <img src={Logo} className={classes.logo} alt="logo"></img>
             </NavLink>
           </div>*/}
-          <CurtainMenu></CurtainMenu>
+          <CurtainMenu menuVisible={menuVisible}></CurtainMenu>
           <div className={classes.burgerButton}>
           <BurgerButton></BurgerButton>
           </div>
