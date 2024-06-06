@@ -4,7 +4,7 @@ import CartContext from "../Store/cart-context";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
 
-const CurtainMenu = (menuVisible) => {
+const CurtainMenu = ({ menuVisible }) => {
   const cartCtx = useContext(CartContext);
 
   const [overlayClass, setOverlayClass] = useState(styles.overlay);
@@ -95,7 +95,7 @@ const CurtainMenu = (menuVisible) => {
 
   return (
     <div>
-      <div id="myNav" className={overlayClass} onClick={closeNav}>
+      <div id="myNav" className={overlayClass} onClick={closeNav} style={{ top: menuVisible ? '5rem' : '3rem' }}>
         <div className={styles.container}>
           {images.map((image) => (
             <div
