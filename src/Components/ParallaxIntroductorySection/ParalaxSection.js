@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./ParalaxSection.module.css";
 import image1 from "../../Assets/CakesPicture/HarryPotter.png";
 import image2 from "../../Assets/CakesPicture/Macaron.png";
 import image3 from "../../Assets/CakesPicture/Málna, mogyoró mousse.jpg";
+import fruitCake from "../../Assets/CakesPicture/viragLada.png";
 
 function ParalaxSection() {
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div>
       <div className={classes.parallax}>
@@ -27,19 +42,25 @@ function ParalaxSection() {
             Jó nézelődést kívánok! 🙂
           </p>
         </div>
-        <div className={classes.imageContainer}>
-          <div className={classes.imageBoxSingle}>
-            <img src={image1} alt="Image 1" />
+        {isMobileView ? (
+          <div className={classes.fruitCakeContainer}>
+          <img src={fruitCake} alt="Fruit Cake" className={classes.fruitCake} />
           </div>
-          <div className={classes.imageBoxGroup}>
-            <div className={classes.imageBox}>
-              <img src={image2} alt="Image 2" />
+        ) : (
+          <div className={classes.imageContainer}>
+            <div className={classes.imageBoxSingle}>
+              <img src={image1} alt="Image 1" />
             </div>
-            <div className={classes.imageBox2}>
-              <img src={image3} alt="Image 3" />
+            <div className={classes.imageBoxGroup}>
+              <div className={classes.imageBox}>
+                <img src={image2} alt="Image 2" />
+              </div>
+              <div className={classes.imageBox2}>
+                <img src={image3} alt="Image 3" />
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
