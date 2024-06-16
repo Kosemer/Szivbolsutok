@@ -114,13 +114,26 @@
     border-radius: 30px;
   }
 
+  .container {
+    display: flex;
+    justify-content: center; /* Vízszintesen középre igazít */
+    align-items: center; /* Függőlegesen középre igazít */
+    height: 50vh; /* A teljes magasságot lefedi */
+  }
+  
+  .wordCloud {
+    max-width: 100%; /* A kép szélességét igazítja */
+    height: auto; /* Megőrzi a kép arányait */
+  }
+  
+
 /* Mobil eszközök (kis képernyő) */
 @media (max-width: 480px) {
     .parallax {
         height: 100%;
         background-attachment: scroll; /* Make the background scroll with content */
         flex-direction: column;
-        background-attachment: fixed; /* Fix the background */
+        /*background-attachment: fixed;*/ 
         background-repeat: no-repeat;
         overflow: auto; /* Ensure scrolling */
         text-align: center;
@@ -130,13 +143,13 @@
         width: 100%;
         height: auto; /* Adjust height to auto for content flexibility */
         margin-top: 20px; /* Adjust margin for spacing */
-        top: 40%;
+        top: 45%;
     }
     
     .titleBox {
         margin-top: 20px; /* Adjust margin as needed */
         left: auto;
-        top: 10%;
+        top: 15%;
 
     }
 
@@ -147,17 +160,17 @@
       }
     
     .fruitCake {
-        max-width: 80%; /* Adjust width to fit the screen */
+        max-width: 70%; /* Adjust width to fit the screen */
         height: auto;
         top: 80%;
     }
 
     .centeredTextTitle {
-        font-size: 3rem; /* Adjust font size for smaller screens */
+        font-size: 2.7rem; /* Adjust font size for smaller screens */
     }
 
     .introductoryText2 {
-        font-size: 1.2rem; /* Adjust font size for smaller screens */
+        font-size: 1.1rem; /* Adjust font size for smaller screens */
         padding: 0px 20px; /* Adjust padding for smaller screens */
     }
 
