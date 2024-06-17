@@ -118,14 +118,33 @@
     display: flex;
     justify-content: center; /* Vízszintesen középre igazít */
     align-items: center; /* Függőlegesen középre igazít */
-    height: 50vh; /* A teljes magasságot lefedi */
+    height: 100%; /* A teljes magasságot lefedi */
   }
   
   .wordCloud {
-    max-width: 100%; /* A kép szélességét igazítja */
+    max-width: 90%; /* A kép szélességét igazítja */
     height: auto; /* Megőrzi a kép arányait */
   }
+
+  .productCategoryTitle {
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 3.5rem; 
+    font-family: 'Sorts Mill Goudy', serif;
+    position: relative;
+    display: inline-block; /* szükséges a középre igazításhoz */
+  }
   
+  .productCategoryTitle::after {
+    content: ''; 
+    position: absolute; 
+    bottom: -4px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 100%; 
+    height: 3px; /* Vonal magassága */
+    background-color: #FF69B4; /* Vonal színe */
+  }
 
 /* Mobil eszközök (kis képernyő) */
 @media (max-width: 480px) {
@@ -173,7 +192,18 @@
         font-size: 1.1rem; /* Adjust font size for smaller screens */
         padding: 0px 20px; /* Adjust padding for smaller screens */
     }
-
+    .productCategoryTitle {
+        text-align: center;
+        margin-top: 5rem;
+        font-size: 1.5rem; 
+        font-family: 'Sorts Mill Goudy', serif;
+        position: relative;
+        display: inline-block; /* szükséges a középre igazításhoz */
+      }
+      .wordCloud {
+        max-width: 100%; /* A kép szélességét igazítja */
+        height: auto; /* Megőrzi a kép arányait */
+      }
   }
 
 /* Mobil eszközök */

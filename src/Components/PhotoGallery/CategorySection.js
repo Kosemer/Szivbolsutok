@@ -11,6 +11,7 @@ const CategorySection = ({ category, imageSrc, description }) => {
       <div className={styles.wrapper}>
                 {/* Kép */}
                 <div className={styles["image-containerMoblie"]}> {/* CSS modul osztály */}
+                
           <img
             src={imageSrc}
             alt={category}
@@ -96,6 +97,7 @@ const CategorySection = ({ category, imageSrc, description }) => {
         </div>
         {/* Kép */}
         <div className={styles["image-container"]}> {/* CSS modul osztály */}
+        
           <img
             src={imageSrc}
             alt={category}

@@ -61,7 +61,9 @@
         align-items: center;
         justify-content: center;
         height: 20px;
+        line-height: 25px;
     }
+    
     h1{
         margin-top: 2rem;
     }

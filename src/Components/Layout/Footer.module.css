@@ -250,7 +250,7 @@ span {
 
 
 .verticalLine {
-  border-left: 2px solid #ff000080; 
+  border-left: 2px solid #FF69B4; 
   height: 100%; /* A függőleges vonal magasságának beállítása a linkBox méretére */
   margin-right: 4rem; 
   padding-left: 1rem;

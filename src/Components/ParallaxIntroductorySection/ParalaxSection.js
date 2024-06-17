@@ -65,6 +65,9 @@ function ParalaxSection() {
         
       </div>
       <div className={classes.container}>
+      <h1 className={classes.productCategoryTitle}>Fedezd fel a termékkategóriákat!</h1>
+      </div>
+      <div className={classes.container}>
         <img src={wordCloud} alt="wordCloud" className={classes.wordCloud} />
       </div>
     </div>
