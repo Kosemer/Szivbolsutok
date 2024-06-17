@@ -4,7 +4,8 @@ import image1 from "../../Assets/CakesPicture/HarryPotter.png";
 import image2 from "../../Assets/CakesPicture/Macaron.png";
 import image3 from "../../Assets/CakesPicture/Málna, mogyoró mousse.jpg";
 import fruitCake from "../../Assets/CakesPicture/viragLada.png";
-import wordCloud from "../../Assets/CakesPicture/wordCloud.png"
+import wordCloud from "../../Assets/CakesPicture/wordCloud.png";
+import AnimatedDownArrow from "../AnimatedDownArrow/AnimatedDownArrow";
 
 function ParalaxSection() {
   const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
@@ -70,6 +71,7 @@ function ParalaxSection() {
       <div className={classes.container}>
         <img src={wordCloud} alt="wordCloud" className={classes.wordCloud} />
       </div>
+      <AnimatedDownArrow></AnimatedDownArrow>
     </div>
   );
 }

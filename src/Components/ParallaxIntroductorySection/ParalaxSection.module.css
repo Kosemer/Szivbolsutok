@@ -122,13 +122,14 @@
   }
   
   .wordCloud {
-    max-width: 90%; /* A kép szélességét igazítja */
+    max-width: 80%; /* A kép szélességét igazítja */
     height: auto; /* Megőrzi a kép arányait */
   }
 
   .productCategoryTitle {
     text-align: center;
-    margin-top: 5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     font-size: 3.5rem; 
     font-family: 'Sorts Mill Goudy', serif;
     position: relative;
