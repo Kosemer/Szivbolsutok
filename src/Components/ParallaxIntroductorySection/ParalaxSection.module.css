@@ -142,7 +142,7 @@
     left: 50%; 
     transform: translateX(-50%); 
     width: 100%; 
-    height: 3px; /* Vonal magassága */
+    height: 4px; /* Vonal magassága */
     background-color: #FF69B4; /* Vonal színe */
   }
 
