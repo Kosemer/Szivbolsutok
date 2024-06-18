@@ -2,7 +2,7 @@
     margin-top: 5rem;
     padding-left: 50px;
     padding-right: 50px;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
 }
 
 .rowContainer {
@@ -50,7 +50,12 @@
     color: rgba(255, 0, 0, 0.5);
 }
 
-
+.imageStyle {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    background-color: rgba(255, 0, 0, 0.5);
+  }
 
 /* Extra kicsi készülékek (telefonok, 576px és alatt) */
 @media (max-width: 575.98px) {
@@ -71,7 +76,7 @@
         margin-top: 1rem;
         padding-left: 30px;
         padding-right: 30px;
-        margin-bottom: 5rem;
+        margin-bottom: 2rem;
     }
     .cardBodyNext{
         color: rgba(255, 0, 0, 0.5);
@@ -83,7 +88,10 @@
         align-items: center;
         justify-content: center;
         height: 20px;
-    }     
+    }
+    .imageStyle {
+        height: 250px;
+      }     
   }
   
   /* Kicsi készülékek (tabletek, 576px és 767px között) */
@@ -113,7 +121,10 @@
         align-items: center;
         justify-content: center;
         height: 20px;
-    } 
+    }
+    .imageStyle {
+        height: 250px;
+      } 
   }
   
   /* Közepes készülékek (tabletek, 768px és 991px között) */

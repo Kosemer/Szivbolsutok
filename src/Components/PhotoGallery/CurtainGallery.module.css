@@ -96,7 +96,22 @@ backdrop-filter: blur(5.4px);
   
     /* Extra kicsi készülékek (telefonok, 576px és alatt) */
   @media (max-width: 575.98px) {
-  
+    .categoryTitle{
+      text-align: center;
+      color: #f1f1f1;
+      background-color: rgb(255, 105, 180);
+      display: inline-block;
+      padding: 10px;
+      border-radius: 0 0 10px 10px;
+      animation: slideIn 0.5s ease-out;
+  }
+
+  .categoryH1{
+      font-size: 2rem;
+      font-family: "Bebas Neue", sans-serif;
+      margin-bottom: 0rem;
+      margin-top: 0rem;
+  }
 
   }
   
@@ -107,6 +122,22 @@ backdrop-filter: blur(5.4px);
       margin: 0 10px 20px 10px;
       position: relative;
     }
+    .categoryTitle{
+      text-align: center;
+      color: #f1f1f1;
+      background-color: rgb(255, 105, 180);
+      display: inline-block;
+      padding: 10px;
+      border-radius: 0 0 10px 10px;
+      animation: slideIn 0.5s ease-out;
+  }
+
+  .categoryH1{
+      font-size: 2rem;
+      font-family: "Bebas Neue", sans-serif;
+      margin-bottom: 0rem;
+      margin-top: 0rem;
+  }
   }
   
   .box img {
@@ -142,6 +173,7 @@ backdrop-filter: blur(5.4px);
     transition: font-size 0.3s ease-in-out;
     cursor: pointer;
   }
+
   
   /* Közepes készülékek (tabletek, 768px és 991px között) */
   @media (min-width: 768px) and (max-width: 991.98px) {

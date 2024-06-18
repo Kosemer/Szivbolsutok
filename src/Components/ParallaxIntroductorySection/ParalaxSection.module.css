@@ -29,16 +29,6 @@
   z-index: 2;
 }
 
-.fruitCake {
-    max-width: 45%;
-    height: auto;
-    position: absolute;
-    right: 10%; /* Adjust as needed */
-    top: 60%;
-    transform: translate(0, -50%);
-    z-index: 1;
-}
-
 .centeredTextTitle {
     text-align: center;
     font-size: 4rem;
@@ -147,8 +137,131 @@
     background-color: #FF69B4; /* Vonal színe */
   }
 
-/* Mobil eszközök (kis képernyő) */
-@media (max-width: 480px) {
+  @media (min-width: 320px) and (max-width: 375px) {
+    .parallax {
+        height: 100%;
+        background-attachment: scroll; /* Make the background scroll with content */
+        flex-direction: column;
+        /*background-attachment: fixed;*/ 
+        background-repeat: no-repeat;
+        overflow: auto; /* Ensure scrolling */
+        text-align: center;
+    }
+
+    .rectangle {
+        width: 100%;
+        height: auto; /* Adjust height to auto for content flexibility */
+        margin-top: 20px; /* Adjust margin for spacing */
+        top: 45%;
+    }
+    
+    .titleBox {
+        margin-top: 20px; /* Adjust margin as needed */
+        left: auto;
+        top: 15%;
+
+    }
+
+    .fruitCakeContainer {
+        display: flex;
+        justify-content: center; /* Horizontálisan középre igazítás */
+        align-items: center; /* Vertikálisan középre igazítás */
+      }
+    
+    .fruitCake {
+        max-width: 55%; /* Adjust width to fit the screen */
+        height: auto;
+        top: 80%;
+        transform: translate(0, -50%);
+        position: absolute;
+    }
+
+    .centeredTextTitle {
+        font-size: 2.5rem; /* Adjust font size for smaller screens */
+    }
+
+    .introductoryText2 {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+        padding: 0px 20px; /* Adjust padding for smaller screens */
+    }
+    .productCategoryTitle {
+        text-align: center;
+        margin-top: 5rem;
+        font-size: 1.5rem; 
+        font-family: 'Sorts Mill Goudy', serif;
+        position: relative;
+        display: inline-block; /* szükséges a középre igazításhoz */
+      }
+      .wordCloud {
+        max-width: 100%; /* A kép szélességét igazítja */
+        height: auto; /* Megőrzi a kép arányait */
+      }
+  }
+
+  @media (min-width: 376px) and (max-width: 575.98px) {
+    .parallax {
+        height: 100%;
+        background-attachment: scroll; /* Make the background scroll with content */
+        flex-direction: column;
+        /*background-attachment: fixed;*/ 
+        background-repeat: no-repeat;
+        overflow: auto; /* Ensure scrolling */
+        text-align: center;
+    }
+
+    .rectangle {
+        width: 100%;
+        height: auto; /* Adjust height to auto for content flexibility */
+        margin-top: 20px; /* Adjust margin for spacing */
+        top: 45%;
+    }
+    
+    .titleBox {
+        margin-top: 20px; /* Adjust margin as needed */
+        left: auto;
+        top: 15%;
+
+    }
+
+    .fruitCakeContainer {
+        display: flex;
+        justify-content: center; /* Horizontálisan középre igazítás */
+        align-items: center; /* Vertikálisan középre igazítás */
+      }
+    
+    .fruitCake {
+        max-width: 65%; /* Adjust width to fit the screen */
+        height: auto;
+        top: 80%;
+        transform: translate(0, -50%);
+        position: absolute;
+    }
+
+    .centeredTextTitle {
+        font-size: 3rem; /* Adjust font size for smaller screens */
+    }
+
+    .introductoryText2 {
+        font-size: 1.1rem; /* Adjust font size for smaller screens */
+        padding: 0px 20px; /* Adjust padding for smaller screens */
+    }
+    .productCategoryTitle {
+        text-align: center;
+        margin-top: 5rem;
+        font-size: 1.5rem; 
+        font-family: 'Sorts Mill Goudy', serif;
+        position: relative;
+        display: inline-block; /* szükséges a középre igazításhoz */
+      }
+      .wordCloud {
+        max-width: 100%; /* A kép szélességét igazítja */
+        height: auto; /* Megőrzi a kép arányait */
+      }
+  }
+
+
+  /* Kicsi készülékek (tabletek, 576px és 767px között) */
+  @media (min-width: 576px) and (max-width: 767.98px) {
     .parallax {
         height: 100%;
         background-attachment: scroll; /* Make the background scroll with content */
@@ -207,59 +320,150 @@
       }
   }
 
-/* Mobil eszközök */
-@media only screen and (min-width: 481px) and (max-width: 767px) {
+/* Közepes készülékek (tabletek, 768px és 991px között) */
+@media (min-width: 768px) and (max-width: 991.98px) {
     .parallax {
-        height: 100%;
-        background-attachment: scroll; /* Make the background scroll with content */
-        flex-direction: column;
-        background-attachment: fixed; /* Fix the background */
-        background-repeat: no-repeat;
-        overflow: auto; /* Ensure scrolling */
-        text-align: center;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      background-attachment: scroll; /* Make the background scroll with content */
+      background-repeat: no-repeat;
+      overflow: auto; /* Ensure scrolling */
+      text-align: center;
     }
-
+  
     .rectangle {
-        width: 100%;
-        height: auto; /* Adjust height to auto for content flexibility */
-        margin-top: 20px; /* Adjust margin for spacing */
-        top: 50%;
+      width: 100%;
+      height: auto; /* Adjust height to auto for content flexibility */
+      margin-top: 20px; /* Adjust margin for spacing */
+      top: 40%;
     }
     
     .titleBox {
+      margin-top: 20px; /* Adjust margin as needed */
+      left: auto;
+      top: 15%;
+    }
+  
+    .fruitCakeContainer {
+      display: flex;
+      justify-content: center; /* Horizontálisan középre igazítás */
+      align-items: center; /* Vertikálisan középre igazítás */
+    }
+      
+    .fruitCake {
+      max-width: 55%; /* Adjust width to fit the screen */
+      height: auto;
+      top: 75%;
+      transform: translate(0, -50%);
+      position: absolute;
+    }
+  
+    .imageContainer {
+      margin-top: auto; /* Helyezzük az imageContainer-t az aljára */
+    }
+  
+    .centeredTextTitle {
+      font-size: 4rem; /* Adjust font size for smaller screens */
+    }
+  
+    .introductoryText2 {
+      font-size: 1.5rem; /* Adjust font size for smaller screens */
+      padding: 0px 20px; /* Adjust padding for smaller screens */
+    }
+  
+    .productCategoryTitle {
+      text-align: center;
+      margin-top: 5rem;
+      font-size: 2.5rem;
+      font-family: 'Sorts Mill Goudy', serif;
+      position: relative;
+      display: inline-block; /* szükséges a középre igazításhoz */
+    }
+  
+    .wordCloud {
+      max-width: 100%; /* A kép szélességét igazítja */
+      height: auto; /* Megőrzi a kép arányait */
+    }
+  }
+  
+
+  /* Nagy készülékek (asztali gépek, 992px és 1199px között) */
+  @media (min-width: 992px) and (max-width: 1024px) {
+    .parallax {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        background-attachment: scroll; /* Make the background scroll with content */
+        background-repeat: no-repeat;
+        overflow: auto; /* Ensure scrolling */
+        text-align: center;
+      }
+    
+      .rectangle {
+        width: 100%;
+        height: auto; /* Adjust height to auto for content flexibility */
+        margin-top: 20px; /* Adjust margin for spacing */
+        top: 40%;
+      }
+      
+      .titleBox {
         margin-top: 20px; /* Adjust margin as needed */
         left: auto;
         top: 15%;
-    }
+      }
     
-    .fruitCake {
-        max-width: 80%; /* Adjust width to fit the screen */
+      .fruitCakeContainer {
+        display: flex;
+        justify-content: center; /* Horizontálisan középre igazítás */
+        align-items: center; /* Vertikálisan középre igazítás */
+      }
+        
+      .fruitCake {
+        max-width: 55%; /* Adjust width to fit the screen */
         height: auto;
-        top: 100%;
-    }
-
-    .centeredTextTitle {
-        font-size: 2.5rem; /* Adjust font size for smaller screens */
-    }
-
-    .introductoryText2 {
-        font-size: 1.1rem; /* Adjust font size for smaller screens */
+        top: 75%;
+        transform: translate(0, -50%);
+        position: absolute;
+      }
+    
+      .imageContainer {
+        margin-top: auto; /* Helyezzük az imageContainer-t az aljára */
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 5rem;
+      }
+    
+      .centeredTextTitle {
+        font-size: 5rem; /* Adjust font size for smaller screens */
+      }
+    
+      .introductoryText2 {
+        font-size: 2rem; /* Adjust font size for smaller screens */
         padding: 0px 20px; /* Adjust padding for smaller screens */
-    }
-      
+      }
+    
+      .productCategoryTitle {
+        text-align: center;
+        margin-top: 5rem;
+        font-size: 2.5rem;
+        font-family: 'Sorts Mill Goudy', serif;
+        position: relative;
+        display: inline-block; /* szükséges a középre igazításhoz */
+      }
+    
+      .wordCloud {
+        max-width: 100%; /* A kép szélességét igazítja */
+        height: auto; /* Megőrzi a kép arányait */
+      }
 }
 
-/* Tablet eszközök (közepes képernyő) */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* Extra nagy készülékek (asztali gépek, 1200px és afölött) */
+  @media (min-width: 1200px) and (max-width: 1600px) {
 
 }
 
-/* Kisebb asztali és laptop kijelzők */
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-
-}
-
-/* Nagyobb asztali kijelzők és TV-k */
-@media only screen and (min-width: 1200px) {
+  /* Extra nagy készülékek (asztali gépek, 1601px és afölött) */
+  @media (min-width: 1601px) {
 }
 

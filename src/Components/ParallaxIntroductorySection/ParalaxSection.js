@@ -12,7 +12,7 @@ function ParalaxSection() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 768);
+      setIsMobileView(window.innerWidth < 768);
     };
 
     window.addEventListener("resize", handleResize);

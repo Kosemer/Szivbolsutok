@@ -40,17 +40,12 @@ const CardGallery = ({ categories, categoriesName }) => {
         <Row className={classes.rowContainer}>
           {images.map((image, index) => (
             <Col key={index} xs={12} md={6} lg={3} className={`mb-4 mt-4 d-flex ${classes.customCol}`}>
-              <Card className="shadow" style={{ height: "100%" }}>
+              <Card className="shadow" style={{ height: "100%" }} onClick={() => onImageClickHandler()}>
                 <Card.Img
                   variant="top"
                   src={image.src}
                   alt={image.caption}
-                  style={{
-                    width: "100%",
-                    height: "150px",
-                    objectFit: "cover",
-                    backgroundColor: "rgba(255, 0, 0, 0.5)",
-                  }}
+                  className={classes.imageStyle}
                 />
                 <Card.Body className={classes.cardBody}>
                   <Card.Text className={classes.cardText}>

@@ -1,13 +1,9 @@
 import React, { useEffect, useContext, useRef } from "react";
-import OptionalPhotoshoots from "../Components/UI/GoToGallery/OptionalPhotoshoots";
-import Slider from "../Components/UI/Slider/Slider";
 import classes from "./Home.module.css";
-import OpinionSwiperCard from "../Components/UI/OpinionSwiper/OpinionSwiperCard";
 import CartContext from "../Components/Store/cart-context";
 import DesktopSlider from "../Components/UI/OpinionSwiper/DesktopSlider";
 import CardGallery from "../Components/PhotoGallery/CardGallery";
 import CategorySection from "../Components/PhotoGallery/CategorySection";
-import IntroductorySection from "../Components/ParallaxIntroductorySection/IntroductorySection";
 import hagyomanyosTortak from "../Assets/CategorySection/kitKat2.png";
 import burkoltTortak from "../Assets/CategorySection/viragLada.png";
 import linzerTortak from "../Assets/CategorySection/almas3.png";
