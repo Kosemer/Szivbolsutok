@@ -249,6 +249,7 @@ button {
 .pictureSize {
   font-size: 18px;
   font-weight: 600;
+  margin-top: 2rem;
 }
 
 .warningText {
@@ -287,6 +288,16 @@ button {
   font-weight: 600;
   margin-top: 1rem;
 }
+
+.numberOfCharacters{
+  font-size: 1.4rem;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.imageNameInput.exceeded {
+  border-color: red; /* Piros keret, ha túllép a karakter szám */
+}
+
 
 /* Small devices (mobile phones) */
 @media only screen and (max-width: 600px) {

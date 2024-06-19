@@ -71,7 +71,9 @@ function ParalaxSection() {
       <div className={classes.container}>
         <img src={wordCloud} alt="wordCloud" className={classes.wordCloud} />
       </div>
+      <div className={classes.arrow}>
       <AnimatedDownArrow></AnimatedDownArrow>
+      </div>
     </div>
   );
 }

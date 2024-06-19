@@ -196,6 +196,9 @@
         max-width: 100%; /* A kép szélességét igazítja */
         height: auto; /* Megőrzi a kép arányait */
       }
+      .arrow{
+        margin-bottom: 6rem;
+      }
   }
 
   @media (min-width: 376px) and (max-width: 575.98px) {
@@ -256,6 +259,9 @@
       .wordCloud {
         max-width: 100%; /* A kép szélességét igazítja */
         height: auto; /* Megőrzi a kép arányait */
+      }
+      .arrow{
+        margin-bottom: 6rem;
       }
   }
 

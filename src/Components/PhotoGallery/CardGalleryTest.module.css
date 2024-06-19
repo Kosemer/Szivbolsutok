@@ -90,6 +90,9 @@
       max-width: 100%;
       flex: 1 1 100%;
     }
+    .card {
+        height:300px; /* Egységes kártyamagasság */
+      }
     .cardBodyNext {
         height: 150px; /* Kisebb magasság mobilnézetben */
       }
@@ -98,6 +101,9 @@
       }
       .cardText {
         font-size: 1.4rem;
+      }
+      .cardContainer {
+        margin-top: 0rem
       }
   }
 
@@ -120,4 +126,13 @@
         margin-top: -4rem;
       }
 }
+
+@media (min-width: 992px) and (max-width: 1024px) {
+    .cardContainer {
+        padding: 0px 20px 0px 20px;
+        margin-top: -3rem;
+        margin-bottom: 4rem;
+      }
+}
+
   

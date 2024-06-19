@@ -16,6 +16,15 @@ import DietIconSectionAdminPage from "./DietIconSectionAdminPage";
 
 const ImageUploader = ({ setLoggedIn }) => {
   const cartCtx = useContext(CartContext);
+  
+  const [characterCount, setCharacterCount] = useState(0);
+
+    // Eseménykezelő a beírt szöveg változásához
+    const handleChange = (e) => {
+      const inputValue = e.target.value;
+      cartCtx.setImageName(inputValue); // Állítsa be a kép nevét a kontextusban
+      setCharacterCount(inputValue.length); // Frissíti a karakter számlálót
+    };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -114,6 +123,7 @@ const ImageUploader = ({ setLoggedIn }) => {
     cartCtx.setImageName(""); // Reset the image name after upload
     cartCtx.setSelectedIcons([]);
     cartCtx.setSelectedIconsError(null)
+    setCharacterCount(0)
   };
 
   useEffect(() => {
@@ -348,16 +358,18 @@ const ImageUploader = ({ setLoggedIn }) => {
           {cartCtx.folderError && (
             <div className={classes.error}>{cartCtx.folderError}</div>
           )}
-          {cartCtx.selectedFolder && (
+          {cartCtx.selectedFile && (
             <div className={classes.inputWrapper}>
               <input
                 id="imageName"
                 type="text"
                 value={cartCtx.imageName}
-                onChange={(e) => cartCtx.setImageName(e.target.value)}
+                onChange={handleChange}
                 className={classes.imageNameInput}
                 placeholder="Mi legyen a kép neve?"
               />
+              <div className={classes.numberOfCharacters}>Karakterek száma: {characterCount}</div> {/* Karakter számláló */}
+              <div>Az optimális megjelenés érdekében a képek neve ne legyen 20 karakternél több.</div>
             </div>
           )}
           {cartCtx.imageNameError && (
