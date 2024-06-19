@@ -16,15 +16,15 @@ import DietIconSectionAdminPage from "./DietIconSectionAdminPage";
 
 const ImageUploader = ({ setLoggedIn }) => {
   const cartCtx = useContext(CartContext);
-  
+
   const [characterCount, setCharacterCount] = useState(0);
 
-    // Eseménykezelő a beírt szöveg változásához
-    const handleChange = (e) => {
-      const inputValue = e.target.value;
-      cartCtx.setImageName(inputValue); // Állítsa be a kép nevét a kontextusban
-      setCharacterCount(inputValue.length); // Frissíti a karakter számlálót
-    };
+  // Eseménykezelő a beírt szöveg változásához
+  const handleChange = (e) => {
+    const inputValue = e.target.value;
+    cartCtx.setImageName(inputValue); // Állítsa be a kép nevét a kontextusban
+    setCharacterCount(inputValue.length); // Frissíti a karakter számlálót
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -83,7 +83,10 @@ const ImageUploader = ({ setLoggedIn }) => {
       cartCtx.setImageNameError(null);
     }
 
-    if (cartCtx.selectedIcons && cartCtx.selectedFolder === "MentesSutemenyek") {
+    if (
+      cartCtx.selectedIcons &&
+      cartCtx.selectedFolder === "MentesSutemenyek"
+    ) {
       cartCtx.setSelectedIconsError("Biztos nem választasz ki semmit?");
     } else {
       cartCtx.setSelectedIconsError(null);
@@ -101,9 +104,10 @@ const ImageUploader = ({ setLoggedIn }) => {
     const formData = new FormData();
     formData.append("image", cartCtx.selectedFile);
     formData.append("folder", cartCtx.selectedFolder);
-    const imageNameWithIcons = cartCtx.selectedIcons.length > 0
-    ? `${cartCtx.imageName}(${cartCtx.selectedIcons.join(', ')})`
-    : cartCtx.imageName;
+    const imageNameWithIcons =
+      cartCtx.selectedIcons.length > 0
+        ? `${cartCtx.imageName}(${cartCtx.selectedIcons.join(", ")})`
+        : cartCtx.imageName;
     formData.append("imageName", imageNameWithIcons);
 
     const response = await axios.post(
@@ -122,8 +126,8 @@ const ImageUploader = ({ setLoggedIn }) => {
     cartCtx.resetImageUploader();
     cartCtx.setImageName(""); // Reset the image name after upload
     cartCtx.setSelectedIcons([]);
-    cartCtx.setSelectedIconsError(null)
-    setCharacterCount(0)
+    cartCtx.setSelectedIconsError(null);
+    setCharacterCount(0);
   };
 
   useEffect(() => {
@@ -350,7 +354,11 @@ const ImageUploader = ({ setLoggedIn }) => {
               <option value="MentesSutemenyek">Mentes sütemények</option>
               <option value="FondantFigurak">Fondant figurák</option>
             </optgroup>
-            <optgroup label="Főképernyő kép lapozó">
+            <optgroup label="Főkoldal, üdvözlő rész">
+              <option value="slider">Slider</option>
+              <option value="sliderMobile">Mobil slider</option>
+            </optgroup>
+            <optgroup label="Főoldal, kategóriák képei">
               <option value="slider">Slider</option>
               <option value="sliderMobile">Mobil slider</option>
             </optgroup>
@@ -368,8 +376,18 @@ const ImageUploader = ({ setLoggedIn }) => {
                 className={classes.imageNameInput}
                 placeholder="Mi legyen a kép neve?"
               />
-              <div className={classes.numberOfCharacters}>Karakterek száma: {characterCount}</div> {/* Karakter számláló */}
-              <div>Az optimális megjelenés érdekében a képek neve ne legyen 20 karakternél több.</div>
+              <div
+                className={`${classes.numberOfCharacters} ${
+                  characterCount > 20 ? classes.redText : ""
+                }`}
+              >
+                Karakterek száma: {characterCount}
+              </div>{" "}
+              {/* Karakter számláló */}
+              <div>
+                Az optimális megjelenés érdekében a képek neve ne legyen 20
+                karakternél több.
+              </div>
             </div>
           )}
           {cartCtx.imageNameError && (
@@ -384,7 +402,9 @@ const ImageUploader = ({ setLoggedIn }) => {
                   : "none",
             }}
           >
-            <div className={classes.dietTitle}>Válassz egy vagy több kategóriát.</div>
+            <div className={classes.dietTitle}>
+              Válassz egy vagy több kategóriát.
+            </div>
             <DietIconSectionAdminPage></DietIconSectionAdminPage>
           </div>
           {cartCtx.selectedIconsError && (

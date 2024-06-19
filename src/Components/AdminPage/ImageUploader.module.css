@@ -83,6 +83,7 @@
   justify-content: space-between;
   width: 100%;
   margin-bottom: 1rem;
+  margin-top: 2rem;
   align-items: center;
 }
 
@@ -292,10 +293,12 @@ button {
 .numberOfCharacters{
   font-size: 1.4rem;
   font-family: "Bebas Neue", sans-serif;
+  margin-top: 1rem;
+  color: #249940;
 }
 
-.imageNameInput.exceeded {
-  border-color: red; /* Piros keret, ha túllép a karakter szám */
+.redText {
+  color: red; /* Piros keret, ha túllép a karakter szám */
 }
 
 
