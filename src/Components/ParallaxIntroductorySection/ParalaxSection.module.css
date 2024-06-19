@@ -455,6 +455,8 @@
       .wordCloud {
         max-width: 100%; /* A kép szélességét igazítja */
         height: auto; /* Megőrzi a kép arányait */
+        margin-bottom: 2rem;
+        margin-top: 1rem;
       }
 }
 
