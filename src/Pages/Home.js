@@ -50,7 +50,7 @@ function Home() {
               "A hagyományos torták számos kultúrában és országban jelentős szerepet töltenek be ünnepi és különleges alkalmakon. Ezek a desszertek gyakran több generáció receptjei alapján készülnek"
             }
           />
-          <CardGalleryTest categories={"HagyomanyosTortak"} categoriesName={"Hagyományos torták"} />
+          <CardGalleryTest categories={"HagyomanyosTortak"} CategoryGallery={"CategoryGallery/HagyomanyosTortak"} categoriesName={"Hagyományos torták"} />
         </div>
         <div ref={sectionsRefs.BurkoltTortak} className={classes.section}>
           <CategorySection 
@@ -60,7 +60,7 @@ function Home() {
               "A burkolt torták különleges és művészi alkotások, amelyeket általában különleges alkalmakra vagy ünnepekre készítenek. A burkolt torták gyakran lenyűgöző megjelenésük miatt népszerűek esküvőkön, születésnapokon és más ünnepi eseményeken."
             }
           />
-          <CardGalleryTest categories={"BurkoltTortak"} categoriesName={"Burkolt torták"} />
+          <CardGalleryTest categories={"BurkoltTortak"} CategoryGallery={"CategoryGallery/BurkoltTortak"} categoriesName={"Burkolt torták"} />
         </div>
         <div ref={sectionsRefs.Linzertortak} className={classes.section}>
           <CategorySection
@@ -70,7 +70,7 @@ function Home() {
               "A linzertorta egy hagyományos osztrák sütemény, amelyet általában ünnepekre és különleges alkalmakra készítenek. Ez az ízletes torta rétegekben vagy tésztaként készül, és gyakran málna- vagy ribizlis lekvárral van töltve."
             }
           />
-          <CardGalleryTest categories={"Linzertortak"} categoriesName={"Linzertorták"} />
+          <CardGalleryTest categories={"Linzertortak"} CategoryGallery={"CategoryGallery/Linzertortak"} categoriesName={"Linzertorták"} />
         </div>
         <div ref={sectionsRefs.Macaronok} className={classes.section}>
           <CategorySection
@@ -80,7 +80,7 @@ function Home() {
               "A macaronok finom francia édességek, melyek két mandulás piskóta közé töltött krém vagy lekvár réteggel készülnek. Ezek a kis, színes sütemények számos ízben és színben elérhetőek, így sokféle kombinációban kóstolhatóak."
             }
           />
-          <CardGalleryTest categories={"Macaronok"} categoriesName={"Macaronok"} />
+          <CardGalleryTest categories={"Macaronok"} CategoryGallery={"CategoryGallery/Macaronok"} categoriesName={"Macaronok"} />
         </div>
         <div ref={sectionsRefs.HagyomanyosSutemenyek} className={classes.section}>
           <CategorySection
@@ -90,7 +90,7 @@ function Home() {
               "A hagyományos sütemények hordozzák magukban az évtizedek vagy akár évszázadok alatt kialakult ízek és receptek varázsát. Ezek a finomságok gyakran nemcsak ízükkel, hanem történetükkel is gazdagítják az étkezéseket."
             }
           />
-          <CardGalleryTest categories={"HagyomanyosSutemenyek"} categoriesName={"Hagyományos sütemények"} />
+          <CardGalleryTest categories={"HagyomanyosSutemenyek"} CategoryGallery={"CategoryGallery/HagyomanyosSutemenyek"} categoriesName={"Hagyományos sütemények"} />
         </div>
         <div ref={sectionsRefs.MentesSutemenyek} className={classes.section}>
           <CategorySection
@@ -100,7 +100,7 @@ function Home() {
               "A mentes sütemények olyan különleges édességek, melyek kiváló alternatívát nyújtanak azoknak, akik különböző ételintoleranciával vagy diétás korlátozásokkal küzdenek, például glutén-, tej-, vagy tojásmentes ételeket keresnek. Ezek a sütemények általában kreatív és egészséges összetevőket használnak."
             }
           />
-          <CardGalleryTest categories={"MentesSutemenyek"} categoriesName={"Mentes sütemények"} />
+          <CardGalleryTest categories={"MentesSutemenyek"} CategoryGallery={"CategoryGallery/MentesSutemenyek"} categoriesName={"Mentes sütemények"} />
         </div>
         <div ref={sectionsRefs.FondantFigurak} className={classes.section}>
           <CategorySection
@@ -110,7 +110,7 @@ function Home() {
               "A fondant figurák kézműves mestermunkák, melyekkel valódi művészi alkotásokat lehet létrehozni a süteményeken és tortákon. A fondant, egy rugalmas, gyurma-szerű cukormáz, lehetővé teszi a különféle formák és modellek készítését, legyen az virág, állat, vagy akár személyes karakter."
             }
           />
-          <CardGalleryTest categories={"FondantFigurak"} categoriesName={"Fondant figurák"} />
+          <CardGalleryTest categories={"FondantFigurak"} CategoryGallery={"CategoryGallery/FondantFigurak"} categoriesName={"Fondant figurák"} />
         </div>
       </div>
       <div className={classes.DesktopSlider}>

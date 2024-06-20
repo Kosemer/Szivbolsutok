@@ -355,12 +355,23 @@ const ImageUploader = ({ setLoggedIn }) => {
               <option value="FondantFigurak">Fondant figurák</option>
             </optgroup>
             <optgroup label="Főkoldal, üdvözlő rész">
-              <option value="slider">Slider</option>
-              <option value="sliderMobile">Mobil slider</option>
+              <option value="DesktopHomePage">Asztali nézet</option>
+              <option value="MobileHomePage">Mobil nézet</option>
             </optgroup>
             <optgroup label="Főoldal, kategóriák képei">
-              <option value="slider">Slider</option>
-              <option value="sliderMobile">Mobil slider</option>
+              <option value="../CategoryGallery/HagyomanyosTortak">
+                Hagyományos torták
+              </option>
+              <option value="../CategoryGallery/BurkoltTortak">Burkolt torták</option>
+              <option value="../CategoryGallery/Linzertortak">Linzertorták</option>
+              <option value="../CategoryGallery/Macaronok">Macaronok</option>
+              <option value="../CategoryGallery/HagyomanyosSutemenyek">
+                Hagyományos sütemények
+              </option>
+              <option value="../CategoryGallery/MentesSutemenyek">
+                Mentes sütemények
+              </option>
+              <option value="../CategoryGallery/FondantFigurak">Fondant figurák</option>
             </optgroup>
           </select>
           {cartCtx.folderError && (
@@ -376,6 +387,9 @@ const ImageUploader = ({ setLoggedIn }) => {
                 className={classes.imageNameInput}
                 placeholder="Mi legyen a kép neve?"
               />
+              {cartCtx.imageNameError && (
+                <div className={classes.error}>{cartCtx.imageNameError}</div>
+              )}
               <div
                 className={`${classes.numberOfCharacters} ${
                   characterCount > 20 ? classes.redText : ""
@@ -390,9 +404,7 @@ const ImageUploader = ({ setLoggedIn }) => {
               </div>
             </div>
           )}
-          {cartCtx.imageNameError && (
-            <div className={classes.error}>{cartCtx.imageNameError}</div>
-          )}
+
           <div
             className={classes.dietBox}
             style={{

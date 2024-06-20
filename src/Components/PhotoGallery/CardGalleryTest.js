@@ -4,7 +4,7 @@ import classes from "./CardGalleryTest.module.css";
 import { useNavigate } from "react-router-dom";
 import CartContext from "../Store/cart-context";
 
-const CardGalleryTest = ({ categories, categoriesName }) => {
+const CardGalleryTest = ({ categories, CategoryGallery, categoriesName }) => {
   const cartCtx = useContext(CartContext);
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ const CardGalleryTest = ({ categories, categoriesName }) => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const imageData = await ImageDimensions(categories);
+        const imageData = await ImageDimensions(CategoryGallery);
         const combinedImages = imageData.slice(0, 3);
         setImages(combinedImages);
       } catch (error) {
@@ -22,13 +22,12 @@ const CardGalleryTest = ({ categories, categoriesName }) => {
     };
 
     fetchImages();
-  }, [categories]);
+  }, [CategoryGallery]);
 
   const onImageClickHandler = () => {
     cartCtx.setCategory(categories);
     cartCtx.setCategoriesName(categoriesName);
     cartCtx.setGalleryIsOpen(!cartCtx.galleryIsOpen);
-    console.log(cartCtx.category);
   };
 
   return (
