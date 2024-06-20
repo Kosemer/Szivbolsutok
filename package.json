@@ -26,6 +26,7 @@
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.2.0",
+    "react-ga4": "^2.1.0",
     "react-gesture-responder": "^2.1.0",
     "react-google-recaptcha": "^2.1.0",
     "react-google-recaptcha-v3": "^1.10.1",
