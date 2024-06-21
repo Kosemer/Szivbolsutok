@@ -107,7 +107,8 @@
         font-size: 1.4rem;
       }
       .cardContainer {
-        margin-top: 0rem
+        margin-top: 0rem;
+        width: 100%;
       }
   }
 
