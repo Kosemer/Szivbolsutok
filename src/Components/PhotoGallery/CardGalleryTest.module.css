@@ -107,7 +107,8 @@
         font-size: 1.4rem;
       }
       .cardContainer {
-        margin-top: 0rem
+        margin-top: 0rem;
+        width: 100%;
       }
   }
 
@@ -126,8 +127,8 @@
         font-size: 1rem;
       }
       .cardContainer {
-        padding: 0px 20px 0px 20px;
-        margin-top: -4rem;
+        margin-top: -5rem;
+        width: 100%;
       }
 }
 
@@ -136,6 +137,10 @@
         padding: 0px 20px 0px 20px;
         margin-top: -3rem;
         margin-bottom: 4rem;
+      }
+      .cardContainer {
+        margin-top: -2rem;
+        width: 100%;
       }
 }
 

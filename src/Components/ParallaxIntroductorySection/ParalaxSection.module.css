@@ -21,6 +21,10 @@
     z-index: 2;
 }
 
+.wordCloudMobile {
+    display: none;
+  }
+
 .titleBox {
   position: absolute;
   left: 5%;
@@ -199,6 +203,14 @@
       .arrow{
         margin-bottom: 6rem;
       }
+      .wordCloud {
+        display: none; 
+      }
+    
+      .wordCloudMobile {
+        display: block; 
+      }
+
   }
 
   @media (min-width: 376px) and (max-width: 575.98px) {
@@ -251,7 +263,7 @@
     .productCategoryTitle {
         text-align: center;
         margin-top: 5rem;
-        font-size: 1.5rem; 
+        font-size: 1.7rem; 
         font-family: 'Sorts Mill Goudy', serif;
         position: relative;
         display: inline-block; /* szükséges a középre igazításhoz */
@@ -262,6 +274,13 @@
       }
       .arrow{
         margin-bottom: 6rem;
+      }
+      .wordCloud {
+        display: none; 
+      }
+    
+      .wordCloudMobile {
+        display: block; 
       }
   }
 
@@ -321,8 +340,11 @@
         display: inline-block; /* szükséges a középre igazításhoz */
       }
       .wordCloud {
-        max-width: 100%; /* A kép szélességét igazítja */
-        height: auto; /* Megőrzi a kép arányait */
+        display: none; 
+      }
+    
+      .wordCloudMobile {
+        display: block; 
       }
   }
 
