@@ -158,7 +158,7 @@ function Footer() {
         <a
           href="https://www.frontweb.hu"
           style={{
-            color: "#FF69B4",
+            color: "#ff7f7f",
             textDecoration: "none",
             fontWeight: "bold",
           }}
@@ -176,7 +176,7 @@ function Footer() {
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
-            fill="rgb(255, 105, 180)"
+            fill="#ff7f7f"
             class="bi bi-gear ms-1"
             viewBox="0 0 16 16"
           >

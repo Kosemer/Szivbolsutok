@@ -63,7 +63,7 @@
 }
 
 .adminText:hover{
-  color: rgb(255, 105, 180);
+  color: #ff7f7f;
 }
 
 .linkContainer a{
@@ -77,14 +77,14 @@
 .pages a:hover {
   color: #ffffff;
   text-decoration: none;
-  color: #FF69B4;
+  color: #ff7f7f;
   font-weight: 600;
 }
 
 .underlineLong {
   border: none;
   height: 1px;
-  background-color: rgb(255, 105, 180);
+  background-color: #ff7f7f;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -206,7 +206,7 @@ span {
   left: 0; /* Balra igazítás */
   width: 100%; /* Teljes szélességű vonal */
   height: 2px; /* Vonal magassága */
-  background-color: #FF69B4; /* Vonal színe */
+  background-color: #ff7f7f; /* Vonal színe */
 }
 .h2TitleLogo::after,
 .h2TitleInsta::after {
@@ -217,7 +217,7 @@ span {
   left: 0;
   right: 0;
   height: 2px; /* Vonal magassága */
-  background-color: #FF69B4; /* Vonal színe */
+  background-color: #ff7f7f; /* Vonal színe */
 }
 
 .h2TitleLogo{
@@ -250,7 +250,7 @@ span {
 
 
 .verticalLine {
-  border-left: 2px solid #FF69B4; 
+  border-left: 2px solid #ff7f7f; 
   height: 100%; /* A függőleges vonal magasságának beállítása a linkBox méretére */
   margin-right: 4rem; 
   padding-left: 1rem;
@@ -510,7 +510,7 @@ span {
     cursor: pointer;
   }
   .verticalLine {
-    border-left: 0px solid #FF69B4; 
+    border-left: 0px solid #ff7f7f; 
     height: 100%; /* A függőleges vonal magasságának beállítása a linkBox méretére */
     margin-right: 1rem; 
     padding-left: 1rem;
@@ -615,7 +615,7 @@ span {
     cursor: pointer;
   }
   .verticalLine {
-    border-left: 0px solid #FF69B4; 
+    border-left: 0px solid #ff7f7f; 
     height: 100%; /* A függőleges vonal magasságának beállítása a linkBox méretére */
     margin-right: 1rem; 
     padding-left: 1rem;
