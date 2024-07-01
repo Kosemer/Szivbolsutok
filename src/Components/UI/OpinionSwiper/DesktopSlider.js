@@ -44,7 +44,7 @@ const DesktopSlider = () => {
         autoplay={{
           delay: 6000,
         }}
-        spaceBetween={30}
+        spaceBetween={50}
         pagination={{
           type: "fraction",
         }}

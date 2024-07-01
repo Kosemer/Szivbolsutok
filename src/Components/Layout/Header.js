@@ -12,7 +12,7 @@ import instagram from "../../Assets/SocialIcon/instagram.svg";
 import facebook from "../../Assets/SocialIcon/facebook.svg";
 import CurtainMenu from "./CurtainMenu";
 import CurtainMenuWithLink from "./CurtainMenuWithLink";
-import mainTitle from "../../Assets/CakesPicture/mainTitle.png"
+import mainTitle from "../../Assets/CakesPicture/mainTitle3.png"
 
 function Header() {
   const cartCtx = useContext(CartContext);
