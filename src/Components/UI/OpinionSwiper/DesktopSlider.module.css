@@ -24,7 +24,7 @@
     justify-content: center;
     align-items: center;
     /* Set a minimum height */
-    min-height: 250px;
+    min-height: 200px;
     border-radius: 10px;
     padding: 0 25px;
 
@@ -34,6 +34,8 @@
   
   .swiper-slide p{
     font-size: 1.6rem;
+    font-family: "Bebas Neue";
+    margin: 0 auto;
   }
 
   .swiper-button-prev {

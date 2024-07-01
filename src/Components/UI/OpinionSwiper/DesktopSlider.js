@@ -39,7 +39,7 @@ const DesktopSlider = () => {
     {!isMobile && (
       <Swiper
         onSwiper={setSwiperRef}
-        slidesPerView={3}
+        slidesPerView={4}
         centeredSlides={false}
         autoplay={{
           delay: 6000,
