@@ -4,6 +4,7 @@
     display: flex;
     height: 50vh;
     overflow: visible !important;
+    background-color: rgb(241, 239, 233);
 }
 
 .image-container {

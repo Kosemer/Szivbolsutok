@@ -128,6 +128,12 @@
     font-family: 'Sorts Mill Goudy', serif;
     position: relative;
     display: inline-block; /* szükséges a középre igazításhoz */
+    background-color: #FF7F7F;
+  }
+
+  .container h1{
+    color: white;
+    padding: 10px 20px 0px 20px;
   }
   
   .productCategoryTitle::after {
