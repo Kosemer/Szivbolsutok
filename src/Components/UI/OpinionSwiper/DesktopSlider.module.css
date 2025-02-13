@@ -27,7 +27,7 @@
     min-height: 200px;
     border-radius: 10px;
     padding: 0 25px;
-
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
    
   }
 
@@ -55,22 +55,24 @@
     color: #ffffff;
     text-align: center;
     font-family: "Bebas Neue";
-    background-color: #FF7F7F;
+    background-color: #473939;
     display: inline-block;
     position: relative;
-    padding-top: 2rem;
+    margin-top: 2rem;
+    padding: 10px 20px 0px 20px;
+    box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
   }
 
-  .opinionTitle::after {
+  /*.opinionTitle::after {
     content: '';
     position: absolute;
     bottom: -5px;
-    left: 50%; /* A bal oldalt 50%-ra állítjuk, hogy középre igazítsuk */
-    transform: translateX(-50%); /* A vonal középre igazításához */
-    width: 100%; /* A vonal szélessége megegyezik a szöveg szélességével */
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 100%; 
     height: 2px;
     background-color: #020202;
-  }
+  }*/
 
   .underline{
     margin-top: -30px;

@@ -9,15 +9,7 @@ const CategorySection = ({ category, imageSrc, description }) => {
   return (
     <Container fluid  style={{ "--bs-gutter-x": "0rem", marginTop: "0px" }}>
       <div className={styles.wrapper}>
-                {/* Kép */}
-                <div className={styles["image-containerMoblie"]}> {/* CSS modul osztály */}
-                
-          <img
-            src={imageSrc}
-            alt={category}
-            className={styles.image} 
-          />
-        </div>
+
         {/* Szöveg */}
         <div
           className={styles.h1TextBox}
@@ -94,6 +86,15 @@ const CategorySection = ({ category, imageSrc, description }) => {
               />
             </svg>
           </div>*/}
+        </div>
+                        {/* Kép */}
+                <div className={styles["image-containerMoblie"]}> {/* CSS modul osztály */}
+                
+          <img
+            src={imageSrc}
+            alt={category}
+            className={styles.image} 
+          />
         </div>
         {/* Kép */}
         <div className={styles["image-container"]}> {/* CSS modul osztály */}
