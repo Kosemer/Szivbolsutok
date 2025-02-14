@@ -37,7 +37,7 @@ backdrop-filter: blur(5.4px);
     
     /* When you mouse over the navigation links, change their color */
     .overlay a:hover, .overlay a:focus {
-      color: rgb(255, 105, 180);
+      color: #FF7F7F;
     }
     
     /* Position the close button (top right corner) */
@@ -79,7 +79,7 @@ backdrop-filter: blur(5.4px);
     .categoryTitle{
         text-align: center;
         color: #f1f1f1;
-        background-color: rgb(255, 105, 180);
+        background-color: #FF7F7F;
         display: inline-block;
         padding: 10px;
         border-radius: 0 0 10px 10px;
@@ -99,7 +99,7 @@ backdrop-filter: blur(5.4px);
     .categoryTitle{
       text-align: center;
       color: #f1f1f1;
-      background-color: rgb(255, 105, 180);
+      background-color: #FF7F7F;
       display: inline-block;
       padding: 10px;
       border-radius: 0 0 10px 10px;
@@ -125,7 +125,7 @@ backdrop-filter: blur(5.4px);
     .categoryTitle{
       text-align: center;
       color: #f1f1f1;
-      background-color: rgb(255, 105, 180);
+      background-color: #FF7F7F;
       display: inline-block;
       padding: 10px;
       border-radius: 0 0 10px 10px;
