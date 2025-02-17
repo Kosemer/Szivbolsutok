@@ -1,0 +1,75 @@
+.background-container {
+    background-image: url("../../Assets/CakesPicture/splashbackground3.png");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.image-row {
+    display: flex;
+    gap: 2%;
+    width: 90%;
+    justify-content: center;
+    align-items: center; /* Képek alapból középre igazítása */
+}
+
+.overlay-image {
+    width: 30%;
+    height: auto;
+}
+
+.overlay-image:nth-child(2) {
+    width: 35%; /* Középső kép nagyobb lesz */
+    height: auto;
+    transform: translateY(40px); /* Ha szükséges, finomhangold a pozíciót */
+}
+
+.bottom-right-button {
+    position: absolute;
+    bottom: 20px; /* 20px a képernyő aljától */
+    right: 200px; /* 20px a képernyő jobb szélétől */
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.bottom-right-button:hover {
+    transform: scale(1.2);
+}
+
+.col {
+    position: absolute;
+    bottom: 60px; /* 20px távolság az oldal aljától */
+    right: 150px; /* 20px távolság a képernyő jobb szélétől */
+    display: flex;
+    align-items: center;
+}
+
+.cardBodyNext {
+    cursor: pointer;
+}
+
+.cardTextNext {
+    color: #ff7f7f;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+    transition: transform 0.2s;
+}
+
+.bi-arrow-right-circle-fill {
+    margin-left: 10px; /* Továbbra is lesz egy kis távolság az ikon és a szöveg között */
+}
+

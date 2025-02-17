@@ -3,6 +3,7 @@ import classes from "./Home.module.css";
 import CartContext from "../Components/Store/cart-context";
 import DesktopSlider from "../Components/UI/OpinionSwiper/DesktopSlider";
 import CardGalleryTest from "../Components/PhotoGallery/CardGalleryTest";
+import CategorySection2 from "../Components/PhotoGallery/CategorySection2";
 import CategorySection from "../Components/PhotoGallery/CategorySection";
 import hagyomanyosTortak from "../Assets/CategorySection/kitKat2.png";
 import burkoltTortak from "../Assets/CategorySection/viragLada.png";
@@ -43,17 +44,18 @@ function Home() {
       <CurtainGallery />
       <div>
         <div ref={sectionsRefs.HagyomanyosTortak} className={classes.section}>
-          <CategorySection
+          <CategorySection2
             category={"Hagyományos Torták"}
             imageSrc={hagyomanyosTortak}
             description={
               "Piskóta és krém rétegezésével készülnek. Kívülről valamilyen krémmel (pl. vajkrém, habtejszín, a torta belsejébe töltött krém, illetve számos különböző elkészítésű krém) kerülnek beborításra."
             }
+            categories={"HagyomanyosTortak"} CategoryGallery={"CategoryGallery/HagyomanyosTortak"} categoriesName={"Hagyományos torták"}
           />
           <CardGalleryTest categories={"HagyomanyosTortak"} CategoryGallery={"CategoryGallery/HagyomanyosTortak"} categoriesName={"Hagyományos torták"} />
         </div>
         <div ref={sectionsRefs.BurkoltTortak} className={classes.section}>
-          <CategorySection 
+          <CategorySection2 
             category={"Burkolt Torták"}
             imageSrc={burkoltTortak}
             description={
@@ -63,7 +65,7 @@ function Home() {
           <CardGalleryTest categories={"BurkoltTortak"} CategoryGallery={"CategoryGallery/BurkoltTortak"} categoriesName={"Burkolt torták"} />
         </div>
         <div ref={sectionsRefs.Linzertortak} className={classes.section}>
-          <CategorySection
+          <CategorySection2
             category={"Linzertorták"}
             imageSrc={linzerTortak}
             description={
@@ -73,7 +75,7 @@ function Home() {
           <CardGalleryTest categories={"Linzertortak"} CategoryGallery={"CategoryGallery/Linzertortak"} categoriesName={"Linzertorták"} />
         </div>
         <div ref={sectionsRefs.Macaronok} className={classes.section}>
-          <CategorySection
+          <CategorySection2
             category={"Macaronok"}
             imageSrc={macaronok}
             description={
@@ -83,7 +85,7 @@ function Home() {
           <CardGalleryTest categories={"Macaronok"} CategoryGallery={"CategoryGallery/Macaronok"} categoriesName={"Macaronok"} />
         </div>
         <div ref={sectionsRefs.HagyomanyosSutemenyek} className={classes.section}>
-          <CategorySection
+          <CategorySection2
             category={"Hagyományos Sütemények"}
             imageSrc={macaronok}
             description={
@@ -93,7 +95,7 @@ function Home() {
           <CardGalleryTest categories={"HagyomanyosSutemenyek"} CategoryGallery={"CategoryGallery/HagyomanyosSutemenyek"} categoriesName={"Hagyományos sütemények"} />
         </div>
         <div ref={sectionsRefs.MentesSutemenyek} className={classes.section}>
-          <CategorySection
+          <CategorySection2
             category={"Mentes Sütemények"}
             imageSrc={mentesSutemenyek}
             description={
@@ -103,7 +105,7 @@ function Home() {
           <CardGalleryTest categories={"MentesSutemenyek"} CategoryGallery={"CategoryGallery/MentesSutemenyek"} categoriesName={"Mentes sütemények"} />
         </div>
         <div ref={sectionsRefs.FondantFigurak} className={classes.section}>
-          <CategorySection
+          <CategorySection2
             category={"Fondant figurák"}
             imageSrc={fondantFigurak}
             description={
