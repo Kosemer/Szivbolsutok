@@ -25,6 +25,7 @@ function Home() {
     HagyomanyosSutemenyek: useRef(null),
     MentesSutemenyek: useRef(null),
     FondantFigurak: useRef(null),
+    KulonlegesTortak: useRef(null),
   };
 
   useEffect(() => {
@@ -45,14 +46,25 @@ function Home() {
       <div>
         <div ref={sectionsRefs.HagyomanyosTortak} className={classes.section}>
           <CategorySection2
-            category={"Hagyományos Torták"}
+            category={"Klasszikus Torták"}
             imageSrc={hagyomanyosTortak}
             description={
               "Piskóta és krém rétegezésével készülnek. Kívülről valamilyen krémmel (pl. vajkrém, habtejszín, a torta belsejébe töltött krém, illetve számos különböző elkészítésű krém) kerülnek beborításra."
             }
             categories={"HagyomanyosTortak"} CategoryGallery={"CategoryGallery/HagyomanyosTortak"} categoriesName={"Hagyományos torták"}
           />
-          <CardGalleryTest categories={"HagyomanyosTortak"} CategoryGallery={"CategoryGallery/HagyomanyosTortak"} categoriesName={"Hagyományos torták"} />
+           {/* <CardGalleryTest categories={"HagyomanyosTortak"} CategoryGallery={"CategoryGallery/HagyomanyosTortak"} categoriesName={"Hagyományos torták"} />*/}
+        </div>
+        <div ref={sectionsRefs.KulonlegesTortak} className={classes.section}>
+          <CategorySection2
+            category={"Különleges Torták"}
+            imageSrc={hagyomanyosTortak}
+            description={
+              "Piskóta és krém rétegezésével készülnek. Kívülről valamilyen krémmel (pl. vajkrém, habtejszín, a torta belsejébe töltött krém, illetve számos különböző elkészítésű krém) kerülnek beborításra."
+            }
+            categories={"KulonlegesTortak"} CategoryGallery={"CategoryGallery/KulonlegesTortak"} categoriesName={"Különleges Torták"}
+          />
+          {/* <CardGalleryTest categories={"HagyomanyosTortak"} CategoryGallery={"CategoryGallery/HagyomanyosTortak"} categoriesName={"Hagyományos torták"} /> */}
         </div>
         <div ref={sectionsRefs.BurkoltTortak} className={classes.section}>
           <CategorySection2 
@@ -61,8 +73,9 @@ function Home() {
             description={
               "Rendszerint fondant (ízesített vagy ízesítetlen cukormassza) burkolással készített hagyományos torták, vagy formatorták."
             }
+            CategoryGallery={"CategoryGallery/BurkoltTortak"}
           />
-          <CardGalleryTest categories={"BurkoltTortak"} CategoryGallery={"CategoryGallery/BurkoltTortak"} categoriesName={"Burkolt torták"} />
+          {/* <CardGalleryTest categories={"BurkoltTortak"} CategoryGallery={"CategoryGallery/BurkoltTortak"} categoriesName={"Burkolt torták"} /> */}
         </div>
         <div ref={sectionsRefs.Linzertortak} className={classes.section}>
           <CategorySection2
@@ -71,8 +84,9 @@ function Home() {
             description={
               "Omlós édes tésztalapok és krém rétegezésével készülnek, a tetejükön díszítéssel."
             }
+            CategoryGallery={"CategoryGallery/Linzertortak"}
           />
-          <CardGalleryTest categories={"Linzertortak"} CategoryGallery={"CategoryGallery/Linzertortak"} categoriesName={"Linzertorták"} />
+          {/* <CardGalleryTest categories={"Linzertortak"} CategoryGallery={"CategoryGallery/Linzertortak"} categoriesName={"Linzertorták"} /> */}
         </div>
         <div ref={sectionsRefs.Macaronok} className={classes.section}>
           <CategorySection2
@@ -81,18 +95,20 @@ function Home() {
             description={
               "Mandulaliszt, tojásfehérje és cukor felhasználásával készült édes sütemény, amely ízesített, ganache alapú (csokoládé és tejszín) krémmel kerül összeragasztásra."
             }
+            CategoryGallery={"CategoryGallery/Macaronok"}
           />
-          <CardGalleryTest categories={"Macaronok"} CategoryGallery={"CategoryGallery/Macaronok"} categoriesName={"Macaronok"} />
+          {/* <CardGalleryTest categories={"Macaronok"} CategoryGallery={"CategoryGallery/Macaronok"} categoriesName={"Macaronok"} /> */}
         </div>
         <div ref={sectionsRefs.HagyomanyosSutemenyek} className={classes.section}>
           <CategorySection2
-            category={"Hagyományos Sütemények"}
+            category={"Klasszikus Sütemények"}
             imageSrc={macaronok}
             description={
               "Hétköznapi alapanyagokból készült különféle sütemények."
             }
+            CategoryGallery={"CategoryGallery/HagyomanyosSutemenyek"}
           />
-          <CardGalleryTest categories={"HagyomanyosSutemenyek"} CategoryGallery={"CategoryGallery/HagyomanyosSutemenyek"} categoriesName={"Hagyományos sütemények"} />
+          {/* <CardGalleryTest categories={"HagyomanyosSutemenyek"} CategoryGallery={"CategoryGallery/HagyomanyosSutemenyek"} categoriesName={"Hagyományos sütemények"} /> */}
         </div>
         <div ref={sectionsRefs.MentesSutemenyek} className={classes.section}>
           <CategorySection2
@@ -101,8 +117,9 @@ function Home() {
             description={
               "Különböző ételintoleranciával összeegyeztethető, valamint diétás étrendbe illeszthető sütemény alternatívák. Pl. glutén- , tej- , tojás- , cukormentes, teljeskiőrlésű, szénhidrátcsökkentett."
             }
+            CategoryGallery={"CategoryGallery/MentesSutemenyek"}
           />
-          <CardGalleryTest categories={"MentesSutemenyek"} CategoryGallery={"CategoryGallery/MentesSutemenyek"} categoriesName={"Mentes sütemények"} />
+          {/* <CardGalleryTest categories={"MentesSutemenyek"} CategoryGallery={"CategoryGallery/MentesSutemenyek"} categoriesName={"Mentes sütemények"} /> */}
         </div>
         <div ref={sectionsRefs.FondantFigurak} className={classes.section}>
           <CategorySection2
@@ -111,8 +128,9 @@ function Home() {
             description={
               "Ízesített vagy ízesítetlen cukormasszából készült különféle egyedi figurák."
             }
+            CategoryGallery={"CategoryGallery/FondantFigurak"}
           />
-          <CardGalleryTest categories={"FondantFigurak"} CategoryGallery={"CategoryGallery/FondantFigurak"} categoriesName={"Fondant figurák"} />
+          {/* <CardGalleryTest categories={"FondantFigurak"} CategoryGallery={"CategoryGallery/FondantFigurak"} categoriesName={"Fondant figurák"} /> */}
         </div>
       </div>
       <div className={classes.DesktopSlider}>

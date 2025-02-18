@@ -46,7 +46,7 @@ const CurtainMenu = ({ menuVisible }) => {
   const fetchImagesFromFolder = async (folder) => {
     try {
       const imageData = await ImageDimensions(folder);
-      return imageData.slice(0, 7); // Change 3 to the number of images you want to display from each folder
+      return imageData.slice(0, 8); // Change 3 to the number of images you want to display from each folder
     } catch (error) {
       console.error("Hiba a képek lekérése közben", error);
       return [];
