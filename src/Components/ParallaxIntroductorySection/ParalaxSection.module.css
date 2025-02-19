@@ -194,14 +194,32 @@
         font-size: 1rem; /* Adjust font size for smaller screens */
         padding: 0px 20px; /* Adjust padding for smaller screens */
     }
+
+    .titleContainer {
+      background-color: #FF7F7F; /* Kiválaszthatod a kívánt háttérszínt */
+      padding-bottom: 10px;
+    }
+    
     .productCategoryTitle {
-        text-align: center;
-        margin-top: 5rem;
-        font-size: 1.5rem; 
-        font-family: 'Sorts Mill Goudy', serif;
-        position: relative;
-        display: inline-block; /* szükséges a középre igazításhoz */
-      }
+      text-align: left; /* Balra igazítja az első h1-t */
+      margin: 0px;
+      font-family: "Bebas Neue";
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      font-size: 2.6rem;
+      margin-left: 30px;
+    }
+    
+    .productCategoryTitle2 {
+      margin-top: 0px; /* Kisebb távolságot ad az első h1 és a második között */
+      text-align: left; /* Alapértelmezett balra igazítás */
+      margin-left: 50px; /* Eltolás jobbra */
+      font-family: "Sorts Mill Goudy";
+      background-color: #FF7F7F;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      font-size: 1.8rem;
+
+    }
       .wordCloud {
         max-width: 100%; /* A kép szélességét igazítja */
         height: auto; /* Megőrzi a kép arányait */
@@ -267,13 +285,16 @@
         padding: 0px 20px; /* Adjust padding for smaller screens */
     }
     .productCategoryTitle {
-        text-align: center;
-        margin-top: 5rem;
-        font-size: 1.7rem; 
-        font-family: 'Sorts Mill Goudy', serif;
-        position: relative;
-        display: inline-block; /* szükséges a középre igazításhoz */
-      }
+      text-align: center;
+      margin-top: 0rem;
+      margin-bottom: 2rem;
+      font-size: 1.7rem; 
+      font-family: 'Sorts Mill Goudy', serif;
+      position: relative;
+      display: inline-block;
+  }
+  
+
       .wordCloud {
         max-width: 100%; /* A kép szélességét igazítja */
         height: auto; /* Megőrzi a kép arányait */

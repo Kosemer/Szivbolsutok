@@ -7,12 +7,13 @@ import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
 const CategorySection2 = ({ category, CategoryGallery, categoriesName }) => {
   const cartCtx = useContext(CartContext);
   const [images, setImages] = useState([]);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth); // Állapot a képernyő szélességére
 
   useEffect(() => {
     const fetchImages = async () => {
       try {
         const imageData = await ImageDimensions(CategoryGallery);
-        const combinedImages = imageData.slice(0, 3);
+        const combinedImages = imageData.slice(0, 3); // Az első három kép
         setImages(combinedImages);
       } catch (error) {
         console.error("Hiba a képek lekérése közben", error);
@@ -21,6 +22,16 @@ const CategorySection2 = ({ category, CategoryGallery, categoriesName }) => {
     };
 
     fetchImages();
+
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth); // Ablakméret változása
+    };
+
+    window.addEventListener("resize", handleResize); // Figyeljük az ablak méretének változását
+
+    return () => {
+      window.removeEventListener("resize", handleResize); // Eltávolítjuk az eseményfigyelőt
+    };
   }, [CategoryGallery]);
 
   const onImageClickHandler = () => {
@@ -34,6 +45,9 @@ const CategorySection2 = ({ category, CategoryGallery, categoriesName }) => {
   const firstWord = words[0];
   const secondWord = words.length > 1 ? words.slice(1).join(" ") : null; // Ha több szó van, akkor a második szó és az összes többi összekapcsolása
 
+  // Mobil nézetben csak egy képet jelenítünk meg
+  const imagesToDisplay = windowWidth <= 768 ? images.slice(0, 1) : images;
+
   return (
     <div className={classes["background-container"]}>
       {/* Bal felső sarokban a cím */}
@@ -41,8 +55,8 @@ const CategorySection2 = ({ category, CategoryGallery, categoriesName }) => {
       {secondWord && <h1 className={classes["page-title2"]}>{secondWord}</h1>}
 
       <div className={classes["image-row"]}>
-        {images.length > 0
-          ? images.map((image, index) => (
+        {imagesToDisplay.length > 0
+          ? imagesToDisplay.map((image, index) => (
               <img
                 key={index}
                 src={image.src}

@@ -29,7 +29,8 @@ function ParalaxSection() {
         <div className={classes.titleBox}>
           <h1 className={classes.centeredTextTitle}>
             <span className={classes.pinkText}>
-              Üdvözöllek<br />
+              Üdvözöllek
+              <br />
             </span>
             <span className={classes.blackText}>az oldalon!</span>
           </h1>
@@ -41,13 +42,19 @@ function ParalaxSection() {
             ezért 2017-ben elvégeztem egy cukrász képzést. Ezt követően pedig
             megállíthatatlan süteménykészítésbe kezdtem a hagyományos és a
             mentes vonalon is bontogatva a szárnyaimat. Mindezek eredményét
-            láthatod az oldalon.<br /><br />
+            láthatod az oldalon.
+            <br />
+            <br />
             Jó nézelődést kívánok! 🙂
           </p>
         </div>
         {isMobileView ? (
           <div className={classes.fruitCakeContainer}>
-            <img src={fruitCake} alt="Fruit Cake" className={classes.fruitCake} />
+            <img
+              src={fruitCake}
+              alt="Fruit Cake"
+              className={classes.fruitCake}
+            />
           </div>
         ) : (
           <div className={classes.imageContainer}>
@@ -65,14 +72,20 @@ function ParalaxSection() {
           </div>
         )}
       </div>
-      <div className={classes.container}>
-        <h1 className={classes.productCategoryTitle}>Fedezd fel a termékkategóriákat!</h1>
+      <div className={classes.titleContainer}>
+        <h1 className={classes.productCategoryTitle}>Fedezd fel a</h1>
+        <h1 className={classes.productCategoryTitle2}>termékkategóriákat!</h1>
       </div>
+
       <div className={classes.container}>
         <img src={wordCloud} alt="wordCloud" className={classes.wordCloud} />
       </div>
       <div className={classes.container}>
-        <img src={wordCloudMobile} alt="wordCloud" className={classes.wordCloudMobile} />
+        <img
+          src={wordCloudMobile}
+          alt="wordCloud"
+          className={classes.wordCloudMobile}
+        />
       </div>
       <div className={classes.arrow}>
         <AnimatedDownArrow />

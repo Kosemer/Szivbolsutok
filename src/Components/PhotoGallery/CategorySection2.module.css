@@ -107,3 +107,78 @@
     margin-left: 10px; /* Továbbra is lesz egy kis távolság az ikon és a szöveg között */
 }
 
+@media (max-width: 768px) {
+
+    
+    .image-row img {
+      width: 100%; /* Az egyes képek teljes szélességűek lesznek */
+     
+    }
+    .background-container {
+        background-image: url("../../Assets/CakesPicture/splashbackground3.png");
+        background-size: 95%; /* A háttérkép mérete 80%-ra csökkentve */
+        background-repeat: no-repeat; /* Ne ismétlődjön */
+        background-position: center;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        background-color: #F4F4F4;
+    }
+    .page-title {
+        position: absolute;
+        top: 40px; /* 20px-re az oldal tetejétől */
+        left: 60px; /* 20px-re az oldal bal szélétől */
+        font-size: 3rem;
+        font-family: "Bebas Neue";
+        color: #F4F4F4; /* Vagy más szín, ami jól látszik a háttéren */
+        background-color: #FF7F7F;
+        width: 200px;
+        padding: 5px 0px 0px 0px;
+        text-align: center;
+        align-items: center;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Árnyék a jobb láthatóság érdekében */
+    }
+    
+    .page-title2 {
+        position: absolute;
+        top: 95px; /* 20px-re az oldal tetejétől */
+        left: 110px; /* 20px-re az oldal bal szélétől */
+        font-size: 3rem;
+        font-family: "Bebas Neue";
+        color: #F4F4F4; /* Vagy más szín, ami jól látszik a háttéren */
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Árnyék a jobb láthatóság érdekében */
+        background-color: #473939;
+        width: 200px;
+        padding: 5px 0px 0px 0px;
+        text-align: center;
+        align-items: center;
+    }
+    .cardTextNext {
+        color: #ff7f7f;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        margin: 0;
+        transition: transform 0.2s;
+    }
+
+    .col {
+        position: absolute;
+        bottom: 60px; /* 20px távolság az oldal aljától */
+        right: 100px; /* 20px távolság a képernyő jobb szélétől */
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    .cardTextNext svg {
+        width: 48px; /* Növelt méret */
+        height: 48px;
+      }
+  }
+

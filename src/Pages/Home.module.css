@@ -142,7 +142,9 @@
 
 /* Kicsi készülékek (tabletek, 576px és 767px között) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-
+  .section{
+    height: auto;
+  }
 }
 
 /* Közepes készülékek (tabletek, 768px és 991px között) */
