@@ -12,7 +12,8 @@ import instagram from "../../Assets/SocialIcon/instagram.svg";
 import facebook from "../../Assets/SocialIcon/facebook.svg";
 import CurtainMenu from "./CurtainMenu";
 import CurtainMenuWithLink from "./CurtainMenuWithLink";
-import mainTitle from "../../Assets/CakesPicture/mainTitle3.png"
+import mainTitle from "../../Assets/CakesPicture/mainTitle3.png";
+import DropdownMenu from "../Navigation/DropdownMenu";
 
 function Header() {
   const cartCtx = useContext(CartContext);
@@ -24,6 +25,7 @@ function Header() {
 
   const [menuVisible, setMenuVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,10 +35,16 @@ function Header() {
       setPrevScrollPos(currentScrollPos);
     };
 
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth <= 768);
+    };
+
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, [prevScrollPos]);
 
@@ -73,7 +81,15 @@ function Header() {
           </div>*/}
           <CurtainMenu menuVisible={menuVisible}></CurtainMenu>
           <div className={classes.burgerButton}>
-          <BurgerButton></BurgerButton>
+          {isMobileView ? (
+          <div className={classes.burgerButton}>
+            <BurgerButton />
+          </div>
+        ) : (
+          <div className={classes.dropdownMenu}>
+          <DropdownMenu />
+          </div>
+        )}
           </div>
           
           {/*<CurtainMenuWithLink></CurtainMenuWithLink>*/}

@@ -16,6 +16,14 @@
   transition: height 0.6s ease-in-out; 
 }
 
+.dropdownMenu {
+  position: absolute;
+  left: 60%;
+  transform: translateX(-50%); /* Centers the menu horizontally */
+  top: 40%; /* Centers the menu vertically */
+  transform: translate(-50%, -50%); /* Final centering */
+  /* You can add any other styling you want here */
+}
 
 .hidden {
   position: fixed;
