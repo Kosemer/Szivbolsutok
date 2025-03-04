@@ -7,30 +7,39 @@ const DropdownMenu = () => {
     <nav role="navigation" className={styles.nav}>
       <ul className={styles.navList}>
         <li className={styles.navItem}>
-          <NavLink to="/" className={styles.navLink} activeClassName={styles.active}>Home</NavLink>
-        </li>
-        <li className={styles.navItem}>
-          <NavLink to="/cakes" className={styles.navLink} activeClassName={styles.active}>Torták</NavLink>
+          <NavLink to="/" className={styles.navLink} activeClassName={styles.active}>Torták</NavLink>
           <ul className={styles.dropdown}>
             <li className={styles.dropdownItem}>
-              <NavLink to="/web-development" className={styles.dropdownLink} activeClassName={styles.active}>Web Development</NavLink>
+              <NavLink to="/web-development" className={styles.dropdownLink} activeClassName={styles.active}>Klasszikus torák</NavLink>
             </li>
             <li className={styles.dropdownItem}>
-              <NavLink to="/web-design" className={styles.dropdownLink} activeClassName={styles.active}>Web Design</NavLink>
+              <NavLink to="/web-design" className={styles.dropdownLink} activeClassName={styles.active}>Burkolt torák</NavLink>
             </li>
             <li className={styles.dropdownItem}>
-              <NavLink to="/illustration" className={styles.dropdownLink} activeClassName={styles.active}>Illustration</NavLink>
-            </li>
-            <li className={styles.dropdownItem}>
-              <NavLink to="/iconography" className={styles.dropdownLink} activeClassName={styles.active}>Iconography</NavLink>
+              <NavLink to="/illustration" className={styles.dropdownLink} activeClassName={styles.active}>Linzertorták</NavLink>
             </li>
           </ul>
         </li>
         <li className={styles.navItem}>
-          <NavLink to="/about" className={styles.navLink} activeClassName={styles.active}>About</NavLink>
+          <NavLink to="/cakes" className={styles.navLink} activeClassName={styles.active}>Macaronok</NavLink>
+
         </li>
         <li className={styles.navItem}>
-          <NavLink to="/contact" className={styles.navLink} activeClassName={styles.active}>Contact</NavLink>
+          <NavLink to="/about" className={styles.navLink} activeClassName={styles.active}>Sütemények</NavLink>
+          <ul className={styles.dropdown}>
+            <li className={styles.dropdownItem}>
+              <NavLink to="/web-development" className={styles.dropdownLink} activeClassName={styles.active}>Klasszikus sütemények</NavLink>
+            </li>
+            <li className={styles.dropdownItem}>
+              <NavLink to="/web-design" className={styles.dropdownLink} activeClassName={styles.active}>Mentes sütemények</NavLink>
+            </li>
+          </ul>
+        </li>
+        <li className={styles.navItem}>
+          <NavLink to="/contact" className={styles.navLink} activeClassName={styles.active}>Fondant figurák</NavLink>
+        </li>
+        <li className={styles.navItem}>
+          <NavLink to="/contact" className={styles.navLink} activeClassName={styles.active}>Kapcsolat</NavLink>
         </li>
       </ul>
     </nav>

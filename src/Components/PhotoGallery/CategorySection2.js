@@ -12,9 +12,19 @@ const CategorySection2 = ({ category, CategoryGallery, categoriesName }) => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const imageData = await ImageDimensions(CategoryGallery);
-        const combinedImages = imageData.slice(0, 3); // Az első három kép
-        setImages(combinedImages);
+        let imageData = await ImageDimensions(CategoryGallery);
+        
+        // Rendezés a fájlnév elején lévő szám szerint
+        imageData = imageData
+          .slice(0, 3) // Az első három kép
+          .sort((a, b) => {
+            const numA = parseInt(a.src.match(/\d+/)?.[0]) || 0;
+            const numB = parseInt(b.src.match(/\d+/)?.[0]) || 0;
+            return numA - numB;
+          });
+
+        setImages(imageData);
+
       } catch (error) {
         console.error("Hiba a képek lekérése közben", error);
         setImages([]);

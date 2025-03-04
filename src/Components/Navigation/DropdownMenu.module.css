@@ -3,7 +3,6 @@
   display: block;
   padding: 20px 0 0 0;
   text-align: center;
-  font-size: 16px;
 }
 
 .navList {
@@ -17,18 +16,36 @@
   display: inline-block;
   padding: 0 30px;
   position: relative;
-  text-decoration: none;
   text-align: center;
-  font-family: 'Arvo', sans-serif;
+  white-space: nowrap;
 }
 
 .navLink {
-  color: black;
+  color: #473939;
   text-decoration: none;
+  position: relative;
+  padding-bottom: 5px;
+  font-size: 1.5rem;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background-color: #FF7F7F;
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
 }
 
 .navLink:hover {
-  color: #3ca0e7;
+  color: #473939;
 }
 
 .navItem:hover {
@@ -40,9 +57,11 @@
   opacity: 0;
   position: absolute;
   padding-left: 0;
-  left: 0;
+  left: 20%;
   display: none;
   background: white;
+  border-radius: 4px;
+
 }
 
 .navItem:hover > .dropdown,
@@ -50,10 +69,8 @@
   visibility: visible;
   opacity: 1;
   display: block;
-  min-width: 250px;
+  min-width: 200px;
   text-align: left;
-
-  box-shadow: 0px 3px 5px -1px #ccc;
 }
 
 .dropdownItem {
@@ -64,22 +81,39 @@
   margin-bottom: 0px;
   border-style: none;
   background-color: #ffffff;
+  white-space: nowrap;
+}
+
+.dropdownLink {
+  color: #473939;
+  transition: all 0.5s ease;
+  position: relative;
+  padding-bottom: 5px;
+  font-size: 1.2rem;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.dropdownLink::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background-color: #FF7F7F;
+  transition: width 0.3s ease;
+}
+
+.dropdownLink:hover::after {
+  width: 100%;
 }
 
 .dropdownLink:hover {
   padding-left: 10px;
-  border-left: 2px solid #FF7F7F;
-  transition: all 0.3s ease;
+  color: #473939;
 }
 
 a {
   text-decoration: none;
-}
-
-a:hover {
-  color: #FF7F7F;
-}
-
-.dropdownLink {
-  transition: all 0.5s ease;
+  color: #473939;
 }
