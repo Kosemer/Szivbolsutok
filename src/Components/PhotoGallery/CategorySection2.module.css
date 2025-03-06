@@ -53,12 +53,12 @@
 }
 
 .overlay-image {
-    width: 35%;
+    width: 30%;
     height: auto;
 }
 
 .overlay-image:nth-child(2) {
-    width: 40%; /* Középső kép nagyobb lesz */
+    width: 35%; /* Középső kép nagyobb lesz */
     height: auto;
     transform: translateY(40px); /* Ha szükséges, finomhangold a pozíciót */
 }
@@ -94,7 +94,7 @@
 .cardTextNext {
     color: #ff7f7f;
     font-family: "Bebas Neue", sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,7 +108,13 @@
 }
 
 @media (max-width: 768px) {
-
+    .image-row {
+        display: flex;
+        gap: 0%;
+        width: 100%;
+        justify-content: center;
+        align-items: center; /* Képek alapból középre igazítása */
+    }
     
     .image-row img {
       width: 100%; /* Az egyes képek teljes szélességűek lesznek */
@@ -116,10 +122,10 @@
     }
     .background-container {
         background-image: url("../../Assets/CakesPicture/splashbackground3.png");
-        background-size: 95%; /* A háttérkép mérete 80%-ra csökkentve */
+        background-size: 100%; /* A háttérkép mérete 80%-ra csökkentve */
         background-repeat: no-repeat; /* Ne ismétlődjön */
         background-position: center;
-        height: 90vh;
+        height: 80vh;
         display: flex;
         justify-content: center;
         align-items: center;

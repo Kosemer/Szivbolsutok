@@ -56,12 +56,14 @@
 .dropdown {
   visibility: hidden;
   opacity: 0;
+  top: 40px;
   position: absolute;
   padding-left: 0;
   left: 20%;
   display: none;
   background: white;
   border-radius: 4px;
+  box-shadow: 4px 8px 12px -3px rgba(0,0,0,0.75);
 
 }
 
@@ -86,7 +88,7 @@
   position: relative;
   padding: 10px 20px;
   transition: background-color 0.3s ease;
-  box-shadow: 4px 8px 12px -3px rgba(0,0,0,0.75);
+ 
 }
 
 .dropdownItem:not(:last-child)::after {
