@@ -34,7 +34,15 @@ function Home() {
 
   useEffect(() => {
     if (cartCtx.scrollToCategory) {
-      sectionsRefs[cartCtx.scrollToCategory].current.scrollIntoView({ behavior: "smooth" });
+      const headerHeight = 50; // Header magassága pixelben
+      const element = sectionsRefs[cartCtx.scrollToCategory].current;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
       cartCtx.setScrollToCategory(null);
     }
   }, [cartCtx.scrollToCategory]);

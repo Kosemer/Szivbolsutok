@@ -48,14 +48,14 @@
 }
 
 .mainTitle{
-  width: 55%;
+  width: 50%;
   height: auto;
   margin-left: 2rem;
   transition: width 0.6s ease-in-out; 
 }
 
 .mainTitleHidden{
-  width: 50%;
+  width: 45%;
   height: auto;
   margin-left: 2rem;
   transition: width 0.6s ease-in-out; 

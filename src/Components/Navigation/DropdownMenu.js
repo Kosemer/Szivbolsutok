@@ -1,45 +1,138 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom'; // Import NavLink from react-router-dom
-import styles from './DropdownMenu.module.css'; // Import the CSS Module
+import React, { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
+import styles from './DropdownMenu.module.css';
+import CartContext from '../Store/cart-context';
 
 const DropdownMenu = () => {
+  const cartCtx = useContext(CartContext);
+
+  const handleScroll = (category) => {
+    cartCtx.setScrollToCategory(category);
+  };
+
   return (
     <nav role="navigation" className={styles.nav}>
       <ul className={styles.navList}>
         <li className={styles.navItem}>
-          <NavLink to="/" className={styles.navLink} activeClassName={styles.active}>Torták</NavLink>
+          <NavLink 
+            to="/" 
+            className={styles.navLink} 
+            activeClassName={styles.active}
+            onClick={(e) => {
+              e.preventDefault();
+              handleScroll('HagyomanyosTortak');
+            }}
+          >
+            Torták
+          </NavLink>
           <ul className={styles.dropdown}>
             <li className={styles.dropdownItem}>
-              <NavLink to="/web-development" className={styles.dropdownLink} activeClassName={styles.active}>Klasszikus torák</NavLink>
+              <NavLink 
+                to="/hagyomanyos-tortak" 
+                className={styles.dropdownLink} 
+                activeClassName={styles.active}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleScroll('HagyomanyosTortak');
+                }}
+              >
+                Klasszikus torták
+              </NavLink>
             </li>
             <li className={styles.dropdownItem}>
-              <NavLink to="/web-design" className={styles.dropdownLink} activeClassName={styles.active}>Burkolt torák</NavLink>
+              <NavLink 
+                to="/burkolt-tortak" 
+                className={styles.dropdownLink} 
+                activeClassName={styles.active}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleScroll('BurkoltTortak');
+                }}
+              >
+                Burkolt torták
+              </NavLink>
             </li>
             <li className={styles.dropdownItem}>
-              <NavLink to="/illustration" className={styles.dropdownLink} activeClassName={styles.active}>Linzertorták</NavLink>
+              <NavLink 
+                to="/linzertortak" 
+                className={styles.dropdownLink} 
+                activeClassName={styles.active}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleScroll('Linzertortak');
+                }}
+              >
+                Linzertorták
+              </NavLink>
             </li>
           </ul>
         </li>
         <li className={styles.navItem}>
-          <NavLink to="/cakes" className={styles.navLink} activeClassName={styles.active}>Macaronok</NavLink>
-
+          <NavLink 
+            to="/macaronok" 
+            className={styles.navLink} 
+            activeClassName={styles.active}
+            onClick={(e) => {
+              e.preventDefault();
+              handleScroll('Macaronok');
+            }}
+          >
+            Macaronok
+          </NavLink>
         </li>
         <li className={styles.navItem}>
-          <NavLink to="/about" className={styles.navLink} activeClassName={styles.active}>Sütemények</NavLink>
+          <NavLink 
+            to="/sutemenyek" 
+            className={styles.navLink} 
+            activeClassName={styles.active}
+            onClick={(e) => {
+              e.preventDefault();
+              handleScroll('HagyomanyosSutemenyek');
+            }}
+          >
+            Sütemények
+          </NavLink>
           <ul className={styles.dropdown}>
             <li className={styles.dropdownItem}>
-              <NavLink to="/web-development" className={styles.dropdownLink} activeClassName={styles.active}>Klasszikus sütemények</NavLink>
+              <NavLink 
+                to="/klasszikus-sutemenyek" 
+                className={styles.dropdownLink} 
+                activeClassName={styles.active}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleScroll('HagyomanyosSutemenyek');
+                }}
+              >
+                Klasszikus sütemények
+              </NavLink>
             </li>
             <li className={styles.dropdownItem}>
-              <NavLink to="/web-design" className={styles.dropdownLink} activeClassName={styles.active}>Mentes sütemények</NavLink>
+              <NavLink 
+                to="/mentes-sutemenyek" 
+                className={styles.dropdownLink} 
+                activeClassName={styles.active}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleScroll('MentesSutemenyek');
+                }}
+              >
+                Mentes sütemények
+              </NavLink>
             </li>
           </ul>
         </li>
         <li className={styles.navItem}>
-          <NavLink to="/contact" className={styles.navLink} activeClassName={styles.active}>Fondant figurák</NavLink>
-        </li>
-        <li className={styles.navItem}>
-          <NavLink to="/contact" className={styles.navLink} activeClassName={styles.active}>Kapcsolat</NavLink>
+          <NavLink 
+            to="/fondant-figurak" 
+            className={styles.navLink} 
+            activeClassName={styles.active}
+            onClick={(e) => {
+              e.preventDefault();
+              handleScroll('FondantFigurak');
+            }}
+          >
+            Fondant figurák
+          </NavLink>
         </li>
       </ul>
     </nav>
