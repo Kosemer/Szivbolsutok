@@ -11,13 +11,13 @@ const IntroSection = () => {
       </div>
       <div className={classes.rightSection}>
         <div className={classes.titleBox}>
-          <h1 className={classes.centeredTextTitle}>
+          <div className={classes.centeredTextTitle}>
             <h1 className={classes.pinkText}>
               Üdvözöllek
               <br />
             </h1>
             <h1 className={classes.blackText}>az oldalon!</h1>
-          </h1>
+          </div>
         </div>
         <div className={classes.rectangle}>
           <p className={classes.introductoryText2}>
@@ -33,7 +33,7 @@ const IntroSection = () => {
           </p>
         </div>
       </div>
-      <div className={classes.arrow}>
+      <div className={classes.arrowContainer}>
         <AnimatedDownArrow />
       </div>
     </div>
