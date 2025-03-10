@@ -3,10 +3,12 @@
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   gap: 2rem;
   width: 100%;
+  background-color: #F4F4F4;
+  height: 100vh;
 }
 
 .leftSection {
@@ -49,10 +51,9 @@
 }
 
 .rectangle {
-  background-color: #F4F4F4;
+
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .introductoryText2 {

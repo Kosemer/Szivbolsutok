@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './IntroSection.module.css';
 import wordCloudMobile from '../../Assets/CakesPicture/wordCloudMobile.png';
+import AnimatedDownArrow from '../AnimatedDownArrow/AnimatedDownArrow';
 
 const IntroSection = () => {
   return (
@@ -31,6 +32,9 @@ const IntroSection = () => {
             Jó nézelődést kívánok! 🙂
           </p>
         </div>
+      </div>
+      <div className={classes.arrow}>
+        <AnimatedDownArrow />
       </div>
     </div>
   );

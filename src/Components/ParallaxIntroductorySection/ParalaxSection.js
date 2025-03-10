@@ -86,9 +86,7 @@ function ParalaxSection() {
           className={classes.wordCloudMobile}
         />
       </div>
-      <div className={classes.arrow}>
-        <AnimatedDownArrow />
-      </div>
+
     </div>
   );
 }
