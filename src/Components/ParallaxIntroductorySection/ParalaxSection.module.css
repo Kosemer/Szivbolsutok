@@ -4,10 +4,10 @@
     display: flex;
     align-items: center;
     justify-content: flex-start; 
-    background-color: white;
     background-image: url('../../Assets/CakesPicture/polygonSvg3.svg'); /* Háttérkép beállítása */
     background-size: cover; /* A háttér méretének beállítása */
     background-repeat: no-repeat; /* A háttér ismétlődésének megakadályozása */
+    background-color: #F4F4F4;
 }
 
 .rectangle {

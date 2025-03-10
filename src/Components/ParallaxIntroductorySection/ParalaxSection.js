@@ -7,6 +7,7 @@ import fruitCake from "../../Assets/CakesPicture/viragLada.png";
 import wordCloud from "../../Assets/CakesPicture/wordCloud.png";
 import wordCloudMobile from "../../Assets/CakesPicture/wordCloudMobile.png";
 import AnimatedDownArrow from "../AnimatedDownArrow/AnimatedDownArrow";
+import IntroSection from "../IntroSection/IntroSection";
 
 function ParalaxSection() {
   const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
@@ -77,9 +78,7 @@ function ParalaxSection() {
         <h1 className={classes.productCategoryTitle2}>termékkategóriákat!</h1>
       </div>
 
-      <div className={classes.container}>
-        <img src={wordCloud} alt="wordCloud" className={classes.wordCloud} />
-      </div>
+<IntroSection></IntroSection>
       <div className={classes.container}>
         <img
           src={wordCloudMobile}
