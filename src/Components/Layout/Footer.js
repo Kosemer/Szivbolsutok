@@ -124,7 +124,7 @@ function Footer() {
         </div>
 
         <div className={classes.containerContact}>
-          <h2 className={classes.h2TitleLogo}>Szivből sütök</h2>
+          <h2 className={classes.h2TitleLogo}>Szívből sütök</h2>
 
           <img
             src={footerLogo}
