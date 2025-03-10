@@ -42,12 +42,16 @@
   font-size: 4rem;
   margin: 0;
   line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pinkText, .blackText {
-  display: inline-block;
+  display: block;
   font-family: inherit;
   font-size: inherit;
+  margin: 0;
 }
 
 .pinkText {
@@ -65,7 +69,7 @@
 
 .introductoryText2 {
   font-family: "Sorts Mill Goudy", serif;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   line-height: 1.6;
   color: #1f1e1d;
   margin: 0;
