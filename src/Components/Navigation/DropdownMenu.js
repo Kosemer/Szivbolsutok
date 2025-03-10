@@ -10,9 +10,13 @@ const DropdownMenu = () => {
     cartCtx.setScrollToCategory(category);
   };
 
+  const handleMenuClick = () => {
+    cartCtx.setGalleryIsOpen(false);  // Bezárjuk a galleryContainer-t
+  };
+
   return (
     <nav role="navigation" className={styles.nav}>
-      <ul className={styles.navList}>
+      <ul className={styles.navList} onClick={handleMenuClick}>
         <li className={styles.navItem}>
           <NavLink 
             to="/" 

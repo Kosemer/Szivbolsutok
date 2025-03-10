@@ -46,52 +46,74 @@ const CategorySection2 = ({ category, CategoryGallery, categoriesName }) => {
   const secondWord = words.length > 1 ? words.slice(1).join(" ") : null; // Ha több szó van, akkor a második szó és az összes többi összekapcsolása
 
   // Mobil nézetben csak egy képet jelenítünk meg
-  const imagesToDisplay = windowWidth <= 768 ? images.slice(0, 1) : images;
+// Ellenőrizzük, hogy van-e legalább egy kép
+const mobileImage = images.length > 0 
+  ? images.find((img) => img.src.includes("1_")) || images[0] 
+  : null;
+
+// Ha mobilnézet van, csak ezt az egy képet jelenítsük meg (ha van kép)
+const imagesToDisplay = windowWidth <= 768 
+  ? mobileImage 
+    ? [mobileImage] 
+    : [] 
+  : images;
+
 
   return (
-    <div className={classes["background-container"]}>
-      {/* Bal felső sarokban a cím */}
+    <div
+  className={`${classes["background-container"]} ${
+    words.length === 1 ? classes["background-container-single"] : ""
+  }`}
+>
+  {/* Dinamikusan osztályt adunk a címnek */}
+  {words.length === 1 ? (
+    <h1 className={classes["page-title3"]}>{firstWord}</h1>
+  ) : (
+    <>
       <h1 className={classes["page-title"]}>{firstWord}</h1>
-      {secondWord && <h1 className={classes["page-title2"]}>{secondWord}</h1>}
+      <h1 className={classes["page-title2"]}>{secondWord}</h1>
+    </>
+  )}
 
-      <div className={classes["image-row"]}>
-        {imagesToDisplay.length > 0
-          ? imagesToDisplay.map((image, index) => (
-              <img
-                key={index}
-                src={image.src}
-                alt={`Cake ${index + 1}`}
-                className={classes["overlay-image"]}
-              />
-            ))
-          : [1, 2, 3].map((_, index) => (
-              <img
-                key={index}
-                src={test}
-                alt={`Placeholder Cake ${index + 1}`}
-                className={classes["overlay-image"]}
-              />
-            ))}
-      </div>
+  <div className={classes["image-row"]}>
+    {imagesToDisplay.length > 0
+      ? imagesToDisplay.map((image, index) => (
+          <img
+            key={index}
+            src={image.src}
+            alt={`Cake ${index + 1}`}
+            className={classes["overlay-image"]}
+          />
+        ))
+      : [1, 2, 3].map((_, index) => (
+          <img
+            key={index}
+            src={test}
+            alt={`Placeholder Cake ${index + 1}`}
+            className={classes["overlay-image"]}
+          />
+        ))}
+  </div>
 
-      <div className={classes.col}>
-        <div className={classes.cardBodyNext} onClick={onImageClickHandler}>
-          <p className={classes.cardTextNext}>
-            További képek
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              fill="currentColor"
-              className="bi bi-arrow-right-circle-fill ms-3"
-              viewBox="0 0 16 16"
-            >
-              <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
-            </svg>
-          </p>
-        </div>
-      </div>
+  <div className={classes.col}>
+    <div className={classes.cardBodyNext} onClick={onImageClickHandler}>
+      <p className={classes.cardTextNext}>
+        További képek
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          fill="currentColor"
+          className="bi bi-arrow-right-circle-fill ms-3"
+          viewBox="0 0 16 16"
+        >
+          <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+        </svg>
+      </p>
     </div>
+  </div>
+</div>
+
   );
 };
 
