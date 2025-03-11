@@ -10,12 +10,30 @@ import React, { useContext } from "react";
 import DeleteIcon from "../../Assets/DeleteIcon.svg";
 import darkModeClasses from "./DarkMode.module.css";
 
-const DraggableImage = ({ index, image, handleImageClick }) => {
+const DraggableImage = ({ index, image, handleImageClick, onDragDrop }) => {
+  const cartCtx = useContext(CartContext);
+
   const handleDragStart = (e) => {
-    e.dataTransfer.setData("imageIndex", index);
+    e.dataTransfer.setData("dragIndex", index);
   };
 
-  const cartCtx = useContext(CartContext);
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    e.currentTarget.classList.add(classes.dragOver);
+  };
+
+  const handleDragLeave = (e) => {
+    e.currentTarget.classList.remove(classes.dragOver);
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    e.currentTarget.classList.remove(classes.dragOver);
+    const dragIndex = parseInt(e.dataTransfer.getData("dragIndex"));
+    if (dragIndex !== index) {
+      onDragDrop(dragIndex, index);
+    }
+  };
 
   const handleDeleteClick = (e) => {
     e.stopPropagation();
@@ -27,10 +45,16 @@ const DraggableImage = ({ index, image, handleImageClick }) => {
   const imageUrl = `http://localhost/${image.replace('../', '')}`;
 
   return (
-    <div className={classes.imageContainer} onClick={handleDeleteClick}>
+    <div 
+      className={classes.imageContainer} 
+      onClick={handleDeleteClick}
+      draggable
+      onDragStart={handleDragStart}
+      onDragOver={handleDragOver}
+      onDragLeave={handleDragLeave}
+      onDrop={handleDrop}
+    >
       <img
-        draggable
-        onDragStart={handleDragStart}
         src={imageUrl}
         alt=""
         className={classes.draggableImage}

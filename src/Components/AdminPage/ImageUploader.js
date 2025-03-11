@@ -144,10 +144,27 @@ const ImageUploader = ({ setLoggedIn }) => {
       );
       
       if (response.data) {
-        // Csak a '../' prefixet távolítjuk el, a szerver URL-t nem adjuk hozzá
-        const modifiedImages = response.data.map(imagePath => 
+        // Csak a '../' prefixet távolítjuk el
+        let modifiedImages = response.data.map(imagePath => 
           imagePath.replace('../', '')
         );
+
+        // Betöltjük a mentett sorrendet
+        try {
+          const orderResponse = await axios.get('http://localhost/backend/getImageOrder.php');
+          if (orderResponse.data && orderResponse.data[cartCtx.selectedFolder]) {
+            // Ha van mentett sorrend, azt használjuk
+            const savedOrder = orderResponse.data[cartCtx.selectedFolder];
+            // Rendezzük a képeket a mentett sorrend alapján
+            modifiedImages = savedOrder.filter(img => modifiedImages.includes(img));
+            // Hozzáadjuk az esetleges új képeket a végére
+            const newImages = modifiedImages.filter(img => !savedOrder.includes(img));
+            modifiedImages = [...modifiedImages, ...newImages];
+          }
+        } catch (error) {
+          console.error('Error loading image order:', error);
+        }
+
         console.log('Modified image paths:', modifiedImages);
         cartCtx.setFolderImages(modifiedImages);
       }
@@ -271,6 +288,34 @@ const ImageUploader = ({ setLoggedIn }) => {
       Sikeres optimalizálás
     </p>
   );
+
+  // Új függvény a képek átrendezéséhez
+  const handleDragDrop = async (dragIndex, dropIndex) => {
+    const newImages = [...cartCtx.folderImages];
+    const draggedImage = newImages[dragIndex];
+    
+    // Töröljük a régi pozícióból és beszúrjuk az újba
+    newImages.splice(dragIndex, 1);
+    newImages.splice(dropIndex, 0, draggedImage);
+    
+    // Frissítjük a state-et
+    cartCtx.setFolderImages(newImages);
+
+    // Mentjük a szervernek az új sorrendet
+    try {
+      await axios.post('http://localhost/backend/saveImageOrder.php', {
+        folder: cartCtx.selectedFolder,
+        images: newImages
+      }, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      console.log('Image order saved successfully');
+    } catch (error) {
+      console.error('Error saving image order:', error);
+    }
+  };
 
   return (
     <div
@@ -492,11 +537,7 @@ const ImageUploader = ({ setLoggedIn }) => {
       {imageDeleteInfoMobileView}
       {selectedFolder}
       {cartCtx.folderImages.length > 0 && (
-        <div
-          className={
-            cartCtx.isDarkMode ? darkModeClasses.imageGrid : classes.imageGrid
-          }
-        >
+        <div className={cartCtx.isDarkMode ? darkModeClasses.imageGrid : classes.imageGrid}>
           {cartCtx.folderImages.map((image, index) => (
             <div key={index}>
               <DraggableImage
@@ -504,6 +545,7 @@ const ImageUploader = ({ setLoggedIn }) => {
                 image={image}
                 handleImageClick={handleImageClick}
                 loadImages={loadImages}
+                onDragDrop={handleDragDrop}
               />
               <DeleteImage loadImages={loadImages} />
             </div>
