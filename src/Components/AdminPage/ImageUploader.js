@@ -163,6 +163,7 @@ const ImageUploader = ({ setLoggedIn }) => {
   }, [cartCtx.selectedFolder]);
 
   const handleImageClick = async (image) => {
+    // A szerver maga hozzáadja az '../assets/' prefixet, így nekünk csak a relatív útvonalat kell küldenünk
     cartCtx.setImageToDelete(image);
     cartCtx.setIsModalOpen(true);
   };

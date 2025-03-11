@@ -8,22 +8,34 @@ const DeleteImage = ({ loadImages }) => {
 
   const handleDeleteConfirmed = async (e) => {
     e.preventDefault();
-    const response = await axios({
-      method: "DELETE",
-      //url: "/backend/deleteImage.php",
-      //url: "/backend/deleteImage.php",
-      url: "http://localhost/backend/deleteImage.php",
-      data: `image=${cartCtx.imageToDelete}`,
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    });
-    console.log(response.data);
-    console.log(cartCtx.imageToDelete);
-    cartCtx.setDeleteSuccess(true);
-    setTimeout(() => {
-      cartCtx.setDeleteSuccess(false);
-    }, 2000);
-    await loadImages();
-    cartCtx.setIsModalOpen(false);
+    try {
+      // Eltávolítjuk az assets/ részt az útvonalból, mert a szerver hozzáadja
+      const imagePath = cartCtx.imageToDelete.replace('assets/', '');
+      console.log('Deleting image:', imagePath);
+
+      const response = await axios({
+        method: "DELETE",
+        url: "http://localhost/backend/deleteImage.php",
+        data: {
+          image: imagePath
+        },
+        headers: { 
+          "Content-Type": "application/json"
+        },
+        withCredentials: false
+      });
+
+      console.log('Server response:', response.data);
+      cartCtx.setDeleteSuccess(true);
+      setTimeout(() => {
+        cartCtx.setDeleteSuccess(false);
+      }, 2000);
+      await loadImages();
+      cartCtx.setIsModalOpen(false);
+    } catch (error) {
+      console.error('Error deleting image:', error);
+      console.error('Error details:', error.response?.data);
+    }
   };
 
   return (
