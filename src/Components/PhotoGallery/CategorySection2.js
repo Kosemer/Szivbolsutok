@@ -4,7 +4,7 @@ import test from "../../Assets/CategorySection/almas.png";
 import CartContext from "../Store/cart-context";
 import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
 
-const CategorySection2 = ({ category, CategoryGallery, categoriesName }) => {
+const CategorySection2 = ({ category, categoryTitle, CategoryGallery, categoriesName }) => {
   const cartCtx = useContext(CartContext);
   const [images, setImages] = useState([]);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth); // Állapot a képernyő szélességére
@@ -41,7 +41,7 @@ const CategorySection2 = ({ category, CategoryGallery, categoriesName }) => {
   };
 
   // Kategória szavak szétszedése és feltérképezése
-  const words = category.split(" ");
+  const words = categoryTitle.split(" ");
   const firstWord = words[0];
   const secondWord = words.length > 1 ? words.slice(1).join(" ") : null; // Ha több szó van, akkor a második szó és az összes többi összekapcsolása
 

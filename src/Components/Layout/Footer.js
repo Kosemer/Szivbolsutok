@@ -78,14 +78,14 @@ function Footer() {
           <div className={classes.links}>
             <div className={classes.linkBox}>
               <div className={classes.verticalLine}>
-              <div className={classes.linkContainer}>
-                  <NavLink className={classes.linkText} onClick={() => cartCtx.setScrollToCategory("HagyomanyosSutemenyek")}>
-                    Hagyományos sütemények
+                <div className={classes.linkContainer}>
+                  <NavLink className={classes.linkText} onClick={() => cartCtx.setScrollToCategory("HagyomanyosTortak")}>
+                    Klasszikus torták
                   </NavLink>
                 </div>
                 <div className={classes.linkContainer}>
-                  <NavLink className={classes.linkText} onClick={() => cartCtx.setScrollToCategory("HagyomanyosTortak")}>
-                    Hagyományos torták
+                  <NavLink className={classes.linkText} onClick={() => cartCtx.setScrollToCategory("KulonlegesTortak")}>
+                    Különleges torták
                   </NavLink>
                 </div>
                 <div className={classes.linkContainer}>
@@ -103,6 +103,11 @@ function Footer() {
 
             <div className={classes.linkBox}>
               <div className={classes.verticalLine}>
+              <div className={classes.linkContainer}>
+                  <NavLink className={classes.linkText} onClick={() => cartCtx.setScrollToCategory("HagyomanyosSutemenyek")}>
+                    Klasszikus sütemények
+                  </NavLink>
+                </div>
               <div className={classes.linkContainer}>
                   <NavLink className={classes.linkText} onClick={() => cartCtx.setScrollToCategory("MentesSutemenyek")}>
                     Mentes sütemények

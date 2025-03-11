@@ -45,6 +45,19 @@ const DropdownMenu = () => {
             </li>
             <li className={styles.dropdownItem}>
               <NavLink 
+                to="/kulonleges-tortak" 
+                className={styles.dropdownLink} 
+                activeClassName={styles.active}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleScroll('KulonlegesTortak');
+                }}
+              >
+                Különleges torták
+              </NavLink>
+            </li>
+            <li className={styles.dropdownItem}>
+              <NavLink 
                 to="/burkolt-tortak" 
                 className={styles.dropdownLink} 
                 activeClassName={styles.active}
