@@ -59,7 +59,7 @@ function Home() {
             description={
               "Piskóta és krém rétegezésével készülnek. Kívülről valamilyen krémmel (pl. vajkrém, habtejszín, a torta belsejébe töltött krém, illetve számos különböző elkészítésű krém) kerülnek beborításra."
             }
-            categories={"HagyomanyosTortak"} CategoryGallery={"CategoryGallery/HagyomanyosTortak"} categoriesName={"Hagyományos torták"}
+            categories={"Gallery/HagyomanyosTortak"} CategoryGallery={"CategoryGallery/HagyomanyosTortak"} categoriesName={"Hagyományos torták"}
           />
            {/* <CardGalleryTest categories={"HagyomanyosTortak"} CategoryGallery={"CategoryGallery/HagyomanyosTortak"} categoriesName={"Hagyományos torták"} />*/}
         </div>

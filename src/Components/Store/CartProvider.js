@@ -17,6 +17,8 @@ function CartProvider(props) {
 
   const [categoriesName, setCategoriesName] = useState([]);
 
+  const [categories, setCategories] = useState([]);
+
   const [lastFilter, setLastFilter] = useState(null);
 
   const [images, setImages] = useState([]);
@@ -175,6 +177,8 @@ function CartProvider(props) {
     setSelectedIcons: setSelectedIcons,
     selectedIconsError: selectedIconsError,
     setSelectedIconsError: setSelectedIconsError,
+    categories: categories,
+    setCategories: setCategories
   };
 
   return (

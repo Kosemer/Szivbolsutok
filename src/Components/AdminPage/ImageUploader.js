@@ -148,6 +148,7 @@ const ImageUploader = ({ setLoggedIn }) => {
         let modifiedImages = response.data.map(imagePath => 
           imagePath.replace('../', '')
         );
+        console.log('Server returned images:', modifiedImages);
 
         // Betöltjük a mentett sorrendet
         try {
@@ -155,17 +156,22 @@ const ImageUploader = ({ setLoggedIn }) => {
           if (orderResponse.data && orderResponse.data[cartCtx.selectedFolder]) {
             // Ha van mentett sorrend, azt használjuk
             const savedOrder = orderResponse.data[cartCtx.selectedFolder];
-            // Rendezzük a képeket a mentett sorrend alapján
-            modifiedImages = savedOrder.filter(img => modifiedImages.includes(img));
-            // Hozzáadjuk az esetleges új képeket a végére
+            console.log('Saved order:', savedOrder);
+            
+            // Először az elmentett sorrendben lévő képeket vesszük
+            const orderedImages = savedOrder.filter(img => modifiedImages.includes(img));
+            
+            // Majd hozzáadjuk azokat a képeket, amik nincsenek a mentett sorrendben
             const newImages = modifiedImages.filter(img => !savedOrder.includes(img));
-            modifiedImages = [...modifiedImages, ...newImages];
+            console.log('New images to add:', newImages);
+            
+            modifiedImages = [...orderedImages, ...newImages];
           }
         } catch (error) {
           console.error('Error loading image order:', error);
         }
 
-        console.log('Modified image paths:', modifiedImages);
+        console.log('Final image order:', modifiedImages);
         cartCtx.setFolderImages(modifiedImages);
       }
     } catch (error) {
