@@ -6,7 +6,7 @@ A kép forrását (src) az image prop alapján állítja be, ami egy URL utolsó
 
 import classes from "./DraggableImage.module.css";
 import CartContext from "../../Components/Store/cart-context";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import DeleteIcon from "../../Assets/DeleteIcon.svg";
 import darkModeClasses from "./DarkMode.module.css";
 
@@ -23,19 +23,22 @@ const DraggableImage = ({ index, image, handleImageClick }) => {
     cartCtx.setIsModalOpen(true);
   };
 
+  // Eltávolítjuk a '../' prefixet és hozzáadjuk a teljes szerver URL-t
+  const imageUrl = `http://localhost/${image.replace('../', '')}`;
+
   return (
     <div className={classes.imageContainer} onClick={handleDeleteClick}>
       <img
         draggable
         onDragStart={handleDragStart}
-        src={`/assets/${image}`}
+        src={imageUrl}
         alt=""
         className={classes.draggableImage}
         onClick={() => handleImageClick(image)}
       />
       <div className={classes.overlay}>
         {/*<div className={classes.x}>X</div>*/}
-        <img src={DeleteIcon}></img>
+        <img src={DeleteIcon} alt="Delete" />
       </div>
     </div>
   );

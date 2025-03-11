@@ -137,12 +137,23 @@ const ImageUploader = ({ setLoggedIn }) => {
   }, [cartCtx.uploadSuccess]);
 
   const loadImages = async () => {
-    const response = await axios.get(
-      //`/backend/listImages.php?folder=${cartCtx.selectedFolder}`
-      `http://localhost/backend/listImages.php?folder=${cartCtx.selectedFolder}`
-    );
-    cartCtx.setFolderImages(response.data);
-    console.log(response.data);
+    try {
+      console.log('Selected folder:', cartCtx.selectedFolder);
+      const response = await axios.get(
+        `http://localhost/backend/listImages.php?folder=${cartCtx.selectedFolder}`
+      );
+      
+      if (response.data) {
+        // Csak a '../' prefixet távolítjuk el, a szerver URL-t nem adjuk hozzá
+        const modifiedImages = response.data.map(imagePath => 
+          imagePath.replace('../', '')
+        );
+        console.log('Modified image paths:', modifiedImages);
+        cartCtx.setFolderImages(modifiedImages);
+      }
+    } catch (error) {
+      console.error('Error loading images:', error);
+    }
   };
 
   useEffect(() => {
@@ -344,34 +355,34 @@ const ImageUploader = ({ setLoggedIn }) => {
           >
             <option value="">Válassz mappát</option>
             <optgroup label="Galéria">
-              <option value="HagyomanyosTortak">Hagyományos torták</option>
-              <option value="BurkoltTortak">Burkolt torták</option>
-              <option value="Linzertortak">Linzertorták</option>
-              <option value="Macaronok">Macaronok</option>
-              <option value="HagyomanyosSutemenyek">
+              <option value="Gallery/HagyomanyosTortak">Hagyományos torták</option>
+              <option value="Gallery/BurkoltTortak">Burkolt torták</option>
+              <option value="Gallery/Linzertortak">Linzertorták</option>
+              <option value="Gallery/Macaronok">Macaronok</option>
+              <option value="Gallery/HagyomanyosSutemenyek">
                 Hagyományos sütemények
               </option>
-              <option value="MentesSutemenyek">Mentes sütemények</option>
-              <option value="FondantFigurak">Fondant figurák</option>
+              <option value="Gallery/MentesSutemenyek">Mentes sütemények</option>
+              <option value="Gallery/FondantFigurak">Fondant figurák</option>
             </optgroup>
             <optgroup label="Főkoldal, üdvözlő rész">
               <option value="DesktopHomePage">Asztali nézet</option>
               <option value="MobileHomePage">Mobil nézet</option>
             </optgroup>
             <optgroup label="Főoldal, kategóriák képei">
-              <option value="../CategoryGallery/HagyomanyosTortak">
+              <option value="CategoryGallery/HagyomanyosTortak">
                 Hagyományos torták
               </option>
-              <option value="../CategoryGallery/BurkoltTortak">Burkolt torták</option>
-              <option value="../CategoryGallery/Linzertortak">Linzertorták</option>
-              <option value="../CategoryGallery/Macaronok">Macaronok</option>
-              <option value="../CategoryGallery/HagyomanyosSutemenyek">
+              <option value="CategoryGallery/BurkoltTortak">Burkolt torták</option>
+              <option value="CategoryGallery/Linzertortak">Linzertorták</option>
+              <option value="CategoryGallery/Macaronok">Macaronok</option>
+              <option value="CategoryGallery/HagyomanyosSutemenyek">
                 Hagyományos sütemények
               </option>
-              <option value="../CategoryGallery/MentesSutemenyek">
+              <option value="CategoryGallery/MentesSutemenyek">
                 Mentes sütemények
               </option>
-              <option value="../CategoryGallery/FondantFigurak">Fondant figurák</option>
+              <option value="CategoryGallery/FondantFigurak">Fondant figurák</option>
             </optgroup>
           </select>
           {cartCtx.folderError && (
