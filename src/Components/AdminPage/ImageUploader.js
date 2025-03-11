@@ -13,9 +13,11 @@ import DarkModeButton from "./DarkModeButton";
 import CartContext from "../../Components/Store/cart-context";
 import DeleteImage from "./DeleteImage";
 import DietIconSectionAdminPage from "./DietIconSectionAdminPage";
+import { useNavigate } from 'react-router-dom';
 
 const ImageUploader = ({ setLoggedIn }) => {
   const cartCtx = useContext(CartContext);
+  const navigate = useNavigate();
 
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -32,6 +34,10 @@ const ImageUploader = ({ setLoggedIn }) => {
 
   const handleLogout = () => {
     setLoggedIn(false);
+  };
+
+  const navigateToHome = () => {
+    navigate('/');
   };
 
   const handleResizeSuccess = (newSize) => {
@@ -335,9 +341,14 @@ const ImageUploader = ({ setLoggedIn }) => {
           onClick={() => cartCtx.setIsDarkMode((prevMode) => !prevMode)}
           isDarkMode={cartCtx.isDarkMode}
         ></DarkModeButton>
-        <button className={classes.logoutButton} onClick={handleLogout}>
-          Kijelentkezés
-        </button>
+        <div className={classes.navigationButtons}>
+          <button className={classes.homeButton} onClick={navigateToHome}>
+            Főoldal
+          </button>
+          <button className={classes.logoutButton} onClick={handleLogout}>
+            Kijelentkezés
+          </button>
+        </div>
       </div>
       <form className={classes.formContainer}>
         <div

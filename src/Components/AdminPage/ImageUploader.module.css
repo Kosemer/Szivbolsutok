@@ -301,6 +301,78 @@ button {
   color: red; /* Piros keret, ha túllép a karakter szám */
 }
 
+.navigationButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.homeButton {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.homeButton:hover {
+  background-color: #45a049;
+}
+
+.logoutButton {
+  padding: 8px 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.logoutButton:hover {
+  background-color: #da190b;
+}
+
+.uploadButton {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.uploadButton:hover {
+  background-color: #45a049;
+}
+
+.resetButton {
+  padding: 8px 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.resetButton:hover {
+  background-color: #da190b;
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 20px;
+}
 
 /* Small devices (mobile phones) */
 @media only screen and (max-width: 600px) {
@@ -340,6 +412,38 @@ button {
     font-size: 22px;
     color: #249940;
     font-weight: 600;
+  }
+
+  .navigationButtons {
+    flex-direction: column;
+    width: auto;
+    align-items: flex-end;
+  }
+
+  .homeButton,
+  .logoutButton {
+    width: auto;
+    margin-bottom: 10px;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .uploadButton,
+  .resetButton {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .buttonRow {
+    padding: 10px 20px;
   }
 }
 
