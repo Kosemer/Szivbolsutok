@@ -47,6 +47,10 @@
   margin-top: 0.5rem;
 }
 
+img{
+  cursor: pointer;
+}
+
 .mainTitle{
   width: 40%;
   height: auto;

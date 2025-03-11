@@ -20,6 +20,13 @@ function Header() {
 
   const cssMobile = cartCtx.cssMobile;
   const setCssMobile = cartCtx.setCssMobile;
+  
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth" // Ez biztosítja a sima görgetési animációt
+    });
+  };
 
   /*Menü eltüntetése görgetéskor*/
 
@@ -67,12 +74,10 @@ function Header() {
     <Fragment>
       {
         <header className={headerClasses}>
-          <NavLink to="/" className={classes.linkText}>
-            <div className={classes.headerTitle}>
+            <div className={classes.headerTitle}  onClick={scrollToTop}>
           <img src={mainTitle} alt="Fruit Cake" className={mainTitleClasses} />
           </div>
             {/*<h1 className={classes.title}>Szívből sütök</h1>*/}
-          </NavLink>
 
           {/*<div className={classes.logoContainer}>
             <NavLink to="/" className={classes.logoLink}>
