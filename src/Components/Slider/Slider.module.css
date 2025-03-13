@@ -44,7 +44,7 @@
 
 .prevButton {
   left: 0px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(33, 32, 32, 0.5);
 }
 
 .leftArrow, .rightArrow{
@@ -62,7 +62,7 @@
 
 .nextButton {
   right:  0px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(33, 32, 32, 0.5);
 }
 
 /* Pöttyök */
