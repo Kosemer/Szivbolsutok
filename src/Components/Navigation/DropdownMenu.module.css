@@ -28,6 +28,7 @@
   padding-bottom: 5px;
   font-size: 1.5rem;
   font-family: 'Bebas Neue', sans-serif;
+  transition: color 0.3s ease;
 }
 
 .navLink::after {
@@ -108,7 +109,7 @@
 
 .dropdownLink {
   color: #473939;
-  transition: all 0.5s ease;
+  transition: color 0.3s ease;
   position: relative;
   padding-bottom: 5px;
   font-size: 1.2rem;
@@ -136,4 +137,12 @@
 a {
   text-decoration: none;
   color: #473939;
+}
+
+.whiteText {
+  color: #ffffff;
+}
+
+.blackText {
+  color: #000000;
 }

@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import styles from './DropdownMenu.module.css';
 import CartContext from '../Store/cart-context';
 
-const DropdownMenu = () => {
+const DropdownMenu = ({ menuVisible }) => {
   const cartCtx = useContext(CartContext);
 
   const handleScroll = (category) => {
@@ -14,13 +14,16 @@ const DropdownMenu = () => {
     cartCtx.setGalleryIsOpen(false);  // Bezárjuk a galleryContainer-t
   };
 
+  // Only apply color changes to main navigation items
+  const navLinkClasses = `${styles.navLink} ${menuVisible ? styles.whiteText : styles.blackText}`;
+
   return (
     <nav role="navigation" className={styles.nav}>
       <ul className={styles.navList} onClick={handleMenuClick}>
         <li className={styles.navItem}>
           <NavLink 
             to="/" 
-            className={styles.navLink} 
+            className={navLinkClasses}
             activeClassName={styles.active}
             onClick={(e) => {
               e.preventDefault();
@@ -33,7 +36,7 @@ const DropdownMenu = () => {
             <li className={styles.dropdownItem}>
               <NavLink 
                 to="/hagyomanyos-tortak" 
-                className={styles.dropdownLink} 
+                className={styles.dropdownLink}
                 activeClassName={styles.active}
                 onClick={(e) => {
                   e.preventDefault();
@@ -46,7 +49,7 @@ const DropdownMenu = () => {
             <li className={styles.dropdownItem}>
               <NavLink 
                 to="/kulonleges-tortak" 
-                className={styles.dropdownLink} 
+                className={styles.dropdownLink}
                 activeClassName={styles.active}
                 onClick={(e) => {
                   e.preventDefault();
@@ -59,7 +62,7 @@ const DropdownMenu = () => {
             <li className={styles.dropdownItem}>
               <NavLink 
                 to="/burkolt-tortak" 
-                className={styles.dropdownLink} 
+                className={styles.dropdownLink}
                 activeClassName={styles.active}
                 onClick={(e) => {
                   e.preventDefault();
@@ -72,7 +75,7 @@ const DropdownMenu = () => {
             <li className={styles.dropdownItem}>
               <NavLink 
                 to="/linzertortak" 
-                className={styles.dropdownLink} 
+                className={styles.dropdownLink}
                 activeClassName={styles.active}
                 onClick={(e) => {
                   e.preventDefault();
@@ -87,7 +90,7 @@ const DropdownMenu = () => {
         <li className={styles.navItem}>
           <NavLink 
             to="/macaronok" 
-            className={styles.navLink} 
+            className={navLinkClasses}
             activeClassName={styles.active}
             onClick={(e) => {
               e.preventDefault();
@@ -100,7 +103,7 @@ const DropdownMenu = () => {
         <li className={styles.navItem}>
           <NavLink 
             to="/sutemenyek" 
-            className={styles.navLink} 
+            className={navLinkClasses}
             activeClassName={styles.active}
             onClick={(e) => {
               e.preventDefault();
@@ -113,7 +116,7 @@ const DropdownMenu = () => {
             <li className={styles.dropdownItem}>
               <NavLink 
                 to="/klasszikus-sutemenyek" 
-                className={styles.dropdownLink} 
+                className={styles.dropdownLink}
                 activeClassName={styles.active}
                 onClick={(e) => {
                   e.preventDefault();
@@ -126,7 +129,7 @@ const DropdownMenu = () => {
             <li className={styles.dropdownItem}>
               <NavLink 
                 to="/mentes-sutemenyek" 
-                className={styles.dropdownLink} 
+                className={styles.dropdownLink}
                 activeClassName={styles.active}
                 onClick={(e) => {
                   e.preventDefault();
@@ -141,7 +144,7 @@ const DropdownMenu = () => {
         <li className={styles.navItem}>
           <NavLink 
             to="/fondant-figurak" 
-            className={styles.navLink} 
+            className={navLinkClasses}
             activeClassName={styles.active}
             onClick={(e) => {
               e.preventDefault();
