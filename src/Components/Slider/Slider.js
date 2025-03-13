@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Slider.module.css';
-
+import leftArrow from "../../Assets/CakesPicture/leftArrow.png";
+import rightArrow from "../../Assets/CakesPicture/rightArrow.png";
 
 const Slider = ({ images }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -52,7 +53,7 @@ const Slider = ({ images }) => {
 
       {/* Navigációs nyilak */}
       <button className={`${styles.navButton} ${styles.prevButton}`} onClick={prevSlide}>
-
+        
       </button>
       <button className={`${styles.navButton} ${styles.nextButton}`} onClick={nextSlide}>
 
