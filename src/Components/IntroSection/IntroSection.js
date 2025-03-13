@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './IntroSection.module.css';
-import wordCloudMobile from '../../Assets/CakesPicture/wordCloudMobile.png';
+import wordCloudMobile from '../../Assets/CakesPicture/wordCloudMobileSVG.svg';
 import AnimatedDownArrow from '../AnimatedDownArrow/AnimatedDownArrow';
 
 const IntroSection = () => {
