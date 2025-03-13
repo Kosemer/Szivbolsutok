@@ -21,6 +21,18 @@
   white-space: nowrap;
 }
 
+/* Add invisible bridge */
+.navItem::after {
+  content: '';
+  position: absolute;
+  height: 20px; /* Adjust this value based on your needs */
+  width: 100%;
+  bottom: -20px;
+  left: 0;
+  background: transparent;
+  z-index: 1;
+}
+
 .navLink {
   color: #ffffff;
   text-decoration: none;
@@ -47,7 +59,7 @@
 }
 
 .navLink:hover {
-  color: #473939;
+
 }
 
 .navItem:hover {
@@ -65,7 +77,7 @@
   background: white;
   border-radius: 4px;
   box-shadow: 4px 8px 12px -3px rgba(0,0,0,0.75);
-
+  z-index: 2; /* Ensure dropdown is above the bridge */
 }
 
 .navItem:hover > .dropdown,
