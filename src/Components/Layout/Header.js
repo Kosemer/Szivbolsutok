@@ -70,36 +70,38 @@ function Header() {
     menuVisible ? "" : classes.mainTitleHidden
   } ${cssMobile ? classes.active : ""}`;
   
+  // Determine which logo to use based on menu visibility
+  const currentLogo = menuVisible ? SzvbolSutokLogoWhite : SzvbolSutokLogoBlack;
 
   return (
     <Fragment>
       {
         <header className={headerClasses}>
-            <div className={classes.headerTitle}  onClick={scrollToTop}>
-          <img src={SzvbolSutokLogoWhite} alt="Fruit Cake" className={mainTitleClasses} />
-          </div>
+            <div className={classes.headerTitle} onClick={scrollToTop}>
+              <img src={currentLogo} alt="Szívből sütök logo" className={mainTitleClasses} />
+            </div>
             {/*<h1 className={classes.title}>Szívből sütök</h1>*/}
 
-          {/*<div className={classes.logoContainer}>
-            <NavLink to="/" className={classes.logoLink}>
-              <img src={Logo} className={classes.logo} alt="logo"></img>
-            </NavLink>
-          </div>*/}
-          <CurtainMenu menuVisible={menuVisible}></CurtainMenu>
-          <div className={classes.burgerButton}>
-          {isMobileView ? (
-          <div className={classes.burgerButton}>
-            <BurgerButton />
-          </div>
-        ) : (
-          <div className={classes.dropdownMenu}>
-          <DropdownMenu />
-          </div>
-        )}
-          </div>
-          
-          {/*<CurtainMenuWithLink></CurtainMenuWithLink>*/}
-        </header>
+            {/*<div className={classes.logoContainer}>
+              <NavLink to="/" className={classes.logoLink}>
+                <img src={Logo} className={classes.logo} alt="logo"></img>
+              </NavLink>
+            </div>*/}
+            <CurtainMenu menuVisible={menuVisible}></CurtainMenu>
+            <div className={classes.burgerButton}>
+            {isMobileView ? (
+            <div className={classes.burgerButton}>
+              <BurgerButton />
+            </div>
+          ) : (
+            <div className={classes.dropdownMenu}>
+              <DropdownMenu menuVisible={menuVisible} />
+            </div>
+          )}
+            </div>
+            
+            {/*<CurtainMenuWithLink></CurtainMenuWithLink>*/}
+          </header>
       }
     </Fragment>
   );
