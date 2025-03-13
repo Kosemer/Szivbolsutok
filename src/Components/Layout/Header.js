@@ -12,7 +12,8 @@ import instagram from "../../Assets/SocialIcon/instagram.svg";
 import facebook from "../../Assets/SocialIcon/facebook.svg";
 import CurtainMenu from "./CurtainMenu";
 import CurtainMenuWithLink from "./CurtainMenuWithLink";
-import mainTitle from "../../Assets/CakesPicture/mainTitle3.png";
+import SzvbolSutokLogoBlack from "../../Assets/CakesPicture/mainTitle3.png";
+import SzvbolSutokLogoWhite from "../../Assets/CakesPicture/SzvbolSutokLogoWhite.png";
 import DropdownMenu from "../Navigation/DropdownMenu";
 
 function Header() {
@@ -75,7 +76,7 @@ function Header() {
       {
         <header className={headerClasses}>
             <div className={classes.headerTitle}  onClick={scrollToTop}>
-          <img src={mainTitle} alt="Fruit Cake" className={mainTitleClasses} />
+          <img src={SzvbolSutokLogoWhite} alt="Fruit Cake" className={mainTitleClasses} />
           </div>
             {/*<h1 className={classes.title}>Szívből sütök</h1>*/}
 

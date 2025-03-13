@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import classes from "./ParalaxSection.module.css";
 import image1 from "../../Assets/CakesPicture/HarryPotter.png";
 import image2 from "../../Assets/CakesPicture/Macaron.png";
+import proba3 from "../../Assets/CakesPicture/proba3.jpg";
 import image3 from "../../Assets/CakesPicture/Málna, mogyoró mousse.jpg";
 import fruitCake from "../../Assets/CakesPicture/viragLada.png";
 import wordCloud from "../../Assets/CakesPicture/wordCloud.png";
 import wordCloudMobile from "../../Assets/CakesPicture/wordCloudMobile.png";
 import AnimatedDownArrow from "../AnimatedDownArrow/AnimatedDownArrow";
 import IntroSection from "../IntroSection/IntroSection";
+import Slider from "../Slider/Slider"
 
 function ParalaxSection() {
   const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
@@ -24,9 +26,17 @@ function ParalaxSection() {
     };
   }, []);
 
+  const images = [
+    proba3,
+    proba3,
+    proba3,
+  ];
+
   return (
     <div>
+      <Slider images={images} />
       <div className={classes.parallax}>
+      
         <div className={classes.titleBox}>
           <h1 className={classes.centeredTextTitle}>
             <span className={classes.pinkText}>
