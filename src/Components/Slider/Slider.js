@@ -53,10 +53,10 @@ const Slider = ({ images }) => {
 
       {/* Navigációs nyilak */}
       <button className={`${styles.navButton} ${styles.prevButton}`} onClick={prevSlide}>
-        
+        <img src={leftArrow} className={styles.arrow}></img>
       </button>
       <button className={`${styles.navButton} ${styles.nextButton}`} onClick={nextSlide}>
-
+      <img src={rightArrow} className={styles.arrow}></img>
       </button>
 
       {/* Pöttyök */}
