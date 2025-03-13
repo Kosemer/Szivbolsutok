@@ -47,8 +47,17 @@
   background: rgba(0, 0, 0, 0.5);
 }
 
-.arrow{
+.leftArrow, .rightArrow{
   height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.leftArrow:hover{
+  transform: translateX(-5px);
+}
+
+.rightArrow:hover{
+  transform: translateX(5px);
 }
 
 .nextButton {
