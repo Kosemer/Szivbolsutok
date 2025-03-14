@@ -7,9 +7,14 @@
 .burger-bar {
     width: 2.5rem;
     height: 0.2rem;
-    background-color: #1f1e1d;
+    background-color: white;
     border-radius: 0.5em;
+    transition: all 0.3s ease-in-out;
     margin: 0.5rem;
+}
+
+.burger-bar.scrolled {
+    background-color: #473939;
 }
 
 /* ----- animations--------- */
