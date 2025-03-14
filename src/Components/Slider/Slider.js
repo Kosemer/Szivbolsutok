@@ -10,7 +10,7 @@ const Slider = ({ images }) => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
-    }, 6000); // 6 másodpercenként vált
+    }, 116000); // 6 másodpercenként vált
 
     return () => clearInterval(timer);
   }, [images.length]);
