@@ -32,11 +32,19 @@ function ParalaxSection() {
     };
   }, []);
 
-  const images = [
+  const mobileImages = [
     mobileSlider,
     mobileSlider2,
     mobileSlider3,
   ];
+
+  const desktopImages = [
+    desktopSlider,
+    desktopSlider2,
+    desktopSlider3,
+  ];
+
+  const images = isMobileView ? mobileImages : desktopImages;
 
   return (
     <div>
