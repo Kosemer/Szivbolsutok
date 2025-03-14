@@ -3,8 +3,10 @@ import classes from "./ParalaxSection.module.css";
 import image1 from "../../Assets/CakesPicture/HarryPotter.png";
 import image2 from "../../Assets/CakesPicture/Macaron.png";
 import proba3 from "../../Assets/CakesPicture/proba3.jpg";
-import chalkboardNew from "../../Assets/CakesPicture/chalkboardNew.jpg";
+import desktopSlider from "../../Assets/CakesPicture/desktopSlider.jpg";
+import desktopSlider2 from "../../Assets/CakesPicture/desktopSlider2.jpg";
 import mobileSlider from "../../Assets/CakesPicture/mobileSlider.jpg";
+import mobileSlider2 from "../../Assets/CakesPicture/mobileSlider2.jpg";
 import image3 from "../../Assets/CakesPicture/Málna, mogyoró mousse.jpg";
 import fruitCake from "../../Assets/CakesPicture/viragLada.png";
 import wordCloud from "../../Assets/CakesPicture/wordCloud.png";
@@ -30,8 +32,8 @@ function ParalaxSection() {
 
   const images = [
     mobileSlider,
-    mobileSlider,
-    mobileSlider,
+    mobileSlider2,
+    desktopSlider2,
   ];
 
   return (
