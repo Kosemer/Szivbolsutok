@@ -75,8 +75,20 @@ const PhotoGallery = ({ images }) => {
     );
   };
 
+  // Új függvény a galéria bezárásához
+  const handleCloseGallery = () => {
+    cartCtx.setGalleryIsOpen(false);
+  };
+
   return (
     <div className={classes.container}>
+      <button 
+        className={classes.closeButton}
+        onClick={handleCloseGallery}
+        aria-label="Galéria bezárása"
+      >
+        ✕
+      </button>
       {cartCtx.category === "MentesSutemenyek" && <DietIconSection />}
       <Gallery photos={images} renderImage={renderImage} />
       <ModalGateway>
