@@ -73,6 +73,13 @@ const Header = ({ showCloseButton }) => {
   // Determine which logo to use based on menu visibility
   const currentLogo = menuVisible ? SzvbolSutokLogoWhite : SzvbolSutokLogoBlack;
 
+  const handleHeaderTitleClick = () => {
+    if (cartCtx.galleryIsOpen) {
+      cartCtx.setGalleryIsOpen(false);
+    }
+    scrollToTop();
+  };
+
   const handleCloseGallery = () => {
     cartCtx.setGalleryIsOpen(false);
   };
@@ -81,7 +88,10 @@ const Header = ({ showCloseButton }) => {
     <Fragment>
       {
         <header className={headerClasses}>
-            <div className={classes.headerTitle} onClick={scrollToTop}>
+            <div 
+              className={classes.headerTitle} 
+              onClick={handleHeaderTitleClick}
+            >
               <img src={currentLogo} alt="Szívből sütök logo" className={mainTitleClasses} />
             </div>
             {/*<h1 className={classes.title}>Szívből sütök</h1>*/}
