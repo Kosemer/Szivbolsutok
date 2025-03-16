@@ -4,18 +4,19 @@ A gombra kattintva a felhasználó visszakerül az oldal tetejére, a gördülé
 
 A komponens "useEffect" hook-ot használ a gördülés eseményfigyelő hozzáadására és eltávolítására az oldal betöltésekor és eltűnésekor. */
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styles from "./ScrollToTopButton.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import CartContext from "../Store/cart-context";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const cartCtx = useContext(CartContext);
 
-  // Figyeljük a felhasználó görgetését, hogy megjelenítsük vagy elrejtsük a gombot
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
+      if (window.pageYOffset > 300 && !cartCtx.galleryIsOpen) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -24,21 +25,23 @@ const ScrollToTopButton = () => {
 
     window.addEventListener('scroll', toggleVisibility);
 
-    // Takarítsunk fel a komponens elbontása után
     return () => {
       window.removeEventListener('scroll', toggleVisibility);
     };
-  }, []);
+  }, [cartCtx.galleryIsOpen]);
 
-  // Görgetés a lap tetejére
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth' // Gördülékeny görgetés
+      behavior: 'smooth'
     });
   };
 
   const buttonClass = isVisible ? styles.fadeIn : styles.fadeOut;
+
+  if (cartCtx.galleryIsOpen) {
+    return null;
+  }
 
   return (
     <div className={styles.scrollToTop}>
