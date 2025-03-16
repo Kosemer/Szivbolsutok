@@ -134,7 +134,7 @@ const CurtainGallery = ({ category }) => {
 
   return (
     <div>
-      <div id="galleryContainer" className={overlayClass} onClick={closeNav}>
+      <div id="galleryContainer" className={overlayClass}>
         <div className={styles.categoryTitle}>
           <h1 className={styles.categoryH1}>{cartCtx.categoriesName}</h1>
         </div>
