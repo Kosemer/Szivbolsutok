@@ -119,7 +119,7 @@ const imagesToDisplay = windowWidth <= 768
 
       <div className={classes.col}>
         <div className={classes.cardBodyNext} onClick={onImageClickHandler}>
-          <p className={classes.cardTextNext}>
+          <p className={`${classes.cardTextNext} ${isVisible ? classes.animate : ''}`}>
             További képek
             <svg
               xmlns="http://www.w3.org/2000/svg"

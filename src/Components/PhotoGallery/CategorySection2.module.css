@@ -133,7 +133,12 @@
     justify-content: center;
     height: 100%;
     margin: 0;
-    transition: transform 0.2s;
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.cardTextNext.animate {
+    animation: slideInFromLeft 0.8s forwards, swing 1s ease-in-out 0.8s;
 }
 
 .bi-arrow-right-circle-fill {
@@ -269,6 +274,24 @@
     100% {
         transform: translateX(0);
         opacity: 1;
+    }
+}
+
+@keyframes swing {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(8deg);
+    }
+    40% {
+        transform: rotate(-4deg);
+    }
+    60% {
+        transform: rotate(2deg);
+    }
+    80% {
+        transform: rotate(-1deg);
     }
 }
 
