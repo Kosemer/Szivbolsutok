@@ -19,7 +19,7 @@ function App() {
   return (
     <CartProvider>
       <div className="App">
-        <Header></Header>
+        <Header showCloseButton={true}></Header>
         <Routes>
           <Route exact path="/" element={<Home></Home>}></Route>
           {/*<Route path="/galeria" element={<Photography></Photography>}></Route>*/}

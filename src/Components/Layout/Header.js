@@ -16,7 +16,7 @@ import SzvbolSutokLogoBlack from "../../Assets/CakesPicture/mainTitle3.png";
 import SzvbolSutokLogoWhite from "../../Assets/CakesPicture/SzvbolSutokLogoWhite.png";
 import DropdownMenu from "../Navigation/DropdownMenu";
 
-function Header() {
+const Header = ({ showCloseButton }) => {
   const cartCtx = useContext(CartContext);
 
   const cssMobile = cartCtx.cssMobile;
@@ -73,6 +73,10 @@ function Header() {
   // Determine which logo to use based on menu visibility
   const currentLogo = menuVisible ? SzvbolSutokLogoWhite : SzvbolSutokLogoBlack;
 
+  const handleCloseGallery = () => {
+    cartCtx.setGalleryIsOpen(false);
+  };
+
   return (
     <Fragment>
       {
@@ -101,6 +105,15 @@ function Header() {
             </div>
             
             {/*<CurtainMenuWithLink></CurtainMenuWithLink>*/}
+            {showCloseButton && cartCtx.galleryIsOpen && (
+              <button 
+                className={classes.closeButton}
+                onClick={handleCloseGallery}
+                aria-label="Galéria bezárása"
+              >
+                ✕
+              </button>
+            )}
           </header>
       }
     </Fragment>

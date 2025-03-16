@@ -132,3 +132,32 @@ img{
 /* Nagyobb asztali kijelzők és TV-k */
 @media only screen and (min-width: 1200px) {
 }
+
+.closeButton {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #473939;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.closeButton:hover {
+  background-color: #635252;
+}
+
+@media (max-width: 768px) {
+  .closeButton {
+    display: none;  /* Elrejtjük mobilnézetben */
+  }
+}
