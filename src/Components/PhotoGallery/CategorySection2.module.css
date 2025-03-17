@@ -1,7 +1,7 @@
 .background-container {
     background-image: url("../../Assets/CakesPicture/splashbackground3.png");
-    background-size: 95%; /* A háttérkép mérete 80%-ra csökkentve */
-    background-repeat: no-repeat; /* Ne ismétlődjön */
+    background-size: 95%;
+    background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
     display: flex;
@@ -10,25 +10,26 @@
     width: 100%;
     position: relative;
     background-color: #F4F4F4;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
-
-/* Bal felső sarokban lévő cím */
 .page-title {
     position: absolute;
-    top: 20px; /* 20px-re az oldal tetejétől */
-    left: 60px; /* 20px-re az oldal bal szélétől */
-    font-size: 2.8rem;
+    top: 20px;
+    left: 60px;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
     font-family: "Bebas Neue";
-    color: #F4F4F4; /* Vagy más szín, ami jól látszik a háttéren */
+    color: #F4F4F4;
     background-color: #FF7F7F;
-    width: 200px;
+    width: clamp(150px, 20vw, 200px);
     padding: 5px 0px 0px 0px;
     text-align: center;
     align-items: center;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Árnyék a jobb láthatóság érdekében */
-    opacity: 0;
-    transform: translateX(-100%);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
 .page-title.animate {
@@ -37,19 +38,20 @@
 
 .page-title2 {
     position: absolute;
-    top: 70px; /* 20px-re az oldal tetejétől */
-    left: 130px; /* 20px-re az oldal bal szélétől */
-    font-size: 2.8rem;
+    top: 70px;
+    left: 130px;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
     font-family: "Bebas Neue";
-    color: #F4F4F4; /* Vagy más szín, ami jól látszik a háttéren */
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Árnyék a jobb láthatóság érdekében */
+    color: #F4F4F4;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     background-color: #473939;
-    width: 200px;
+    width: clamp(150px, 20vw, 200px);
     padding: 5px 0px 0px 0px;
     text-align: center;
     align-items: center;
-    opacity: 0;
-    transform: translateX(100%);
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
 .page-title2.animate {
@@ -58,19 +60,20 @@
 
 .page-title3 {
     position: absolute;
-    top: 20px; /* 20px-re az oldal tetejétől */
-    left: 60px; /* 20px-re az oldal bal szélétől */
-    font-size: 2.8rem;
+    top: 20px;
+    left: 60px;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
     font-family: "Bebas Neue";
-    color: #F4F4F4; /* Vagy más szín, ami jól látszik a háttéren */
+    color: #F4F4F4;
     background-color: #FF7F7F;
-    width: 200px;
+    width: clamp(150px, 20vw, 200px);
     padding: 5px 0px 0px 0px;
     text-align: center;
     align-items: center;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Árnyék a jobb láthatóság érdekében */
-    opacity: 0;
-    transform: translateX(-100%);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
 .page-title3.animate {
@@ -82,7 +85,7 @@
     gap: 0%;
     width: 80%;
     justify-content: center;
-    align-items: center; /* Képek alapból középre igazítása */
+    align-items: center;
 }
 
 .overlay-image {
@@ -91,15 +94,15 @@
 }
 
 .overlay-image:nth-child(2) {
-    width: 35%; /* Középső kép nagyobb lesz */
+    width: 35%;
     height: auto;
-    transform: translateY(40px); /* Ha szükséges, finomhangold a pozíciót */
+    transform: translateY(40px);
 }
 
 .bottom-right-button {
     position: absolute;
-    bottom: 20px; /* 20px a képernyő aljától */
-    right: 200px; /* 20px a képernyő jobb szélétől */
+    bottom: 20px;
+    right: 200px;
     padding: 10px 20px;
     color: white;
     border: none;
@@ -108,152 +111,133 @@
     transition: transform 0.3s ease;
 }
 
-.bottom-right-button:hover {
-    transform: scale(1.2);
-}
-
 .col {
     position: absolute;
-    bottom: 60px; /* 20px távolság az oldal aljától */
-    right: 150px; /* 20px távolság a képernyő jobb szélétől */
+    bottom: 60px;
+    right: 150px;
     display: flex;
     align-items: center;
-}
-
-.cardBodyNext {
-    cursor: pointer;
 }
 
 .cardTextNext {
     color: #ff7f7f;
     font-family: "Bebas Neue", sans-serif;
-    font-size: 1.9rem;
+    font-size: clamp(1.2rem, 2vw, 1.9rem);
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     margin: 0;
-    opacity: 0;
-    transform: translateX(-100%);
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
 .cardTextNext.animate {
     animation: slideInFromLeft 0.8s forwards, swing 1s ease-in-out 0.8s;
 }
 
-.bi-arrow-right-circle-fill {
-    margin-left: 10px; /* Továbbra is lesz egy kis távolság az ikon és a szöveg között */
+/* Tablet (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .background-container {
+        background-size: 100%;
+        height: 90vh;
+    }
+
+    .image-row {
+        width: 90%;
+    }
+
+    .page-title, .page-title2, .page-title3 {
+        top: 30px;
+        left: 40px;
+    }
+
+    .page-title2 {
+        top: 80px;
+        left: 100px;
+    }
+
+    .bottom-right-button {
+        right: 150px;
+    }
+
+    .col {
+        right: 100px;
+    }
 }
 
-@media (max-width: 768px) {
+/* Mobile (up to 767px) */
+@media (max-width: 767px) {
+    .background-container {
+        background-image: none;
+        height: 90vh;
+    }
+
     .image-row {
-        display: flex;
-        gap: 0%;
         width: 100%;
-        justify-content: center;
-        align-items: center; /* Képek alapból középre igazítása */
         margin-top: 2rem;
     }
     
     .image-row img {
-      width: 100%; /* Az egyes képek teljes szélességűek lesznek */
-     
-    }
-    .background-container {
-        background-image: none;
-        background-size: 100%; /* A háttérkép mérete 80%-ra csökkentve */
-        background-repeat: no-repeat; /* Ne ismétlődjön */
-        background-position: center;
-        height: 90vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         width: 100%;
-        position: relative;
-        background-color: #F4F4F4;
     }
-    .background-container-single {
-        background-image: none;
-        background-size: 100%; /* A háttérkép mérete 80%-ra csökkentve */
-        background-repeat: no-repeat; /* Ne ismétlődjön */
-        background-position: center;
-        height: 70vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        position: relative;
-        background-color: #F4F4F4;
-    }
-    
+
     .page-title {
-        position: absolute;
-        top: 40px; /* 20px-re az oldal tetejétől */
-        left: 60px; /* 20px-re az oldal bal szélétől */
-        font-size: 3.3rem;
-        font-family: "Bebas Neue";
-        color: #F4F4F4; /* Vagy más szín, ami jól látszik a háttéren */
-        background-color: #FF7F7F;
-        width: 250px;
-        padding: 5px 0px 0px 0px;
-        text-align: center;
-        align-items: center;
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Árnyék a jobb láthatóság érdekében */
+        top: 40px;
+        left: 20px;
+        font-size: 2rem;
+        width: 200px;
     }
     
     .page-title2 {
-        position: absolute;
-        top: 100px; /* 20px-re az oldal tetejétől */
-        left: 130px; /* 20px-re az oldal bal szélétől */
-        font-size: 3.3rem;
-        font-family: "Bebas Neue";
-        color: #F4F4F4; /* Vagy más szín, ami jól látszik a háttéren */
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Árnyék a jobb láthatóság érdekében */
-        background-color: #473939;
-        width: 250px;
-        padding: 5px 0px 0px 0px;
-        text-align: center;
-        align-items: center;
+        top: 100px;
+        left: 60px;
+        font-size: 2rem;
+        width: 200px;
     }
+
     .page-title3 {
-        position: absolute;
-        top: 20px; /* 20px-re az oldal tetejétől */
-        left: 60px; /* 20px-re az oldal bal szélétől */
-        font-size: 3rem;
-        font-family: "Bebas Neue";
-        color: #F4F4F4; /* Vagy más szín, ami jól látszik a háttéren */
-        background-color: #FF7F7F;
-        width: 300px;
-        padding: 5px 0px 0px 0px;
-        text-align: center;
-        align-items: center;
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Árnyék a jobb láthatóság érdekében */
+        top: 40px;
+        left: 20px;
+        font-size: 2rem;
+        width: 200px;
     }
+
     .cardTextNext {
-        color: #ff7f7f;
-        font-family: "Bebas Neue", sans-serif;
-        font-size: 2.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        margin: 0;
-        transition: transform 0.2s;
+        font-size: 1.8rem;
     }
 
     .col {
-        position: absolute;
-        bottom: 60px; /* 20px távolság az oldal aljától */
-        right: 100px; /* 20px távolság a képernyő jobb szélétől */
-        display: flex;
-        align-items: center;
-        text-align: center;
+        right: 20px;
+        bottom: 40px;
     }
+
     .cardTextNext svg {
-        width: 48px; /* Növelt méret */
-        height: 48px;
-      }
-  }
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+    .background-container {
+        background-size: 90%;
+    }
+
+    .image-row {
+        width: 70%;
+    }
+
+    .page-title, .page-title2, .page-title3 {
+        font-size: 2.8rem;
+        width: 250px;
+    }
+
+    .cardTextNext {
+        font-size: 1.9rem;
+    }
+}
 
 @keyframes slideInFromLeft {
     0% {
@@ -294,4 +278,3 @@
         transform: rotate(-1deg);
     }
 }
-
