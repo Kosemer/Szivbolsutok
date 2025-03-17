@@ -18,7 +18,7 @@ import IntroSection from "../IntroSection/IntroSection";
 import Slider from "../Slider/Slider"
 
 function ParalaxSection() {
-  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 820);
 
   useEffect(() => {
     const handleResize = () => {
@@ -39,8 +39,8 @@ function ParalaxSection() {
   ];
 
   const desktopImages = [
-    desktopSlider2,
     desktopSlider,
+    desktopSlider2,
     desktopSlider3,
   ];
 
@@ -49,7 +49,7 @@ function ParalaxSection() {
   return (
     <div>
       <Slider images={images} />
-      <div className={classes.parallax}>
+{/*       <div className={classes.parallax}>
       
         <div className={classes.titleBox}>
           <h1 className={classes.centeredTextTitle}>
@@ -100,7 +100,7 @@ function ParalaxSection() {
       <div className={classes.titleContainer}>
         <h1 className={classes.productCategoryTitle}>Fedezd fel a</h1>
         <h1 className={classes.productCategoryTitle2}>termékkategóriákat!</h1>
-      </div>
+      </div> */}
 
 <IntroSection></IntroSection>
       <div className={classes.container}>

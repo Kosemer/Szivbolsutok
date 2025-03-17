@@ -121,7 +121,19 @@ img{
 
 /* Tablet eszközök (közepes képernyő) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-
+  .mainTitle{
+    width: 55%;
+    height: auto;
+    margin-left: 2rem;
+    transition: width 0.6s ease-in-out; 
+  }
+  
+  .mainTitleHidden{
+    width: 50%;
+    height: auto;
+    margin-left: 2rem;
+    transition: width 0.6s ease-in-out; 
+  }
 }
 
 /* Kisebb asztali és laptop kijelzők */

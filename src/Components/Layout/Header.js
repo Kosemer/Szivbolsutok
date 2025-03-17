@@ -33,7 +33,7 @@ const Header = ({ showCloseButton }) => {
 
   const [menuVisible, setMenuVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 820);
 
   useEffect(() => {
     const handleScroll = () => {
