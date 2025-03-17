@@ -75,11 +75,6 @@ const PhotoGallery = ({ images }) => {
     );
   };
 
-  // Új függvény a galéria bezárásához
-  const handleCloseGallery = () => {
-    cartCtx.setGalleryIsOpen(false);
-  };
-
   return (
     <div className={classes.container}>
       {cartCtx.category === "MentesSutemenyek" && <DietIconSection />}
