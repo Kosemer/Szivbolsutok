@@ -5,19 +5,13 @@ import { useState, useEffect } from "react";
 import ImageUploader from "../AdminPage/ImageUploader";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
-  const navigate = useNavigate();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   const [loggedIn, setLoggedIn] = useState(false);
   const [error, setError] = useState(null);
-
-  const navigateToHome = () => {
-    navigate('/');
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,12 +40,6 @@ function LoginForm() {
     <>
       {!loggedIn && (
         <div className={classes.container}>
-          <button 
-            className={classes.homeButton}
-            onClick={navigateToHome}
-          >
-            Vissza a főoldalra
-          </button>
           <form className={classes.loginForm}>
             <div className={classes.flexRow}>
               <label className={classes.label} htmlFor="username">

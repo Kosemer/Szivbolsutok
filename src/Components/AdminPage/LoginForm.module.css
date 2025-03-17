@@ -149,23 +149,3 @@
 ::placeholder {
   color: #8f8f8f;
 }
-
-.homeButton {
-  position: absolute;
-  top: 100px;
-  right: 20px;
-  padding: 10px 20px;
-  background-color: #473939;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: "Bebas Neue", serif;
-  font-size: 1.3rem;
-  transition: background-color 0.3s ease;
-  font-weight: 300;
-}
-
-.homeButton:hover {
-  background-color: #635252;
-}
