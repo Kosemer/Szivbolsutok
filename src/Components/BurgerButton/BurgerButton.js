@@ -4,33 +4,16 @@ import "./BurgerButton.css";
 
 function BurgerButton() {
   const cartCtx = useContext(CartContext);
+
   const [burgerClass, setBurgerClass] = useState("burger-bar unclicked");
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // Ha az oldal tetejétől való távolság nagyobb mint 50px, akkor scrolled állapot
-      const scrolled = window.scrollY > 50;
-      setIsScrolled(scrolled);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    
-    // Kezdeti állapot beállítása
-    handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   useEffect(() => {
     if (cartCtx.galleryIsOpen || cartCtx.menuIsOpen) {
       setBurgerClass("burger-bar clicked");
     } else {
-      setBurgerClass(`burger-bar unclicked ${isScrolled ? "scrolled" : ""}`);
+      setBurgerClass("burger-bar unclicked");
     }
-  }, [cartCtx.galleryIsOpen, cartCtx.menuIsOpen, isScrolled]);
+  }, [cartCtx.galleryIsOpen, cartCtx.menuIsOpen]);
 
   const handleClick = () => {
     if (cartCtx.galleryIsOpen) {

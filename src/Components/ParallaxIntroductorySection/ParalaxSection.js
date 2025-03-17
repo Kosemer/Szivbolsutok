@@ -39,8 +39,8 @@ function ParalaxSection() {
   ];
 
   const desktopImages = [
-    desktopSlider2,
     desktopSlider,
+    desktopSlider2,
     desktopSlider3,
   ];
 
