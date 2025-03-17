@@ -97,6 +97,13 @@
 
   /* Medium devices (tablets) */
   @media only screen and (min-width: 601px) and (max-width: 960px) {
+    .swiper {
+      width: 100%;
+      height: 100%;
+      background-color: #FF7F7F;
+      padding: 40px;
+      padding-bottom: 4rem;
+    }
     .swiper-slide {
       height: auto;
       width: auto;
@@ -109,7 +116,7 @@
       justify-content: center;
       align-items: center;
       /* Set a minimum height */
-      min-height: 350px;
+      min-height: 150px;
       border-radius: 10px;
       padding: 0 10px;
      
@@ -126,23 +133,6 @@
       width: 15%;
       margin-left: auto;
       margin-right: auto;
-    }
-    .swiper-slide {
-      height: auto;
-      width: auto;
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      color: #333;
-      /* Center slide text vertically */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      /* Set a minimum height */
-      min-height: 350px;
-      border-radius: 10px;
-      padding: 0 25px;
-     
     }
   }
   

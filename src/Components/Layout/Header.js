@@ -44,7 +44,7 @@ const Header = ({ showCloseButton }) => {
     };
 
     const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 768);
+      setIsMobileView(window.innerWidth <= 820);
     };
 
     window.addEventListener("scroll", handleScroll);
