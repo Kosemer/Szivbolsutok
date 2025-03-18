@@ -23,7 +23,7 @@
 }
 
 .rightSection {
-  flex: 1;
+  flex: 1.4;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -40,31 +40,58 @@
 .titleBox {
   text-align: center;
   width: 100%;
-}
-
-.centeredTextTitle {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  margin: 0;
-  line-height: 1.2;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-.pinkText, .blackText {
-  display: block;
-  font-family: inherit;
-  font-size: inherit;
-  margin: 0;
+
+.rightSection {
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Vízszintes középre igazítás */
+  justify-content: center; /* Függőleges középre igazítás */
+  gap: 2rem;
+  max-width: 50%;
+  text-align: center; /* Szövegek középre igazítása */
+  height: 100%; /* Biztosítja, hogy kitöltse a rendelkezésre álló helyet */
 }
 
+
+
 .pinkText {
-  color: #FF7F7F;
+
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-family: "Bebas Neue";
+  color: #F4F4F4;
+  background-color: #FF7F7F;
+  width: clamp(150px, 20vw, 200px);
+  padding: 5px 0px 0px 0px;
+  text-align: center;
+  align-items: center;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
 .blackText {
-  color: #1f1e1d;
+  position: absolute;
+  top: 110px;
+  right: 230px;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-family: "Bebas Neue";
+  color: #F4F4F4;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: #473939;
+  width: clamp(150px, 20vw, 200px);
+  padding: 5px 0px 0px 0px;
+  text-align: center;
+  align-items: center;
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
 .rectangle {
@@ -153,16 +180,16 @@
   }
 }
 
-/* Large screens (1200px and up) */
-@media (min-width: 1200px) {
+  @media (min-width: 1200px) and (max-width: 1366px) {
   .container {
     padding: 3rem;
   }
 
   .wordCloud {
-    max-width: 600px;
+    width: 80%;
+    height: auto;
+    object-fit: contain;
   }
-
   .centeredTextTitle {
     font-size: 4rem;
   }
@@ -170,4 +197,8 @@
   .introductoryText2 {
     font-size: 1.5rem;
   }
-} 
+}
+
+@media (min-width: 1200px) {
+
+}

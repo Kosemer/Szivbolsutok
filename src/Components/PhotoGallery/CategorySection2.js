@@ -68,7 +68,7 @@ const mobileImage = images.length > 0
   : null;
 
 // Ha mobilnézet van, csak ezt az egy képet jelenítsük meg (ha van kép)
-const imagesToDisplay = windowWidth <= 768 
+const imagesToDisplay = windowWidth <= 767 
   ? mobileImage 
     ? [mobileImage] 
     : [] 
