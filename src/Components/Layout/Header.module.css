@@ -6,7 +6,6 @@
   height: 5rem;
   /*background: radial-gradient(circle, rgba(238,174,202,0.8715861344537815) 0%, rgba(148,187,233,0.8743872549019608) 100%);*/
   
-  
   color: #1f1e1d;
   display: flex;
   justify-content: space-between;
@@ -72,6 +71,8 @@ img{
 .header nav {
   height: 100%;
   width: 100%;
+  max-width: 1800px; /* Ne legyen szélesebb ennél */
+  margin: 0 auto; /* Középre igazítás */
 }
 
 .title {
