@@ -18,10 +18,19 @@ const DesktopSlider = () => {
 
   const [isMobile, setIsMobile] = useState(false);
 
+  const [slidesPerView, setSlidesPerView] = useState(4);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      if (window.innerWidth <= 600) {
+        setSlidesPerView(1); // Mobil
+      } else if (window.innerWidth <= 768) {
+        setSlidesPerView(3); // Kisebb tablet
+      } else if (window.innerWidth <= 960) {
+        setSlidesPerView(3); // Nagyobb tablet
+      } else {
+        setSlidesPerView(4); // Asztali
+      }
     };
     
     handleResize(); // Check initial screen size
@@ -39,12 +48,12 @@ const DesktopSlider = () => {
     {!isMobile && (
       <Swiper
         onSwiper={setSwiperRef}
-        slidesPerView={4}
+        slidesPerView={slidesPerView}
         centeredSlides={false}
         autoplay={{
           delay: 6000,
         }}
-        spaceBetween={50}
+        spaceBetween={40}
         pagination={{
           type: "fraction",
         }}
@@ -73,7 +82,7 @@ const DesktopSlider = () => {
 
     {isMobile && (
       <Swiper
-        slidesPerView={1}
+        slidesPerView={slidesPerView}
         centeredSlides={false}
         autoplay={{
           delay: 6000,

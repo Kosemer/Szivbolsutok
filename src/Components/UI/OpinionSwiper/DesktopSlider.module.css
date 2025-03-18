@@ -83,6 +83,13 @@
 
    /* Mobil eszközök (kis képernyő) */
 @media only screen and (max-width: 400px) {
+      .swiper {
+      width: 100%;
+      height: 100%;
+      background-color: #FF7F7F;
+      padding: 30px 50px 0px 50px;
+      padding-bottom: 4rem;
+    }
   .swiper-slide p{
     font-size: 1.3rem;
   }
@@ -90,6 +97,13 @@
 
 /* Mobil eszközök (kis képernyő) */
 @media only screen and (min-width: 401px) and (max-width: 767px) {
+  .swiper {
+    width: 100%;
+    height: 100%;
+    background-color: #FF7F7F;
+    padding: 30px 50px 0px 50px;
+    padding-bottom: 4rem;
+  }
   .swiper-slide p{
     font-size: 1.3rem;
   }
@@ -104,7 +118,7 @@
       width: 100%;
       height: 100%;
       background-color: #FF7F7F;
-      padding: 30px 250px 0 250px;
+      padding: 30px 50px 0px 50px;
       padding-bottom: 4rem;
     }
     .swiper-slide {
@@ -132,7 +146,7 @@
       width: 100%;
       height: 100%;
       background-color: #FF7F7F;
-      padding: 30px 0px 0 0px;
+      padding: 30px 50px 0px 50px;
       padding-bottom: 4rem;
     }
     .swiper-slide {
@@ -147,7 +161,7 @@
       justify-content: center;
       align-items: center;
       /* Set a minimum height */
-      min-height: 100px;
+      min-height: 150px;
       border-radius: 10px;
       padding: 0 15px;
       box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
