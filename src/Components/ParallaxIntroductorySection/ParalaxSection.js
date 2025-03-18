@@ -103,13 +103,13 @@ function ParalaxSection() {
       </div> */}
 
 <IntroSection></IntroSection>
-      <div className={classes.container}>
+{/*       <div className={classes.container}>
         <img
           src={wordCloudMobile}
           alt="wordCloud"
           className={classes.wordCloudMobile}
         />
-      </div>
+      </div> */}
 
     </div>
   );

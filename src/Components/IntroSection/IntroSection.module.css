@@ -9,7 +9,7 @@
   gap: 2rem;
   width: 100%;
   background-color: #F4F4F4;
-  height: 100vh;
+
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -38,30 +38,29 @@
 }
 
 .titleBox {
-  text-align: center;
-  width: 100%;
+
+
+}
+
+.centeredTextTitle {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
 }
 
 
 .rightSection {
-  flex: 1.4;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Vízszintes középre igazítás */
-  justify-content: center; /* Függőleges középre igazítás */
-  gap: 2rem;
-  max-width: 50%;
-  text-align: center; /* Szövegek középre igazítása */
-  height: 100%; /* Biztosítja, hogy kitöltse a rendelkezésre álló helyet */
+
 }
 
 
 
 .pinkText {
-
+  position: absolute;
+  top: 50px;
   font-size: clamp(1.8rem, 3vw, 2.8rem);
   font-family: "Bebas Neue";
   color: #F4F4F4;
@@ -78,8 +77,8 @@
 
 .blackText {
   position: absolute;
-  top: 110px;
-  right: 230px;
+  top: 95px;
+  right: 220px;
   font-size: clamp(1.8rem, 3vw, 2.8rem);
   font-family: "Bebas Neue";
   color: #F4F4F4;
@@ -99,6 +98,7 @@
   border-radius: 10px;
   width: 100%;
   box-sizing: border-box;
+  padding-top: 6rem;
 }
 
 .introductoryText2 {
@@ -142,25 +142,53 @@
   .introductoryText2 {
     font-size: 1.2rem;
   }
+  .rectangle {
+    padding: clamp(1rem, 2vw, 2rem);
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 5rem;
+  }
+  .pinkText {
+    position: absolute;
+    top: 30px;
+  }
+  
+  .blackText {
+    position: absolute;
+    top: 65px;
+    right: 100px;
+  }
 }
 
 /* Mobile (up to 767px) */
 @media (max-width: 767px) {
   .container {
     flex-direction: column;
-    padding: 1rem;
-    padding-bottom: 80px;
-    height: auto;
-    min-height: 100vh;
+    align-items: center;
   }
+
+  .leftSection {
+    order: 2; /* A wordCloudMobile a rectangle alá kerül */
+    max-width: 100%;
+  }
+
+  .rightSection {
+    order: 1; /* A szöveges tartalom a kép fölé kerül */
+    max-width: 100%;
+    gap: 0rem;
+  }
+  
+
+  .wordCloud {
+    max-width: 100%;
+    margin-top: 1rem;
+  }
+
 
   .leftSection, .rightSection {
     max-width: 100%;
     width: 100%;
-  }
-
-  .wordCloud {
-    max-width: 300px;
   }
 
   .centeredTextTitle {
@@ -171,8 +199,20 @@
     font-size: 1.1rem;
   }
 
+
   .rectangle {
-    padding: 1rem;
+    padding: 0rem;
+    padding-top: 0rem;
+  }
+  .pinkText {
+    position: absolute;
+    top: 30px;
+  }
+  
+  .blackText {
+    position: absolute;
+    top: 65px;
+    right: 100px;
   }
 
   .arrowContainer {

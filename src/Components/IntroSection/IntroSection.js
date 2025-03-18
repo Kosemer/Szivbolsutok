@@ -12,10 +12,7 @@ const IntroSection = () => {
       <div className={classes.rightSection}>
         <div className={classes.titleBox}>
           <div className={classes.centeredTextTitle}>
-            <h1 className={classes.pinkText}>
-              Üdvözöllek
-              <br />
-            </h1>
+            <h1 className={classes.pinkText}>Üdvözöllek</h1>
             <h1 className={classes.blackText}>az oldalon!</h1>
           </div>
         </div>
