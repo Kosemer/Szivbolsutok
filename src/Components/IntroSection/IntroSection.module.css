@@ -242,3 +242,47 @@
 @media (min-width: 1200px) {
 
 }
+
+@media (min-width: 2048px) { /* 2K és nagyobb */
+ 
+    
+}
+
+@media (min-width: 3840px) { /* 4K kijelző */
+  .container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    max-width: 1500px;
+    margin: 0 auto;
+    gap: 2rem;
+    width: 100%;
+    background-color: #F4F4F4;
+  
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .wordCloud {
+    width: 100%;
+    height: auto;
+    max-width: 1500px;
+    object-fit: contain;
+  }
+  .leftSection {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+  }
+  
+  .rightSection {
+    flex: 1.4;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 50%;
+  }
+}
