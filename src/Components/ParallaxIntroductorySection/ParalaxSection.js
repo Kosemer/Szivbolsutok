@@ -18,11 +18,11 @@ import IntroSection from "../IntroSection/IntroSection";
 import Slider from "../Slider/Slider"
 
 function ParalaxSection() {
-  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 820);
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 920);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 768);
+      setIsMobileView(window.innerWidth <= 920);
     };
 
     window.addEventListener("resize", handleResize);

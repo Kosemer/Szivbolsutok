@@ -174,3 +174,64 @@ img{
     display: none;  /* Elrejtjük mobilnézetben */
   }
 }
+
+@media only screen and (min-width: 2560px) {
+
+}
+
+@media only screen and (min-width: 3840px) {
+  .header {
+    height: 7rem;
+    color: #1f1e1d;
+  }
+  .hidden {
+    height:3 rem;
+    /*background: radial-gradient(circle, rgba(238,174,202,0.8715861344537815) 0%, rgba(148,187,233,0.8743872549019608) 100%);*/
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #1f1e1d;
+    display: flex;
+    justify-content: space-between;
+
+  }
+  
+.mainTitle{
+  width: 60%;
+  height: auto;
+  margin-left: 4rem;
+}
+.mainTitleHidden{
+  width: 50%;
+  height: auto;
+  margin-left: 2rem;
+}
+.header nav {
+  height: 100%;
+  width: 100%;
+  max-width: 1800px; /* Ne legyen szélesebb ennél */
+  margin: 0 auto; /* Középre igazítás */
+}
+
+.title {
+  margin-right: auto; /* Hogy a h1 elem balra legyen igazítva a flexbox konténeren belül */
+  margin-left: 30px; /* Eltartás a bal oldaltól */
+  font-family: 'Sorts Mill Goudy', serif;
+  margin-top: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
+}
+.header ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin-right: 10rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.header ul a {
+  font-size: 2rem;
+  padding-right: 6rem;
+}
+}
+
