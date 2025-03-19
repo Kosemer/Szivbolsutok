@@ -25,11 +25,17 @@ const DesktopSlider = () => {
       if (window.innerWidth <= 600) {
         setSlidesPerView(1); // Mobil
       } else if (window.innerWidth <= 768) {
-        setSlidesPerView(3); // Kisebb tablet
+        setSlidesPerView(2); // Kisebb tablet
       } else if (window.innerWidth <= 960) {
         setSlidesPerView(3); // Nagyobb tablet
+      } else if (window.innerWidth <= 1366) {
+        setSlidesPerView(4); // Átlagos asztali
+      } else if (window.innerWidth <= 2048) {
+        setSlidesPerView(5); // 2K kijelző
+      } else if (window.innerWidth <= 3840) {
+        setSlidesPerView(6); // 4K kijelző
       } else {
-        setSlidesPerView(4); // Asztali
+        setSlidesPerView(7); // Extra nagy kijelzők
       }
     };
     

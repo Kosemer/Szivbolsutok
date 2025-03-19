@@ -625,3 +625,11 @@ span {
 /* Nagyobb asztali kijelzők és TV-k */
 @media only screen and (min-width: 1200px) {
 }
+
+@media (min-width: 2048px) { /* 2K és nagyobb */
+
+}
+
+@media (min-width: 3840px) { /* 4K kijelző */
+
+}

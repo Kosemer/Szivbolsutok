@@ -172,5 +172,45 @@
   /* Large devices (desktops) */
   @media only screen and (min-width: 961px) {
   }
+
+  @media (min-width: 2048px) { /* 2K és nagyobb */
+
+  }
+  
+  @media (min-width: 3840px) { /* 4K kijelző */
+    .swiper-slide {
+      height: auto;
+      width: auto;
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      color: #333;
+      /* Center slide text vertically */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* Set a minimum height */
+      min-height: 350px;
+      border-radius: 10px;
+      padding: 0 25px;
+     
+    }
+    
+    .swiper-slide p{
+      font-size: 3rem;
+    }
+    .opinionTitle{
+      color: #ffffff;
+      text-align: center;
+      font-family: "Bebas Neue";
+      background-color: #473939;
+      display: inline-block;
+      position: relative;
+      margin-top: 2rem;
+      padding: 20px 30px 10px 30px;
+      box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+      font-size: 3.5rem;
+    }
+  }
   
   
