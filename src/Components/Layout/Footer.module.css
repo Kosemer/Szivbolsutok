@@ -630,6 +630,31 @@ span {
 
 }
 
-@media (min-width: 3840px) { /* 4K kijelző */
+@media (min-width: 3840px) { /* 4K felbontás */
+  .footer {
+    padding: 60px;
+    font-size: 24px;
+  }
 
+  .logo {
+    width: 400px;
+    height: 400px;
+  }
+
+  .socialIcon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .adminText {
+    font-size: 2rem;
+  }
+
+  .linkContainer a {
+    font-size: 20px;
+  }
+
+  .footerLogo {
+    width: 400px;
+  }
 }
