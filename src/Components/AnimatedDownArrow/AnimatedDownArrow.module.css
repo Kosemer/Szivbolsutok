@@ -82,3 +82,21 @@
       transform: translateY(4.8rem) scale(0.5);
     }
   }
+
+  @media (min-width: 2048px) { /* 2K és nagyobb */
+
+  }
+  
+  @media (min-width: 3840px) { /* 4K kijelző */
+    .chevron {
+      position: absolute;
+      width: 4rem;
+      height: 0.5rem;
+      opacity: 0;
+      transform: scale(0.3);
+      -webkit-animation: move-chevron 3s ease-out infinite;
+              animation: move-chevron 3s ease-out infinite;
+  }
+  
+  }
+  
