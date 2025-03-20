@@ -16,6 +16,22 @@
 .burger-bar.scrolled {
     background-color: #473939;
 }
+@keyframes swing {
+    0% { transform: rotate(45deg) translate(0.2em, 0.75em); }
+    25% { transform: rotate(50deg) translate(0.2em, 0.75em); }
+    50% { transform: rotate(40deg) translate(0.2em, 0.75em); }
+    75% { transform: rotate(45deg) translate(0.2em, 0.75em); }
+    100% { transform: rotate(45deg) translate(0.2em, 0.75em); }
+}
+
+
+@keyframes swing-reverse {
+    0% { transform: rotate(135deg) translate(-0.3em, 0.8em); }
+    25% { transform: rotate(130deg) translate(-0.3em, 0.8em); }
+    50% { transform: rotate(140deg) translate(-0.3em, 0.8em); }
+    75% { transform: rotate(135deg) translate(-0.3em, 0.8em); }
+    100% { transform: rotate(135deg) translate(-0.3em, 0.8em); }
+}
 
 /* ----- animations--------- */
 /* clicked */
@@ -23,6 +39,8 @@
     transform: rotate(45deg) translate(0.2em, 0.75em);
     transition: ease-out 0.5s;
     background-color: #473939;
+    animation: swing 1s ease-in-out  infinite alternate;
+    animation-delay: 1s;
 }
 
 .burger-bar.clicked:nth-child(2){
@@ -35,6 +53,8 @@
     transform: rotate(135deg) translate(-0.3em, 0.8em);
     transition: ease-out 0.5s;
     background-color: #473939;
+    animation: swing-reverse 1s ease-in-out  infinite alternate;
+    animation-delay: 1s;
 }
 
 /* unclicked */
