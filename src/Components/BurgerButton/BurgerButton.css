@@ -16,22 +16,7 @@
 .burger-bar.scrolled {
     background-color: #473939;
 }
-@keyframes swing {
-    0% { transform: rotate(45deg) translate(0.2em, 0.75em); }
-    25% { transform: rotate(50deg) translate(0.2em, 0.75em); }
-    50% { transform: rotate(40deg) translate(0.2em, 0.75em); }
-    75% { transform: rotate(45deg) translate(0.2em, 0.75em); }
-    100% { transform: rotate(45deg) translate(0.2em, 0.75em); }
-}
 
-
-@keyframes swing-reverse {
-    0% { transform: rotate(135deg) translate(-0.3em, 0.8em); }
-    25% { transform: rotate(130deg) translate(-0.3em, 0.8em); }
-    50% { transform: rotate(140deg) translate(-0.3em, 0.8em); }
-    75% { transform: rotate(135deg) translate(-0.3em, 0.8em); }
-    100% { transform: rotate(135deg) translate(-0.3em, 0.8em); }
-}
 
 /* ----- animations--------- */
 /* clicked */
@@ -39,8 +24,7 @@
     transform: rotate(45deg) translate(0.2em, 0.75em);
     transition: ease-out 0.5s;
     background-color: #473939;
-    animation: swing 1s ease-in-out  infinite alternate;
-    animation-delay: 1s;
+
 }
 
 .burger-bar.clicked:nth-child(2){
@@ -53,8 +37,7 @@
     transform: rotate(135deg) translate(-0.3em, 0.8em);
     transition: ease-out 0.5s;
     background-color: #473939;
-    animation: swing-reverse 1s ease-in-out  infinite alternate;
-    animation-delay: 1s;
+
 }
 
 /* unclicked */
@@ -62,6 +45,21 @@
     transform: rotate(0.9deg) translate(0);
     transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
 }
+
+/* Burger menü swing animáció */
+@keyframes swing-menu {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(3deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Ha a menü nyitva van, az egész burger-menu kap egy hintázó hatást */
+.burger-menu.swing-menu {
+    animation: swing-menu 0.8s ease-in-out infinite alternate;
+}
+
 
 @media (min-width: 1102px) {
 .burger-menu{

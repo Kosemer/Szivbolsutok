@@ -6,17 +6,16 @@ function BurgerButton() {
   const cartCtx = useContext(CartContext);
   const [burgerClass, setBurgerClass] = useState("burger-bar unclicked");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [burgerColor, setBurgerColor] = useState("white");
+  const [menuAnimationClass, setMenuAnimationClass] = useState(""); // ÚJ
 
   useEffect(() => {
     const handleScroll = () => {
-      // Ha az oldal tetejétől való távolság nagyobb mint 50px, akkor scrolled állapot
       const scrolled = window.scrollY > 50;
       setIsScrolled(scrolled);
     };
 
     window.addEventListener("scroll", handleScroll);
-    
-    // Kezdeti állapot beállítása
     handleScroll();
 
     return () => {
@@ -30,6 +29,13 @@ function BurgerButton() {
     } else {
       setBurgerClass(`burger-bar unclicked ${isScrolled ? "scrolled" : ""}`);
     }
+
+    // Ha nincs görgetés, a gomb legyen fehér
+    setBurgerColor(isScrolled ? "#473939" : "white");
+
+    // Ha a menü nyitva van, hozzáadja az animációs osztályt
+    setMenuAnimationClass(cartCtx.menuIsOpen ? "swing-menu" : "");
+
   }, [cartCtx.galleryIsOpen, cartCtx.menuIsOpen, isScrolled]);
 
   const handleClick = () => {
@@ -42,10 +48,10 @@ function BurgerButton() {
 
   return (
     <Fragment>
-      <div className="burger-menu" onClick={handleClick}>
-        <div className={burgerClass}></div>
-        <div className={burgerClass}></div>
-        <div className={burgerClass}></div>
+      <div className={`burger-menu ${menuAnimationClass}`} onClick={handleClick}>
+        <div className={burgerClass} style={{ backgroundColor: burgerColor }}></div>
+        <div className={burgerClass} style={{ backgroundColor: burgerColor }}></div>
+        <div className={burgerClass} style={{ backgroundColor: burgerColor }}></div>
       </div>
     </Fragment>
   );
