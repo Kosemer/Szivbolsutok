@@ -173,7 +173,7 @@
 @media (max-width: 767px) {
     .background-container {
         background-image: none;
-        height: 90vh;
+        height: 80vh;
     }
 
     .image-row {

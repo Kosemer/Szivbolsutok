@@ -94,11 +94,18 @@ const PhotoGallery = ({ images }) => {
                 const matches = fileName.match(/\((.*?)\)/); // Zárójel előtti szöveg
                 const textBeforeIcon = matches ? fileName.split("(")[0].trim() : ""; // Zárójel előtti szöveg
                 const matchedIcons = matches ? matches[0].replace(/[()]/g, "").split(",") : []; // Jelölések szétválasztása vesszővel
-                const icons = matchedIcons.map((key) => iconMapping[key.trim()]);
+                const icons = matchedIcons.map((key) => iconMapping[key.trim()]).filter(Boolean); // Filter out undefined icons
                 const title = getFileNameWithoutExtension(image.title);
+                
+                // Defensive check for image source
+                const imageSrc = icons.length > 0 ? icons[0] : image.src;
+                if (!imageSrc) {
+                  console.error("Image source is undefined for:", image);
+                }
+
                 return {
                   ...image,
-                  src: icons.length > 0 ? icons[0] : image.src,
+                  src: imageSrc,
                   srcset: image.srcSet,
                   caption: title, // Megjeleníti a fájlnevet kiterjesztés nélkül
                   textBeforeIcon: textBeforeIcon, // Zárójel előtti szöveg hozzáadása a Carousel nézetben
