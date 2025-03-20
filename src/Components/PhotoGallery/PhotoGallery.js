@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useContext } from "react";
+import React, { useState, useCallback, useContext, memo } from "react"; // Import memo
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import classes from "./PhotoGallery.module.css";
@@ -19,6 +19,17 @@ const iconMapping = {
   milk: milk,
   sugar: sugar,
 };
+
+// Memoized Image Component
+const MemoizedImage = memo(({ photo, onClick, title }) => (
+  <img
+    alt={title}
+    {...photo}
+    onClick={onClick}
+    loading="lazy" // Lazy loading attribute
+    style={{ cursor: "pointer" }}
+  />
+));
 
 const PhotoGallery = ({ images }) => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -53,11 +64,10 @@ const PhotoGallery = ({ images }) => {
 
     return (
       <div key={index} style={{ margin, display: "inline-block", position: "relative" }}>
-        <img
-          alt={title}
-          {...photo}
+        <MemoizedImage
+          photo={photo}
           onClick={(e) => openLightbox(e, { index })}
-          style={{ cursor: "pointer" }}
+          title={title}
         />
         {cartCtx.category === "MentesSutemenyek" && icons.length > 0 ? (
           <div className={classes.captionContainer}>
@@ -73,11 +83,6 @@ const PhotoGallery = ({ images }) => {
         )}
       </div>
     );
-  };
-
-  // Új függvény a galéria bezárásához
-  const handleCloseGallery = () => {
-    cartCtx.setGalleryIsOpen(false);
   };
 
   return (

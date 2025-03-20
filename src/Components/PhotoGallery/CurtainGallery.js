@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect, memo } from "react";
 import styles from "./CurtainGallery.module.css";
 import CartContext from "../Store/cart-context";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -7,6 +7,16 @@ import { useNavigate } from 'react-router-dom';
 import PhotoGallery from "./PhotoGallery";
 import BurgerButton from "../BurgerButton/BurgerButton";  // Importáljuk a BurgerButton komponenst
 import axios from "axios";  // Add axios import
+
+// Memoized Image Component
+const MemoizedImage = memo(({ src, alt }) => (
+  <img
+    src={src}
+    alt={alt}
+    loading="lazy" // Lazy loading attribute
+    style={{ width: '100%', height: 'auto' }} // Adjust styles as needed
+  />
+));
 
 const CurtainGallery = ({ category }) => {
   const cartCtx = useContext(CartContext);
@@ -52,32 +62,26 @@ const CurtainGallery = ({ category }) => {
 
   const fetchImagesFromFolder = async (folder) => {
     try {
-      // Get the image data first
       const imageData = await ImageDimensions(folder);
       console.log('Original image data:', imageData);
       
-      // Get the saved order from the server
       try {
         const orderResponse = await axios.get('http://localhost/backend/getImageOrder.php');
         console.log('Order response:', orderResponse.data);
         
-        // Fix the folder name extraction to match the JSON structure
-        const folderName = `Gallery/${folder.split('/')[1]}`; // This should give us "Gallery/FondantFigurak"
+        const folderName = `Gallery/${folder.split('/')[1]}`;
         console.log('Looking for folder name in JSON:', folderName);
         
         if (orderResponse.data && orderResponse.data[folderName]) {
-          // If we have a saved order for this folder
           const savedOrder = orderResponse.data[folderName];
           console.log('Saved order for folder:', savedOrder);
           
-          // Helper function to get just the filename from a path
           const getFilename = (path) => {
             const filename = path.split('/').pop();
             console.log('Getting filename from path:', path, ' -> ', filename);
             return filename;
           };
           
-          // First take images in the saved order
           const orderedImages = savedOrder
             .map(savedPath => {
               const savedFilename = getFilename(savedPath);
@@ -90,17 +94,15 @@ const CurtainGallery = ({ category }) => {
               console.log('Found image:', foundImage ? 'yes' : 'no');
               return foundImage;
             })
-            .filter(Boolean); // Remove any undefined entries
+            .filter(Boolean);
           
           console.log('Ordered images:', orderedImages);
           
-          // Then add any new images that aren't in the saved order
           const newImages = imageData.filter(data => 
             !savedOrder.some(savedPath => getFilename(data.src) === getFilename(savedPath))
           );
           console.log('New images:', newImages);
           
-          // Return combined array of ordered and new images
           const finalImages = [...orderedImages, ...newImages];
           console.log('Final ordered images array:', finalImages);
           return finalImages;
@@ -109,7 +111,6 @@ const CurtainGallery = ({ category }) => {
         console.error("Error loading image order:", error);
       }
       
-      // If no saved order or error occurred, return original image data
       console.log('Returning original image data:', imageData);
       return imageData;
     } catch (error) {
@@ -117,7 +118,6 @@ const CurtainGallery = ({ category }) => {
       return [];
     }
   };
-  
 
   useEffect(() => {
     const body = document.body;
