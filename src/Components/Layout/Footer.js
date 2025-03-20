@@ -148,11 +148,11 @@ function Footer() {
             />
           </h2>
           <div className={classes.imageBox} onClick={handleClickInsta}>
-            {images.map((image) => (
-              <div key={image.id} className={classes.box}>
-                <img src={image.src} alt={image.alt} />
-              </div>
-            ))}
+          {images.map((image, index) => (
+  <div key={`${image.src}-${index}`} className={classes.box}>
+    <img src={image.src} alt={image.alt} />
+  </div>
+))}
           </div>
         </div>
       </div>

@@ -97,16 +97,17 @@ const CurtainMenu = ({ menuVisible }) => {
     <div>
       <div id="myNav" className={overlayClass} onClick={closeNav} style={{ top: menuVisible ? '5rem' : '3rem' }}>
         <div className={styles.container}>
-          {images.map((image) => (
-            <div
-              key={image.id}
-              className={styles.box}
-              onClick={() => onImageClickHandler(image)}
-            >
-              <img src={image.src} alt={image.alt} />
-              <div className={styles.text}>{image.title.split(".")[0]}</div>
-            </div>
-          ))}
+        {images.map((image, index) => (
+  <div
+    key={`${image.id}-${index}`}
+    className={styles.box}
+    onClick={() => onImageClickHandler(image)}
+  >
+    <img src={image.src} alt={image.alt} />
+    <div className={styles.text}>{image.title.split(".")[0]}</div>
+  </div>
+))}
+
         </div>
       </div>
 

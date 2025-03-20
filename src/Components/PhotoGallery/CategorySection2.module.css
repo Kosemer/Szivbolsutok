@@ -91,6 +91,7 @@
 .overlay-image {
     width: 30%;
     height: auto;
+    cursor:default;
 }
 
 .overlay-image:nth-child(2) {
@@ -117,6 +118,7 @@
     right: 150px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .cardTextNext {
@@ -258,8 +260,14 @@
         transition: transform 0.8s ease, opacity 0.8s ease;
     }
     .overlay-image {
+        width: 30%;
+        height: auto;
+    }
+    
+    .overlay-image:nth-child(2) {
         width: 35%;
         height: auto;
+        transform: translateY(40px);
     }
     .page-title {
         top: 20px;
@@ -308,8 +316,14 @@
         transition: transform 0.8s ease, opacity 0.8s ease;
     }
     .overlay-image {
-        width: 40%;
+        width: 30%;
         height: auto;
+    }
+    
+    .overlay-image:nth-child(2) {
+        width: 35%;
+        height: auto;
+        transform: translateY(40px);
     }
     .page-title {
         top: 20px;
