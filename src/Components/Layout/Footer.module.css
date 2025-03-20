@@ -630,31 +630,66 @@ span {
 
 }
 
-@media (min-width: 3840px) { /* 4K felbontás */
-  .footer {
-    padding: 60px;
-    font-size: 24px;
-  }
 
-  .logo {
-    width: 400px;
-    height: 400px;
-  }
-
-  .socialIcon {
-    width: 64px;
-    height: 64px;
-  }
-
-  .adminText {
-    font-size: 2rem;
-  }
-
-  .linkContainer a {
-    font-size: 20px;
+@media (min-width: 3840px) { /* 4K kijelző */
+  .container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 
   .footerLogo {
-    width: 400px;
+    width: 350px; /* Példa méret, növelve a logót */
+    height: auto;
+  }
+
+  .containerContact,
+  .photoServices,
+  .containerInsta {
+  flex-basis: 33.33%;
+  max-width: 33.33%;
+  align-items: center;
+  }
+
+  .linkContainer a{
+    font-size: 1.8rem;
+  }
+
+  .box {
+    width: 100px;
+    height: 200px;
+    width: calc(50% - 15px);
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .footer {
+    padding: 40px; /* Increased padding for a larger footer */
+    font-size: 20px; /* Adjust font size for better visibility */
+  }
+
+  .logo {
+    width: 300px; /* Increase logo size */
+    height: 300px; /* Increase logo size */
+  }
+
+  .socialIcon {
+    height: 48px; /* Increase social icon size */
+    width: 48px; /* Increase social icon size */
+  }
+
+  .h2Title,
+  .h2TitleLogo,
+  .h2TitleInsta {
+    font-size: 2.5rem; /* Increase title sizes */
+  }
+
+  .adminText {
+    font-size: 1.8rem; /* Increase admin text size */
+  }
+
+  .author {
+    font-size: 20px; /* Increase author text size */
   }
 }
