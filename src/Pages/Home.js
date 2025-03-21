@@ -28,6 +28,73 @@ function Home() {
     KulonlegesTortak: useRef(null),
   };
 
+  const categoryData = [
+    {
+      category: "HagyomanyosTortak",
+      title: "Klasszikus Torták",
+      imageSrc: hagyomanyosTortak,
+      description:
+        "Piskóta és krém rétegezésével készülnek. Kívülről valamilyen krémmel (pl. vajkrém, habtejszín, a torta belsejébe töltött krém, illetve számos különböző elkészítésű krém) kerülnek beborításra.",
+      categoriesName: "Hagyományos torták",
+    },
+    {
+      category: "KulonlegesTortak",
+      title: "Különleges Torták",
+      imageSrc: hagyomanyosTortak,
+      description:
+        "Piskóta és krém rétegezésével készülnek. Kívülről valamilyen krémmel (pl. vajkrém, habtejszín, a torta belsejébe töltött krém, illetve számos különböző elkészítésű krém) kerülnek beborításra.",
+      categoriesName: "Különleges Torták",
+    },
+    {
+      category: "BurkoltTortak",
+      title: "Burkolt Torták",
+      imageSrc: burkoltTortak,
+      description:
+        "Rendszerint fondant (ízesített vagy ízesítetlen cukormassza) burkolással készített hagyományos torták, vagy formatorták.",
+      categoriesName: "Burkolt Torták",
+    },
+    {
+      category: "Linzertortak",
+      title: "Linzertorták",
+      imageSrc: linzerTortak,
+      description:
+        "Omlós édes tésztalapok és krém rétegezésével készülnek, a tetejükön díszítéssel.",
+      categoriesName: "Linzertorták",
+    },
+    {
+      category: "Macaronok",
+      title: "Macaronok",
+      imageSrc: macaronok,
+      description:
+        "Mandulaliszt, tojásfehérje és cukor felhasználásával készült édes sütemény, amely ízesített, ganache alapú (csokoládé és tejszín) krémmel kerül összeragasztásra.",
+      categoriesName: "Macaronok",
+    },
+    {
+      category: "HagyomanyosSutemenyek",
+      title: "Klasszikus Sütemények",
+      imageSrc: macaronok,
+      description: "Hétköznapi alapanyagokból készült különféle sütemények.",
+      categoriesName: "Klasszikus Sütemények",
+    },
+    {
+      category: "MentesSutemenyek",
+      title: "Mentes Sütemények",
+      imageSrc: mentesSutemenyek,
+      description:
+        "Különböző ételintoleranciával összeegyeztethető, valamint diétás étrendbe illeszthető sütemény alternatívák. Pl. glutén- , tej- , tojás- , cukormentes, teljeskiőrlésű, szénhidrátcsökkentett.",
+      categoriesName: "Mentes Sütemények",
+    },
+    {
+      category: "FondantFigurak",
+      title: "Fondant figurák",
+      imageSrc: fondantFigurak,
+      description:
+        "Ízesített vagy ízesítetlen cukormasszából készült különféle egyedi figurák.",
+      categoriesName: "Fondant figurák",
+    },
+  ];
+  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -51,110 +118,18 @@ function Home() {
     <div>
       <ParalaxSection />
       <CurtainGallery />
-      <div>
-        <div ref={sectionsRefs.HagyomanyosTortak} className={classes.section}>
+      {categoryData.map((data) => (
+        <div key={data.category} ref={sectionsRefs[data.category]} className={classes.section}>
           <CategorySection2
-            category={"HagyomanyosTortak"}
-            categoryTitle={"Klasszikus Torták"}
-            imageSrc={hagyomanyosTortak}
-            description={
-              "Piskóta és krém rétegezésével készülnek. Kívülről valamilyen krémmel (pl. vajkrém, habtejszín, a torta belsejébe töltött krém, illetve számos különböző elkészítésű krém) kerülnek beborításra."
-            }
-            categories={"Gallery/HagyomanyosTortak"} CategoryGallery={"CategoryGallery/HagyomanyosTortak"} categoriesName={"Hagyományos torták"}
+            category={data.category}
+            categoryTitle={data.title}
+            imageSrc={data.imageSrc}
+            description={data.description}
+            CategoryGallery={`CategoryGallery/${data.category}`}
+            categoriesName={data.categoriesName}
           />
-           {/* <CardGalleryTest categories={"HagyomanyosTortak"} CategoryGallery={"CategoryGallery/HagyomanyosTortak"} categoriesName={"Hagyományos torták"} />*/}
         </div>
-        <div ref={sectionsRefs.KulonlegesTortak} className={classes.section}>
-          <CategorySection2
-            category={"KulonlegesTortak"}
-            categoryTitle={"Különleges Torták"}
-            imageSrc={hagyomanyosTortak}
-            description={
-              "Piskóta és krém rétegezésével készülnek. Kívülről valamilyen krémmel (pl. vajkrém, habtejszín, a torta belsejébe töltött krém, illetve számos különböző elkészítésű krém) kerülnek beborításra."
-            }
-            categories={"KulonlegesTortak"} CategoryGallery={"CategoryGallery/KulonlegesTortak"} categoriesName={"Különleges Torták"}
-          />
-          {/* <CardGalleryTest categories={"HagyomanyosTortak"} CategoryGallery={"CategoryGallery/HagyomanyosTortak"} categoriesName={"Hagyományos torták"} /> */}
-        </div>
-        <div ref={sectionsRefs.BurkoltTortak} className={classes.section}>
-          <CategorySection2 
-            category={"BurkoltTortak"}
-            categoryTitle={"Burkolt Torták"}
-            imageSrc={burkoltTortak}
-            description={
-              "Rendszerint fondant (ízesített vagy ízesítetlen cukormassza) burkolással készített hagyományos torták, vagy formatorták."
-            }
-            CategoryGallery={"CategoryGallery/BurkoltTortak"}
-            categoriesName={"Burkolt Torták"}
-          />
-          {/* <CardGalleryTest categories={"BurkoltTortak"} CategoryGallery={"CategoryGallery/BurkoltTortak"} categoriesName={"Burkolt torták"} /> */}
-        </div>
-        <div ref={sectionsRefs.Linzertortak} className={classes.section}>
-          <CategorySection2
-            category={"Linzertortak"}
-            categoryTitle={"Linzertorták"}
-            imageSrc={linzerTortak}
-            description={
-              "Omlós édes tésztalapok és krém rétegezésével készülnek, a tetejükön díszítéssel."
-            }
-            CategoryGallery={"CategoryGallery/Linzertortak"}
-            categoriesName={"Linzertorták"}
-          />
-          {/* <CardGalleryTest categories={"Linzertortak"} CategoryGallery={"CategoryGallery/Linzertortak"} categoriesName={"Linzertorták"} /> */}
-        </div>
-        <div ref={sectionsRefs.Macaronok} className={classes.section}>
-          <CategorySection2
-            category={"Macaronok"}
-            categoryTitle={"Macaronok"}
-            imageSrc={macaronok}
-            description={
-              "Mandulaliszt, tojásfehérje és cukor felhasználásával készült édes sütemény, amely ízesített, ganache alapú (csokoládé és tejszín) krémmel kerül összeragasztásra."
-            }
-            CategoryGallery={"CategoryGallery/Macaronok"}
-            categoriesName={"Macaronok"}
-          />
-          {/* <CardGalleryTest categories={"Macaronok"} CategoryGallery={"CategoryGallery/Macaronok"} categoriesName={"Macaronok"} /> */}
-        </div>
-        <div ref={sectionsRefs.HagyomanyosSutemenyek} className={classes.section}>
-          <CategorySection2
-            category={"HagyomanyosSutemenyek"}
-            categoryTitle={"Klasszikus Sütemények"}
-            imageSrc={macaronok}
-            description={
-              "Hétköznapi alapanyagokból készült különféle sütemények."
-            }
-            CategoryGallery={"CategoryGallery/HagyomanyosSutemenyek"}
-            categoriesName={"Klasszikus Sütemények"}
-          />
-          {/* <CardGalleryTest categories={"HagyomanyosSutemenyek"} CategoryGallery={"CategoryGallery/HagyomanyosSutemenyek"} categoriesName={"Hagyományos sütemények"} /> */}
-        </div>
-        <div ref={sectionsRefs.MentesSutemenyek} className={classes.section}>
-          <CategorySection2
-            category={"MentesSutemenyek"}
-            categoryTitle={"Mentes Sütemények"}
-            imageSrc={mentesSutemenyek}
-            description={
-              "Különböző ételintoleranciával összeegyeztethető, valamint diétás étrendbe illeszthető sütemény alternatívák. Pl. glutén- , tej- , tojás- , cukormentes, teljeskiőrlésű, szénhidrátcsökkentett."
-            }
-            CategoryGallery={"CategoryGallery/MentesSutemenyek"}
-            categoriesName={"Mentes Sütemények"}
-          />
-          {/* <CardGalleryTest categories={"MentesSutemenyek"} CategoryGallery={"CategoryGallery/MentesSutemenyek"} categoriesName={"Mentes sütemények"} /> */}
-        </div>
-        <div ref={sectionsRefs.FondantFigurak} className={classes.section}>
-          <CategorySection2
-            category={"FondantFigurak"}
-            categoryTitle={"Fondant figurák"}
-            imageSrc={fondantFigurak}
-            description={
-              "Ízesített vagy ízesítetlen cukormasszából készült különféle egyedi figurák."
-            }
-            CategoryGallery={"CategoryGallery/FondantFigurak"}
-            categoriesName={"Fondant figurák"}
-          />
-          {/* <CardGalleryTest categories={"FondantFigurak"} CategoryGallery={"CategoryGallery/FondantFigurak"} categoriesName={"Fondant figurák"} /> */}
-        </div>
-      </div>
+      ))}
       <div className={classes.DesktopSlider}>
         <DesktopSlider />
       </div>

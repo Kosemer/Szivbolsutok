@@ -16,14 +16,25 @@ const CategorySection2 = ({ category, categoryTitle, CategoryGallery, categories
     const fetchImages = async () => {
       try {
         const imageData = await ImageDimensions(CategoryGallery);
-        const orderedImages = await fetchImageOrder(CategoryGallery); // Fetch ordered images
-        const combinedImages = orderedImages.length > 0 ? orderedImages : imageData.slice(0, 3); // Use ordered images or fallback to the first three
+        const orderedImages = await fetchImageOrder(CategoryGallery);
+        console.log("imageData", imageData);
+        // Ha nincs mentett sorrend, az összes képet betöltjük
+        const combinedImages = (orderedImages.length > 0 ? orderedImages : imageData).map(
+          (image) => ({
+            ...image,
+            // Ellenőrizd, hogy a src már tartalmazza-e a localhost-ot, ha igen, ne adj hozzá újra
+            src: image.src.startsWith("http://localhost") ? image.src : `http://localhost/${image.src}`,
+          })
+        );
+    
         setImages(combinedImages);
+        console.log("combinedImages", combinedImages);
       } catch (error) {
-        console.error("Hiba a képek lekérése közben", error);
+        console.error("Error fetching images", error);
         setImages([]);
       }
     };
+    
 
     fetchImages();
 
@@ -75,7 +86,7 @@ const CategorySection2 = ({ category, categoryTitle, CategoryGallery, categories
     } catch (error) {
       console.error("Error loading image order:", error);
     }
-    return [];
+    return []; // Return an empty array if there's an error
   };
 
   const onImageClickHandler = () => {

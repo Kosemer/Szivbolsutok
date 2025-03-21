@@ -17,12 +17,14 @@ html, body {
 .captionContainer {
     text-align: center;
     background-color: white;
-    font-family: "Bebas Neue", sans-serif;
+    font-family: "Sorts Mill Goudy", sans-serif;
     font-size: 1.3rem;
     white-space: nowrap; /* Szöveg ne tördeljen */
     overflow: hidden; /* Túlcsorduló rész legyen rejtve */
     text-overflow: ellipsis; /* Három pont az elvágott rész után */
     max-width: 100%;
+    font-weight: 600;
+    letter-spacing: 1px;
   }
 
 .caption {

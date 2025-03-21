@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import axios from 'axios';
 import CartContext from '../../Components/Store/cart-context';
+import classes from './CategorySection2.module.css'; // Assuming you have a CSS module for styling
 
 const CategorySection2 = () => {
     const cartCtx = useContext(CartContext);
@@ -24,8 +25,16 @@ const CategorySection2 = () => {
     }, [cartCtx.selectedFolder]);
 
     return (
-        <div>
-            {/* Render images here */}
+        <div className={classes.imageGrid}>
+            {cartCtx.folderImages.length > 0 ? (
+                cartCtx.folderImages.map((image, index) => (
+                    <div key={index} className={classes.imageContainer}>
+                        <img src={image} alt={`Image ${index}`} className={classes.image} />
+                    </div>
+                ))
+            ) : (
+                <p>No images available in this category.</p>
+            )}
         </div>
     );
 };
