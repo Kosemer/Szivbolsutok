@@ -418,12 +418,13 @@ const ImageUploader = ({ setLoggedIn }) => {
           >
             <option value="">Válassz mappát</option>
             <optgroup label="Galéria">
-              <option value="Gallery/HagyomanyosTortak">Hagyományos torták</option>
+              <option value="Gallery/HagyomanyosTortak">Klasszikus torták</option>
+              <option value="Gallery/KulonlegesTortak">Különleges torták</option>
               <option value="Gallery/BurkoltTortak">Burkolt torták</option>
               <option value="Gallery/Linzertortak">Linzertorták</option>
               <option value="Gallery/Macaronok">Macaronok</option>
               <option value="Gallery/HagyomanyosSutemenyek">
-                Hagyományos sütemények
+                Klasszikus sütemények
               </option>
               <option value="Gallery/MentesSutemenyek">Mentes sütemények</option>
               <option value="Gallery/FondantFigurak">Fondant figurák</option>
@@ -434,13 +435,16 @@ const ImageUploader = ({ setLoggedIn }) => {
             </optgroup>
             <optgroup label="Főoldal, kategóriák képei">
               <option value="CategoryGallery/HagyomanyosTortak">
-                Hagyományos torták
+                Klasszikus torták
+              </option>
+              <option value="CategoryGallery/KulonlegesTortak">
+              Különleges torták
               </option>
               <option value="CategoryGallery/BurkoltTortak">Burkolt torták</option>
               <option value="CategoryGallery/Linzertortak">Linzertorták</option>
               <option value="CategoryGallery/Macaronok">Macaronok</option>
               <option value="CategoryGallery/HagyomanyosSutemenyek">
-                Hagyományos sütemények
+              Klasszikus sütemények
               </option>
               <option value="CategoryGallery/MentesSutemenyek">
                 Mentes sütemények

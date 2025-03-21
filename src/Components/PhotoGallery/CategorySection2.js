@@ -3,11 +3,12 @@ import classes from "./CategorySection2.module.css";
 import test from "../../Assets/CategorySection/almas.png";
 import CartContext from "../Store/cart-context";
 import { ImageDimensions } from "../../Pages/PhotoGalleryPage/ImageDimensions";
+import axios from "axios"; // Import axios for HTTP requests
 
 const CategorySection2 = ({ category, categoryTitle, CategoryGallery, categoriesName }) => {
   const cartCtx = useContext(CartContext);
   const [images, setImages] = useState([]);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth); // Állapot a képernyő szélességére
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth); // State for window width
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef(null);
 
@@ -15,7 +16,8 @@ const CategorySection2 = ({ category, categoryTitle, CategoryGallery, categories
     const fetchImages = async () => {
       try {
         const imageData = await ImageDimensions(CategoryGallery);
-        const combinedImages = imageData.slice(0, 3); // Az első három kép
+        const orderedImages = await fetchImageOrder(CategoryGallery); // Fetch ordered images
+        const combinedImages = orderedImages.length > 0 ? orderedImages : imageData.slice(0, 3); // Use ordered images or fallback to the first three
         setImages(combinedImages);
       } catch (error) {
         console.error("Hiba a képek lekérése közben", error);
@@ -26,10 +28,10 @@ const CategorySection2 = ({ category, categoryTitle, CategoryGallery, categories
     fetchImages();
 
     const handleResize = () => {
-      setWindowWidth(window.innerWidth); // Ablakméret változása
+      setWindowWidth(window.innerWidth); // Update window width on resize
     };
 
-    window.addEventListener("resize", handleResize); // Figyeljük az ablak méretének változását
+    window.addEventListener("resize", handleResize); // Listen for window resize
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -43,12 +45,38 @@ const CategorySection2 = ({ category, categoryTitle, CategoryGallery, categories
     }
 
     return () => {
-      window.removeEventListener("resize", handleResize); // Eltávolítjuk az eseményfigyelőt
+      window.removeEventListener("resize", handleResize); // Clean up resize listener
       if (containerRef.current) {
         observer.unobserve(containerRef.current);
       }
     };
   }, [CategoryGallery]);
+
+  const fetchImageOrder = async (folder) => { // Fetch ordered images based on the folder
+    try {
+      const orderResponse = await axios.get('http://localhost/backend/getImageOrder.php');
+
+      const folderName = `CategoryGallery/${folder.split('/')[1]}`;
+      console.log('Looking for folder name in JSON:', folderName);
+
+      if (orderResponse.data && orderResponse.data[folderName]) {
+        const savedOrder = orderResponse.data[folderName];
+
+        // Map the saved order to the actual image data
+        const orderedImages = savedOrder.map(savedPath => {
+          return {
+            src: savedPath, // Use the path directly
+            alt: savedPath.split('/').pop() // Use the filename as alt text
+          };
+        });
+
+        return orderedImages;
+      }
+    } catch (error) {
+      console.error("Error loading image order:", error);
+    }
+    return [];
+  };
 
   const onImageClickHandler = () => {
     cartCtx.setCategory(category);
@@ -56,24 +84,21 @@ const CategorySection2 = ({ category, categoryTitle, CategoryGallery, categories
     cartCtx.setGalleryIsOpen(!cartCtx.galleryIsOpen);
   };
 
-  // Kategória szavak szétszedése és feltérképezése
+  // Split category title into words
   const words = categoryTitle.split(" ");
   const firstWord = words[0];
-  const secondWord = words.length > 1 ? words.slice(1).join(" ") : null; // Ha több szó van, akkor a második szó és az összes többi összekapcsolása
+  const secondWord = words.length > 1 ? words.slice(1).join(" ") : null; // Handle multiple words
 
-  // Mobil nézetben csak egy képet jelenítünk meg
-// Ellenőrizzük, hogy van-e legalább egy kép
-const mobileImage = images.length > 0 
-  ? images.find((img) => img.src.includes("1_")) || images[0] 
-  : null;
+  // Display only one image in mobile view
+  const mobileImage = images.length > 0 
+    ? images.find((img) => img.src.includes("1_")) || images[0] 
+    : null;
 
-// Ha mobilnézet van, csak ezt az egy képet jelenítsük meg (ha van kép)
-const imagesToDisplay = windowWidth <= 767 
-  ? mobileImage 
-    ? [mobileImage] 
-    : [] 
-  : images;
-
+  const imagesToDisplay = windowWidth <= 767 
+    ? mobileImage 
+      ? [mobileImage] 
+      : [] 
+    : images;
 
   return (
     <div
@@ -103,7 +128,7 @@ const imagesToDisplay = windowWidth <= 767
               <img
                 key={index}
                 src={image.src}
-                alt={`Cake ${index + 1}`}
+                alt={image.alt} // Use the alt text from the ordered images
                 className={classes["overlay-image"]}
               />
             ))
