@@ -235,41 +235,47 @@
 @media (max-width: 767px) {
     .background-container {
         background-image: none;
-        height: 80vh;
+        height: auto;
+    }
+
+    .green-background-container {
+        background-image: none;
+        height: auto;
     }
 
     .image-row {
         width: 100%;
-        margin-top: 2rem;
+        margin-top: 9rem;
     }
     
     .image-row img {
         width: 100%;
+        margin-bottom: 8rem;
     }
 
     .page-title {
-        top: 30px;
+        top: 20px;
         left: 20px;
-        font-size: 2rem;
+        font-size: 2.5rem;
         width: 200px;
     }
     
     .page-title2 {
         top: 65x;
         left: 60px;
-        font-size: 2rem;
+        font-size: 2.5rem;
         width: 200px;
     }
 
     .page-title3, .green-page-title3 {
-        top: 30px;
+        top: 20px;
         left: 20px;
-        font-size: 2rem;
+        font-size: 2.5rem;
         width: 200px;
     }
 
     .cardTextNext, .greenCardTextNext {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .col {
