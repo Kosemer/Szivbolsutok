@@ -13,10 +13,22 @@
     box-sizing: border-box;
     overflow-x: hidden;
 }
+.green-background-container {
+    background-image: url("../../Assets/CakesPicture/brushBackground.png");
+    background-size: 95%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    background-color: #F4F4F4;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
 
-section:nth-of-type(2n) .page-title {
-    color: green;
-  }
   
 
 .page-title {
@@ -80,10 +92,40 @@ section:nth-of-type(2n) .page-title {
     transform: translateX(0);
     transition: transform 0.8s ease, opacity 0.8s ease;
 }
+.green-page-title3 {
+    position: absolute;
+    top: 20px;
+    left: 60px;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-family: "Bebas Neue";
+    color: #473939;
+    background-color: #9DE0B1;
+    width: clamp(150px, 20vw, 200px);
+    padding: 5px 0px 0px 0px;
+    text-align: center;
+    align-items: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
 
-.page-title3.animate {
+.page-title3.animate,
+.green-page-title3.animate {
     animation: slideInFromLeft 0.8s forwards;
 }
+
+/* Zöld SVG szín */
+.green-svg {
+    color: #9DE0B1;
+  }
+  
+  /* Alapértelmezett szín */
+  .default-svg {
+
+  }
+  
+
 
 .image-row {
     display: flex;
@@ -139,9 +181,24 @@ section:nth-of-type(2n) .page-title {
     transform: translateX(0);
     transition: transform 0.8s ease, opacity 0.8s ease;
 }
+.greenCardTextNext {
+    color: #473939;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: clamp(1.2rem, 2vw, 1.9rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
 
-.cardTextNext.animate {
-    animation: slideInFromLeft 0.8s forwards, swing 1s ease-in-out 0.8s;
+.cardTextNext.animate,
+.greenCardTextNext.animate
+{
+    animation: /* slideInFromLeft 0.8s forwards,*/ swing 1s ease-in-out 0.8s;
 }
 
 /* Tablet (768px - 1024px) */
@@ -155,7 +212,7 @@ section:nth-of-type(2n) .page-title {
         width: 100%;
     }
 
-    .page-title, .page-title2, .page-title3 {
+    .page-title, .page-title2, .page-title3, .green-page-title3 {
         top: 30px;
         left: 40px;
     }
@@ -204,14 +261,14 @@ section:nth-of-type(2n) .page-title {
         width: 200px;
     }
 
-    .page-title3 {
-        top: 40px;
+    .page-title3, .green-page-title3 {
+        top: 30px;
         left: 20px;
         font-size: 2rem;
         width: 200px;
     }
 
-    .cardTextNext {
+    .cardTextNext, .greenCardTextNext {
         font-size: 1.8rem;
     }
 
@@ -220,7 +277,7 @@ section:nth-of-type(2n) .page-title {
         bottom: 40px;
     }
 
-    .cardTextNext svg {
+    .cardTextNext svg, .greenCardTextNext svg {
         width: 40px;
         height: 40px;
     }
@@ -236,12 +293,12 @@ section:nth-of-type(2n) .page-title {
         width: 70%;
     }
 
-    .page-title, .page-title2, .page-title3 {
+    .page-title, .page-title2, .page-title3, .green-page-title3 {
         font-size: 2.8rem;
         width: 250px;
     }
 
-    .cardTextNext {
+    .cardTextNext, .greenCardTextNext {
         font-size: 1.9rem;
     }
 }
@@ -251,7 +308,7 @@ section:nth-of-type(2n) .page-title {
         background-size: 100%;
         height: 100vh;
     }
-    .cardTextNext {
+    .cardTextNext,.greenCardTextNext {
         color: #ff7f7f;
         font-family: "Bebas Neue", sans-serif;
         font-size: clamp(3rem, 2vw, 1.9rem);
@@ -288,7 +345,7 @@ section:nth-of-type(2n) .page-title {
         width: clamp(150px, 20vw, 300px);
         padding: 10px 20px 5px 20px;
     }
-    .page-title3 {
+    .page-title3, .green-page-title3 {
         top: 20px;
         left: 60px;
         font-size: clamp(3rem, 3vw, 2.8rem);
@@ -296,7 +353,7 @@ section:nth-of-type(2n) .page-title {
         padding: 10px 20px 5px 20px;
 
     }
-    .cardTextNext svg {
+    .cardTextNext svg, .greenCardTextNext svg {
         width: 48px; /* 2K felbontás */
         height: 48px; /* 2K felbontás */
     }
@@ -307,7 +364,7 @@ section:nth-of-type(2n) .page-title {
         background-size: 100%;
         height: 90vh;
     }
-    .cardTextNext {
+    .cardTextNext, .greenCardTextNext {
         color: #ff7f7f;
         font-family: "Bebas Neue", sans-serif;
         font-size: clamp(4rem, 2vw, 1.9rem);
@@ -344,7 +401,7 @@ section:nth-of-type(2n) .page-title {
         width: clamp(150px, 20vw, 400px);
         padding: 20px 20px 10px 20px;
     }
-    .page-title3 {
+    .page-title3, .green-page-title3 {
         top: 20px;
         left: 60px;
         font-size: clamp(4rem, 3vw, 2.8rem);
@@ -352,7 +409,7 @@ section:nth-of-type(2n) .page-title {
         padding: 20px 20px 10px 20px;
 
     }
-    .cardTextNext svg {
+    .cardTextNext svg, .greenCardTextNext svg {
         width: 72px; /* 2K felbontás */
         height: 72px; /* 2K felbontás */
     }
