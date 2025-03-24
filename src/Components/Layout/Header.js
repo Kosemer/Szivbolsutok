@@ -3,7 +3,7 @@
 Figyelembe veszi a mobil nézet állapotát a cssMobile változó segítségével, amit a CartContext-ból szerez meg. Ha a nézet mobil, a fejléc stílusa változik, és a moblieMenuChange funkcióval lehet megváltoztatni ezt az állapotot. */
 
 import { Fragment, useContext, useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink,useLocation } from "react-router-dom";
 import classes from "./Header.module.css";
 import BurgerButton from "../BurgerButton/BurgerButton";
 import CartContext from "../Store/cart-context";
@@ -18,6 +18,7 @@ import DropdownMenu from "../Navigation/DropdownMenu";
 
 const Header = ({ showCloseButton }) => {
   const cartCtx = useContext(CartContext);
+  
 
   const cssMobile = cartCtx.cssMobile;
   const setCssMobile = cartCtx.setCssMobile;
@@ -83,6 +84,16 @@ const Header = ({ showCloseButton }) => {
   const handleCloseGallery = () => {
     cartCtx.setGalleryIsOpen(false);
   };
+
+  const location = useLocation();
+
+
+
+  if (location.pathname === '/login') {
+
+    return null;
+
+  }
 
   return (
     <Fragment>
