@@ -126,14 +126,20 @@ const CategorySection2 = ({
   const firstWord = words[0];
   const secondWord = words.length > 1 ? words.slice(1).join(" ") : null; // Handle multiple words
 
-  // Display only one image in mobile view
+/*   // Display only one image in mobile view
   const mobileImage =
     images.length > 0
       ? images.find((img) => img.src.includes("1_")) || images[0]
       : null;
 
   const imagesToDisplay =
-    windowWidth <= 767 ? (mobileImage ? [mobileImage] : []) : images;
+    windowWidth <= 767 ? (mobileImage ? [mobileImage] : []) : images; */
+
+    // Az első kép kiválasztása mobilnézetben
+const mobileImage = images.length > 0 ? images[0] : null;
+
+// Ha mobilnézet van (<= 767px), akkor csak az első képet jelenítse meg
+const imagesToDisplay = windowWidth <= 767 ? (mobileImage ? [mobileImage] : []) : images;
 
   return (
     <div ref={containerRef} className={`${classes["background-container"]} ${classes[`background-container-${group}`] || ""}`}>
