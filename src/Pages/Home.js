@@ -34,75 +34,78 @@ function Home() {
       title: "Klasszikus Torták",
       imageSrc: hagyomanyosTortak,
       description:
-        "Piskóta és krém rétegezésével készülnek...",
+        "Piskóta és krém rétegezésével készülnek. Kívülről valamilyen krémmel (pl. vajkrém, habtejszín, a torta belsejébe töltött krém, illetve számos különböző elkészítésű krém) kerülnek beborításra.",
       categoriesName: "Hagyományos torták",
+      group: "tortak",
     },
     {
       category: "KulonlegesTortak",
       title: "Különleges Torták",
       imageSrc: hagyomanyosTortak,
       description:
-        "Piskóta és krém rétegezésével készülnek...",
+        "Piskóta és krém rétegezésével készülnek. Kívülről valamilyen krémmel (pl. vajkrém, habtejszín, a torta belsejébe töltött krém, illetve számos különböző elkészítésű krém) kerülnek beborításra.",
       categoriesName: "Különleges Torták",
+      group: "tortak",
     },
     {
       category: "BurkoltTortak",
       title: "Burkolt Torták",
       imageSrc: burkoltTortak,
       description:
-        "Rendszerint fondant burkolással készített...",
+        "Rendszerint fondant (ízesített vagy ízesítetlen cukormassza) burkolással készített hagyományos torták, vagy formatorták.",
       categoriesName: "Burkolt Torták",
+      group: "tortak",
     },
     {
       category: "Linzertortak",
       title: "Linzertorták",
       imageSrc: linzerTortak,
       description:
-        "Omlós édes tésztalapok és krém rétegezésével...",
+        "Omlós édes tésztalapok és krém rétegezésével készülnek, a tetejükön díszítéssel.",
       categoriesName: "Linzertorták",
+      group: "tortak",
     },
     {
       category: "Macaronok",
       title: "Macaronok",
       imageSrc: macaronok,
       description:
-        "Mandulaliszt, tojásfehérje és cukor felhasználásával...",
+        "Mandulaliszt, tojásfehérje és cukor felhasználásával készült édes sütemény, amely ízesített, ganache alapú (csokoládé és tejszín) krémmel kerül összeragasztásra.",
       categoriesName: "Macaronok",
+      group: "macaronok",
     },
     {
       category: "HagyomanyosSutemenyek",
       title: "Klasszikus Sütemények",
       imageSrc: macaronok,
-      description: "Hétköznapi alapanyagokból készült...",
+      description: "Hétköznapi alapanyagokból készült különféle sütemények.",
       categoriesName: "Klasszikus Sütemények",
+      group: "sutemenyek",
     },
     {
       category: "MentesSutemenyek",
       title: "Mentes Sütemények",
       imageSrc: mentesSutemenyek,
       description:
-        "Különböző ételintoleranciával összeegyeztethető...",
+        "Különböző ételintoleranciával összeegyeztethető, valamint diétás étrendbe illeszthető sütemény alternatívák. Pl. glutén- , tej- , tojás- , cukormentes, teljeskiőrlésű, szénhidrátcsökkentett.",
       categoriesName: "Mentes Sütemények",
+      group: "sutemenyek",
     },
     {
       category: "FondantFigurak",
       title: "Fondant figurák",
       imageSrc: fondantFigurak,
       description:
-        "Ízesített vagy ízesítetlen cukormasszából...",
+        "Ízesített vagy ízesítetlen cukormasszából készült különféle egyedi figurák.",
       categoriesName: "Fondant figurák",
+      group: "fondantFigurak",
     },
-  ].map((item, index) => ({
-    ...item,
-    secondSections: index % 2 === 1, // Minden második elem `true`
-  }));
-  
-  
+  ];
   
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []); 
+  }, []);
 
   useEffect(() => {
     if (cartCtx.scrollToCategory) {
@@ -132,7 +135,7 @@ function Home() {
             description={data.description}
             CategoryGallery={`CategoryGallery/${data.category}`}
             categoriesName={data.categoriesName}
-            secondSections={data.secondSections}
+            group={data.group}
           />
         </div>
       ))}
