@@ -5,7 +5,7 @@ Az App komponens a CartProvider kontextusban fut, ami a kosár állapotát kezel
 import Header from "./Components/Layout/Header";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
-import Photography from "./Pages/PhotoGalleryPage/Photography";
+
 import CartProvider from "./Components/Store/CartProvider";
 import Footer from "./Components/Layout/Footer";
 import ScrollToTopButton from "./Components/ScrollToTopButton/ScrollToTopButton";

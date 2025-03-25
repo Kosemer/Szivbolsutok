@@ -2,7 +2,6 @@ import React, { useEffect, useContext, useRef } from "react";
 import classes from "./Home.module.css";
 import CartContext from "../Components/Store/cart-context";
 import DesktopSlider from "../Components/UI/OpinionSwiper/DesktopSlider";
-import CardGalleryTest from "../Components/PhotoGallery/CardGalleryTest";
 import CategorySection2 from "../Components/PhotoGallery/CategorySection2";
 import CategorySection from "../Components/PhotoGallery/CategorySection";
 import hagyomanyosTortak from "../Assets/CategorySection/kitKat2.png";
