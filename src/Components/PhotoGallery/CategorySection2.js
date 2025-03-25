@@ -136,10 +136,10 @@ const CategorySection2 = ({
     windowWidth <= 767 ? (mobileImage ? [mobileImage] : []) : images;
 
   return (
-    <div ref={containerRef} className={classes["background-container"]}>
+    <div ref={containerRef} className={`${classes["background-container"]} ${classes[`background-container-${group}`] || ""}`}>
       {words.length === 1 ? (
         <h1
-          className={`${classes["page-title3"]} ${
+         className={`${classes["page-title3"]} ${classes[`page-title3-${group}`] || ""} ${
             isVisible ? classes.animate : ""
           }`}
         >
@@ -148,14 +148,14 @@ const CategorySection2 = ({
       ) : (
         <>
           <h1
-            className={`${classes["page-title"]} ${
+            className={`${classes["page-title"]} ${classes[`page-title-${group}`] || ""} ${
               isVisible ? classes.animate : ""
             }`}
           >
             {firstWord}
           </h1>
           <h1
-            className={`${classes["page-title2"]} ${
+            className={`${classes["page-title2"]} ${classes[`page-title2-${group}`] || ""} ${
               isVisible ? classes.animate : ""
             }`}
           >
@@ -191,7 +191,7 @@ const CategorySection2 = ({
           onClick={onImageClickHandler}
         >
           <p
-            className={`${classes.cardTextNext} ${
+            className={`${classes["cardTextNext"]} ${classes[`cardTextNext-${group}`] || ""} ${
               isCardVisible ? classes.animate : ""
             }`}
           >

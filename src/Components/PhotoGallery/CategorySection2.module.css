@@ -15,6 +15,23 @@
 }
 
 
+.background-container-tortak{
+
+}
+
+.background-container-macaronok{
+    background-image: url("../../Assets/CakesPicture/brushBackground.png");
+}
+
+.background-container-sutemenyek{
+    background-image: url("../../Assets/CakesPicture/brushBackgroundYellow.png");
+}
+
+.background-container-fondantFigurak{
+    background-image: url("../../Assets/CakesPicture/brushBackgroundPurple.png");
+}
+
+
 .page-title {
     position: absolute;
     top: 20px;
@@ -35,6 +52,24 @@
 
 .page-title.animate {
     animation: slideInFromLeft 0.8s forwards;
+}
+
+.page-title-tortak{
+    background-color: #ff7f7f;
+}
+
+.page-title-macaronok{
+    background-color: #9DE0B1;
+}
+
+.page-title-sutemenyek{
+    background-color: #faf066;
+    color: #473939;
+}
+
+.page-title-fondantFigurak{
+    background-color: #e09ddd;
+    color: #473939;
 }
 
 .page-title2 {
@@ -59,6 +94,22 @@
     animation: slideInFromRight 0.8s forwards;
 }
 
+.page-title2-tortak{
+
+}
+
+.page-title2-macaronok{
+
+}
+
+.page-title2-sutemenyek{
+
+}
+
+.page-title2-fondantFigurak{
+
+}
+
 .page-title3 {
     position: absolute;
     top: 20px;
@@ -80,6 +131,24 @@
 
 .page-title3.animate {
     animation: slideInFromLeft 0.8s forwards;
+}
+
+.page-title3-tortak{
+    background-color: #ff7f7f;
+}
+
+.page-title3-macaronok{
+    background-color: #9DE0B1;
+    color: #473939;
+}
+
+.page-title3-sutemenyek{
+    background-color: #faf066;
+    color: #473939;
+}
+
+.page-title3-fondantFigurak{
+    background-color: #e09ddd;
 }
 
 /* Zöld SVG szín */
@@ -147,6 +216,26 @@
     opacity: 1;
     transform: translateX(0);
     transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.cardTextNext-tortak{
+    color: #473939;
+}
+
+.cardTextNext-macaronok{
+    color: #473939;
+}
+
+.cardTextNext-sutemenyek{
+    color: #473939;
+}
+
+.cardTextNext-fondantFigurak{
+    color: #473939;
+}
+
+.cardTextNext-sutemenyek svg{
+    color: #473939;
 }
 
 
