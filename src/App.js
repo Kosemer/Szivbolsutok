@@ -5,11 +5,9 @@ Az App komponens a CartProvider kontextusban fut, ami a kosár állapotát kezel
 import Header from "./Components/Layout/Header";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
-import AboutMe from "./Pages/AboutMe";
 import Photography from "./Pages/PhotoGalleryPage/Photography";
 import CartProvider from "./Components/Store/CartProvider";
 import Footer from "./Components/Layout/Footer";
-import ContactForm from "./Components/ContactForm/ContactFrom";
 import ScrollToTopButton from "./Components/ScrollToTopButton/ScrollToTopButton";
 import ImageUploader from "../src/Components/AdminPage/ImageUploader";
 import LoginForm from "./Components/AdminPage/LoginForm";
@@ -24,11 +22,6 @@ function App() {
           <Route exact path="/" element={<Home></Home>}></Route>
           {/*<Route path="/galeria" element={<Photography></Photography>}></Route>*/}
           <Route path="/galeria" element={<CurtainGallery></CurtainGallery>}></Route>
-          <Route path="/rolam" element={<AboutMe></AboutMe>}></Route>
-          <Route
-            path="/kapcsolat"
-            element={<ContactForm></ContactForm>}
-          ></Route>
           <Route path="login" element={<LoginForm></LoginForm>}></Route>
         </Routes>
         <Footer></Footer>
