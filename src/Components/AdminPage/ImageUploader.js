@@ -430,10 +430,6 @@ const ImageUploader = ({ setLoggedIn }) => {
               <option value="Gallery/MentesSutemenyek">Mentes sütemények</option>
               <option value="Gallery/FondantFigurak">Fondant figurák</option>
             </optgroup>
-            <optgroup label="Főkoldal, üdvözlő rész">
-              <option value="DesktopHomePage">Asztali nézet</option>
-              <option value="MobileHomePage">Mobil nézet</option>
-            </optgroup>
             <optgroup label="Főoldal, kategóriák képei">
               <option value="CategoryGallery/HagyomanyosTortak">
                 Klasszikus torták
