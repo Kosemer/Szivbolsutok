@@ -186,6 +186,7 @@ const ImageUploader = ({ setLoggedIn }) => {
   };
 
   useEffect(() => {
+    console.log("Selected folder changed:", cartCtx.selectedFolder); // Debugging line
     if (cartCtx.selectedFolder) {
       loadImages();
     }
@@ -484,7 +485,7 @@ const ImageUploader = ({ setLoggedIn }) => {
             className={classes.dietBox}
             style={{
               display:
-                cartCtx.selectedFolder === "MentesSutemenyek"
+                cartCtx.selectedFolder.includes("MentesSutemenyek")
                   ? "block"
                   : "none",
             }}
