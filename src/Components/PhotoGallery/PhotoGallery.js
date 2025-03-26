@@ -103,14 +103,14 @@ const PhotoGallery = ({ images }) => {
                 const title = getFileNameWithoutExtension(image.title);
                 
                 // Defensive check for image source
-                const imageSrc = icons.length > 0 ? icons[0] : image.src;
+                const imageSrc = icons.length > 0 ? image.src : image.src; // Use the original image source
                 if (!imageSrc) {
                   console.error("Image source is undefined for:", image);
                 }
 
                 return {
                   ...image,
-                  src: imageSrc,
+                  src: imageSrc, // Ensure the original image source is used
                   srcset: image.srcSet,
                   caption: title, // Megjeleníti a fájlnevet kiterjesztés nélkül
                   textBeforeIcon: textBeforeIcon, // Zárójel előtti szöveg hozzáadása a Carousel nézetben
