@@ -28,7 +28,7 @@
 }
 
 .background-container-fondantFigurak{
-    background-image: url("../../Assets/CakesPicture/brushBackgroundPurple.png");
+    background-image: url("../../Assets/CakesPicture/brushBackgroundBlue.png");
 }
 
 
@@ -152,21 +152,6 @@
     background-color: #e09ddd;
 }
 
-/* Zöld SVG szín */
-.green-svg {
-    color: #9DE0B1;
-  }
-  
-  /* Alapértelmezett szín */
-  .default-svg {
-
-  }
-
-  .cardTextNext svg{
-    color: #86bbd8;
-  }
-  
-
 
 .image-row {
     display: flex;
@@ -239,15 +224,31 @@
     color: #473939;
 }
 
-.cardTextNext-sutemenyek svg{
-    color: #473939;
-}
+
 
 
 .cardTextNext.animate
 {
     animation: /* slideInFromLeft 0.8s forwards,*/ swing 1s ease-in-out 0.8s;
 }
+
+
+.cardTextNext-tortak svg{
+    color: #ff7f7f;
+}
+
+.cardTextNext-macaronok svg{
+    color: #9DE0B1;
+}
+
+.cardTextNext-sutemenyek svg{
+    color: #faf066;
+}
+
+.cardTextNext-fondantFigurak svg{
+    color: #86bbd8;
+}
+
 
 /* Tablet (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {

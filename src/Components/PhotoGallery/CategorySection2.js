@@ -126,7 +126,7 @@ const CategorySection2 = ({
   const firstWord = words[0];
   const secondWord = words.length > 1 ? words.slice(1).join(" ") : null; // Handle multiple words
 
-/*   // Display only one image in mobile view
+  /*   // Display only one image in mobile view
   const mobileImage =
     images.length > 0
       ? images.find((img) => img.src.includes("1_")) || images[0]
@@ -135,35 +135,51 @@ const CategorySection2 = ({
   const imagesToDisplay =
     windowWidth <= 767 ? (mobileImage ? [mobileImage] : []) : images; */
 
-    // Az első kép kiválasztása mobilnézetben
-const mobileImage = images.length > 0 ? images[0] : null;
+  // Az első kép kiválasztása mobilnézetben
+  const mobileImage = images.length > 0 ? images[0] : null;
 
-// Ha mobilnézet van (<= 767px), akkor csak az első képet jelenítse meg
-const imagesToDisplay = windowWidth <= 767 ? (mobileImage ? [mobileImage] : []) : images;
+  // Ha mobilnézet van (<= 767px), akkor csak az első képet jelenítse meg
+  const imagesToDisplay =
+    windowWidth <= 767 ? (mobileImage ? [mobileImage] : []) : images;
+
+
+    const colorMap = {
+      tortak: "#ff7f7f",
+      macaronok: "#9DE0B1",
+      sutemenyek: "#faf066",
+      fondantFigurak: "#86bbd8",
+    };
+    
+    const circleColor = colorMap[group] || "#ddd"; // Alapértelmezett szín, ha nincs egyezés
 
   return (
-    <div ref={containerRef} className={`${classes["background-container"]} ${classes[`background-container-${group}`] || ""}`}>
+    <div
+      ref={containerRef}
+      className={`${classes["background-container"]} ${
+        classes[`background-container-${group}`] || ""
+      }`}
+    >
       {words.length === 1 ? (
         <h1
-         className={`${classes["page-title3"]} ${classes[`page-title3-${group}`] || ""} ${
-            isVisible ? classes.animate : ""
-          }`}
+          className={`${classes["page-title3"]} ${
+            classes[`page-title3-${group}`] || ""
+          } ${isVisible ? classes.animate : ""}`}
         >
           {firstWord}
         </h1>
       ) : (
         <>
           <h1
-            className={`${classes["page-title"]} ${classes[`page-title-${group}`] || ""} ${
-              isVisible ? classes.animate : ""
-            }`}
+            className={`${classes["page-title"]} ${
+              classes[`page-title-${group}`] || ""
+            } ${isVisible ? classes.animate : ""}`}
           >
             {firstWord}
           </h1>
           <h1
-            className={`${classes["page-title2"]} ${classes[`page-title2-${group}`] || ""} ${
-              isVisible ? classes.animate : ""
-            }`}
+            className={`${classes["page-title2"]} ${
+              classes[`page-title2-${group}`] || ""
+            } ${isVisible ? classes.animate : ""}`}
           >
             {secondWord}
           </h1>
@@ -197,20 +213,27 @@ const imagesToDisplay = windowWidth <= 767 ? (mobileImage ? [mobileImage] : []) 
           onClick={onImageClickHandler}
         >
           <p
-            className={`${classes["cardTextNext"]} ${classes[`cardTextNext-${group}`] || ""} ${
-              isCardVisible ? classes.animate : ""
-            }`}
+            className={`${classes["cardTextNext"]} ${
+              classes[`cardTextNext-${group}`] || ""
+            } ${isCardVisible ? classes.animate : ""}`}
           >
             További képek
+
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
               height="32"
-              fill="currentColor"
               className="bi bi-arrow-right-circle-fill ms-3"
               viewBox="0 0 16 16"
             >
-              <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+              <circle cx="8" cy="8" r="8"  fill={circleColor} />
+
+              <path
+                d="M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"
+                fill="#473939"
+                strokeWidth="0.3"
+                stroke="#473939"
+              />
             </svg>
           </p>
         </div>
