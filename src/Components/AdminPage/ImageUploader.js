@@ -70,11 +70,19 @@ const ImageUploader = ({ setLoggedIn }) => {
       cartCtx.selectedFile.size === 0 ||
       !cartCtx.imageName
     ) {
-      window.scrollTo({
-        top: 150,
-        left: 0,
-        behavior: "smooth",
-      });
+      // Get the position of the image name input
+      const inputElement = document.getElementById("imageName");
+      if (inputElement) {
+        const rect = inputElement.getBoundingClientRect();
+        const scrollY = window.scrollY || window.pageYOffset;
+        const middleOfScreen = window.innerHeight / 2;
+        const targetScrollPosition = scrollY + rect.top + rect.height / 2 - middleOfScreen;
+
+        window.scrollTo({
+          top: targetScrollPosition,
+          behavior: "smooth",
+        });
+      }
     }
 
     if (!cartCtx.selectedFile || cartCtx.selectedFile.size === 0) {
