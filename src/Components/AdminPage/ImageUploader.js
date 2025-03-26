@@ -20,12 +20,15 @@ const ImageUploader = ({ setLoggedIn }) => {
   const navigate = useNavigate();
 
   const [characterCount, setCharacterCount] = useState(0);
+  const [isNameInputTouched, setIsNameInputTouched] = useState(false);
+  const [isImageNameError, setIsImageNameError] = useState(false);
 
   // Eseménykezelő a beírt szöveg változásához
   const handleChange = (e) => {
     const inputValue = e.target.value;
     cartCtx.setImageName(inputValue); // Állítsa be a kép nevét a kontextusban
     setCharacterCount(inputValue.length); // Frissíti a karakter számlálót
+    setIsNameInputTouched(true);
   };
 
   useEffect(() => {
@@ -58,6 +61,9 @@ const ImageUploader = ({ setLoggedIn }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Reset the error state
+    setIsImageNameError(false);
+
     if (
       !cartCtx.selectedFile ||
       !cartCtx.selectedFolder ||
@@ -85,6 +91,7 @@ const ImageUploader = ({ setLoggedIn }) => {
 
     if (!cartCtx.imageName && cartCtx.selectedFolder) {
       cartCtx.setImageNameError("Mi legyen a kép neve?");
+      setIsImageNameError(true);
     } else {
       cartCtx.setImageNameError(null);
     }
@@ -460,8 +467,9 @@ const ImageUploader = ({ setLoggedIn }) => {
                 type="text"
                 value={cartCtx.imageName}
                 onChange={handleChange}
-                className={classes.imageNameInput}
+                className={`${classes.imageNameInput} ${!cartCtx.imageName && isImageNameError ? classes.errorInput : ''}`}
                 placeholder="Mi legyen a kép neve?"
+                onFocus={() => setIsNameInputTouched(true)}
               />
               {cartCtx.imageNameError && (
                 <div className={classes.error}>{cartCtx.imageNameError}</div>
@@ -472,11 +480,9 @@ const ImageUploader = ({ setLoggedIn }) => {
                 }`}
               >
                 Karakterek száma: {characterCount}
-              </div>{" "}
-              {/* Karakter számláló */}
+              </div>
               <div>
-                Az optimális megjelenés érdekében a képek neve ne legyen 20
-                karakternél több.
+                Az optimális megjelenés érdekében a képek neve ne legyen 20 karakternél több.
               </div>
             </div>
           )}
