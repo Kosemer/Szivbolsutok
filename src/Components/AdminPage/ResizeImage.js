@@ -12,7 +12,7 @@ const ResizeImage = ({
   imageFile,
   setImageFile,
   onResizeSuccess,
-  scale = 0.25,
+  scale = 0.6,
   selectedFile,
 }) => {
   const cartCtx = useContext(CartContext);
