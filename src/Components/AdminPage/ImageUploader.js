@@ -132,7 +132,7 @@ const ImageUploader = ({ setLoggedIn }) => {
     formData.append("imageName", imageNameWithIcons);
 
     const response = await axios.post(
-      "http://localhost/backend/uploadImage.php",
+      "https://www.szivbolsutok.hu/backend/uploadImage.php",
       formData,
       {
         headers: {
@@ -161,7 +161,7 @@ const ImageUploader = ({ setLoggedIn }) => {
     try {
       console.log('Selected folder:', cartCtx.selectedFolder);
       const response = await axios.get(
-        `http://localhost/backend/listImages.php?folder=${cartCtx.selectedFolder}`
+        `https://www.szivbolsutok.hu/backend/listImages.php?folder=${cartCtx.selectedFolder}`
       );
       
       if (response.data) {
@@ -173,7 +173,7 @@ const ImageUploader = ({ setLoggedIn }) => {
 
         // Betöltjük a mentett sorrendet
         try {
-          const orderResponse = await axios.get('http://localhost/backend/getImageOrder.php');
+          const orderResponse = await axios.get('https://www.szivbolsutok.hu/backend/getImageOrder.php');
           if (orderResponse.data && orderResponse.data[cartCtx.selectedFolder]) {
             // Ha van mentett sorrend, azt használjuk
             const savedOrder = orderResponse.data[cartCtx.selectedFolder];
@@ -331,7 +331,7 @@ const ImageUploader = ({ setLoggedIn }) => {
 
     // Mentjük a szervernek az új sorrendet
     try {
-      await axios.post('http://localhost/backend/saveImageOrder.php', {
+      await axios.post('https://www.szivbolsutok.hu/backend/saveImageOrder.php', {
         folder: cartCtx.selectedFolder,
         images: newImages
       }, {

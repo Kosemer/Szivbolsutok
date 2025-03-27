@@ -66,7 +66,7 @@ const CurtainGallery = ({ category }) => {
       console.log('Original image data:', imageData);
       
       try {
-        const orderResponse = await axios.get('http://localhost/backend/getImageOrder.php');
+        const orderResponse = await axios.get('https://www.szivbolsutok.hu/backend/getImageOrder.php');
         console.log('Order response:', orderResponse.data);
         
         const folderName = `Gallery/${folder.split('/')[1]}`;

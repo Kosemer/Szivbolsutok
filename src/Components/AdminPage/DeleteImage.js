@@ -15,7 +15,7 @@ const DeleteImage = ({ loadImages }) => {
 
       const response = await axios({
         method: "DELETE",
-        url: "http://localhost/backend/deleteImage.php",
+        url: "https://www.szivbolsutok.hu/backend/deleteImage.php",
         data: {
           image: imagePath
         },

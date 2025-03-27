@@ -31,9 +31,9 @@ const CategorySection2 = ({
           orderedImages.length > 0 ? orderedImages : imageData
         ).map((image) => ({
           ...image,
-          src: image.src.startsWith("http://localhost")
+          src: image.src.startsWith("https://www.szivbolsutok.hu/")
             ? image.src
-            : `http://localhost/${image.src}`,
+            : `https://www.szivbolsutok.hu/${image.src}`,
         }));
 
         setImages(combinedImages);
@@ -90,7 +90,7 @@ const CategorySection2 = ({
     // Fetch ordered images based on the folder
     try {
       const orderResponse = await axios.get(
-        "http://localhost/backend/getImageOrder.php"
+        "https://www.szivbolsutok.hu/getImageOrder.php"
       );
 
       const folderName = `CategoryGallery/${folder.split("/")[1]}`;

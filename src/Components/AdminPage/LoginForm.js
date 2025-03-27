@@ -21,27 +21,36 @@ function LoginForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const response = await fetch("http://localhost/backend/login.php", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username: document.getElementById("username").value,
-        password: document.getElementById("password").value,
-      }),
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
-      setLoggedIn(true);
-      setError(null);
-    } else {
-      setError("Hibás felhasználónév vagy jelszó");
+    setError(null); // Reset error üzenet
+  
+    try {
+      const response = await fetch("https://www.szivbolsutok.hu/backend/login.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: document.getElementById("username").value,
+          password: document.getElementById("password").value,
+        }),
+      });
+  
+      if (!response.ok) {
+        throw new Error(`Szerverhiba: ${response.status}`);
+      }
+  
+      const data = await response.json();
+  
+      if (data.success) {
+        setLoggedIn(true);
+      } else {
+        setError("Hibás felhasználónév vagy jelszó");
+      }
+    } catch (err) {
+      setError(`Hiba történt: ${err.message}`);
     }
   };
+  
   return (
     <>
       {!loggedIn && (

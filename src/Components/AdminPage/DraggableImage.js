@@ -42,7 +42,7 @@ const DraggableImage = ({ index, image, handleImageClick, onDragDrop }) => {
   };
 
   // Eltávolítjuk a '../' prefixet és hozzáadjuk a teljes szerver URL-t
-  const imageUrl = `http://localhost/${image.replace('../', '')}`;
+  const imageUrl = `https://www.szivbolsutok.hu/${image.replace('../', '')}`;
 
   return (
     <div 
