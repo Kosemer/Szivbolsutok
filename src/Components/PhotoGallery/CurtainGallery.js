@@ -23,7 +23,7 @@ const CurtainGallery = ({ category }) => {
   const navigate = useNavigate();
 
   const [overlayClass, setOverlayClass] = useState(styles.overlay);
-  const [images, setImages] = useState([]);
+  const [cachedImages, setCachedImages] = useState({});
 
   useEffect(() => {
     if (cartCtx.galleryIsOpen) {
@@ -51,67 +51,31 @@ const CurtainGallery = ({ category }) => {
   };
 
   useEffect(() => {
-    const fetchImages = async () => {
-      const imagesData = await fetchImagesFromFolder(`Gallery/${cartCtx.category}`);
-      console.log('Setting images array:', imagesData);
-      setImages(imagesData);
-    };
-
-    fetchImages();
-  }, [cartCtx.category]);
+    if (!cachedImages[cartCtx.category]) {
+      fetchImagesFromFolder(`Gallery/${cartCtx.category}`).then((imagesData) => {
+        setCachedImages((prev) => ({ ...prev, [cartCtx.category]: imagesData }));
+      });
+    }
+  }, [cartCtx.category, cachedImages]);
 
   const fetchImagesFromFolder = async (folder) => {
     try {
       const imageData = await ImageDimensions(folder);
-      console.log('Original image data:', imageData);
-      
       try {
         const orderResponse = await axios.get('https://www.szivbolsutok.hu/backend/getImageOrder.php');
-        console.log('Order response:', orderResponse.data);
-        
         const folderName = `Gallery/${folder.split('/')[1]}`;
-        console.log('Looking for folder name in JSON:', folderName);
-        
         if (orderResponse.data && orderResponse.data[folderName]) {
           const savedOrder = orderResponse.data[folderName];
-          console.log('Saved order for folder:', savedOrder);
-          
-          const getFilename = (path) => {
-            const filename = path.split('/').pop();
-            console.log('Getting filename from path:', path, ' -> ', filename);
-            return filename;
-          };
-          
+          const getFilename = (path) => path.split('/').pop();
           const orderedImages = savedOrder
-            .map(savedPath => {
-              const savedFilename = getFilename(savedPath);
-              console.log('Looking for file:', savedFilename);
-              const foundImage = imageData.find(data => {
-                const dataFilename = getFilename(data.src);
-                console.log('Comparing with:', dataFilename);
-                return dataFilename === savedFilename;
-              });
-              console.log('Found image:', foundImage ? 'yes' : 'no');
-              return foundImage;
-            })
+            .map(savedPath => imageData.find(data => getFilename(data.src) === getFilename(savedPath)))
             .filter(Boolean);
-          
-          console.log('Ordered images:', orderedImages);
-          
-          const newImages = imageData.filter(data => 
-            !savedOrder.some(savedPath => getFilename(data.src) === getFilename(savedPath))
-          );
-          console.log('New images:', newImages);
-          
-          const finalImages = [...orderedImages, ...newImages];
-          console.log('Final ordered images array:', finalImages);
-          return finalImages;
+          const newImages = imageData.filter(data => !savedOrder.some(savedPath => getFilename(data.src) === getFilename(savedPath)));
+          return [...orderedImages, ...newImages];
         }
       } catch (error) {
         console.error("Error loading image order:", error);
       }
-      
-      console.log('Returning original image data:', imageData);
       return imageData;
     } catch (error) {
       console.error("Hiba a képek lekérése közben", error);
@@ -120,16 +84,8 @@ const CurtainGallery = ({ category }) => {
   };
 
   useEffect(() => {
-    const body = document.body;
-    if (cartCtx.galleryIsOpen) {
-      body.style.overflow = "hidden";
-    } else {
-      body.style.overflow = "auto";
-    }
-
-    return () => {
-      body.style.overflow = "auto";
-    };
+    document.body.style.overflow = cartCtx.galleryIsOpen ? "hidden" : "auto";
+    return () => { document.body.style.overflow = "auto"; };
   }, [cartCtx.galleryIsOpen]);
 
   return (
@@ -139,8 +95,7 @@ const CurtainGallery = ({ category }) => {
           <h1 className={styles.categoryH1}>{cartCtx.categoriesName}</h1>
         </div>
         <div className={styles.container}>
-          {console.log('Images being passed to PhotoGallery:', images)}
-          <PhotoGallery images={images}></PhotoGallery>
+          <PhotoGallery images={cachedImages[cartCtx.category] || []}></PhotoGallery>
         </div>
       </div>
     </div>

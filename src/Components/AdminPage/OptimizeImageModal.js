@@ -13,7 +13,7 @@ const OptimizeImageModal = ({ show, onClose, onOptimize }) => {
         <Modal.Title>Kép optimalizálása</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        A kép mérete kisebb, mint 6 MB, nincs szükség optimalizálásra.
+        A kép mérete kisebb, mint 3 MB, nincs szükség optimalizálásra.
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={onClose}>
