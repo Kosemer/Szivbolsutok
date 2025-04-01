@@ -225,9 +225,9 @@ const ImageUploader = ({ setLoggedIn }) => {
 
       const fileSizeInMB = (e.target.files[0].size / (1024 * 1024)).toFixed(2);
       cartCtx.setImageSize(fileSizeInMB);
-      cartCtx.setIsOpenResize(fileSizeInMB > 6);
+      cartCtx.setIsOpenResize(fileSizeInMB > 1.4);
       // Állítsd be a showWarning állapotot, ha a méret nagyobb, mint 6 MB
-      cartCtx.setShowWarningImageSize(fileSizeInMB > 6);
+      cartCtx.setShowWarningImageSize(fileSizeInMB > 1.4);
       cartCtx.setResizeSuccess(false);
       cartCtx.setFileError(null);
     } else {
