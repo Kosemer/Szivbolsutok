@@ -14,11 +14,13 @@
 
 .overlayOpen {
   height: 100%;
+  padding-bottom: 4rem;
 }
 
 .overlayClose {
   height: 0%;
   transition: height 0.5s ease;
+  padding-bottom: 0rem;
 }
   
   /* The navigation links inside the overlay */

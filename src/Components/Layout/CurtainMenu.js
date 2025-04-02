@@ -29,19 +29,34 @@ const CurtainMenu = ({ menuVisible }) => {
   /*Images load*/
   useEffect(() => {
     const fetchImages = async () => {
-      const imagesData = await Promise.all([
-        fetchImagesFromFolder("menuPictures"),
-      ]);
-
-      const combinedImages = imagesData.reduce(
-        (acc, curr) => acc.concat(curr),
-        []
-      );
-      setImages(combinedImages);
+      const imagesData = await Promise.all([fetchImagesFromFolder("menuPictures")]);
+      const combinedImages = imagesData.reduce((acc, curr) => acc.concat(curr), []);
+  
+      // Előre meghatározott sorrend
+      const categoryOrder = [
+        "Klasszikus torták",
+        "Különleges torták",
+        "Burkolt torták",
+        "Linzertorták",
+        "Macaronok",
+        "Klasszikus sütemények",
+        "Mentes sütemények",
+        "Fondant figurák",
+      ];
+  
+      // Rendezzük a képeket a kívánt sorrend szerint
+      const sortedImages = combinedImages.sort((a, b) => {
+        const indexA = categoryOrder.indexOf(a.title.split(".")[0]) ?? Infinity;
+        const indexB = categoryOrder.indexOf(b.title.split(".")[0]) ?? Infinity;
+        return indexA - indexB;
+      });
+  
+      setImages(sortedImages);
     };
-
+  
     fetchImages();
   }, []);
+  
 
   const fetchImagesFromFolder = async (folder) => {
     try {
