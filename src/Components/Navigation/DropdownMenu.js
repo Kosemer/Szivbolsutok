@@ -27,7 +27,7 @@ const DropdownMenu = ({ menuVisible }) => {
             activeClassName={styles.active}
             onClick={(e) => {
               e.preventDefault();
-              handleScroll('HagyomanyosTortak');
+              handleScroll('KlasszikusTortak');
             }}
           >
             Torták
@@ -35,12 +35,12 @@ const DropdownMenu = ({ menuVisible }) => {
           <ul className={styles.dropdown}>
             <li className={styles.dropdownItem}>
               <NavLink 
-                to="/hagyomanyos-tortak" 
+                to="/Klasszikus-tortak" 
                 className={styles.dropdownLink}
                 activeClassName={styles.active}
                 onClick={(e) => {
                   e.preventDefault();
-                  handleScroll('HagyomanyosTortak');
+                  handleScroll('KlasszikusTortak');
                 }}
               >
                 Klasszikus torták
@@ -107,7 +107,7 @@ const DropdownMenu = ({ menuVisible }) => {
             activeClassName={styles.active}
             onClick={(e) => {
               e.preventDefault();
-              handleScroll('HagyomanyosSutemenyek');
+              handleScroll('KlasszikusSutemenyek');
             }}
           >
             Sütemények
@@ -120,7 +120,7 @@ const DropdownMenu = ({ menuVisible }) => {
                 activeClassName={styles.active}
                 onClick={(e) => {
                   e.preventDefault();
-                  handleScroll('HagyomanyosSutemenyek');
+                  handleScroll('KlasszikusSutemenyek');
                 }}
               >
                 Klasszikus sütemények

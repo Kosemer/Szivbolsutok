@@ -17,11 +17,11 @@ function Home() {
   const cartCtx = useContext(CartContext);
   
   const sectionsRefs = {
-    HagyomanyosTortak: useRef(null),
+    KlasszikusTortak: useRef(null),
     BurkoltTortak: useRef(null),
     Linzertortak: useRef(null),
     Macaronok: useRef(null),
-    HagyomanyosSutemenyek: useRef(null),
+    KlasszikusSutemenyek: useRef(null),
     MentesSutemenyek: useRef(null),
     FondantFigurak: useRef(null),
     KulonlegesTortak: useRef(null),
@@ -29,7 +29,7 @@ function Home() {
 
   const categoryData = [
     {
-      category: "HagyomanyosTortak",
+      category: "KlasszikusTortak",
       title: "Klasszikus Torták",
       imageSrc: hagyomanyosTortak,
       description:
@@ -74,7 +74,7 @@ function Home() {
       group: "macaronok",
     },
     {
-      category: "HagyomanyosSutemenyek",
+      category: "KlasszikusSutemenyek",
       title: "Klasszikus Sütemények",
       imageSrc: macaronok,
       description: "Hétköznapi alapanyagokból készült különféle sütemények.",
