@@ -23,19 +23,24 @@ const CategorySection2 = ({
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const imageData = await ImageDimensions(CategoryGallery);
-        const orderedImages = await fetchImageOrder(CategoryGallery);
+        // Ha mobil nézet van, akkor a Mobile mappát használjuk
+        const folderPath =
+          windowWidth <= 767
+            ? `CategoryGallery/Mobile/${CategoryGallery.split("/")[1]}`
+            : `CategoryGallery/${CategoryGallery.split("/")[1]}`;
+  
+        const imageData = await ImageDimensions(folderPath);
+        const orderedImages = await fetchImageOrder(folderPath);
+  
         console.log("imageData", imageData);
-        // If there is no saved order, load all images
-        const combinedImages = (
-          orderedImages.length > 0 ? orderedImages : imageData
-        ).map((image) => ({
+  
+        const combinedImages = (orderedImages.length > 0 ? orderedImages : imageData).map((image) => ({
           ...image,
           src: image.src.startsWith("https://www.szivbolsutok.hu/")
             ? image.src
             : `https://www.szivbolsutok.hu/${image.src}`,
         }));
-
+  
         setImages(combinedImages);
         console.log("combinedImages", combinedImages);
       } catch (error) {
@@ -43,54 +48,26 @@ const CategorySection2 = ({
         setImages([]);
       }
     };
-
-    fetchImages();
-
+  
+    fetchImages(); // Most már a megfelelő fetchImages hívódik meg
+  
     const handleResize = () => {
-      setWindowWidth(window.innerWidth); // Update window width on resize
+      setWindowWidth(window.innerWidth);
     };
-
-    window.addEventListener("resize", handleResize); // Listen for window resize
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.1 }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    // Observer for card text visibility
-    const cardObserver = new IntersectionObserver(
-      ([entry]) => {
-        setIsCardVisible(entry.isIntersecting);
-      },
-      { threshold: 0.1 }
-    );
-
-    if (cardRef.current) {
-      cardObserver.observe(cardRef.current);
-    }
-
+  
+    window.addEventListener("resize", handleResize);
+  
     return () => {
-      window.removeEventListener("resize", handleResize); // Clean up resize listener
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
-      if (cardRef.current) {
-        cardObserver.unobserve(cardRef.current);
-      }
+      window.removeEventListener("resize", handleResize);
     };
-  }, [CategoryGallery]);
+  }, [CategoryGallery, windowWidth]); // Figyeli az ablak méretének változását is
+  
 
   const fetchImageOrder = async (folder) => {
     // Fetch ordered images based on the folder
     try {
       const orderResponse = await axios.get(
-        "https://www.szivbolsutok.hu/getImageOrder.php"
+        "https://www.szivbolsutok.hu/backend/getImageOrder.php"
       );
 
       const folderName = `CategoryGallery/${folder.split("/")[1]}`;

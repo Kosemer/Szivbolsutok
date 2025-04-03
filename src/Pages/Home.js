@@ -34,7 +34,7 @@ function Home() {
       imageSrc: hagyomanyosTortak,
       description:
         "Piskóta és krém rétegezésével készülnek. Kívülről valamilyen krémmel (pl. vajkrém, habtejszín, a torta belsejébe töltött krém, illetve számos különböző elkészítésű krém) kerülnek beborításra.",
-      categoriesName: "Hagyományos torták",
+      categoriesName: "Klasszikus torták",
       group: "tortak",
     },
     {
@@ -124,7 +124,7 @@ function Home() {
   return (
     <div>
       <ParalaxSection />
-      <CurtainGallery />
+      <CurtainGallery group={categoryData.group}/>
       {categoryData.map((data) => (
         <div key={data.category} ref={sectionsRefs[data.category]} className={classes.section}>
           <CategorySection2

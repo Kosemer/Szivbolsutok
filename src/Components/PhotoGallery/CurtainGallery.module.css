@@ -92,6 +92,26 @@ backdrop-filter: blur(5.4px);
         margin-bottom: 0rem;
     }
 
+    .categoryTitle-tortak{
+      color: #f1f1f1;
+      background-color: #83ff7f;
+    }
+    
+    .categoryTitle-macaronok{
+      color: #f1f1f1;
+      background-color: #b67fff;
+    }
+    
+    .categoryTitle-sutemenyek{
+      color: #f1f1f1;
+      background-color: #fdff7f;
+    }
+    
+    .categoryTitle-fondantFigurak{
+      color: #f1f1f1;
+      background-color: #0f0c0c;
+    }
+
   /*Category title*/
   
     /* Extra kicsi készülékek (telefonok, 576px és alatt) */

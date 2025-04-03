@@ -18,12 +18,21 @@ const MemoizedImage = memo(({ src, alt }) => (
   />
 ));
 
-const CurtainGallery = ({ category }) => {
+const CurtainGallery = ({ category, group }) => {
   const cartCtx = useContext(CartContext);
   const navigate = useNavigate();
 
   const [overlayClass, setOverlayClass] = useState(styles.overlay);
   const [cachedImages, setCachedImages] = useState({});
+
+  const colorMap = {
+    tortak: "#ff7f7f",
+    macaronok: "#9DE0B1",
+    sutemenyek: "#faf066",
+    fondantFigurak: "#86bbd8",
+  };
+  
+  const circleColor = colorMap[group] || "#ddd"; // Alapértelmezett szín, ha nincs egyezés
 
   useEffect(() => {
     if (cartCtx.galleryIsOpen) {
@@ -91,7 +100,7 @@ const CurtainGallery = ({ category }) => {
   return (
     <div>
       <div id="galleryContainer" className={overlayClass}>
-        <div className={styles.categoryTitle}>
+      <div className={`${styles.categoryTitle} ${styles[`categoryTitle-${group}`]}`}>
           <h1 className={styles.categoryH1}>{cartCtx.categoriesName}</h1>
         </div>
         <div className={styles.container}>
