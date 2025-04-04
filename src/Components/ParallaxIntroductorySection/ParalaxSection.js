@@ -1,19 +1,10 @@
 import React, { useEffect, useState } from "react";
-import classes from "./ParalaxSection.module.css";
-import image1 from "../../Assets/CakesPicture/HarryPotter.png";
-import image2 from "../../Assets/CakesPicture/Macaron.png";
-import proba3 from "../../Assets/CakesPicture/proba3.jpg";
 import desktopSlider from "../../Assets/CakesPicture/desktopSlider.jpg";
-import desktopSlider2 from "../../Assets/CakesPicture/desktopSlider2.jpg";
-import desktopSlider3 from "../../Assets/CakesPicture/desktopSlider3.jpg";
-import mobileSlider from "../../Assets/CakesPicture/mobileSlider.jpg";
-import mobileSlider2 from "../../Assets/CakesPicture/mobileSlider2.jpg";
-import mobileSlider3 from "../../Assets/CakesPicture/mobileSlider3.jpg";
-import image3 from "../../Assets/CakesPicture/Málna, mogyoró mousse.jpg";
-import fruitCake from "../../Assets/CakesPicture/viragLada.png";
-import wordCloud from "../../Assets/CakesPicture/wordCloud.png";
-import wordCloudMobile from "../../Assets/CakesPicture/wordCloudMobile.png";
-import AnimatedDownArrow from "../AnimatedDownArrow/AnimatedDownArrow";
+import desktopSlider2 from "../../Assets/CakesPicture/desktopSlider2.webp";
+import desktopSlider3 from "../../Assets/CakesPicture/desktopSlider3.webp";
+import mobileSlider from "../../Assets/CakesPicture/mobileSlider.webp";
+import mobileSlider2 from "../../Assets/CakesPicture/mobileSlider2.webp";
+import mobileSlider3 from "../../Assets/CakesPicture/mobileSlider3.webp";
 import IntroSection from "../IntroSection/IntroSection";
 import Slider from "../Slider/Slider"
 

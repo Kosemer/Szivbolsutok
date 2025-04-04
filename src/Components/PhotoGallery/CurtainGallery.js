@@ -31,6 +31,7 @@ const CurtainGallery = ({ category, group }) => {
     sutemenyek: "#faf066",
     fondantFigurak: "#86bbd8",
   };
+
   
   const circleColor = colorMap[group] || "#ddd"; // Alapértelmezett szín, ha nincs egyezés
 
@@ -100,7 +101,7 @@ const CurtainGallery = ({ category, group }) => {
   return (
     <div>
       <div id="galleryContainer" className={overlayClass}>
-      <div className={`${styles.categoryTitle} ${styles[`categoryTitle-${group}`]}`}>
+      <div className={`${styles.categoryTitle} ${styles[`categoryTitle-${cartCtx.categoriesGroup}`]}`}>
           <h1 className={styles.categoryH1}>{cartCtx.categoriesName}</h1>
         </div>
         <div className={styles.container}>

@@ -96,6 +96,7 @@ const CategorySection2 = ({
     cartCtx.setCategory(category);
     cartCtx.setCategoriesName(categoriesName);
     cartCtx.setGalleryIsOpen(!cartCtx.galleryIsOpen);
+    cartCtx.setCategoriesGroup(group);
   };
 
   // Split category title into words

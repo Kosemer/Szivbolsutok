@@ -260,6 +260,7 @@ span {
 .footerLogo {
   width: 200px; 
   height: auto; 
+  margin-top: 4rem;
 }
 
 .containerInsta{
@@ -287,6 +288,7 @@ span {
   .pages {
     margin: 1rem 0;
   }
+
   .containerContact {
     flex-direction: column;
     padding: 0rem;
@@ -353,6 +355,7 @@ span {
 .footerLogo {
   width: 60%; 
   height: auto; 
+  margin-top: 0rem;
 }
 .verticalLine {
   border-left: 0px solid #ff000080; 

@@ -79,7 +79,7 @@ function Footer() {
             <div className={classes.linkBox}>
               <div className={classes.verticalLine}>
                 <div className={classes.linkContainer}>
-                  <NavLink className={classes.linkText} onClick={() => cartCtx.setScrollToCategory("HagyomanyosTortak")}>
+                  <NavLink className={classes.linkText} onClick={() => cartCtx.setScrollToCategory("KlasszikusTortak")}>
                     Klasszikus torták
                   </NavLink>
                 </div>
@@ -104,7 +104,7 @@ function Footer() {
             <div className={classes.linkBox}>
               <div className={classes.verticalLine}>
               <div className={classes.linkContainer}>
-                  <NavLink className={classes.linkText} onClick={() => cartCtx.setScrollToCategory("HagyomanyosSutemenyek")}>
+                  <NavLink className={classes.linkText} onClick={() => cartCtx.setScrollToCategory("KlasszikusSutemenyek")}>
                     Klasszikus sütemények
                   </NavLink>
                 </div>
@@ -129,7 +129,7 @@ function Footer() {
         </div>
 
         <div className={classes.containerContact}>
-          <h2 className={classes.h2TitleLogo}>Szívből sütök</h2>
+          {/* <h2 className={classes.h2TitleLogo}>Szívből sütök</h2> */}
 
           <img
             src={footerLogo}

@@ -74,7 +74,9 @@ const CartContext = React.createContext({
   selectedIconsError: null,
   setSelectedIconsError: () => {},
   categories: "",
-  setCategories: () => {}
+  setCategories: () => {},
+  categoriesGroup: [],
+  setCategoriesGroup: () => {},
 });
 
 export default CartContext;

@@ -93,23 +93,23 @@ backdrop-filter: blur(5.4px);
     }
 
     .categoryTitle-tortak{
-      color: #f1f1f1;
-      background-color: #83ff7f;
+      color: #ffffff;
+      background-color: #ff7f7f;
     }
     
     .categoryTitle-macaronok{
-      color: #f1f1f1;
-      background-color: #b67fff;
+      color: #473939;
+      background-color: #9DE0B1;
     }
     
     .categoryTitle-sutemenyek{
-      color: #f1f1f1;
-      background-color: #fdff7f;
+      color: #473939;
+      background-color: #faf066;
     }
     
     .categoryTitle-fondantFigurak{
-      color: #f1f1f1;
-      background-color: #0f0c0c;
+      color: #473939;
+      background-color: #86bbd8;
     }
 
   /*Category title*/
@@ -124,6 +124,26 @@ backdrop-filter: blur(5.4px);
       padding: 10px;
       border-radius: 0 0 10px 10px;
       animation: slideIn 0.5s ease-out;
+  }
+
+  .categoryTitle-tortak{
+    color: #ffffff;
+    background-color: #ff7f7f;
+  }
+  
+  .categoryTitle-macaronok{
+    color: #473939;
+    background-color: #9DE0B1;
+  }
+  
+  .categoryTitle-sutemenyek{
+    color: #473939;
+    background-color: #faf066;
+  }
+  
+  .categoryTitle-fondantFigurak{
+    color: #473939;
+    background-color: #86bbd8;
   }
 
   .categoryH1{
@@ -150,6 +170,26 @@ backdrop-filter: blur(5.4px);
       padding: 10px;
       border-radius: 0 0 10px 10px;
       animation: slideIn 0.5s ease-out;
+  }
+
+  .categoryTitle-tortak{
+    color: #ffffff;
+    background-color: #ff7f7f;
+  }
+  
+  .categoryTitle-macaronok{
+    color: #473939;
+    background-color: #9DE0B1;
+  }
+  
+  .categoryTitle-sutemenyek{
+    color: #473939;
+    background-color: #faf066;
+  }
+  
+  .categoryTitle-fondantFigurak{
+    color: #473939;
+    background-color: #86bbd8;
   }
 
   .categoryH1{
@@ -235,6 +275,25 @@ backdrop-filter: blur(5.4px);
       transition: font-size 0.3s ease-in-out;
       cursor: pointer;
     }
+    .categoryTitle-tortak{
+      color: #ffffff;
+      background-color: #ff7f7f;
+    }
+    
+    .categoryTitle-macaronok{
+      color: #473939;
+      background-color: #9DE0B1;
+    }
+    
+    .categoryTitle-sutemenyek{
+      color: #473939;
+      background-color: #faf066;
+    }
+    
+    .categoryTitle-fondantFigurak{
+      color: #473939;
+      background-color: #86bbd8;
+    }
   }
   
   
@@ -299,5 +358,24 @@ backdrop-filter: blur(5.4px);
       max-width: 100%;
       margin: 0 auto;
       margin-top: 4rem;
+    }
+    .categoryTitle-tortak{
+      color: #ffffff;
+      background-color: #ff7f7f;
+    }
+    
+    .categoryTitle-macaronok{
+      color: #473939;
+      background-color: #9DE0B1;
+    }
+    
+    .categoryTitle-sutemenyek{
+      color: #473939;
+      background-color: #faf066;
+    }
+    
+    .categoryTitle-fondantFigurak{
+      color: #473939;
+      background-color: #86bbd8;
     }
   }
