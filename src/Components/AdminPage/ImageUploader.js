@@ -435,7 +435,7 @@ const ImageUploader = ({ setLoggedIn }) => {
           >
             <option value="">Válassz mappát</option>
             <optgroup label="Galéria">
-              <option value="Gallery/HagyomanyosTortak">Klasszikus torták</option>
+              <option value="Gallery/KlasszikusTortak">Klasszikus torták</option>
               <option value="Gallery/KulonlegesTortak">Különleges torták</option>
               <option value="Gallery/BurkoltTortak">Burkolt torták</option>
               <option value="Gallery/Linzertortak">Linzertorták</option>
